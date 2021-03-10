@@ -4,7 +4,6 @@ import kotlinx.coroutines.*
 import kotlin.coroutines.CoroutineContext
 
 
-
 suspend fun main(){
     test6()
 }
