@@ -1,6 +1,9 @@
 package com.coco.test.classes
 
 import com.google.gson.Gson
+import sun.rmi.runtime.Log
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 data class User(val name: String, val age: Int) {
@@ -33,7 +36,7 @@ fun main() {
     // 复制
     var copyUser = u.copy(name = "othername")
 
-    val (name ,age ) = copyUser
+    val (name, age) = copyUser
 
     println("${copyUser}   ${u}")
 
@@ -47,9 +50,7 @@ fun main() {
     println("-----解析json------")
     var msg = "{\"name\":\"cocoa\",\"age\":null}"
 //    var msg = "{\"name\":\"cocoa\",\"age\":32}"
-    var jsonUser : User = Gson().fromJson<User>(msg,User::class.java)
+    var jsonUser : User = Gson().fromJson<User>(msg, User::class.java)
     println("-----jsonUser---${jsonUser}---")
-
-
-
+    
 }

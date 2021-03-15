@@ -108,6 +108,8 @@ class _CounterWidgetState extends State<CounterWidget> {
 
   @override
   Widget build(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
+
     return SingleChildScrollView(
         child: Column(
       children: [
@@ -125,6 +127,19 @@ class _CounterWidgetState extends State<CounterWidget> {
         //     }),
         //   ),
         // ),
+        Container(
+            width: double.infinity,
+            height: 100,
+            padding: EdgeInsets.all(20),
+            child: Text(
+              "12312312312312312312321312312312312312312123123123123123123123123123123",
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+            ),
+            // color: Colors.blueAccent,
+            decoration: BoxDecoration(
+                color: Colors.blueAccent,
+                borderRadius: BorderRadius.all(Radius.circular(24)))),
         Container(
           color: Colors.grey,
           width: double.infinity, // 设置container 宽度来充满屏幕
@@ -270,11 +285,11 @@ class _CounterWidgetState extends State<CounterWidget> {
         Row(
           children: [
             Expanded(
-              flex:1,
+              flex: 1,
               child: Text("Expanded1"),
             ),
             Expanded(
-              flex:1,
+              flex: 1,
               child: Text("Expanded2"),
             ),
             Spacer(flex: 3)
@@ -304,16 +319,16 @@ class _CounterWidgetState extends State<CounterWidget> {
                         color: Color.fromARGB(255, 255, 238, 234),
                         borderRadius: BorderRadius.all(Radius.circular(10.0))),
                     child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Image.asset("images/question.png",
-                            width: 20, height: 20),
-                        Text(
-                          "该条码在系统中绑定了3个SKU，请仔细核对后再操作112312313123",
-                          style: TextStyle(fontSize: 10),
+                        // mainAxisSize: MainAxisSize.min,
+                        // children: [
+                        //   Image.asset("images/question.png",
+                        //       width: 20, height: 20),
+                        //   Text(
+                        //     "该条码在系统中绑定了3个SKU，请仔细核对后再操作112312313123",
+                        //     style: TextStyle(fontSize: 10),
+                        //   ),
+                        // ],
                         ),
-                      ],
-                    ),
                   ),
                 ],
               ),
