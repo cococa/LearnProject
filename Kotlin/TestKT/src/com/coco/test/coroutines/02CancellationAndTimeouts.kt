@@ -4,7 +4,19 @@ import kotlinx.coroutines.*
 
 
 fun main() = runBlocking{
-    test01();
+    test02()
+}
+
+suspend fun test02(){
+    var job = GlobalScope.launch {
+        repeat(1000){
+            println("--${it}----${isActive}")
+            delay(500)
+        }
+    }
+    delay(1500)
+    job.cancelAndJoin()   // 个人理解： cancelAndJoin 并不能保证协程被取消，如果不能被及时取消，可以在协程中使用 isActive
+    print("test02 was canceled")
 }
 
 

@@ -4,8 +4,30 @@ import kotlinx.coroutines.*
 import kotlin.coroutines.CoroutineContext
 
 
-suspend fun main(){
-    test6()
+/**
+ * 参考文档
+ * 1. 协程  https://mp.weixin.qq.com/s?__biz=MzUyMzk0NTk4OQ==&mid=2247484884&idx=1&sn=17e0033eee4e481ec0d3e4c9bd7d56ee&scene=21
+ * 2. 官方文档 https://www.kotlincn.net/docs/reference/coroutines/basics.html
+ *
+ *
+ */
+
+//suspend fun test000() : String{
+//    withContext(Dispatchers.IO){
+//            delay(1000)
+//    }
+//    return "123"
+//}
+//
+//
+//fun main(){
+//     val a  = test000()
+//
+//}
+
+
+ fun main(){
+//    delay()
 }
 
 

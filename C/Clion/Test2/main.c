@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+//#include <openssl/aes.h>
 #include "ex16.h"
 //#include "string.h"
 #include "advanced/string01.h"
@@ -168,6 +169,10 @@ SDS* append(SDS* p, char* str, size_t len){
 
 int main(){
     char *str = "Helloworld!!!";
+
+    printf("%p", str);
+    long d =  sizeof(*str);
+
     size_t len  = strlen(str);
     SDS* sds = init(str, len);
     printSds(sds);
