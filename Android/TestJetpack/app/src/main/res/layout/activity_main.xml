@@ -22,6 +22,14 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/text1"
+            android:textColor="@color/colorPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp" />
+
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="@{(v)-> handler.onClick( v,user)}"
@@ -32,5 +40,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{user.lastName}" />
+
+
+        <Button
+            android:id="@+id/btn1"
+            android:text="btn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+
     </LinearLayout>
 </layout>

@@ -44,7 +44,7 @@ void main() {
   var name = "bob";
   print(name);
 
-  int count;
+  int count = 1;
 
   print("未初始化的变量具有 null 的初始值。即使数字类型变量最初为 ${count}  ，因为数字是对象,");
 
@@ -56,4 +56,9 @@ void main() {
   int a1a = 12;
 
   int a2a = 13;
+
+
+  var d = 1 / 0;
+  print("---${d}");
+
 }
