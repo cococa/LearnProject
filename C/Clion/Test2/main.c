@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "ex16.h"
-#include "string.h"
+#include "string1.h"
 #include "advanced/string01.h"
 #include "const01/const01.h"
 #include "memory/memory.h"

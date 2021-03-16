@@ -7,5 +7,10 @@
 
 #endif //TEST2_EX16_H
 
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <assert.h>
+
 void test();
 
