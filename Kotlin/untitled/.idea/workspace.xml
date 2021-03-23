@@ -2,28 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="649da595-ffbf-47ba-ba43-f724125d8de1" name="默认的" comment="">
-      <change afterPath="$PROJECT_DIR$/../../iOS/s/s.xcodeproj/project.pbxproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/s/s.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/s/s.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/s/s/Assets.xcassets/AccentColor.colorset/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/s/s/Assets.xcassets/AppIcon.appiconset/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/s/s/Assets.xcassets/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/s/s/ContentView.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/s/s/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/s/s/Preview Content/Preview Assets.xcassets/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/s/s/s.entitlements" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/s/s/sApp.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/s/sTests/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/s/sTests/sTests.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/s/sUITests/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/s/sUITests/sUITests.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../C/Clion/Test2/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../C/Clion/Test2/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C/Clion/Test2/ex16.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../C/Clion/Test2/ex16.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C/Clion/Test2/ex16.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../C/Clion/Test2/ex16.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../C/Clion/Test2/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../C/Clion/Test2/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C/testArrayPointer.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../C/testArrayPointer.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JavaScript/TypeScript/classes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../JavaScript/TypeScript/classes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JavaScript/TypeScript/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../JavaScript/TypeScript/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JavaScript/TypeScript/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../JavaScript/TypeScript/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../iOS/TestSwiftUI/TestSwiftUI/CourseList.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../../iOS/TestSwiftUI/TestSwiftUI/CourseList.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C/Clion/Test2/memory/memory.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../C/Clion/Test2/memory/memory.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C/Clion/Test2/memory/memory.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../C/Clion/Test2/memory/memory.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C/Clion/Test2/memory/test.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../C/Clion/Test2/memory/test.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C/Clion/Test2/string.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../C/Clion/Test2/string1.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C/Clion/Test2/string.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../C/Clion/Test2/string1.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C/base/struct/StructArray.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../C/base/struct/StructArray.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Cpp/Clion/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Cpp/Clion/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../flutter/flutter_app/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../flutter/flutter_app/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../iOS/TestSwiftUI/TestSwiftUI.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/../../iOS/TestSwiftUI/TestSwiftUI.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../iOS/TestSwiftUI/TestSwiftUI/MenuView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../../iOS/TestSwiftUI/TestSwiftUI/MenuView.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../iOS/TestSwiftUI/TestSwiftUI/UpdateStore.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../../iOS/TestSwiftUI/TestSwiftUI/UpdateStore.swift" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,6 +110,7 @@
       <workItem from="1597590045254" duration="128000" />
       <workItem from="1597590178530" duration="39000" />
       <workItem from="1597590361351" duration="379000" />
+      <workItem from="1610675174820" duration="7000" />
     </task>
     <servers />
   </component>

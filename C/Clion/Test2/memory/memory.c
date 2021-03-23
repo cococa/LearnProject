@@ -1,11 +1,9 @@
 //
 // Created by jun shen on 2020/4/19.
 //
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include "test.h"
 
+
+#include "memory.h"
 
 
 
@@ -55,9 +53,9 @@ void memory_main(){
 
 
     // 局部变量和全局变量的测试
-    testGrobal();
-    grobalA= 1111;
-    testGrobal();
+//    testGrobal();
+//    grobalA= 1111;
+//    testGrobal();
 
     //如果局部变量和全局变量同名，取最近的变量
     int grobalA = 2222;

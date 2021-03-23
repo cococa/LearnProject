@@ -2,11 +2,7 @@
 // Created by jun shen on 2020/4/13.
 //
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-#include <assert.h>
-
+#include "ex16.h"
 
 struct Person{
     char *name;
@@ -32,8 +28,6 @@ void destory(struct Person *p){
     free(p);
     p = NULL;
 }
-
-
 
 
 void test(){

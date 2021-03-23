@@ -4,6 +4,9 @@
 int binsearch(int x,int v[],int n);
 
 
+typedef unsigned long long ull;
+
+
 struct book{
   char *name;
   int count;
@@ -16,11 +19,15 @@ struct book{
 
 
 int main(){
-  int findTemp  = 2;
-  int a[3]= {1,2,3};
-  int index = binsearch(findTemp,a,3);
 
-  printf("%d\n", index);
+  ull a = 10;
+  printf("the ull a  = %lld\n", a);
+
+  // int findTemp  = 2;
+  // int a[3]= {1,2,3};
+  // int index = binsearch(findTemp,a,3);
+
+  // printf("%d\n", index);
 
 
   return 0;

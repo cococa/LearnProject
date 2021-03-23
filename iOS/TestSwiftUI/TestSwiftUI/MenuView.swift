@@ -1,8 +1,8 @@
 //
-//  MenuView.swift
+//  MenuView2.swift
 //  TestSwiftUI
 //
-//  Created by jun shen on 2020/5/10.
+//  Created by jun shen on 2020/11/24.
 //  Copyright © 2020 jun shen. All rights reserved.
 //
 
@@ -28,18 +28,17 @@ struct MenuView: View {
         }
         .frame(maxWidth: .infinity)
         .frame(height: 300)
-        .background(LinearGradient(gradient: Gradient(colors:[Color(#colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)), Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))]), startPoint: .top, endPoint: .bottom))
+        .background(LinearGradient(gradient: Gradient(colors:[Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)), Color(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1))]), startPoint: .top, endPoint: .bottom))
         .cornerRadius(20)
         .shadow(radius: 20)
         .padding(20)
-        .overlay(
-            Image("avatar")
-            .resizable()
-            .frame(width: 60, height: 60)
-            .aspectRatio(contentMode: .fill)
-                .clipShape(Circle())
-            .offset(y: -150)
-        )
+        .overlay(Image("avatar")
+                    .resizable()
+                    .frame(width: 60, height: 60)
+                    .aspectRatio(contentMode: .fill)
+                    .clipShape(Circle())
+                    .offset(y: -150))
+       
     }
 }
 
@@ -49,12 +48,13 @@ struct MenuView_Previews: PreviewProvider {
     }
 }
 
+
 struct MenuRow: View {
-    var title : String
-    var icon : String
-    
+    var title: String
+    var icon: String
+
     var body: some View {
-        HStack {
+        HStack{
             Image(systemName: icon)
                 .font(.system(size: 20, weight: .bold))
                 .imageScale(.large)
