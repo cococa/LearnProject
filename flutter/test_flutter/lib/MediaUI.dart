@@ -24,7 +24,17 @@ class ContentWidget extends StatefulWidget {
 
 }
 
+void test(){
+  Stream.periodic(Duration(seconds: 3), (data){}).takeWhile((element) => )
+}
+
+
+
 class _Test2State extends State<ContentWidget> {
+
+  
+  
+  
   @override
   Widget build(BuildContext context) {
     return Container(

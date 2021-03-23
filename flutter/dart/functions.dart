@@ -30,10 +30,18 @@ test(String name, {age = 123}) {
   return name + age.toString();
 }
 
-test1({String key, int age = 0}) {}
+test1({String? key, int age = 0}) {}
+
+void funRequired({required String name, int age = 0}) {
+  print("-----${name}----${age}---");
+}
 
 void main(List<String> args) {
+  var list = ['apples', 'bananas', 'oranges'];
+
   test1(age: 1, key: "123");
+
+  funRequired(name: "ccooca");
 
   print(test("cocoa", age: 12));
 

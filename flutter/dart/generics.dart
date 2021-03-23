@@ -9,7 +9,9 @@ class Person {}
 class Cache<T extends Person> {
   void setCache(T person) {}
 
-  K test<K>(K name) {}
+  K? test<K>(K? name) {
+    return name;
+  }
 }
 
 num versionApi() {
@@ -31,16 +33,20 @@ void checkVersion() async {
   }
 }
 
-
 // generics function
 T check<T, R>(List<R> list) {
   return list[0] as T;
 }
 
 void main() {
-  var names = new List<String>();
-  names.addAll(["one", "two"]);
-  // names.addAll([1,2,3]);
+  var names = List.generate(10, (index) {
+    return index.toString();
+  });
+  names.add("10");
+  print(names is List<String>); // true
+  print("--names.runtimeType-${names.runtimeType}-");
+
+  names.addAll(["11", "12"]);
   print(names);
 
   //Using collection literals（使用集合字面量）
@@ -59,7 +65,9 @@ void main() {
   print("the tag1 ${tag1}");
 
   // new Cache<String>();
-  new Cache<Person>();
+  var nCache = Cache<Person>();
+  var name = nCache.test<String>("123");
+  print("--name=--${name}----");
 
   // new Document();
   File myFile = new File('classes.dart');

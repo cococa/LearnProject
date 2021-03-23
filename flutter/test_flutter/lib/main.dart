@@ -6,8 +6,10 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'MediaUI.dart';
 import 'TestAsset.dart';
+import 'TestCache.dart';
 import 'TestContainer.dart';
 import 'TestEvent.dart';
+import 'TestListView.dart';
 import 'TestLocalCache.dart';
 import 'TestWillPopScope.dart';
 import 'TestFutureBuilder.dart';
@@ -91,6 +93,8 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   List<Item> dataList = [
+    Item("TestCache", TestCache()),
+    Item("ListView", TestListView()),
     Item("Container", TestContainer()),
     Item("MediaUI", MediaUI()),
     Item("TestEvent", TestEvent()),

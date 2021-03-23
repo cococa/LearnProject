@@ -7,6 +7,24 @@ class TestContainer extends StatefulWidget {
   _ScaffoldRouteState createState() => _ScaffoldRouteState();
 }
 
+class _Painter  extends CustomPainter{
+  @override
+  void paint(Canvas canvas, Size size) {
+    var p = Paint();
+    p.color = Colors.blueAccent;
+    canvas.drawCircle(Offset(10.0,10.0), 5.0, p);
+
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) {
+     return this != oldDelegate;
+  }
+
+}
+
+
+
 class _ScaffoldRouteState extends State<TestContainer> {
   int currentIndex = 0;
   var counterWidget = CounterWidget();
@@ -127,6 +145,10 @@ class _CounterWidgetState extends State<CounterWidget> {
         //     }),
         //   ),
         // ),
+        CustomPaint(
+            painter:_Painter()
+        ),
+
         Container(
             width: double.infinity,
             height: 100,

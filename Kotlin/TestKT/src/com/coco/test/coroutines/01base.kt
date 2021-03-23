@@ -1,6 +1,7 @@
 package com.coco.test.coroutines
 
 import kotlinx.coroutines.*
+import java.util.*
 import kotlin.coroutines.CoroutineContext
 
 
@@ -26,12 +27,15 @@ import kotlin.coroutines.CoroutineContext
 //}
 
 
- fun main(){
-//    delay()
+fun main() {
+
+
+
+
 }
 
 
-fun test1(){
+fun test1() {
     GlobalScope.launch {
         delay(1000L)
         println("123")
@@ -45,7 +49,7 @@ fun test1(){
 }
 
 // 但是等待一个协程结束并不是一个好的方案
-suspend fun test2(){
+suspend fun test2() {
 
     val job = GlobalScope.launch {
         delay(1000)
@@ -57,7 +61,7 @@ suspend fun test2(){
 }
 
 // 结构化的协程
-fun test3(){
+fun test3() {
     runBlocking {
         launch {
             delay(1000)
@@ -69,7 +73,7 @@ fun test3(){
 
 
 //作用域构建器
-fun test4(){
+fun test4() {
     runBlocking {
 
     }
@@ -77,7 +81,7 @@ fun test4(){
 
 
 // 挂起函数
-fun test5(){
+fun test5() {
     runBlocking {
         launch {
             delay()
@@ -86,14 +90,14 @@ fun test5(){
     }
 }
 
-suspend fun delay(){
+suspend fun delay() {
     delay(1000)
     println("123")
 }
 
 
-fun test6(){
-    repeat(100_000){
+fun test6() {
+    repeat(100_000) {
         runBlocking {
             launch {
 //                delay(1000)
