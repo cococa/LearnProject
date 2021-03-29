@@ -1,37 +1,37 @@
-
-
-mixin Runner{    // 使用mixin 定义来定义
-    bool canRun = false;
-    void run(){
-        print("im running");
-
-    }
+mixin Runner {
+  // 使用mixin 定义来定义
+  bool canRun = false;
+  void run() {
+    print("im running");
+  }
 }
 
-class Human{
+class Human {}
 
+extension DoubleExt on double {
+  double test() {
+    return this * this;
+  }
 }
 
-class Person extends Human with Runner{    //with 来支持 Mixin
-    
-    static num max_age= 200;  // 静态成员方法
+class Person extends Human with Runner {
+  //with 来支持 Mixin
 
-    num age = 10;
+  static num max_age = 200; // 静态成员方法
 
-    static void printMsg(){
-        print("this is ${max_age}");
-    }
+  num age = 10;
 
-} 
+  static void printMsg() {
+    print("this is ${max_age}");
+  }
+}
 
-
-void main(){
-
-
+void main() {
   var r1 = Person();
   r1.run();
 
   print(Person.max_age);
 
-
+  double a = 1.1;
+  print(a.test());
 }

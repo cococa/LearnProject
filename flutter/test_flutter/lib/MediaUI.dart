@@ -25,7 +25,7 @@ class ContentWidget extends StatefulWidget {
 }
 
 void test(){
-  Stream.periodic(Duration(seconds: 3), (data){}).takeWhile((element) => )
+  // Stream.periodic(Duration(seconds: 3), (data){}).takeWhile((element) => )
 }
 
 

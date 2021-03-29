@@ -1,11 +1,11 @@
 void main() {
   List list1 = [1, 2, 3];
 
-  var list3 = List<int>();
+  var list3 = List<int>.generate(11, (index) => index);
   list3.add(11);
   print(list3);
 
-  var list2 = new List();
+  var list2 = List.generate(10, (index) => index);
   list2.add(1);
 
   const list0x23 = [1, 2, 3];
@@ -30,7 +30,7 @@ void main() {
   list2.fillRange(0, 1, 999);
   print(list2);
 
-  list2.fillRange(0, 2, [8988, 909]);
+  // list2.fillRange(0, 2);
   print(list2);
 
   print(list2.join("--"));
@@ -50,8 +50,8 @@ void main() {
 
   print(set2);
 
-  var tt1 = [1,3];  // 这是一个list
-  var tt2 = {1,23}; // 这是一个set 准确说  LinkedHashSet
+  var tt1 = [1, 3]; // 这是一个list
+  var tt2 = {1, 23}; // 这是一个set 准确说  LinkedHashSet
   print("tt1 ${tt1.runtimeType}");
   print("tt2 ${tt2.runtimeType}");
 
@@ -71,7 +71,4 @@ void main() {
     return value * 2;
   });
   print(a3);
-
-
-
 }

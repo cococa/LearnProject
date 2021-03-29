@@ -1,7 +1,7 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Text,Button } from '@tarojs/components'
 import './index.scss'
-import Welcome from './com'
+// import Welcome from './com'
 
 
 export default class Index extends Component {
@@ -60,7 +60,7 @@ export default class Index extends Component {
       <View className='index'>
         <Text>Hello world!</Text>
         <Button  onClick={this.onClick}>{this.state.isToggleOn ? 'on' : 'off'}</Button>
-        <Welcome name="Wallace" />
+        {/* <Welcome name="Wallace" /> */}
         <Text>{this.state.date.toLocaleTimeString()}</Text>
       </View>
     )

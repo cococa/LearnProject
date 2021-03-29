@@ -4,6 +4,7 @@ void main() {
   // dart 的number有两种类型，int 和 double 都是num 抽象类的实现类  （num 本身不能被创建）
   int aaaa = 10;
   double bbbb = 120.12;
+
   print(aaaa);
   print(bbbb);
 
@@ -57,8 +58,6 @@ void main() {
 
   int a2a = 13;
 
-
   var d = 1 / 0;
   print("---${d}");
-
 }
