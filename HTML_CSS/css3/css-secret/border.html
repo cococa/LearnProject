@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>border 边框</title>
+
+    <style type="text/css">
+            body{
+                background-color: #f1f1f1;
+                padding: 10px;
+            }
+
+            #d2c{
+                width: 100px;
+                height: 100px;
+                background-color: aqua;
+            }
+            #div1{
+                width: 300px;
+                height: 200px;
+                background: white;
+                border: 30px solid hsla(0, 0%, 100%, .5);
+                background-clip: padding-box;
+            }
+            #div2{
+                width: 100px;
+                height: 100px;
+                background-color: yellowgreen;
+                box-shadow: 0 0 0 10px #123 ,  0 0 0 20px red;
+            }
+
+
+            /* #d3c{
+                margin-top: 130px;
+                background-color: goldenrod;
+                 padding: 30px;
+                height: 200px;
+            } */
+            #div3{
+               width: 500px;
+               height: 500px;
+               margin-top: 100px; 
+               background: url(../../img/bg.jpg) no-repeat  grey; 
+               background-position: right 30px bottom 30px;
+            }
+        
+            #div4{
+                border-style: solid;
+                border-width: 2px;
+                -webkit-border-top-colors:green red green;
+                /* border-top-colors:green red green; */
+            }    
+    </style>
+
+</head>
+<body>
+
+    <h1 id="div1">透明边框问题 background-clip: padding-box;</h1>
+    <div id="d2c">
+        <h5 id="div2">多边框 box-shadow 作为边框</h5>
+    </div>       
+    <div id="div3"></div>
+    <div id="div4">123</div>
+
+</body>
+</html>
