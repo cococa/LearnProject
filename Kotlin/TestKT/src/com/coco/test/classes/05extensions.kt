@@ -18,7 +18,7 @@ fun Example.test() {
     println("extensions metho")
 }
 
-fun Example.test(i:Int){
+fun Example.test(i: Int) {
     this.test()
     println("this is from test(i)")
 }
@@ -32,9 +32,31 @@ fun Any?.toString(): String {
     return toString()
 }
 
+inline fun Any?.guard(nullCase: () -> Nothing): Any {
+    return this ?: nullCase()
+}
+
+
+fun testGuard() {
+    println("test  testGuard")
+    var name: String? = null
+    val tName = name.guard {
+        println("name is null! @return case")
+        return
+    }
+
+    println("name is ${name}")
+
+}
+
 
 val <T> List<T>.lastIndex: Int
     get() = size - 1
+
+
+fun Double.square(): Double {
+    return this * this
+}
 
 
 fun main() {
@@ -53,5 +75,10 @@ fun main() {
     var name: String? = ""
     println(name.toString())
 
+    println("extensions for double！！")
+    println(1.2.square())
+
+
+    testGuard();
 
 }

@@ -36,6 +36,7 @@ fun main() {
     // 复制
     var copyUser = u.copy(name = "othername")
 
+
     val (name, age) = copyUser
 
     println("${copyUser}   ${u}")
