@@ -35,8 +35,9 @@ void listDir() {
 
 void writeFileAsString({required String content}) async {
   var file = File("./test.md");
-  var sink = file.openWrite();
+  var sink = file.openWrite(mode: FileMode.append);
   sink.writeln(content);
+  sink.writeln("${DateTime.now()}");
   await sink.flush();
   await sink.close();
 }
