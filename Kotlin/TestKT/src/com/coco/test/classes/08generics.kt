@@ -14,13 +14,6 @@ fun main(){
     var b = Box<String>("123")
     b.t = "123"
 
-    runBlocking {
-        launch {
-
-        }
-    }
-
-
 
 
 }

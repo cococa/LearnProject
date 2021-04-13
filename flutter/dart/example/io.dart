@@ -47,6 +47,6 @@ void main() {
   //
   // readFileAsLines();
   //
-  // listDir();
+  listDir();
   writeFileAsString(content: "add new msg!!");
 }
