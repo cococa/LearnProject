@@ -5,11 +5,11 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
 
-class LogLifecycleObserver : LifecycleObserver {
+class LogLifecycleObserver(var name : String) : LifecycleObserver {
 
     @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
     fun onCreate(){
-        Log.d("---","--onCreate----")
+        Log.d("---","${name}--onCreate----")
     }
 
 
