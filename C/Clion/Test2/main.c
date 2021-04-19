@@ -1,16 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-//#include <openssl/aes.h>
 #include "ex16.h"
 #include "string1.h"
-//#include "string.h"
 #include "advanced/string01.h"
 #include "const01/const01.h"
 #include "memory/memory.h"
 #include "variable/test1.h"
 #include "pretreatment/pretreatment.h"
 #include "jiqiao/jiqiao.h"
+#include "pointer/p1.h"
 #define VALUE 10
 
 #define MAX(a, b) ((a > b) ? (a) : (b))
@@ -169,20 +168,23 @@ SDS* append(SDS* p, char* str, size_t len){
 
 
 int main(){
-    char *str = "Helloworld!!!";
+//    char *str = "Helloworld!!!";
+//
+//    printf("%p", str);
+//    long d =  sizeof(*str);
+//
+//    size_t len  = strlen(str);
+//    SDS* sds = init(str, len);
+//    printSds(sds);
+//
+//    char *str2 = "User Defaults won't write to disk right away";
+//    SDS* s2 = append(sds, str2, strlen(str2));
+//    printSds(s2);
+//
+//    freeSds(sds);
+//    freeSds(s2);
 
-    printf("%p", str);
-    long d =  sizeof(*str);
 
-    size_t len  = strlen(str);
-    SDS* sds = init(str, len);
-    printSds(sds);
-
-    char *str2 = "User Defaults won't write to disk right away";
-    SDS* s2 = append(sds, str2, strlen(str2));
-    printSds(s2);
-
-    freeSds(sds);
-    freeSds(s2);
+    test_p1();
 
 }
