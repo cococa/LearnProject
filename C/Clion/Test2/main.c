@@ -5,7 +5,6 @@
 #include "ex16.h"
 #include "string1.h"
 //#include "string.h"
->>>>>>> 13120079f4f6a1e7c67f10a9f9f37196722a6548
 #include "advanced/string01.h"
 #include "const01/const01.h"
 #include "memory/memory.h"
