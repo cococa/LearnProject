@@ -10,9 +10,32 @@
 #include "pretreatment/pretreatment.h"
 #include "jiqiao/jiqiao.h"
 #include "pointer/p1.h"
+#include "pointer/p2.h"
 #define VALUE 10
 
 #define MAX(a, b) ((a > b) ? (a) : (b))
+
+//      %d 十进制有符号整数   
+//
+//      %u 十进制无符号整数    
+//
+//      %f 浮点数    
+//
+//      %s 字符串     
+//
+//      %c 单个字符     
+//
+//      %p 指针的值     
+//
+//      %e 指数形式的浮点数     
+//
+//      %x,%X 无符号以十六进制表示的整数    
+//
+//      %o 无符号以八进制表示的整数    
+//
+//      %g 自动选择合适的表示法 
+
+
 
 extern int  global_b;
 
@@ -185,6 +208,6 @@ int main(){
 //    freeSds(s2);
 
 
-    test_p1();
+    test_p2();
 
 }
