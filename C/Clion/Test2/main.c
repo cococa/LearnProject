@@ -11,6 +11,7 @@
 #include "jiqiao/jiqiao.h"
 #include "pointer/p1.h"
 #include "pointer/p2.h"
+#include "pointer/p3.h"
 #define VALUE 10
 
 #define MAX(a, b) ((a > b) ? (a) : (b))
@@ -208,6 +209,6 @@ int main(){
 //    freeSds(s2);
 
 
-    test_p2();
+    test_p3();
 
 }

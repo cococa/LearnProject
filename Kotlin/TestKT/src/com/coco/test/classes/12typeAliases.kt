@@ -23,7 +23,7 @@ fun main() {
     var map: KVMap<String> = mutableMapOf("1" to "one")
     println("");
 
-    var list  = listOf<Int>(1,2,11,33,44)
+    var list  = listOf(1,2,11,33,44)
     var filtedList = list.filter(f)
     println("--the filtedList is -${filtedList}--")
 

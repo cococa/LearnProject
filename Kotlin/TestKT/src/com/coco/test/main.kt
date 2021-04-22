@@ -18,6 +18,11 @@ fun main(){
 //
 //    print(ss.typeName)
 
+    var i  : Int = 254;
+    var b : Byte = i.toByte();
+    println("--${b}-")
+
+
 }
 
 
