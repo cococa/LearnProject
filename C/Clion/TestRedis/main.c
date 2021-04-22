@@ -11,8 +11,8 @@ struct Sds {
 };
 
 void change(char c[], char *p, size_t len) {
-    for (int a  = 0; a< len; a ++){
-        *(c+a) = *(p+a);
+    for (int a = 0; a < len; a++) {
+        *(c + a) = *(p + a);
     }
     printf("%s\n", c);
 }
@@ -51,6 +51,25 @@ SDS *append(SDS *p, char *str, size_t len) {
     }
 }
 
+int fib(int n) {
+    if (n == 1 || n == 2) {
+        return 1;
+    }
+
+    int *p = malloc(sizeof(int) * (n + 1));
+    *(p) = 1;
+    *(p + 1) = 1;
+    *(p + 2) = 1;
+    for (int i = 3; i <= n; i++) {
+        *(p + i) = *(p + i - 1) + *(p + i - 2);
+        printf("--%d--\n", *(p + i));
+    }
+    int reult = *(p + n);
+    free(p);
+    return reult;
+}
+
+
 int main() {
 
 //    char s[] = "12312312";
@@ -59,16 +78,21 @@ int main() {
 //    change(s, c, strlen(c));
 
 
-    char *str = "Helloworld!!!";
-    size_t len = strlen(str);
-    SDS *sds = init(str, len);
-    printSds(sds);
+//    char *str = "Helloworld!!!";
+//    size_t len = strlen(str);
+//    SDS *sds = init(str, len);
+//    printSds(sds);
+//
+//    char *str2 = "User Defaults won't write to disk right away";
+//    SDS *s2 = append(sds, str2, strlen(str2));
+//    printSds(s2);
+//
+//    freeSds(sds);
+//    freeSds(s2);
+    int n = fib(3);
 
-    char *str2 = "User Defaults won't write to disk right away";
-    SDS *s2 = append(sds, str2, strlen(str2));
-    printSds(s2);
-
-    freeSds(sds);
-    freeSds(s2);
+    printf("%d", n);
 
 }
+
+
