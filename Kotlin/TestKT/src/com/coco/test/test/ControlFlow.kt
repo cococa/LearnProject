@@ -52,5 +52,4 @@ fun main() {
         println("-------${item}=${index}----");
     }
 
-
 }
