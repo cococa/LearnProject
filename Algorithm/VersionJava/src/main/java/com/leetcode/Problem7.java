@@ -44,6 +44,9 @@ public class Problem7 {
      */
     public static void main(String[] args) {
 
+        System.out.println(-3/10);
+
+
         int result = 0;
         long number = 1534236469;
         while (number != 0) {
@@ -68,10 +71,6 @@ public class Problem7 {
             number /= 10;
         }
         System.out.println(result);
-
-//        System.out.println(Integer.MAX_VALUE);
-//        System.out.println(Integer.MIN_VALUE);
-
 
     }
 

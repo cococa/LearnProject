@@ -4,10 +4,11 @@
 
 typedef struct Sds SDS;
 //https://github.com/redis/redis/blob/unstable/src/sds.c
+//  https://blog.csdn.net/sunlylorn/article/details/7544301
 struct Sds {
     int len;
     int free;
-    char str[];
+    char str[];  //C99 Flexible array member
 };
 
 void change(char c[], char *p, size_t len) {
@@ -19,9 +20,12 @@ void change(char c[], char *p, size_t len) {
 
 SDS *init(char *str, size_t len) {
     SDS *s = (SDS *) malloc(sizeof(int) * 2 + sizeof(char) * (len + 1));
+    printf("-debug-size of sds = %d-\n",sizeof(*s));
     s->len = len;
     s->free = 0;
     change(s->str, str, len + 1);
+    printf("-debug-size of sds = %d-\n",sizeof(*s));
+    // redis 返回的是buffer 的指针
     return s;
 }
 
@@ -51,47 +55,31 @@ SDS *append(SDS *p, char *str, size_t len) {
     }
 }
 
-int fib(int n) {
-    if (n == 1 || n == 2) {
-        return 1;
-    }
-
-    int *p = malloc(sizeof(int) * (n + 1));
-    *(p) = 1;
-    *(p + 1) = 1;
-    *(p + 2) = 1;
-    for (int i = 3; i <= n; i++) {
-        *(p + i) = *(p + i - 1) + *(p + i - 2);
-        printf("--%d--\n", *(p + i));
-    }
-    int reult = *(p + n);
-    free(p);
-    return reult;
-}
-
 
 int main() {
 
-//    char s[] = "12312312";
-//
-//    char *c = "Hello";
-//    change(s, c, strlen(c));
 
 
-//    char *str = "Helloworld!!!";
-//    size_t len = strlen(str);
-//    SDS *sds = init(str, len);
-//    printSds(sds);
-//
-//    char *str2 = "User Defaults won't write to disk right away";
-//    SDS *s2 = append(sds, str2, strlen(str2));
-//    printSds(s2);
-//
-//    freeSds(sds);
-//    freeSds(s2);
-    int n = fib(3);
+    char s[] = "12312312";
 
-    printf("%d", n);
+    char *c = "Hello";
+    change(s, c, strlen(c));
+
+
+    char *str = "Helloworld!!!";
+    size_t len = strlen(str);
+    SDS *sds = init(str, len);
+    printSds(sds);
+
+    char *str2 = "User Defaults won't write to disk right away";
+    SDS *s2 = append(sds, str2, strlen(str2));
+    printSds(s2);
+
+    freeSds(sds);
+    freeSds(s2);
+
+
+
 
 }
 
