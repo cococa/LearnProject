@@ -52,7 +52,19 @@ fun testflow() : Flow<Int> = flow {
 
 
 
-fun main() = runBlocking{
+fun main(args : Array<String>) = runBlocking{
+
+    println("--${args.contentToString()}--");
+    val a: Int = 100
+    val boxedA: Int? = a
+    val anotherBoxedA: Int? = a
+
+    val b: Int = 100
+    val boxedB: Int? = b
+    val anotherBoxedB: Int? = b
+
+    println(boxedA === anotherBoxedA) // true
+    println(boxedB === anotherBoxedB) // false
 
     launch {
         for (k in 1..3) {

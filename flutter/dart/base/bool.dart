@@ -1,4 +1,4 @@
-void main(){
+void main() {
   bool b = false;
   print("b hashcode = ${b.hashCode}");
   print("b toString = ${b.toString()}");
@@ -10,11 +10,9 @@ void main(){
 
   var name = 123;
 
-  if(name !=null){
+  if (name != null) {
     print("name is ${name}");
-  }else{
+  } else {
     print("the name was null");
   }
-
-
 }
