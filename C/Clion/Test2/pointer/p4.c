@@ -29,21 +29,26 @@ void test_p4() {
 //    }
 
 
-    struct Student ss;
-    struct Student *p1;
-    p1 = &ss;
+//    struct Student ss;
+//    struct Student *p1;
+//    p1 = &ss;
+//
+//    p1->age = 10;
+//
+//    printf("--the p1 age = %d--\n", ss.age);
+//
+//
+//    struct Student *p2 = NULL;
+//    p2 = (struct Student *) malloc(sizeof(struct Student));
+//    p2->age = 1111;
+//
+//    printf("--the p2 age = %d--\n", p2->age);
 
-    p1->age = 10;
-
-    printf("--the p1 age = %d--\n", ss.age);
 
 
-    struct Student *p2 = NULL;
-    p2 = (struct Student *) malloc(sizeof(struct Student));
-    p2->age = 1111;
-
-    printf("--the p2 age = %d--\n", p2->age);
-
+        int a = 10;
+        *&a = 20;
+        printf("the a = %d \n",a);
 
 }
 

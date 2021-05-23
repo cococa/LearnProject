@@ -1,5 +1,10 @@
 void main() {
   // int
+  var m1 = <String>{};
+  m1.add("123");
+  m1.forEach((element) {
+    print(element);
+  });
 
   // dart 的number有两种类型，int 和 double 都是num 抽象类的实现类  （num 本身不能被创建）
   int aaaa = 10;

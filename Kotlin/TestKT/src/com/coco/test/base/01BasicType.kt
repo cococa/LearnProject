@@ -33,6 +33,13 @@ fun main() {
     var p = Person0x12().applyTest{
        it.name  = "222"
     }
+
+    listOf<Int>(1,2).run {
+
+    }
+
+
+
     println("${p.name}--")
 
 

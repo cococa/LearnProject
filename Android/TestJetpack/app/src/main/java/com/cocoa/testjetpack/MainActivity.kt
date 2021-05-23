@@ -1,8 +1,14 @@
 package com.cocoa.testjetpack
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.core.edit
+import androidx.datastore.preferences.core.intPreferencesKey
+import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.Observer
 import androidx.lifecycle.observe
 import androidx.work.*
@@ -10,13 +16,26 @@ import com.cocoa.testjetpack.databinding.ActivityMainBinding
 import com.cocoa.testjetpack.lifecycle.LogLifecycleObserver
 import com.cocoa.testjetpack.viewModel.MainViewModel
 import com.cocoa.testjetpack.workManager.UploadWorker
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 import java.util.concurrent.TimeUnit
+
+val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
+
 
 class MainActivity : AppCompatActivity() {
 
 
     val mainViewModel: MainViewModel by viewModels()
     var binding: ActivityMainBinding? = null;
+
+
+
+
+//    val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
+
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +48,10 @@ class MainActivity : AppCompatActivity() {
 
         binding?.user = mainViewModel.user
         binding?.defaultStr = "the default String"
+
+
+
+
 
         mainViewModel?.currentName.observe(this) { value ->
 
@@ -62,6 +85,15 @@ class MainActivity : AppCompatActivity() {
 
 
         }
+
+//        val count  = intPreferencesKey("age")
+//        val transform: suspend (Preferences) -> Int = {
+//            it[count] ?: 0
+//        }
+//        val map : Flow<Int> = dataStore.data.map(transform)
+//        dataStore.edit {
+//            it[count] = 11
+//        }
 
     }
 
