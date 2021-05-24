@@ -43,6 +43,18 @@ class Circle : Shape() {
     }
 }
 
+class TestClass(name : String){
+
+    init{
+        println("the init block!!")
+    }
+
+    constructor(name : String , age :Int) : this(name){
+        println("the constructor of (name , age)!!")
+    }
+
+}
+
 
 fun main() {
     var p1 = Person("cooca")
@@ -54,6 +66,14 @@ fun main() {
     var dog1 = Dog(age = 123)
     println(dog.age)
     println("${dog1.firstName} ${dog1.age}")
+
+
+    var testClass1  = TestClass(name = "cocoa", age = 1)
+//    var testClass2  = TestClass(name = "cocoa", age = 1)
+//    var testClass3  = TestClass(name = "123")
+//    testClass3.age
+
+
 
 
 }
