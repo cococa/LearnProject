@@ -39,3 +39,6 @@ git 命令
 ## git show v1.0   //show tag info
 ## git push origin v1.0   //push tag
 ## git push origin --tags  //push some tag
+
+
+//test code 

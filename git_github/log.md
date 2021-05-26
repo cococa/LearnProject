@@ -13,3 +13,7 @@
 |  --stat     |    显示每次更新的文件修改统计信息。     |
 |  --graph     |    显示 ASCII 图形表示的分支合并历史。     |
 |  --pretty     |    使用其他格式显示历史提交信息。可用的选项包括 oneline，short，full，fuller for（后跟指定格式）  |
+
+
+
+// git md 文件修改，add -commit  后，我又改了这个文件
