@@ -34,7 +34,7 @@ class MainActivity : ComponentActivity() {
             ComposeTestTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
-                    DefaultPreview1()
+                    DefaultPreview()
                 }
             }
         }
@@ -54,10 +54,12 @@ fun test() {
 @Preview(showSystemUi = true)
 @Composable
 fun DefaultPreview1() {
-    Column (modifier = Modifier.width(400.dp)
-        ){
+    Column(
+        modifier = Modifier.width(40.dp)
+    ) {
         SelectionContainer {
-            Text(text = "12311231231123123112312311231231123123112312311231231123" ,
+            Text(
+                text = "12311231231123123112312311231231123123112312311231231123",
                 overflow = TextOverflow.Ellipsis,
                 maxLines = 1
             )
@@ -70,11 +72,19 @@ fun DefaultPreview1() {
             modifier = Modifier.width(300.dp),
             textAlign = TextAlign.Right
         )
+
+        Text("222")
+
+        Button(onClick = {
+
+        }) {
+            Text("222")
+        }
     }
 }
 
 
-@Preview(showBackground = true)
+@Preview(showSystemUi = true)
 @Composable
 fun DefaultPreview() {
 //    ComposeTestTheme {
@@ -97,8 +107,9 @@ fun DefaultPreview() {
             )
         }
         Column(modifier = Modifier.padding(start = 5.dp)) {
-            Text(text = "阿国", fontSize = 10.sp)
-            Text(text = "hahah is zhengenguo", fontSize = 8.sp)
+            Text(text = "阿国1", fontSize = 10.sp)
+            Text(text = "hahah is zhengenguo 12311231231123123112312311231231123123112312311231231123", fontSize = 18.sp)
+            Text(text = "123")
         }
 
     }

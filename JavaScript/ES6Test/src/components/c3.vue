@@ -1,8 +1,28 @@
 <template>
-  <span>1. var [a,b,b] = [1,2,3] </span>
+  <div class="sub-title">1. 数组的解构</div>
   <div>
-    <button @click="test1">test</button>
+    <pre v-highlightjs>
+    <code class="javascript">
+      {{$options.methods.test1}}
+    </code>
+  </pre>
   </div>
+  <div>
+    <button @click="test1">test1</button>
+  </div>
+
+  <div class="sub-title">1. 对象的结构 </div>
+  <div>
+    <pre v-highlightjs>
+    <code class="javascript">
+      {{$options.methods.test2}}
+    </code>
+  </pre>
+  </div>
+  <div>
+    <button @click="test1">test2</button>
+  </div>
+
 
   <div class="sub-title">1. 对象的结构 </div>
   <div>
@@ -47,6 +67,9 @@ export default defineComponent({
     test1() {
       var [a, b, c] = [1, 2, 3];
       console.log(a, b, c);
+      console.log(a, b, c);
+
+
     },
     test2() {
       var { foo, bar } = { foo: 'aaa', bar: 'bbb' };
