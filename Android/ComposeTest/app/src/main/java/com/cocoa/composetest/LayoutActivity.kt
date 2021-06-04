@@ -6,10 +6,14 @@ import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.animateContentSize
+import androidx.compose.animation.core.*
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.gestures.awaitFirstDown
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.GridCells
 import androidx.compose.foundation.lazy.LazyColumn
@@ -29,7 +33,10 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -38,6 +45,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.cocoa.composetest.ui.theme.ComposeTestTheme
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.launch
 
 class LayoutActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -57,9 +66,71 @@ class LayoutActivity : ComponentActivity() {
 @Composable
 fun LayoutActivityDefaultPreview() {
     val painter = painterResource(id = R.mipmap.logo)
+    var message by remember { mutableStateOf("Hello") }
+    var enabled by remember { mutableStateOf(true) }
+    val alpha: Float by animateFloatAsState(if (enabled) 1f else 0.1f)
+
+    val color by animateColorAsState(
+        if (enabled) Color.Blue else Color.Red,
+//        animationSpec = spring(Spring.StiffnessMedium)
+    )
+
+
+    val offset = remember { Animatable(Offset(0f, 0f), Offset.VectorConverter) }
+    
+
     Column(
         modifier = Modifier.padding(15.dp)
     ) {
+
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .pointerInput(Unit) {
+                    coroutineScope {
+                        while (true) {
+                            // Detect a tap event and obtain its position.
+                            val position = awaitPointerEventScope {
+                                awaitFirstDown().position
+                            }
+                            launch {
+                                // Animate to the tap position.
+                                offset.animateTo(position)
+                            }
+                        }
+                    }
+                }
+        ) {
+//            Box(modifier = Modifier.offset(offset= offset))
+            Text("${offset.value.x}")
+        }
+        
+        Box(
+            Modifier
+                .height(50.dp)
+                .width(50.dp)
+//                .graphicsLayer(alpha = alpha)
+                .background(color)
+        )
+        Box(
+            modifier = Modifier
+//                .background(Color.Blue)
+                .animateContentSize()
+        ) {
+            Button(onClick = {
+                if(message.equals("Hello")){
+                    message = "123123123123123123"
+                    enabled = false
+                }else{
+                    enabled = true
+                    message = "Hello"
+                }
+            }) {
+                Text(text = message)
+            }
+        }
+
+
         Text("* 使用 Modifier.weight")
         Row(modifier = Modifier.padding(10.dp)) {
             Box(
