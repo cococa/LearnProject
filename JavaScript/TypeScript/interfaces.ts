@@ -292,10 +292,21 @@ sp.name="sp"
 //     select() { }
 // }
 
-class Location {
+// class Location {
 
+// }
+
+
+
+
+
+interface TTTT{
+        readonly name  : String;
+        readonly aaa : number;
 }
 
+var aaaa : TTTT = {name :"S123",aaa:12}
+// aaaa.aaa = 1
 
 
 

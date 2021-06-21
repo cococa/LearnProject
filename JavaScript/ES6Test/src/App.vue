@@ -6,6 +6,9 @@
               <router-link to="/c2">第2章 ：let和const命令</router-link>
             </div>
             <div>
+              <router-link to="/c3">第3章 ：变量的解析赋值</router-link>
+            </div>
+            <div>
               <router-link to="/about">Go to About</router-link>
             </div>
         </div>

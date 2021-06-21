@@ -6,7 +6,6 @@ import java.util.Arrays;
 
 public class Practice {
 
-    @Test
     public void test1(){
         Arrays.asList(1,2,3,4,5)
                 .stream()
