@@ -13,7 +13,7 @@
 #include "pointer/p2.h"
 #include "pointer/p3.h"
 #include "pointer/p4.h"
-#include "pointer/p5.h"
+#include "pointer/string.h"
 #define VALUE 10
 
 #define MAX(a, b) ((a > b) ? (a) : (b))
