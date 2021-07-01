@@ -14,6 +14,7 @@
 #include "pointer/p3.h"
 #include "pointer/p4.h"
 #include "pointer/string.h"
+#include "pointer/_const.h"
 #define VALUE 10
 
 #define MAX(a, b) ((a > b) ? (a) : (b))
@@ -211,6 +212,6 @@ int main(){
 //    freeSds(s2);
 
 
-    test_p5();
+    test_const();
 
 }
