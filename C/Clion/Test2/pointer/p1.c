@@ -6,9 +6,13 @@
 void test_p1(){
     printf("-test_p1---\n");
 
+    //指针的类型必须与变量的类型相匹配
+    // 假如不相同，编译无法通过
 
     int a  = 111;
     int *p1 = &a;
+
+
     printf("--the size of poniter value = %ld ---\n", sizeof(*p1));
     //--the size of poniter = 8 ---   (64位操作系统)
     printf("--the size of poniter = %d ---\n", sizeof(p1));
