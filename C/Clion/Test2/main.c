@@ -194,7 +194,7 @@ SDS* append(SDS* p, char* str, size_t len){
 }
 
 
-int main(){
+int main(int argc, char* argv[]){
 //    char *str = "Helloworld!!!";
 //
 //    printf("%p", str);
@@ -211,7 +211,10 @@ int main(){
 //    freeSds(sds);
 //    freeSds(s2);
 
+    for (int i = 0; i < argc; ++i) {
+        printf("%s\n",argv[i]);
+    }
 
-    test_const();
+//    test_const();
 
 }
