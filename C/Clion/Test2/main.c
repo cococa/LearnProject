@@ -216,5 +216,6 @@ int main(int argc, char* argv[]){
     }
 
 //    test_const();
+test_p5();
 
 }

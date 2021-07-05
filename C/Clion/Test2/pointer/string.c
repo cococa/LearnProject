@@ -5,7 +5,7 @@
 #include "string.h"
 
 // 删除字符串空格
-void trim(char *c) {
+void my_trim(char *c) {
     char *t1 = c;
     char *t2 = c;
     while (*t1) {
@@ -20,7 +20,7 @@ void trim(char *c) {
 
 void test_trim() {
     char str[] = " H eh  ah sj da ";
-    trim(str);
+    my_trim(str);
     printf("%s", str);
 }
 
@@ -47,12 +47,14 @@ void test_str() {
 }
 
 // 计算字符长度
-void my_strlen(const char *p) {
+int my_strlen(const char *p) {
     char *header = p;
     while (*p != '\0') {
         p++;
     };
-    printf("the length = %d\n", p - header);
+    int len = p - header;
+    printf("the length = %d\n", len);
+    return len;
 }
 
 void test_len() {
@@ -60,7 +62,41 @@ void test_len() {
     my_strlen(ch);
 }
 
+// 计算字符串出现次数
+// 写的不好，还需要改改！！！！
+int my_contain_count(char *src, char *dest) {
+    char* tDset = dest;
+    int count = 0;
+    while (*src != '\0') {
+        if (*src == *dest) {
+            // 判断是否到了dest 的末尾
+            if (*(dest + 1) == '\0') {
+                dest = tDset;
+                count++;
+            }
+            dest++;
+        } else {
+            dest = tDset;
+        }
+        src++;
+    }
+    return count;
+}
+
+
+test_my_contain_count() {
+    char str1[] = "HelloHelloHelo";
+    char str2[] = "llo";
+    int count = my_contain_count(str1, str2);
+    printf("test_my_contain_count %d\n", count);
+}
+
+//课后作业，统计字符出现次数  hello  h=1 e=1 l=2 o=1
+void my_char_count(){
+
+}
+
 
 void test_p5() {
-    test_len();
+    test_my_contain_count();
 }
