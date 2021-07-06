@@ -65,7 +65,7 @@ void test_len() {
 // 计算字符串出现次数
 // 写的不好，还需要改改！！！！
 int my_contain_count(char *src, char *dest) {
-    char* tDset = dest;
+    char *tDset = dest;
     int count = 0;
     while (*src != '\0') {
         if (*src == *dest) {
@@ -92,11 +92,41 @@ test_my_contain_count() {
 }
 
 //课后作业，统计字符出现次数  hello  h=1 e=1 l=2 o=1
-void my_char_count(){
+void my_char_count() {
 
 }
 
 
+// 检测回文字符串
+int check_huiwen(char *p) {
+    char *header = p;
+    char *ender = p + my_strlen(p) - 1;
+    int result = 1;
+    while (header < ender) {
+        if (*header != *ender) {
+            result = -1;
+            break;
+        }
+        header++;
+        ender--;
+    }
+    return result;
+}
+
+void test_check_huiwen() {
+    char str[] = "abcavcba";
+    int result = check_huiwen(str);
+    printf("1= true -1 = false  the result = %d", result);
+}
+
+//课后作业，字符串拷贝
+void my_copy_str() {
+
+}
+
+
+
+
 void test_p5() {
-    test_my_contain_count();
+    test_check_huiwen();
 }
