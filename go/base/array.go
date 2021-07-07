@@ -6,9 +6,10 @@ import (
 
 /**
 go 数组
-数组的申明， var identifier [len]type    for example  var placeArray [5]string
-2.在go 语言中,数组长度是数组类型的一部分，也就是说，[3]int 和 [2]int 是两种类型
+1. 数组的申明， var identifier [len]type    for example  var placeArray [5]string
+2. 在go 语言中,数组长度是数组类型的一部分，也就是说，[3]int 和 [2]int 是两种类型
 3. 数组的字面值初始化中，可以用[...] 表示用具体的字面值的个数来初始化数组长度
+4. 数组类型的值（以下简称数组）的长度是固定的，而切片类型的值（以下简称切片）是可变长的。
 */
 
 type TYPE int

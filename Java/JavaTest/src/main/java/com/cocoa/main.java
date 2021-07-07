@@ -9,35 +9,84 @@ import java.util.Date;
 
 public class main {
 
+
+    /**
+     * @param v1
+     * @param v2
+     * @return 0代表相等，1代表左边大，-1代表右边大
+     */
+    public int checkVersionName(String v1, String v2) {
+        if (v1.equals(v2)) {
+            return 0;
+        }
+        String[] version1Array = v1.split("[._]");
+        String[] version2Array = v2.split("[._]");
+        int index = 0;
+        int minLen = Math.min(version1Array.length, version2Array.length);
+        long diff = 0;
+
+        while (index < minLen
+                && (diff = Long.parseLong(version1Array[index])
+                - Long.parseLong(version2Array[index])) == 0) {
+            index++;
+        }
+        if (diff == 0) {
+            for (int i = index; i < version1Array.length; i++) {
+                if (Long.parseLong(version1Array[i]) > 0) {
+                    return 1;
+                }
+            }
+
+            for (int i = index; i < version2Array.length; i++) {
+                if (Long.parseLong(version2Array[i]) > 0) {
+                    return -1;
+                }
+            }
+            return 0;
+        } else {
+            return diff > 0 ? 1 : -1;
+        }
+
+    }
+
+
+
     public static void main(String[] args) throws ParseException {
-        try {
-//            new main().test();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        // 砂夹石的
-        System.out.println("can 胜多负少的 any more!");
 
-        TestParent  parent = new TestParent();
-        parent.setAge(12);
-        parent.setName("parent");
-        TestChild child = new TestChild();
-        child.setAddr("address");
-        parent.setChild(child);
+        main  main = new main();
 
-        System.out.println(parent.getName());
 
-        try {
-            TestParent parent1 = (TestParent) parent.clone();
-            parent1.setChild(null);
-            parent1.setName(null);
+        System.out.println(Money.ofYuan(20000).getYuan());
 
-            System.out.println(parent.getChild().toString());
-            System.out.println(parent.getName().toString());
 
-        } catch (CloneNotSupportedException e) {
-            e.printStackTrace();
-        }
+//        try {
+////            new main().test();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        // 砂夹石的
+//        System.out.println("can 胜多负少的 any more!");
+//
+//        TestParent  parent = new TestParent();
+//        parent.setAge(12);
+//        parent.setName("parent");
+//        TestChild child = new TestChild();
+//        child.setAddr("address");
+//        parent.setChild(child);
+//
+//        System.out.println(parent.getName());
+//
+//        try {
+//            TestParent parent1 = (TestParent) parent.clone();
+//            parent1.setChild(null);
+//            parent1.setName(null);
+//
+//            System.out.println(parent.getChild().toString());
+//            System.out.println(parent.getName().toString());
+//
+//        } catch (CloneNotSupportedException e) {
+//            e.printStackTrace();
+//        }
 
 
 //        String strDateFormat = "yyyy-MM-dd";
