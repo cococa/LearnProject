@@ -13,6 +13,8 @@
 #include "pointer/p2.h"
 #include "pointer/p3.h"
 #include "pointer/p4.h"
+#include "pointer/string.h"
+#include "pointer/_const.h"
 #define VALUE 10
 
 #define MAX(a, b) ((a > b) ? (a) : (b))
@@ -192,7 +194,7 @@ SDS* append(SDS* p, char* str, size_t len){
 }
 
 
-int main(){
+int main(int argc, char* argv[]){
 //    char *str = "Helloworld!!!";
 //
 //    printf("%p", str);
@@ -209,7 +211,11 @@ int main(){
 //    freeSds(sds);
 //    freeSds(s2);
 
+    for (int i = 0; i < argc; ++i) {
+        printf("%s\n",argv[i]);
+    }
 
-    test_p4();
+//    test_const();
+test_p5();
 
 }
