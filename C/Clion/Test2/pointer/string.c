@@ -119,14 +119,26 @@ void test_check_huiwen() {
     printf("1= true -1 = false  the result = %d", result);
 }
 
-//课后作业，字符串拷贝
-void my_copy_str() {
+//课后作业，字符串拷贝到新的字符串
+// 这里没考虑src 超过dest
+void my_copy_str(char *dest, const char *src, size_t n) {
+    while (*src != '\0' && n > 0) {
+        *dest = *src;
+        dest++;
+        src++;
+        n--;
+    }
+}
+
+void test_copy_str() {
+    char dest[] = "Hello1";
+    char src[] = "TTTT";
+    my_copy_str(dest, src, 2);
+    printf("the dest = %s\n", dest);  //123lo1
 
 }
 
 
-
-
 void test_p5() {
-    test_check_huiwen();
+    test_copy_str();
 }
