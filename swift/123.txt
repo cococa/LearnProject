@@ -1,15 +1,7 @@
-swift 3   
+swift 5
 
 
-https://developer.apple.com/library/prerelease/content/documentation/Swift/Conceptual/Swift_Programming_Language/index.html#//apple_ref/doc/uid/TP40014097-CH3-ID0
-
-http://wiki.jikexueyuan.com/project/swift/
-
-
-http://www.appcoda.com/learnswift/get-started.html
-
-
-哨兵值(sentinel value)
-
-
-https://github.com/apple/swift/blob/master/stdlib/public/core/Integers.swift.gyb
+1. stanford Swfit UI  [https://www.youtube.com/watch?v=bqu6BquVi2M&list=PLpGHT1n4-mAsxuRxVPv7kj4-dQYoC3VVu&index=1](https://www.youtube.com/watch?v=bqu6BquVi2M&list=PLpGHT1n4-mAsxuRxVPv7kj4-dQYoC3VVu&index=1) 
+2. Human Interface Guidelines  Apple Wathch   [https://developer.apple.com/design/human-interface-guidelines/watchos/overview/getting-started/](https://developer.apple.com/design/human-interface-guidelines/watchos/overview/getting-started/) 
+3. swift  doc english    [https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html)
+4. swift doc chines  [https://swiftgg.gitbook.io/swift/swift-jiao-cheng/01_the_basics](https://swiftgg.gitbook.io/swift/swift-jiao-cheng/01_the_basics)
