@@ -39,9 +39,6 @@ void memory_main(){
 
     test1();
 
-
-
-
     int* p = (int*)malloc(sizeof(int));
 
     *p = 100;

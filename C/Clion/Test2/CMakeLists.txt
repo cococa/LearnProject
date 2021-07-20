@@ -10,6 +10,10 @@ include_directories(memory)
 include_directories(pretreatment)
 include_directories(variable)
 
+#//C:\Users\hj\Desktop\libevent-master
+set(INC_DIR C:/Users/hj/Desktop/libevent-master/include)
+set(LINK_DIR C:/Users/hj/Desktop/libevent-master)
+
 add_executable(Test2
     advanced/string01.c
     advanced/string01.h
