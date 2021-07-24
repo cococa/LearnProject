@@ -39,15 +39,6 @@ void memory_main(){
 
     test1();
 
-    int* p = (int*)malloc(sizeof(int));
-
-    *p = 100;
-
-    printf("the p = %d\n",*p);
-    printf("the &p = %p\n",p);
-
-
-
 
     // 局部变量和全局变量的测试
 //    testGrobal();
@@ -60,6 +51,14 @@ void memory_main(){
 
 
 
+    printf("---------malloc----------------------\n");
+    // 开辟堆空间
+    int* p = (int*)malloc(sizeof(int));
+    *p = 100;
+    printf("the p = %d\n",*p);
+    printf("the &p = %p\n",p);
+    free(p);
+    p = NULL;
 
 
 }
