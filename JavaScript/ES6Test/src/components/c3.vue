@@ -24,16 +24,16 @@
   </div>
 
 
-  <div class="sub-title">1. 对象的结构 </div>
+  <div class="sub-title"> Proxy </div>
   <div>
     <pre v-highlightjs>
     <code class="javascript">
-      {{$options.methods.test2}}
+      {{$options.methods.test3}}
     </code>
   </pre>
   </div>
   <div>
-    <button @click="test1">test2</button>
+    <button @click="test3">test3</button>
   </div>
 
 
@@ -75,6 +75,28 @@ export default defineComponent({
       var { foo, bar } = { foo: 'aaa', bar: 'bbb' };
       console.log(foo, bar);
     },
+    test3(){
+       let obj = {
+        a : 1
+    }
+    let proxyObj = new Proxy(obj,{
+        get(target, propKey, receiver) {
+          console.log('你访问了' + propKey);
+          return Reflect.get(target, propKey, receiver);
+        },
+        set(target, propKey, value, receiver) {
+            console.log('你设置了' + propKey);
+            console.log('新的' + propKey + '=' + value);
+            Reflect.set(target, propKey, value, receiver);
+        }
+    })
+    
+    // console.log(proxyObj.a);        // 1
+    // console.log(proxyObj.b);        // 0
+
+    proxyObj.a = 666;
+    console.log(proxyObj.a) 
+    }
   },
 });
 </script>
