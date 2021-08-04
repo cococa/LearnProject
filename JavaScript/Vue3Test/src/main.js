@@ -1,11 +1,18 @@
-import { createApp } from 'vue'
+import { createApp} from 'vue'
 // import { createApp } from 'vue/dist/vue.esm-bundler';
 import App from './App.vue'
 import TestSetup from './pages/TestSetup.vue'
 import './index.css'
 import {createRouter,createWebHashHistory} from 'vue-router'
 
-// Vue.use(VueRouter)
+import { createStore } from 'vuex'
+
+// 手动声明 state 类型
+const store = createStore({
+  state: {
+    count: 111
+  }
+})
 
 
 const Home = { template: '<div> this is Home</div>' }
@@ -36,6 +43,7 @@ const router = createRouter({
   
 const app = createApp(App);
 app.use(router);
+app.use(store)
 app.mount('#app');
 
 

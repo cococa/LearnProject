@@ -20,6 +20,8 @@
 <script>
 import {onMounted, ref, watch}  from 'vue';
 import userCompose from '../composables/UserCompose'
+import {useStore} from 'vuex'
+
 export default {
   name: 'xx',
   data() {
@@ -38,6 +40,10 @@ export default {
         }
   },
   setup(props) {
+
+      const store = useStore();
+      console.log("the count is  = "+ store.state.count);
+
       let name  = "cocoa";
       function getName(){
           return name;
