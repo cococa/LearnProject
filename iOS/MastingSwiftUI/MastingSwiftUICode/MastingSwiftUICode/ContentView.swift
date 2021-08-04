@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct ListData<Destination> : Destination : View {
-    var name : String?
-    var view : Destination
-}
-
-var list : [ListData] = [
-//    ListData(name: "Chapter5 ", view: Chapter5())
-]
+//struct ListData<Destination> : Destination : View {
+//    var name : String?
+//    var view : Destination
+//}
+//
+//var list : [ListData] = [
+////    ListData(name: "Chapter5 ", view: Chapter5())
+//]
 
 
 
@@ -33,6 +33,12 @@ struct ContentView: View {
                     label: {
                         Text("Chapter5 Understanding ScrollView and Building a Carousel UI")
                     }).navigationTitle("Chapter5")
+                
+                NavigationLink(
+                    destination: Chapter6(),
+                    label: {
+                        Text("Chapter6 @State")
+                    }).navigationTitle("Chapter6")
                 
                 
             }
