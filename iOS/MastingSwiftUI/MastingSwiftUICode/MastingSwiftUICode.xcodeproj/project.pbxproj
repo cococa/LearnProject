@@ -14,6 +14,8 @@
 		8D7DC8A82626D4CF0032FFD2 /* MastingSwiftUICodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7DC8A72626D4CF0032FFD2 /* MastingSwiftUICodeTests.swift */; };
 		8D7DC8B32626D4CF0032FFD2 /* MastingSwiftUICodeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7DC8B22626D4CF0032FFD2 /* MastingSwiftUICodeUITests.swift */; };
 		8D7DC8C72626D8720032FFD2 /* LayoutUserInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7DC8C62626D8720032FFD2 /* LayoutUserInterface.swift */; };
+		9F973EBE26B8F06F00AC99F7 /* Chapter5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F973EBD26B8F06F00AC99F7 /* Chapter5.swift */; };
+		9F973EC926B911A900AC99F7 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F973EC826B911A900AC99F7 /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		8D7DC8B22626D4CF0032FFD2 /* MastingSwiftUICodeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MastingSwiftUICodeUITests.swift; sourceTree = "<group>"; };
 		8D7DC8B42626D4CF0032FFD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D7DC8C62626D8720032FFD2 /* LayoutUserInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutUserInterface.swift; sourceTree = "<group>"; };
+		9F973EBD26B8F06F00AC99F7 /* Chapter5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter5.swift; sourceTree = "<group>"; };
+		9F973EC826B911A900AC99F7 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,8 @@
 		8D7DC8942626D4CB0032FFD2 /* MastingSwiftUICode */ = {
 			isa = PBXGroup;
 			children = (
+				9F973EBF26B8F07900AC99F7 /* components */,
+				9F973EBC26B8F04500AC99F7 /* chapter */,
 				8D7DC8952626D4CB0032FFD2 /* MastingSwiftUICodeApp.swift */,
 				8D7DC8972626D4CB0032FFD2 /* ContentView.swift */,
 				8D7DC8992626D4CE0032FFD2 /* Assets.xcassets */,
@@ -131,6 +137,22 @@
 				8D7DC8B42626D4CF0032FFD2 /* Info.plist */,
 			);
 			path = MastingSwiftUICodeUITests;
+			sourceTree = "<group>";
+		};
+		9F973EBC26B8F04500AC99F7 /* chapter */ = {
+			isa = PBXGroup;
+			children = (
+				9F973EBD26B8F06F00AC99F7 /* Chapter5.swift */,
+			);
+			path = chapter;
+			sourceTree = "<group>";
+		};
+		9F973EBF26B8F07900AC99F7 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				9F973EC826B911A900AC99F7 /* CardView.swift */,
+			);
+			path = components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,8 +285,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D7DC8982626D4CB0032FFD2 /* ContentView.swift in Sources */,
+				9F973EBE26B8F06F00AC99F7 /* Chapter5.swift in Sources */,
 				8D7DC8962626D4CB0032FFD2 /* MastingSwiftUICodeApp.swift in Sources */,
 				8D7DC8C72626D8720032FFD2 /* LayoutUserInterface.swift in Sources */,
+				9F973EC926B911A900AC99F7 /* CardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
