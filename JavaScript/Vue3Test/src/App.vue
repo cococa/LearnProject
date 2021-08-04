@@ -1,7 +1,16 @@
-<template>
+<template>  
   <div class="flex justify-center items-center flex-col">
+     <router-link v-for="(item ,index) in routerList" :key="index" :to="item.path">Go to {{item.path}}</router-link>
+     <router-view class="bg-gray-400 rounded-10 w-full h-full p-32"> </router-view>
+<!-- 
     <div class="h-32 w-32 dark:bg-gray-800 bg-red-900 ">
+      {{name}}
     </div>
+    
+    <router-link to="/">Go to About</router-link>
+    <button @click="onRouter">
+      test router
+    </button>
     <img
       class="w-32 h-32 sm:w-60 sm:h-60 rounded-full"
       alt="Vue logo"
@@ -66,12 +75,13 @@
         height="48"
         class="w-7 h-7 rounded-full bg-gray-100 border-2 border-white"
       />
-    </dd>
+    </dd> -->
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue';
+// import { getRoutes } from 'vue-router'
 
 export default {
   name: 'App',
@@ -82,10 +92,24 @@ export default {
         'https://img2.baidu.com/it/u=325567737,3478266281&fm=26&fmt=auto&gp=0.jpg',
       ],
       list: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+      routerList:[]
     };
   },
   components: {
     HelloWorld,
   },
+  created() {
+        this.routerList = this.$router.getRoutes();
+        // console.log(routerList);
+  },  
+  methods: {
+    onRouter(){
+      //   console.log(this.$router);
+      //  this.$router.push('/about')
+    }
+  },
+  setup(props) {
+      
+  }
 };
 </script>
