@@ -8,7 +8,7 @@ void main() {
   final t1 = test1(); // 可以被final 和 var 定义，不能被const 定义
   print("--${t1}--");
 
-  //print(t1!); //Null check operator used on a null value
+  //print(t1!); //Null check operator used on a null value 
 
   print("-t1.abs----${t1?.abs()}--"); // print null
 
@@ -29,7 +29,23 @@ void main() {
   strList.add("123");
   strList.add(null); // List<Strin> strList  则会报错
   print("--${strList}----");
+
+  //understanding-null-safety
+  print("\n understanding-null-safety \n");
+
+  Object maybeString  = "123";
+  requireStringNotObject(maybeString as String);
+
+
 }
+
+// Without null safety:
+requireStringNotObject(String definitelyString) {
+  print(definitelyString.length);
+}
+
+
+
 
 class Person {
   final String name;
