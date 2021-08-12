@@ -1,7 +1,7 @@
 <template>  
-  <div class="flex justify-center items-center flex-col">
-     <router-link v-for="(item ,index) in routerList" :key="index" :to="item.path">Go to {{item.path}}</router-link>
-     <router-view class="bg-gray-400 rounded-10 w-full h-full p-32"> </router-view>
+  <div class="flex justify-center items-center ">
+     <!-- <router-link v-for="(item ,index) in routerList" :key="index" :to="item.path">Go to {{item.path}}</router-link> -->
+     <router-view class="max-w-screen-sm bg-gray-50 min-h-full	max-h-full"> </router-view>
 <!-- 
     <div class="h-32 w-32 dark:bg-gray-800 bg-red-900 ">
       {{name}}

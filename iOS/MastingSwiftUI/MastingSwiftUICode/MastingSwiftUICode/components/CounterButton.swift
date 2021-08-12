@@ -29,6 +29,6 @@ struct CounterButton: View {
 
 struct CounterButton_Previews: PreviewProvider {
     static var previews: some View {
-        CounterButton(count: .constant(1) )
+        CounterButton(count: .constant(11) )
     }
 }

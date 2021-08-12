@@ -21,7 +21,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         NavigationView{
-            VStack{
+            VStack(alignment: .leading, spacing: 10.0){
                 NavigationLink(
                     destination: LayoutUserInterface(),
                     label: {
@@ -40,8 +40,22 @@ struct ContentView: View {
                         Text("Chapter6 @State")
                     }).navigationTitle("Chapter6")
                 
+                NavigationLink(
+                    destination: Chapter8(),
+                    label: {
+                        Text("Chapter8 Implementing Path and Shape for Line Drawing and Pie Charts")
+                    }).navigationTitle("Chapter8")
+                
+                
+                NavigationLink(
+                    destination: Chapter8(),
+                    label: {
+                        Text("Chapter9 Anim")
+                    }).navigationTitle("Chapter9")
+                
                 
             }
+            
                 
         }.navigationTitle("123")
     }

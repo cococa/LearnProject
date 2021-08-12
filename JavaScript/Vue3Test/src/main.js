@@ -1,7 +1,11 @@
 import { createApp} from 'vue'
 // import { createApp } from 'vue/dist/vue.esm-bundler';
 import App from './App.vue'
+import Home from './pages/Home.vue'
 import TestSetup from './pages/TestSetup.vue'
+import TestProvideInject from './pages/TestProvideInject.vue'
+import  Vue from 'vue';
+
 import './index.css'
 import {createRouter,createWebHashHistory} from 'vue-router'
 
@@ -14,16 +18,13 @@ const store = createStore({
   }
 })
 
-
-const Home = { template: '<div> this is Home</div>' }
-// const TestSetup = { template: '<div>About</div>' }
-
 // 2. 定义一些路由
 // 每个路由都需要映射到一个组件。
 // 我们后面再讨论嵌套路由。
 const routes = [
   { path: '/', name:"/",component: Home },
   { path: '/TestSetup', name:"TestSetup", component: TestSetup },
+  { path:'/TestProvideInject',name:"TestProvideInject",component:TestProvideInject}
 ]
 
 const router = createRouter({
