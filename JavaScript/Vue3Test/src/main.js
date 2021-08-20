@@ -4,7 +4,8 @@ import App from './App.vue'
 import Home from './pages/Home.vue'
 import TestSetup from './pages/TestSetup.vue'
 import TestProvideInject from './pages/TestProvideInject.vue'
-import  Vue from 'vue';
+import TestRenderFunction  from './pages/TestRenderFunction.vue'
+// import  Vue from 'vue';
 
 import './index.css'
 import {createRouter,createWebHashHistory} from 'vue-router'
@@ -24,7 +25,9 @@ const store = createStore({
 const routes = [
   { path: '/', name:"/",component: Home },
   { path: '/TestSetup', name:"TestSetup", component: TestSetup },
-  { path:'/TestProvideInject',name:"TestProvideInject",component:TestProvideInject}
+  { path:'/TestProvideInject',name:"TestProvideInject",component:TestProvideInject},
+  { path:'/TestRenderFunction',name:"TestRenderFunction",component:TestRenderFunction}
+
 ]
 
 const router = createRouter({
