@@ -7,6 +7,14 @@
      <div>count from setup  : {{count}}</div>
      <button class="" @click="countPlus" >click from setup use countPlus</button>
 
+     <div class="p-5">
+     </div>   
+     <div> complexUserInfo  : {{complexUserInfo}}</div>
+     <button class="" @click="changeCpxUserInfo" > change complexUserInfo</button>
+
+
+
+
     <div class="p-5">
      </div>   
      <div>get user from setup & composable, 
@@ -67,8 +75,15 @@ export default {
 
       function changeDept(){
         deptID.value++;
-      }  
-
+      } 
+      const userInfo = {
+        name:  "cocoa",
+        age: 33
+      };
+      const complexUserInfo = ref(userInfo);      
+      function changeCpxUserInfo(){
+        this.complexUserInfo.age  += 1;
+      }
       return {
         count,
         countPlus,  
@@ -76,7 +91,9 @@ export default {
         name,
         user,
         getUser,
-        changeDept
+        changeDept,
+        complexUserInfo,
+        changeCpxUserInfo
       }
   }
 };
