@@ -5,8 +5,10 @@ import Home from './pages/Home.vue'
 import TestSetup from './pages/TestSetup.vue'
 import TestProvideInject from './pages/TestProvideInject.vue'
 import TestRenderFunction  from './pages/TestRenderFunction.vue'
-// import  Vue from 'vue';
-
+import BasicType  from './ts/BasicType.vue'
+import Variable from './ts/Variable.vue'
+import VueMarkdownIt from 'vue3-markdown-it';
+import 'highlight.js/styles/monokai.css';
 import './index.css'
 import {createRouter,createWebHashHistory} from 'vue-router'
 
@@ -26,8 +28,11 @@ const routes = [
   { path: '/', name:"/",component: Home },
   { path: '/TestSetup', name:"TestSetup", component: TestSetup },
   { path:'/TestProvideInject',name:"TestProvideInject",component:TestProvideInject},
-  { path:'/TestRenderFunction',name:"TestRenderFunction",component:TestRenderFunction}
+  { path:'/TestRenderFunction',name:"TestRenderFunction",component:TestRenderFunction},
 
+  { path:'/ts/BasicType',name:"BasicType",component:BasicType},
+  { path:'/ts/Variable',name:"Variable",component:Variable},
+  
 ]
 
 const router = createRouter({
@@ -47,7 +52,8 @@ const router = createRouter({
   
 const app = createApp(App);
 app.use(router);
-app.use(store)
+app.use(store);
+app.use(VueMarkdownIt);
 app.mount('#app');
 
 

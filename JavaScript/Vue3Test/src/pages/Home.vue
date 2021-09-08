@@ -7,12 +7,10 @@
               </div>
               <img style="width: 90px; height: 60px;" src="https://t7.baidu.com/it/u=963301259,1982396977&fm=193&f=GIF"/>
           </div>
-       <button>123</button> 
   </div>
 </template>
 
 <script>
-
 
 export default {
   name: 'xx',
