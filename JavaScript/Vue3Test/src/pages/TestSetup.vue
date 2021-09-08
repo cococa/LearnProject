@@ -65,13 +65,24 @@ export default {
       // 使用watch 函数
       watch(count ,(newValue,oldValue)=>{
           console.log(`the newValue ${newValue} and the oldValue ${oldValue}`);
-      });
+      },{immediate: true});
 
-      onMounted(countPlus);  // 在 `mounted` 时调用 `countPlus`
+
+
+
+
+      // onMounted(countPlus);  // 在 `mounted` 时调用 `countPlus`
 
 
       const deptID  = ref(11);  
       const { user , getUser}  = userCompose(deptID);  
+
+
+      watch([deptID,count],(nv,ov)=>{
+        // 监听多个数据，但是如果他们同时改变，只能被回调一次
+          console.log("deptid or count has changed!!");
+      });
+
 
       function changeDept(){
         deptID.value++;
