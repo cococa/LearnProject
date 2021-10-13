@@ -1,6 +1,7 @@
 <template>  
   <div class="flex flex-1 flex-col ">
     <vue3-markdown-it :source='source' />
+    <vue3-markdown-it :source='source' />
     <button>123</button>
   </div>
 </template>
@@ -44,7 +45,8 @@ export default {
   },
   data() {
     return {
-      source: ''
+      source: '',
+      aa: "",
     }
   },
   mounted() {
