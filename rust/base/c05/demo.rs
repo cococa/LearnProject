@@ -19,6 +19,5 @@ fn main(){
 
         let result = main.can_hold(&child);
         println!("main can hold child ? {}", result);
-
-    }
+}
 
