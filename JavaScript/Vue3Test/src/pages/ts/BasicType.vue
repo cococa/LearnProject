@@ -30,10 +30,6 @@ let list2 : number[] = [12,2,3]
 
 console.log(list1);
 console.log(list2);
-
-
-
-
 export default {
   name: 'xx',
   components: {
