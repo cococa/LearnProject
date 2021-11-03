@@ -3,6 +3,7 @@ package com.cocoa.testjetpack
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.viewModels
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
@@ -12,12 +13,15 @@ import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.Observer
 import androidx.lifecycle.observe
 import androidx.work.*
+import com.cocoa.testjetpack.bean.User
 import com.cocoa.testjetpack.databinding.ActivityMainBinding
 import com.cocoa.testjetpack.lifecycle.LogLifecycleObserver
 import com.cocoa.testjetpack.viewModel.MainViewModel
+import com.cocoa.testjetpack.viewModel.UserViewModel
 import com.cocoa.testjetpack.workManager.UploadWorker
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import java.util.*
 import java.util.concurrent.TimeUnit
 
 val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
@@ -29,12 +33,10 @@ class MainActivity : AppCompatActivity() {
     val mainViewModel: MainViewModel by viewModels()
     var binding: ActivityMainBinding? = null;
 
-
+    val userViewModel : UserViewModel by viewModels()
 
 
 //    val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
-
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,8 +52,12 @@ class MainActivity : AppCompatActivity() {
         binding?.defaultStr = "the default String"
 
 
-
-
+        binding?.text2?.setOnClickListener{
+            userViewModel?.setUser(User("shen","test"))
+        }
+        userViewModel.getUser().observe(this){
+            binding?.text2?.text = it.firstName + it.lastName
+        }
 
         mainViewModel?.currentName.observe(this) { value ->
 
@@ -106,7 +112,14 @@ class MainActivity : AppCompatActivity() {
     fun changeName() {
         //您必须调用 setValue(T) 方法以从主线程更新 LiveData 对象。
         // 如果在工作器线程中执行代码，您可以改用 postValue(T) 方法来更新 LiveData 对象。
-        mainViewModel?.currentName.value = "123"
+//        mainViewModel?.currentName.value = "mynameis ${Date().time}"
+
+        Thread {
+            Log.i("Mainactivity", "thread")
+            mainViewModel?.currentName.postValue("mynameis ${Date().time}")
+        }.start();
+
+
     }
 
 }

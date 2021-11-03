@@ -18,6 +18,12 @@ fun main() = runBlocking{
             }
         }
     }
+
+
+    delay(3000L)
+    job.cancel()
+    job.join();
+    println("main: Now I can quit.")
 }
 
 suspend fun test02(){
