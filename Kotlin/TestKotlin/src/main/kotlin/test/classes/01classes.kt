@@ -30,14 +30,14 @@ class Dog(val firstName: String, var age: Int) { /*……*/
     }
 }
 
+// kotlin 中class 默认都是final 的，无法被继承，增加 open 关键字来打开此功能
 open class Shape() {
     open fun draw() {
-
     }
 }
 
+// OpenClass 使用了open 关键字，所以能被继承！
 class Circle : Shape() {
-
     override fun draw() {
 
     }
@@ -62,6 +62,7 @@ fun main() {
     println(p1.innerName)
 
     var dog = Dog(firstName = "cocoa", age = 12)
+
     // 掉用次构造函数
     var dog1 = Dog(age = 123)
     println(dog.age)
@@ -72,6 +73,10 @@ fun main() {
 //    var testClass2  = TestClass(name = "cocoa", age = 1)
 //    var testClass3  = TestClass(name = "123")
 //    testClass3.age
+
+
+
+
 
 
 

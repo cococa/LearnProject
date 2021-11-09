@@ -10,7 +10,7 @@ class UserViewModel : ViewModel() {
 
     private val user: MutableLiveData<User> by lazy {
         MutableLiveData<User>().also {
-            loadUser();
+            loadUser()
         }
     }
 

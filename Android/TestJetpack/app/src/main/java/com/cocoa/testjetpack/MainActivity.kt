@@ -1,6 +1,7 @@
 package com.cocoa.testjetpack
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -16,6 +17,7 @@ import androidx.work.*
 import com.cocoa.testjetpack.bean.User
 import com.cocoa.testjetpack.databinding.ActivityMainBinding
 import com.cocoa.testjetpack.lifecycle.LogLifecycleObserver
+import com.cocoa.testjetpack.storage.StorageActivity
 import com.cocoa.testjetpack.viewModel.MainViewModel
 import com.cocoa.testjetpack.viewModel.UserViewModel
 import com.cocoa.testjetpack.workManager.UploadWorker
@@ -31,7 +33,7 @@ class MainActivity : AppCompatActivity() {
 
 
     val mainViewModel: MainViewModel by viewModels()
-    var binding: ActivityMainBinding? = null;
+    var binding: ActivityMainBinding? = null
 
     val userViewModel : UserViewModel by viewModels()
 
@@ -42,31 +44,35 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 //        setContentView(R.layout.activity_main)
-        binding = ActivityMainBinding.inflate(getLayoutInflater())
+        binding = ActivityMainBinding.inflate(layoutInflater)
 //        binding?.user = User("sj","jun")
 //        binding?.defaultStr = "the default String"
 //        binding?.handler = Handler()
         setContentView(binding?.root)
+
+        binding?.StorageActivity?.setOnClickListener {
+            startActivity(Intent(this, StorageActivity::class.java))
+        }
 
         binding?.user = mainViewModel.user
         binding?.defaultStr = "the default String"
 
 
         binding?.text2?.setOnClickListener{
-            userViewModel?.setUser(User("shen","test"))
+            userViewModel.setUser(User("shen","test"))
         }
         userViewModel.getUser().observe(this){
             binding?.text2?.text = it.firstName + it.lastName
         }
 
-        mainViewModel?.currentName.observe(this) { value ->
+        mainViewModel.currentName.observe(this) { value ->
 
         }
-        mainViewModel?.currentName.observe(this, nameObserver)
+        mainViewModel.currentName.observe(this, nameObserver)
         binding?.btn1?.setOnClickListener {
             changeName()
         }
-        lifecycle.addObserver(LogLifecycleObserver(name = "MainActivity"));
+        lifecycle.addObserver(LogLifecycleObserver(name = "MainActivity"))
 
 
         binding?.getWorkManager?.setOnClickListener {
@@ -116,8 +122,8 @@ class MainActivity : AppCompatActivity() {
 
         Thread {
             Log.i("Mainactivity", "thread")
-            mainViewModel?.currentName.postValue("mynameis ${Date().time}")
-        }.start();
+            mainViewModel.currentName.postValue("mynameis ${Date().time}")
+        }.start()
 
 
     }

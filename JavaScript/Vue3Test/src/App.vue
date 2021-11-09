@@ -82,6 +82,7 @@
 <script>
 import HelloWorld from './components/HelloWorld.vue';
 // import { getRoutes } from 'vue-router'
+    import axios from 'axios';
 
 export default {
   name: 'App',
@@ -100,9 +101,19 @@ export default {
   },
   created() {
         this.routerList = this.$router.getRoutes();
-        // console.log(routerList);
+        console.log("getData");
+        this.getData();
   },  
   methods: {
+    getData() {
+                axios.get('http://47.98.197.126:9999/mock/11/stz/home/station')
+                    .then(res=>{
+                       console.log('axios',res.data);
+                    })
+                    .catch(err=>{
+                        console.log(err);
+                    })
+            },
     onRouter(){
       //   console.log(this.$router);
       //  this.$router.push('/about')

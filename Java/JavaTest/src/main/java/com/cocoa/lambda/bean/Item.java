@@ -1,9 +1,20 @@
-package com.cocoa.lambda;
+package com.cocoa.lambda.bean;
 
 public class Item {
 
     public String name;
     public int age;
+
+    public int[] ids;
+
+
+    public int[] getIds() {
+        return ids;
+    }
+
+    public void setIds(int[] ids) {
+        this.ids = ids;
+    }
 
     public Item(String name, int age) {
         this.name = name;

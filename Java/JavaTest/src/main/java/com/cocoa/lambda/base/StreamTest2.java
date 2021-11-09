@@ -1,5 +1,6 @@
-package com.cocoa.lambda;
+package com.cocoa.lambda.base;
 
+import com.cocoa.lambda.bean.Item;
 import org.junit.Test;
 
 import java.util.*;

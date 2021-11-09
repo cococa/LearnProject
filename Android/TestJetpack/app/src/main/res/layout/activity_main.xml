@@ -21,15 +21,18 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-
-
+        <Button
+            android:id="@+id/StorageActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="StorageActivity"></Button>
 
 
         <TextView
             android:id="@+id/text1"
-            android:textColor="@color/colorPrimary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
             android:textSize="30sp" />
 
 
@@ -48,28 +51,27 @@
 
         <Button
             android:id="@+id/btn1"
-            android:text="btn1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="btn1" />
 
 
         <Button
             android:id="@+id/getWorkManager"
-            android:text="getWorkManager"
-            style="@style/hhh" />
+            style="@style/hhh"
+            android:text="getWorkManager" />
 
 
         <Chronometer
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            />
+            android:layout_height="wrap_content" />
 
 
         <TextView
             android:id="@+id/text2"
-            android:textColor="@color/colorPrimary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
             android:textSize="30sp" />
 
 

@@ -1,5 +1,6 @@
-package com.cocoa.lambda;
+package com.cocoa.lambda.base;
 
+import com.cocoa.lambda.bean.Item;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -28,6 +29,10 @@ public class StreamTest1 {
         // 4. String.interator
         Stream<Integer> stream3 = Stream.iterate(0, (x) -> x);
         stream3.forEach(System.out::println);
+
+
+
+
     }
 
 
