@@ -33,6 +33,12 @@ suspend  fun test333(){
 
 }
 
+//@OptIn(DelicateCoroutinesApi::class)
+fun testAsyncFunction() = GlobalScope.async {
+    print("")
+}
+
+
 // 并发
 suspend fun test334(){
     val a =  GlobalScope.async{
@@ -61,6 +67,6 @@ suspend fun test335(){
 }
 
 fun main() = runBlocking {
-    test335()
+    test334()
     println("-${now()}---")
 }

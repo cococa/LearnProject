@@ -1,8 +1,17 @@
-<template>  
-  <div class="flex justify-center items-center ">
-     <!-- <router-link v-for="(item ,index) in routerList" :key="index" :to="item.path">Go to {{item.path}}</router-link> -->
-     <router-view class="max-w-screen-sm bg-gray-50 min-h-full	max-h-full"> </router-view>
-<!-- 
+<template>
+  <div class="flex-col justify-center items-center">
+    <div class="wrap" :style="setBackground">
+      <div>宿建德江健康的减肥第三方</div>
+      <div>宿建德江健康的减肥第三方</div>
+      <div>宿建德江健康的减肥第三方</div>
+      <div>宿建德江健康的减肥第三方</div>
+      <div>宿建德江健康的减肥第三方</div>
+    </div>
+
+    <!-- <router-link v-for="(item ,index) in routerList" :key="index" :to="item.path">Go to {{item.path}}</router-link> -->
+    <router-view class="max-w-screen-sm bg-gray-50 min-h-full max-h-full">
+    </router-view>
+    <!-- 
     <div class="h-32 w-32 dark:bg-gray-800 bg-red-900 ">
       {{name}}
     </div>
@@ -80,47 +89,72 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import HelloWorld from "./components/HelloWorld.vue";
 // import { getRoutes } from 'vue-router'
-    import axios from 'axios';
+import axios from "axios";
 
 export default {
-  name: 'App',
+  name: "App",
   data() {
     return {
       users: [
-        'https://img0.baidu.com/it/u=3311900507,1448170316&fm=26&fmt=auto&gp=0.jpg',
-        'https://img2.baidu.com/it/u=325567737,3478266281&fm=26&fmt=auto&gp=0.jpg',
+        "https://img0.baidu.com/it/u=3311900507,1448170316&fm=26&fmt=auto&gp=0.jpg",
+        "https://img2.baidu.com/it/u=325567737,3478266281&fm=26&fmt=auto&gp=0.jpg",
       ],
       list: [1, 2, 3, 4, 5, 6, 7, 8, 9],
-      routerList:[]
+      routerList: [],
+      setBackground: {
+        backgroundImage:
+          "url(http://116.131.22.58:18060/img/login_kuang.3dcd8e64.png)",
+        backgroundRepeat: "no-repeat",
+      },
+      //img : require("./assets/border.png")
     };
   },
   components: {
     HelloWorld,
   },
   created() {
-        this.routerList = this.$router.getRoutes();
-        console.log("getData");
-        this.getData();
-  },  
+    this.routerList = this.$router.getRoutes();
+    console.log("getData");
+    this.getData();
+  },
   methods: {
     getData() {
-                axios.get('http://47.98.197.126:9999/mock/11/stz/home/station')
-                    .then(res=>{
-                       console.log('axios',res.data);
-                    })
-                    .catch(err=>{
-                        console.log(err);
-                    })
-            },
-    onRouter(){
+      axios
+        .get("http://47.98.197.126:9999/mock/11/stz/home/station")
+        .then((res) => {
+          console.log("axios", res.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+    onRouter() {
       //   console.log(this.$router);
       //  this.$router.push('/about')
-    }
+    },
   },
-  setup(props) {
-      
-  }
+  setup(props) {},
 };
 </script>
+
+<style scoped>
+.wrap {
+  /* width: 300px;
+  height: 300px; */
+  width: 150px;
+  height: auto;
+  background-size: cover;
+  /* 　　background-position: center center;
+background-size:100% 100%; */
+  /* background-size:cover; */
+  background-size: 100% 100%;
+  background-position: center center;
+  /* background-color: transparent; */
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  color: white;
+}
+</style>
