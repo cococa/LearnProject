@@ -10,14 +10,26 @@
 <script lang="ts">
 import VueMarkdownIt from "vue3-markdown-it";
 
+function test(){
+  return `
+  # 
+  \`\`\`javascript
+      console.log('123123');
+  \`\`\`
+  ## 
+
+  `
+}
+
+
 export default {
-  name: "xx",
+  name: "",
   components: {
     VueMarkdownIt,
   },
   data() {
     return {
-      source: "",
+      source: test(),
       name: "shencocoa",
       list: [1, 2, 3, 4],
     };

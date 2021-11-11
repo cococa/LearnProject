@@ -6,8 +6,8 @@
       :key="index"
       @click="push(item.path)"
     >
-      <div class="flex-1 flex-row">
-        <div class="item-title flex-1">{{item.meta.title || 'item.path'}} </div>
+      <div class="flex-1 flex-row item">
+        <div class="item-title flex-1">{{index}}. {{item.meta.title || 'item.path'}} </div>
         <div>点击进入</div>
       </div>
     </div>
@@ -51,5 +51,17 @@ export default {
     color: #333;
     padding: 10px 20px;
 }
+
+.item{
+  padding: 16px;
+  border-top-width: 0px;
+  border-left-width:  0px;
+  border-right-width:  0px;
+  border-bottom-width: 1px;
+  border-color: #999;
+  border-style: solid;
+  align-items: center;
+}
+
 </style>
 
