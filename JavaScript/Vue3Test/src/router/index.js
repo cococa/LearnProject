@@ -7,6 +7,10 @@ import Home from '../pages/Home.vue'
 import JsIndex from "../pages/js/index.vue";
 import JsObject from "../pages/js/object.vue";
 import arrowFunction from "../pages/js/arrowFunction.vue";
+import optional from "../pages/js/optional.vue";
+
+
+
 
 //ts
 import BasicType from "../pages/ts/BasicType.vue";
@@ -53,7 +57,10 @@ const routes = [
       title: "js 箭头函数",
       keepAlive: true,
     }},
-
+    { path: "/js/optional", name: "optional", component: optional ,meta: {
+      title: "js optional",
+      keepAlive: true,
+    }},
   ];
   
   const router = createRouter({

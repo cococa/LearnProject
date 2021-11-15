@@ -8,6 +8,8 @@
       <div>宿建德江健康的减肥第三方</div>
     </div>
 
+    <div class="arrowaa">123</div>
+
     <!-- <router-link v-for="(item ,index) in routerList" :key="index" :to="item.path">Go to {{item.path}}</router-link> -->
     <router-view class="max-w-screen-sm bg-gray-50 min-h-full max-h-full">
     </router-view>
@@ -157,4 +159,335 @@ background-size:100% 100%; */
   padding: 10px;
   color: white;
 }
+body {
+  background: #f8f8f8;
+}
+
+.page {
+  padding: 50px;
+}
+
+.arrow {
+  border: 3px solid #97d4e8;
+  border-radius: 4px;
+  background: #c8e7f1;
+  color: #2d7187;
+  margin: 0 auto 40px;
+  padding: 20px;
+  text-align: center;
+  width: 200px;
+  height: 30px;
+}
+
+.arrow--1 {
+  position: relative;
+}
+.arrow--1:after, .arrow--1:before {
+  border: solid transparent;
+  content: " ";
+  display: block;
+  height: 0;
+  position: absolute;
+  pointer-events: none;
+  width: 0;
+  bottom: 100%;
+}
+.arrow--1:after {
+  border-color: rgba(255, 255, 255, 0);
+  border-bottom-color: #c8e7f1;
+  left: 50%;
+  margin-left: -10px;
+  border-width: 10px;
+}
+.arrow--1:before {
+  border-color: rgba(255, 255, 255, 0);
+  border-bottom-color: #97d4e8;
+  left: 50%;
+  margin-left: -14px;
+  border-width: 14px;
+}
+
+.arrow--2 {
+  position: relative;
+}
+.arrow--2:after, .arrow--2:before {
+  border: solid transparent;
+  content: " ";
+  display: block;
+  height: 0;
+  position: absolute;
+  pointer-events: none;
+  width: 30;
+  left: 100%;
+}
+.arrow--2:after {
+  border-color: rgba(255, 255, 255, 0);
+  border-left-color: #c8e7f1;
+  top: 10px;
+  border-width: 20px;
+}
+.arrow--2:before {
+  border-color: rgba(255, 255, 255, 0);
+  border-left-color: #97d4e8;
+  top: -3px;
+  /* margin-top: -14px; */
+  border-width: 40px;
+}
+
+.arrow--3 {
+  position: relative;
+}
+.arrow--3:after, .arrow--3:before {
+  border: solid transparent;
+  content: " ";
+  display: block;
+  height: 0;
+  position: absolute;
+  pointer-events: none;
+  width: 0;
+  top: 100%;
+}
+.arrow--3:after {
+  border-color: rgba(255, 255, 255, 0);
+  border-top-color: #c8e7f1;
+  left: 50%;
+  margin-left: -10px;
+  border-width: 10px;
+}
+.arrow--3:before {
+  border-color: rgba(255, 255, 255, 0);
+  border-top-color: #97d4e8;
+  left: 50%;
+  margin-left: -14px;
+  border-width: 14px;
+}
+
+.arrow--4 {
+  position: relative;
+}
+.arrow--4:after, .arrow--4:before {
+  border: solid transparent;
+  content: " ";
+  display: block;
+  height: 0;
+  position: absolute;
+  pointer-events: none;
+  width: 0;
+  right: 100%;
+}
+.arrow--4:after {
+  border-color: rgba(255, 255, 255, 0);
+  border-right-color: #c8e7f1;
+  top: 50%;
+  margin-top: -10px;
+  border-width: 10px;
+}
+.arrow--4:before {
+  border-color: rgba(255, 255, 255, 0);
+  border-right-color: #97d4e8;
+  top: 50%;
+  margin-top: -14px;
+  border-width: 14px;
+}
+
+.arrow--5 {
+  position: relative;
+  border: none;
+}
+.arrow--5:after, .arrow--5:before {
+  border: solid transparent;
+  content: " ";
+  display: block;
+  height: 0;
+  position: absolute;
+  pointer-events: none;
+  width: 0;
+  top: 100%;
+}
+.arrow--5:after {
+  border-color: rgba(255, 255, 255, 0);
+  border-top-color: #c8e7f1;
+  left: 50%;
+  margin-left: -10px;
+  border-width: 10px;
+}
+.arrow--5:before {
+  border-color: rgba(255, 255, 255, 0);
+  border-top-color: #999;
+  left: 50%;
+  margin-left: -10px;
+  border-width: 10px;
+}
+
+.arrow--6 {
+  position: relative;
+}
+.arrow--6:after, .arrow--6:before {
+  border: solid transparent;
+  content: " ";
+  display: block;
+  height: 0;
+  position: absolute;
+  pointer-events: none;
+  width: 0;
+  margin-top: -3px;
+  top: 0;
+}
+.arrow--6:after {
+  border-color: rgba(255, 255, 255, 0);
+  border-top-color: #f8f8f8;
+  left: 50%;
+  margin-left: -10px;
+  border-width: 10px;
+}
+.arrow--6:before {
+  border-color: rgba(255, 255, 255, 0);
+  border-top-color: #97d4e8;
+  left: 50%;
+  margin-left: -14px;
+  border-width: 14px;
+}
+
+.arrow--7 {
+  position: relative;
+}
+.arrow--7:after, .arrow--7:before {
+  border: solid transparent;
+  content: " ";
+  display: block;
+  height: 0;
+  position: absolute;
+  pointer-events: none;
+  width: 0;
+  margin-right: -3px;
+  right: 0;
+}
+.arrow--7:after {
+  border-color: rgba(255, 255, 255, 0);
+  border-right-color: #f8f8f8;
+  top: 50%;
+  margin-top: -10px;
+  border-width: 10px;
+}
+.arrow--7:before {
+  border-color: rgba(255, 255, 255, 0);
+  border-right-color: #97d4e8;
+  top: 50%;
+  margin-top: -14px;
+  border-width: 14px;
+}
+
+.arrow--8 {
+  position: relative;
+}
+.arrow--8:after, .arrow--8:before {
+  border: solid transparent;
+  content: " ";
+  display: block;
+  height: 0;
+  position: absolute;
+  pointer-events: none;
+  width: 0;
+  bottom: 0;
+  margin-bottom: -3px;
+}
+.arrow--8:after {
+  border-color: rgba(255, 255, 255, 0);
+  border-bottom-color: #f8f8f8;
+  left: 50%;
+  margin-left: -10px;
+  border-width: 10px;
+}
+.arrow--8:before {
+  border-color: rgba(255, 255, 255, 0);
+  border-bottom-color: #97d4e8;
+  left: 50%;
+  margin-left: -14px;
+  border-width: 14px;
+}
+
+.arrow--9 {
+  position: relative;
+}
+.arrow--9:after, .arrow--9:before {
+  border: solid transparent;
+  content: " ";
+  display: block;
+  height: 0;
+  position: absolute;
+  pointer-events: none;
+  width: 0;
+  left: 0;
+  margin-left: -3px;
+}
+.arrow--9:after {
+  border-color: rgba(255, 255, 255, 0);
+  border-left-color: #f8f8f8;
+  top: 50%;
+  margin-top: -10px;
+  border-width: 10px;
+}
+.arrow--9:before {
+  border-color: rgba(255, 255, 255, 0);
+  border-left-color: #97d4e8;
+  top: 50%;
+  margin-top: -14px;
+  border-width: 14px;
+}
+
+.arrow--10 {
+  position: relative;
+  border: none;
+}
+.arrow--10:after, .arrow--10:before {
+  border: solid transparent;
+  content: " ";
+  display: block;
+  height: 0;
+  position: absolute;
+  pointer-events: none;
+  width: 0;
+  bottom: 0;
+  margin-bottom: 0;
+}
+.arrow--10:after {
+  border-color: rgba(255, 255, 255, 0);
+  border-bottom-color: #f8f8f8;
+  left: 50%;
+  margin-left: -10px;
+  border-width: 10px;
+}
+.arrow--10:before {
+  border-color: rgba(255, 255, 255, 0);
+  border-bottom-color: none;
+  left: 50%;
+  margin-left: -10px;
+  border-width: 10px;
+}
+.arrowaa {
+                width: 20px;
+                height: 4px;
+                margin: 0 auto 7px;
+                border-left: 4px solid transparent;
+                border-right: 4px solid transparent;
+                border-bottom: 4px solid #343c99;
+                transform: rotate(45deg);
+                transform-origin: left;
+            }
+            
+            .arrowaa:after {
+                content: '';
+                display: block;
+                width: 100%;
+                height: 100%;
+                border-left: 4px solid transparent;
+                border-right: 4px solid transparent;
+                border-top: 4px solid #343c99;
+                position: absolute;
+                right: -10px;
+                top: -14px;
+                transform: rotate(90deg);
+                transform-origin: bottom;
+            }
+
 </style>
