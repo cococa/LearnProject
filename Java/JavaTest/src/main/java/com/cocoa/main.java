@@ -1,11 +1,19 @@
 package com.cocoa;
 
 
+import com.alibaba.excel.EasyExcel;
+import com.alibaba.excel.context.AnalysisContext;
+import com.alibaba.excel.event.AnalysisEventListener;
+import com.alibaba.fastjson.JSONObject;
+
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import java.util.Map;
 
 public class main {
 
@@ -50,13 +58,43 @@ public class main {
     }
 
 
+    public static Date parseDate(String dateStr) {
 
-    public static void main(String[] args) throws ParseException {
+        try {
+            String fmtDateStr = dateStr.replaceAll("\\/", "-");
+            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+            return df.parse(fmtDateStr);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
-        main  main = new main();
+
+    public static void main(String[] args) throws ParseException, IOException {
+
+//        main main = new main();
+//
+//        String dateStr = "2019/12/12";
+//
+//        Date d = parseDate(dateStr);
+//        System.out.println(d);
+//        ;
 
 
-        System.out.println(Money.ofYuan(20000).getYuan());
+//        File file  = new File("/Users/shenjun/Documents/a.txt");
+//        file.createNewFile();
+//        FileOutputStream fileOutputStream = new FileOutputStream(file);
+//        OutputStreamWriter bufferedOutputStream  = new OutputStreamWriter(fileOutputStream, StandardCharsets.UTF_8);
+//
+//        JSONObject  jsonObject = new JSONObject();
+//        jsonObject.put("123123","收到回复水电费收到货");
+//        bufferedOutputStream.write(jsonObject.toJSONString());
+//        bufferedOutputStream.flush();
+//        bufferedOutputStream.close();
+
+
+//        System.out.println(Money.ofYuan(20000).getYuan());
 
 
 //        try {
@@ -98,7 +136,58 @@ public class main {
 //        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 //        LocalDateTime parse = LocalDateTime.parse(str1, dtf);
 //        System.out.println(parse);
+        String dateStr = "2020/06/12 11:00:00";
+        if (dateStr.contains(" ")) {
+            String[] dateArray = dateStr.split(" ");
+            if (dateArray != null && dateArray.length > 1) {
+                dateStr = dateArray[0];
+            }
+        }
+        System.out.println(dateStr);
 
+
+        String finalFileName = "/Users/shenjun/Desktop/20211201184219566.xlsx";
+
+        EasyExcel.read(finalFileName, ExcelDataOldCustomer.class, new AnalysisEventListener<ExcelDataOldCustomer>() {
+            @Override
+            public void invokeHeadMap(Map<Integer, String> headMap, AnalysisContext context) {
+                super.invokeHeadMap(headMap, context);
+                // 判断excel 的数据是否发生变化
+                final int headerSize = ExcelDataOldCustomer.EXCEL_TEML_HEADER_NAMES.length;
+                for (int i = 0; i < headerSize; i++) {
+                    String itemTmplHeaderName = ExcelDataOldCustomer.EXCEL_TEML_HEADER_NAMES[i];
+                    if (!itemTmplHeaderName.equals(headMap.get(i))) {
+                        String errorMsg = String.format("导入失败, 解析excel 第 {%s} 列出错，模板字段= {%s}, 上传的字段= {%s}，请核对！", i, itemTmplHeaderName, headMap.get(i));
+                        throw new NullPointerException(errorMsg);
+                    }
+                }
+            }
+
+            @Override
+            public void onException(Exception exception, AnalysisContext context) throws Exception {
+                super.onException(exception, context);
+
+            }
+
+            @Override
+            public void invoke(ExcelDataOldCustomer data, AnalysisContext analysisContext) {
+                try {
+                    System.out.println("----");
+                    JSONObject jsonObject = new JSONObject();
+                    jsonObject.put("data",data);
+                    System.out.println(jsonObject.toJSONString());
+                    System.out.println(data.getRegisterTime());
+                    System.out.println(data.getVehicleInsuranceTime());
+                    System.out.println(data.getCompulsoryInsuranceTime());
+                } catch (Exception e) {
+
+                }
+            }
+
+            @Override
+            public void doAfterAllAnalysed(AnalysisContext analysisContext) {
+            }
+        }).sheet().doRead();
 
 
     }

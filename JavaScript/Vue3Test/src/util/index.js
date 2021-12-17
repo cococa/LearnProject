@@ -26,36 +26,18 @@ function deepClone(obj) {
 
 export default deepClone;
 
-// array
-/**
- * 根据key-value 查询数组中的对象
- * @param {*} list 查询的数组
- * @param {*} key  查询的key
- * @param {*} value 查询的key对应的value
- * @returns
- */
-function findListByKv(list, key, value) {
-  let result = null;
-  list &&
-    key &&
-    list.forEach((element) => {
-      if (element[key] == value) {
-        result = element;
-      }
-    });
-  return result;
-}
+
 
 /**
- * 
- * 
+ *
+ *
  * //example
  * URLJoin('http://www.google.com', 'a', '/b/cd', '?foo=123', '?bar=foo');
  * 'http://www.google.com/a/b/cd?foo=123&bar=foo'
- * 
- * 
- * @param  {...any} args 
- * @returns 
+ *
+ *
+ * @param  {...any} args
+ * @returns
  */
 export function URLJoin(...args) {
   return args
@@ -67,3 +49,12 @@ export function URLJoin(...args) {
     .replace(/\?/g, "&")
     .replace("&", "?");
 }
+
+export const ArrayUtil = {
+  testArray: function () {
+    console.log("testArray");
+  },
+};
+
+
+

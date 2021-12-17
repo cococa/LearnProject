@@ -9,12 +9,16 @@ import router from './router/index.js';
 
 import { createStore } from "vuex";
 
+import './util/CCArrayExt.js'
+
+
 // 手动声明 state 类型
 const store = createStore({
   state: {
     count: 111,
   },
 });
+
 
 
 //   router.beforeEach((to, from) => {
@@ -28,3 +32,8 @@ app.use(router);
 app.use(store);
 app.use(VueMarkdownIt);
 app.mount("#app");
+
+
+
+
+

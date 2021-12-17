@@ -15,11 +15,15 @@
     <div style="background-color:red">||===>{{ age || "default value"}}</div>
 
 
+    <button type="button" @click="testArray">testArray</button>
+
   </div>
 </template>
 
 <script lang="ts">
 import VueMarkdownIt from "vue3-markdown-it";
+import { ArrayUtil } from '../../util/index.js'
+
 
 function test(){
   return `
@@ -64,6 +68,9 @@ export default {
   },
   mounted() {},
   methods: {
+    testArray(){
+        ArrayUtil.testArray();
+    },
     base1() {
       // 箭头函数的基本使用
       const sum = (a, b) => a + b;
