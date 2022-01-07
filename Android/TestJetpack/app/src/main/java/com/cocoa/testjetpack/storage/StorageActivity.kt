@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.ui.AppBarConfiguration
-import com.cocoa.testjetpack.TestApplication
+import com.cocoa.testjetpack.MainApplication
 import com.cocoa.testjetpack.databinding.ActivityStorageBinding
 import com.cocoa.testjetpack.storage.room.AppDatabase
 import com.cocoa.testjetpack.storage.room.User
@@ -24,7 +24,7 @@ class StorageActivity : AppCompatActivity() {
     var db: AppDatabase? = null
     val userViewModel: UserViewModel by viewModels {
         UserViewModelFactory(
-            (application as TestApplication).database.userDao()
+            (application as MainApplication).database.userDao()
         )
     }
 

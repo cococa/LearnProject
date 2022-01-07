@@ -1,6 +1,6 @@
 <template>
   <div class="flex-col justify-center items-center">
-    <div class="wrap" :style="setBackground">
+    <!-- <div class="wrap" :style="setBackground">
       <div>宿建德江健康的减肥第三方</div>
       <div>宿建德江健康的减肥第三方</div>
       <div>宿建德江健康的减肥第三方</div>
@@ -8,7 +8,7 @@
       <div>宿建德江健康的减肥第三方</div>
     </div>
 
-    <div class="arrowaa">123</div>
+    <div class="arrowaa">123</div> -->
 
     <!-- <router-link v-for="(item ,index) in routerList" :key="index" :to="item.path">Go to {{item.path}}</router-link> -->
     <router-view class="max-w-screen-sm bg-gray-50 min-h-full max-h-full">

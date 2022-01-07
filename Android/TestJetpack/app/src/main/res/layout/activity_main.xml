@@ -21,58 +21,64 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <Button
-            android:id="@+id/StorageActivity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="StorageActivity"></Button>
+<!--        <Button-->
+<!--            android:id="@+id/StorageActivity"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="StorageActivity"></Button>-->
 
 
-        <TextView
-            android:id="@+id/text1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/colorPrimary"
-            android:textSize="30sp" />
+<!--        <TextView-->
+<!--            android:id="@+id/text1"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textColor="@color/colorPrimary"-->
+<!--            android:textSize="30sp" />-->
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="@{(v)-> handler.onClick( v,user)}"
-            android:text="@{user.firstName.length() > 13 ?user.firstName:defaultStr}"
-            android:textSize="30sp" />
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:onClick="@{(v)-> handler.onClick( v,user)}"-->
+<!--            android:text="@{user.firstName.length() > 13 ?user.firstName:defaultStr}"-->
+<!--            android:textSize="30sp" />-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{user.lastName}" />
-
-
-        <Button
-            android:id="@+id/btn1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="btn1" />
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@{user.lastName}" />-->
 
 
-        <Button
-            android:id="@+id/getWorkManager"
-            style="@style/hhh"
-            android:text="getWorkManager" />
+<!--        <Button-->
+<!--            android:id="@+id/btn1"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="btn1" />-->
 
 
-        <Chronometer
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+<!--        <Button-->
+<!--            android:id="@+id/getWorkManager"-->
+<!--            style="@style/hhh"-->
+<!--            android:text="getWorkManager" />-->
 
 
-        <TextView
-            android:id="@+id/text2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/colorPrimary"
-            android:textSize="30sp" />
+<!--        <Chronometer-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content" />-->
+
+
+<!--        <TextView-->
+<!--            android:id="@+id/text2"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textColor="@color/colorPrimary"-->
+<!--            android:textSize="30sp" />-->
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/mRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
 
     </LinearLayout>

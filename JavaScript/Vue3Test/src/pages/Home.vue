@@ -6,9 +6,9 @@
       :key="index"
       @click="push(item.path)"
     >
-      <div class="flex-1">
-        <div>{{ index }} This is test Pages</div>
-        <div>the path is {{ item.path }}</div>
+      <div class="flex-1 flex-row">
+        <div>{{ index+1 }}. </div>
+        <div>{{ item.meta.title }}相关</div>
       </div>
       <img
         style="width: 90px; height: 60px"
@@ -29,12 +29,11 @@ export default {
   },
   components: {},
   created() {
-    const app = this;
-    this.routerList = this.$router.getRoutes().filter((item) => {
-      let matchList = app.firstRouterName.filter((name) => {
+     this.routerList = this.$router.getRoutes().filter((item) => {
+      console.log(item);
+      return  this.firstRouterName.some((name) => {
         return name == item.name;
       });
-      return matchList && matchList.length > 0;
     });
     console.log(this.routerList);
   },

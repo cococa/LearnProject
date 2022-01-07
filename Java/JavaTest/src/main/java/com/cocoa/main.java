@@ -73,6 +73,20 @@ public class main {
 
     public static void main(String[] args) throws ParseException, IOException {
 
+        String s =  "中";
+
+        for(Byte b : s.getBytes()) {
+            System.out.println(b);
+        }
+
+        String sss = new String(s.getBytes());
+
+        Long  a = new Long(123);
+        Long  b = new Long(123);
+
+        System.out.println(a.equals(b));
+
+
 //        main main = new main();
 //
 //        String dateStr = "2019/12/12";
@@ -136,58 +150,58 @@ public class main {
 //        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 //        LocalDateTime parse = LocalDateTime.parse(str1, dtf);
 //        System.out.println(parse);
-        String dateStr = "2020/06/12 11:00:00";
-        if (dateStr.contains(" ")) {
-            String[] dateArray = dateStr.split(" ");
-            if (dateArray != null && dateArray.length > 1) {
-                dateStr = dateArray[0];
-            }
-        }
-        System.out.println(dateStr);
-
-
-        String finalFileName = "/Users/shenjun/Desktop/20211201184219566.xlsx";
-
-        EasyExcel.read(finalFileName, ExcelDataOldCustomer.class, new AnalysisEventListener<ExcelDataOldCustomer>() {
-            @Override
-            public void invokeHeadMap(Map<Integer, String> headMap, AnalysisContext context) {
-                super.invokeHeadMap(headMap, context);
-                // 判断excel 的数据是否发生变化
-                final int headerSize = ExcelDataOldCustomer.EXCEL_TEML_HEADER_NAMES.length;
-                for (int i = 0; i < headerSize; i++) {
-                    String itemTmplHeaderName = ExcelDataOldCustomer.EXCEL_TEML_HEADER_NAMES[i];
-                    if (!itemTmplHeaderName.equals(headMap.get(i))) {
-                        String errorMsg = String.format("导入失败, 解析excel 第 {%s} 列出错，模板字段= {%s}, 上传的字段= {%s}，请核对！", i, itemTmplHeaderName, headMap.get(i));
-                        throw new NullPointerException(errorMsg);
-                    }
-                }
-            }
-
-            @Override
-            public void onException(Exception exception, AnalysisContext context) throws Exception {
-                super.onException(exception, context);
-
-            }
-
-            @Override
-            public void invoke(ExcelDataOldCustomer data, AnalysisContext analysisContext) {
-                try {
-                    System.out.println("----");
-                    JSONObject jsonObject = new JSONObject();
-                    jsonObject.put("data",data);
-                    System.out.println(jsonObject.toJSONString());
-                    System.out.println(data.getRegisterTime());
-                    System.out.println(data.getVehicleInsuranceTime());
-                    System.out.println(data.getCompulsoryInsuranceTime());
-                } catch (Exception e) {
-
-                }
-            }
-
-            @Override
-            public void doAfterAllAnalysed(AnalysisContext analysisContext) {
-            }
-        }).sheet().doRead();
+//        String dateStr = "2020/06/12 11:00:00";
+//        if (dateStr.contains(" ")) {
+//            String[] dateArray = dateStr.split(" ");
+//            if (dateArray != null && dateArray.length > 1) {
+//                dateStr = dateArray[0];
+//            }
+//        }
+//        System.out.println(dateStr);
+//
+//
+//        String finalFileName = "/Users/shenjun/Desktop/20211201184219566.xlsx";
+//
+//        EasyExcel.read(finalFileName, ExcelDataOldCustomer.class, new AnalysisEventListener<ExcelDataOldCustomer>() {
+//            @Override
+//            public void invokeHeadMap(Map<Integer, String> headMap, AnalysisContext context) {
+//                super.invokeHeadMap(headMap, context);
+//                // 判断excel 的数据是否发生变化
+//                final int headerSize = ExcelDataOldCustomer.EXCEL_TEML_HEADER_NAMES.length;
+//                for (int i = 0; i < headerSize; i++) {
+//                    String itemTmplHeaderName = ExcelDataOldCustomer.EXCEL_TEML_HEADER_NAMES[i];
+//                    if (!itemTmplHeaderName.equals(headMap.get(i))) {
+//                        String errorMsg = String.format("导入失败, 解析excel 第 {%s} 列出错，模板字段= {%s}, 上传的字段= {%s}，请核对！", i, itemTmplHeaderName, headMap.get(i));
+//                        throw new NullPointerException(errorMsg);
+//                    }
+//                }
+//            }
+//
+//            @Override
+//            public void onException(Exception exception, AnalysisContext context) throws Exception {
+//                super.onException(exception, context);
+//
+//            }
+//
+//            @Override
+//            public void invoke(ExcelDataOldCustomer data, AnalysisContext analysisContext) {
+//                try {
+//                    System.out.println("----");
+//                    JSONObject jsonObject = new JSONObject();
+//                    jsonObject.put("data",data);
+//                    System.out.println(jsonObject.toJSONString());
+//                    System.out.println(data.getRegisterTime());
+//                    System.out.println(data.getVehicleInsuranceTime());
+//                    System.out.println(data.getCompulsoryInsuranceTime());
+//                } catch (Exception e) {
+//
+//                }
+//            }
+//
+//            @Override
+//            public void doAfterAllAnalysed(AnalysisContext analysisContext) {
+//            }
+//        }).sheet().doRead();
 
 
     }
