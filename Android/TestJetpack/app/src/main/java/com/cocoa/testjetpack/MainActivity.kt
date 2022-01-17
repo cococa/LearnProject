@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
 
         binding?.mRecyclerView?.layoutManager = LinearLayoutManager(this)
         binding?.mRecyclerView?.adapter = mMainItemAdapter
-
+//        mMainItemAdapter.    
         mMainItemAdapter.submitList(mMianItemList)
 
 //

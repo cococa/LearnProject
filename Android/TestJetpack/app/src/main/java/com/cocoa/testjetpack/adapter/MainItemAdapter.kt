@@ -41,6 +41,7 @@ class MainItemAdapter(private val onClick: (MainItem) -> Unit) :
 
     override fun onBindViewHolder(holder: MainItemViewHolder, position: Int) {
         val mainItem = getItem(position)
+//        currentList[position]
         holder.bindItem(mainItem);
     }
 
@@ -55,6 +56,11 @@ object MainItemDiffCallback : DiffUtil.ItemCallback<MainItem>() {
 
     override fun areContentsTheSame(oldItem: MainItem, newItem: MainItem): Boolean {
         return oldItem.name.equals(newItem.name)
+    }
+
+
+    override fun getChangePayload(oldItem: MainItem, newItem: MainItem): Any? {
+        return super.getChangePayload(oldItem, newItem)
     }
 
 }
