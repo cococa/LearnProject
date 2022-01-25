@@ -7,3 +7,5 @@
 7-html-css-js prettify
 8-threejs-autoComplete
 9-gradle
+10-vscode-icon
+11-

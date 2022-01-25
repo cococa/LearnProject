@@ -9,7 +9,7 @@ fn main(){
     println!("{:?}", v1);
     println!("{:?}", v2);
 
-
+    //所引法取值可能出险 panic
     let item1 : &i32  = &v2[1];
     println!("the item1 in vec2 = {:?}", item1);
 

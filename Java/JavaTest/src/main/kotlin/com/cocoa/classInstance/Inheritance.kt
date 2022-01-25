@@ -49,7 +49,7 @@ open class Children(name : String, val lastName : String): Parent(
 
 
 open  class Parent0x12{
-    fun draw(){
+    open fun draw(){
     }
 }
 
