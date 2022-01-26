@@ -45,9 +45,10 @@ public class Join {
         list.add(new Item("name4", 4));
 
         list.stream().forEach(item -> {
-            int[] re = Stream.generate(() -> {
-                return Math.random() * 100;
-            }).limit(4).mapToInt((it) -> it.intValue()).toArray();
+            int[] re = Stream.generate(() -> Math.random() * 100)
+                    .limit(4)
+                    .mapToInt((it) -> it.intValue())
+                    .toArray();
             item.setIds(re);
         });
 

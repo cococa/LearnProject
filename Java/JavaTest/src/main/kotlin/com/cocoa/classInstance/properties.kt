@@ -7,7 +7,8 @@ const val CONSTANCT_VALUE = "123123"
 /**
  *
  * 3. 一个只读属性的语法和一个可变的属性的语法有两方面的不同：
- *   1、只读属性的用 val开始代替var 2、只读属性不允许 setter
+ *   1、只读属性的用 val开始代替var
+ *   2、只读属性不允许 setter
  * 4.
  *
  *
@@ -42,7 +43,8 @@ class Test {
     val isAdrEmpty : Boolean
         get() = addr.isEmpty()
 
-    // lateinit 不能对基本类型使用，只能使用字符类型和引用类型
+    // lateinit 不能对基本类型使用，只能使用字符类型和引用类型,
+    // 如果 在init 函数中进行了初始化，那么这个lateinit 就不用申明了
     lateinit  var bb : Thread
     lateinit  var aa : String
     var testBoolean: Boolean = true

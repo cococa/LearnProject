@@ -24,6 +24,10 @@ fun main(){
     println(cocoa == p)
 
 
+
+    println("------test Serializable--------")
+
+
     //数据类与解构声明
     val (name ,age ) = Person0x00(name = "cocoa", age = 12)
     println("the name is $name and age is ${age}")
@@ -34,11 +38,18 @@ fun main(){
 
     // use fastjson
     val jsonResult : Person0x01 = JSON.parseObject(jsonStr,Person0x01::class.java)
+//    jsonResult.name = "changed"
     println("the jsonResult from fastjson is $jsonResult")
 
     // use google gson
     var gsonResult  : Person0x01 = Gson().fromJson(jsonStr,Person0x01::class.java)
     println("the gsonResult from gson is $gsonResult")
+
+
+//    val p33 = Person0x03();
+//    val p33 = Person0x03(name= "",age=1);
+
+
 }
 
 class Person0x11(val name :String , val age : Int){
@@ -54,12 +65,20 @@ data class Person0x00(val name :String , var age : Int){
 
 }
 
-//如果生成的类需要含有一个无参的构造函数，则所有的属性必须指定默认值
+//如果生成的类需要含有一个无参的构造函数，则所有的属性必须指定默认值,即使在init 方法实现初始化也不行
 data class Person0x01(var name :String = "" , var age : Int = 0){
 
 }
 
 data class Person0x02(var name : String){
     var age : Int  = 120
+}
+
+
+data class Person0x03(var name :String  , var age : Int){
+    init {
+        name = "123"
+        age = 0
+    }
 }
 

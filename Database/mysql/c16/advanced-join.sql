@@ -16,4 +16,10 @@ from dept_manager as dm1 , dept_manager as dm2
 where dm1.dept_no = dm2.dept_no and dm2.emp_no = 110022;
 
 
+SELECT IFNULL( select * from dept_manager , NULL) as dept_no
+
+
+
+
+
 

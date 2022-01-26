@@ -96,6 +96,14 @@ class Connection (val host :Host ,val port :Int){
 }
 
 
+fun Any?.antherToString(): String{
+    if(this == null){
+        return "optional null";
+    }
+    return this.toString()
+}
+
+
 
 
 
