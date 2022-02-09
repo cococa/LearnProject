@@ -3,6 +3,17 @@ package com.cocoa.classInstance
 import com.alibaba.fastjson.JSON
 import com.google.gson.Gson
 
+/**
+ * data class 自动帮你生成 toString equals  hashCode  copy  componetN  方法， 如果你自己实现了。那就不会自动生成了, 比如 Person0x00 的 toString
+ * data class 必须满足下面三个点
+ *    1.  主构造函数至少要有一个参数
+ *    2.  主构造函数的参数要被标记成 var 或 val
+ *    3.  data class 不能使用  abstract, open, sealed, 或 inner 关键字修饰
+ * 在 JVM 中，如果生成的类需要含有一个无参的构造函数，则所有的属性必须指定默认值。 （换句话说 dataclass 初始化时必须给参数赋值 ）
+ * 如果想要排除一个属性，即上面那些方法中不用到这个属性，可以把属性定义在类体中，但是要注意，生成的对象可能会引发一些问题，比如 equals
+ *
+ *
+ */
 fun main(){
 
     var p = Person0x00("123",12)
@@ -20,8 +31,8 @@ fun main(){
     println("print ppp $ppp")
 
     // copy 方法 创建修改后的新对象
-    val cocoa = p.copy(name = "ccocoa")
-    println(cocoa == p)
+    val cocoa = p.copy(name = "123")
+    println(cocoa === p)
 
 
 
@@ -62,6 +73,11 @@ class Person0x11(val name :String , val age : Int){
 
 // 可以自己重写 equals hashCode  和 toString , 当然数据类会有默认的实现
 data class Person0x00(val name :String , var age : Int){
+
+
+//    override fun toString(): String {
+//        return JSON.toJSONString(this);
+//    }
 
 }
 
