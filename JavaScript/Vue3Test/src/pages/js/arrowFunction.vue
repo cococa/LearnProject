@@ -1,26 +1,26 @@
 <template>
   <div class="flex flex-1 flex-col">
-    <vue3-markdown-it :source="source" />
-    <button @click="base1">base1</button>
-    <button @click="base2">base2</button>
-    <button @click="test1">test1</button>
+    <div v-for="(item, index) in codeArray" :key="index" class="item">
+      <vue3-markdown-it :source="item.code" />
+      <button @click="testClick(item.methodName)">
+        testMethod({{ item.methodName }})
+      </button>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import VueMarkdownIt from "vue3-markdown-it";
 
-function test(){
+function testCode(res) {
   return `
   # 
   \`\`\`javascript
-      console.log('123123');
+   ${res}   
   \`\`\`
   ## 
-
-  `
+  `;
 }
-
 
 export default {
   name: "",
@@ -29,13 +29,31 @@ export default {
   },
   data() {
     return {
-      source: test(),
+      codeArray: [],
       name: "shencocoa",
       list: [1, 2, 3, 4],
     };
   },
-  mounted() {},
+  mounted() {
+    var methods = this.$options.methods;
+    Object.keys(methods).forEach((element) => {
+      if (element != "testClick") {
+        const code = {
+          methodName: element,
+          code: testCode(this.$options.methods[element]),
+        };
+        this.codeArray.push(code);
+      }
+    });
+  },
   methods: {
+    testClick(mName) {
+      if (mName) {
+        var vueMethods = this.$options.methods;
+        let m = vueMethods[mName];
+        m.call(this);
+      }
+    },
     base1() {
       // 箭头函数的基本使用
       const sum = (a, b) => a + b;
@@ -49,12 +67,14 @@ export default {
       };
       console.log("base2 sum =>> ", sum(1, 2));
     },
-    test1() {
-      this.list.forEach((element) => {
+    base3() {
+      const list = [1, 3, 5, 7];
+      console.log("=>", this);
+      list.forEach((element) => {
         //箭头函数没有 this。如果访问 this，则会从外部获取。
         console.log("get name from list foreach @arrow function==>", this.name);
       });
-      this.list.forEach(function (item) {
+      list.forEach(function (item) {
         //Cannot read properties of undefined (reading 'name')
         // console.log('get name from list foreach ==>',this.name);
         console.log(this);
@@ -65,4 +85,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.item {
+  margin-bottom: 10px;
+}
+</style>

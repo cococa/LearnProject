@@ -12,6 +12,10 @@ import { createStore } from "vuex";
 import './util/CCArrayExt.js'
 
 
+import VConsole from 'vconsole';
+const vConsole = new VConsole();
+
+
 // 手动声明 state 类型
 const store = createStore({
   state: {
