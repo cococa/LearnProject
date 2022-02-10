@@ -9,8 +9,6 @@
     <div>
       <button type="button" @click="test2">自定义对象的拷贝</button>
     </div>
-
-
     <button @click="testClick">
       test
     </button>

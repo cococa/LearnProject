@@ -11,52 +11,21 @@
 
 <script lang="ts">
 import VueMarkdownIt from "vue3-markdown-it";
-
-function testCode(res) {
-  return `
-  # 
-  \`\`\`javascript
-   ${res}   
-  \`\`\`
-  ## 
-  `;
-}
+import mixinCode from "../../mixins/mixinCode";
 
 export default {
-  name: "",
+  name: "asd",
   components: {
     VueMarkdownIt,
   },
+   mixins: [mixinCode],
   data() {
     return {
-      codeArray: [],
       name: "shencocoa",
-      list: [1, 2, 3, 4],
     };
   },
-  mounted() {
-    var methods = this.$options.methods;
-    Object.keys(methods).forEach((element) => {
-      if (element != "testClick") {
-        const code = {
-          methodName: element,
-          code: testCode(this.$options.methods[element]),
-        };
-        this.codeArray.push(code);
-      }
-    });
-  },
+  mounted() {},
   methods: {
-    testClick(mName) {
-      if (mName) {
-        var vueMethods = this.$options.methods;
-        let m = vueMethods[mName];
-        m.call(this);
-      }
-    },
-    /**
-     * 123
-     */
     base1() {
       // 箭头函数的基本使用
       const sum = (a, b) => a + b;
