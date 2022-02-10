@@ -7,13 +7,7 @@ package com.cocoa.classInstance
  *
  */
 
-//fun interface kRunnable {
-//    fun invoke();
-//}
 
-//fun interface IntPredicate {
-//    fun accept(i: Int): Boolean
-//}
 
 fun main() {
 

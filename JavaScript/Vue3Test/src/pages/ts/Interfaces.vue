@@ -46,6 +46,35 @@ compare = function (a : number , b : number) {
   return a > b 
 }
 
+// 接口约束类
+interface ClockInterface{
+  currentTime : Date;
+  setTime(d: Date)
+}
+
+
+class Clock implements ClockInterface{
+  setTime(d: Date) {
+    // throw new Error('Method not implemented.');
+  }
+  currentTime : Date;
+  
+}
+
+
+// 构造器这块跳过
+
+// -------继承接口--------
+interface Shape {
+    color: string;
+}
+// 接口的多继承
+interface Square extends ClockInterface , Shape{
+
+}
+
+
+
 
 
 
