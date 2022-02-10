@@ -54,6 +54,9 @@ export default {
         m.call(this);
       }
     },
+    /**
+     * 123
+     */
     base1() {
       // 箭头函数的基本使用
       const sum = (a, b) => a + b;

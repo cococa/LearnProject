@@ -27,7 +27,7 @@
 
 <script>
 import {onMounted, ref, watch}  from 'vue';
-import userCompose from '../composables/UserCompose'
+import userCompose from '../../composables/UserCompose'
 import {useStore} from 'vuex'
 
 export default {

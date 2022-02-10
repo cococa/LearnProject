@@ -1,6 +1,4 @@
-import TestSetup from "../pages/TestSetup.vue";
-import TestProvideInject from "../pages/TestProvideInject.vue";
-import TestRenderFunction from "../pages/TestRenderFunction.vue";
+
 import Home from "../pages/Home.vue";
 
 //js
@@ -15,6 +13,10 @@ import BasicType from "../pages/ts/BasicType.vue";
 import Variable from "../pages/ts/Variable.vue";
 
 //vue
+import TestSetup from "../pages/vue/TestSetup.vue";
+import TestProvideInject from "../pages/vue/TestProvideInject.vue";
+import TestRenderFunction from "../pages/vue/TestRenderFunction.vue";
+
 
 import { createRouter, createWebHashHistory } from "vue-router";
 

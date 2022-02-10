@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import RenderComponent from '../components/RenderComponent.js'
+import RenderComponent from '../../components/RenderComponent'
 import { ref} from  'vue'
 
 export default {

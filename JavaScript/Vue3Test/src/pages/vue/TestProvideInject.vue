@@ -15,8 +15,7 @@
 </template>
 
 <script>
-import InjectComponent from '../components/InjectComponent.vue'
-import {provide ,ref} from 'vue';
+import InjectComponent from '../../components/InjectComponent.vue'
 
 export default {
   name: 'xx',
