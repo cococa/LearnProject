@@ -11,6 +11,7 @@ import optional from "../pages/js/optional.vue";
 import TsIndex from "../pages/ts/index.vue";
 import BasicType from "../pages/ts/BasicType.vue";
 import Variable from "../pages/ts/Variable.vue";
+import Interfaces from "../pages/ts/Interfaces.vue"
 
 //vue
 import TestSetup from "../pages/vue/TestSetup.vue";
@@ -60,6 +61,15 @@ const routes = [
     component: Variable,
     meta: {
       title: "ts Variable",
+      keepAlive: true,
+    },
+  },
+  {
+    path: "/ts/Interfaces",
+    name: "Interfaces",
+    component: Interfaces,
+    meta: {
+      title: "ts Interfaces",
       keepAlive: true,
     },
   },
