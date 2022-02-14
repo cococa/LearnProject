@@ -89,7 +89,7 @@ fun DefaultPreview() {
         Column(modifier = Modifier.padding(start = 5.dp)) {
             Text(text = "123222123", fontSize = 10.sp)
             Text(
-                text = "hahah is zhengenguo 12311231231123123112312311231231123123112312311231231123",
+                text = "hahah is 12311231231123123112312311231231123123112312311231231123",
                 fontSize = 18.sp
             )
             Text(text = "123", maxLines = 2, overflow = TextOverflow.Clip)
