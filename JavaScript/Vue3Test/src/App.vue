@@ -1,15 +1,9 @@
 <template>
   <div class="flex-col justify-center items-center">
-    <!-- <div class="wrap" :style="setBackground">
-      <div>宿建德江健康的减肥第三方</div>
-      <div>宿建德江健康的减肥第三方</div>
-      <div>宿建德江健康的减肥第三方</div>
-      <div>宿建德江健康的减肥第三方</div>
-      <div>宿建德江健康的减肥第三方</div>
+    <div class="ctn">
+        <p class="p1">冬奥会自开幕以来冬奥会自开幕以来冬奥冬奥会自开幕以来冬奥会自开幕以来冬奥会自开幕以来会自开幕以来冬奥会自开幕以来冬奥会自开幕以来冬奥会自开幕以来</p>
+        <p>loadmore</p>
     </div>
-
-    <div class="arrowaa">123</div> -->
-
     <!-- <router-link v-for="(item ,index) in routerList" :key="index" :to="item.path">Go to {{item.path}}</router-link> -->
     <router-view class="max-w-screen-sm bg-gray-50 min-h-full max-h-full">
     </router-view>
@@ -142,6 +136,21 @@ export default {
 </script>
 
 <style scoped>
+p{
+  display: inline;
+}
+
+
+.ctn{
+  /* height: 75px; */
+}
+
+.p1{
+  height: 75px;
+  line-height: 75px;
+  font-size: 25px;
+}
+
 .wrap {
   /* width: 300px;
   height: 300px; */

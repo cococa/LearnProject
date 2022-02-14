@@ -17,6 +17,8 @@
 		9FA2FDDC27A4DD84000BD4E5 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA2FDDB27A4DD84000BD4E5 /* Restaurant.swift */; };
 		9FA2FDDE27B23E59000BD4E5 /* RestaurantDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA2FDDD27B23E59000BD4E5 /* RestaurantDetailView.swift */; };
 		9FA2FDE027B35A7A000BD4E5 /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA2FDDF27B35A7A000BD4E5 /* UIColorExt.swift */; };
+		9FA42E4627B69E5B0092CDCE /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA42E4527B69E5B0092CDCE /* ReviewView.swift */; };
+		9FA42E6127BA55510092CDCE /* RestaurantData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA42E6027BA55510092CDCE /* RestaurantData.swift */; };
 		9FFD753927B66ABE00BA30C1 /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFD753827B66ABE00BA30C1 /* Rating.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +53,8 @@
 		9FA2FDDB27A4DD84000BD4E5 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		9FA2FDDD27B23E59000BD4E5 /* RestaurantDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailView.swift; sourceTree = "<group>"; };
 		9FA2FDDF27B35A7A000BD4E5 /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
+		9FA42E4527B69E5B0092CDCE /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
+		9FA42E6027BA55510092CDCE /* RestaurantData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantData.swift; sourceTree = "<group>"; };
 		9FFD753827B66ABE00BA30C1 /* Rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,14 +106,15 @@
 		9FA2FDB027A28E9F000BD4E5 /* TestAppcoda1 */ = {
 			isa = PBXGroup;
 			children = (
-				9FA2FDB127A28E9F000BD4E5 /* TestAppcoda1App.swift */,
 				9FA2FDB327A28E9F000BD4E5 /* ContentView.swift */,
 				9FA2FDDD27B23E59000BD4E5 /* RestaurantDetailView.swift */,
+				9FA42E4527B69E5B0092CDCE /* ReviewView.swift */,
+				9FA42E4827BA487F0092CDCE /* views */,
+				9FA42E4727BA48650092CDCE /* Model */,
+				9FA2FDB127A28E9F000BD4E5 /* TestAppcoda1App.swift */,
 				9FA2FDB527A28EA1000BD4E5 /* Assets.xcassets */,
 				9FA2FDB727A28EA1000BD4E5 /* Preview Content */,
-				9FA2FDDB27A4DD84000BD4E5 /* Restaurant.swift */,
 				9FA2FDDF27B35A7A000BD4E5 /* UIColorExt.swift */,
-				9FFD753827B66ABE00BA30C1 /* Rating.swift */,
 			);
 			path = TestAppcoda1;
 			sourceTree = "<group>";
@@ -137,6 +142,23 @@
 				9FA2FDCE27A28EA1000BD4E5 /* TestAppcoda1UITestsLaunchTests.swift */,
 			);
 			path = TestAppcoda1UITests;
+			sourceTree = "<group>";
+		};
+		9FA42E4727BA48650092CDCE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9FA2FDDB27A4DD84000BD4E5 /* Restaurant.swift */,
+				9FFD753827B66ABE00BA30C1 /* Rating.swift */,
+				9FA42E6027BA55510092CDCE /* RestaurantData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9FA42E4827BA487F0092CDCE /* views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,10 +293,12 @@
 			files = (
 				9FFD753927B66ABE00BA30C1 /* Rating.swift in Sources */,
 				9FA2FDDE27B23E59000BD4E5 /* RestaurantDetailView.swift in Sources */,
+				9FA42E6127BA55510092CDCE /* RestaurantData.swift in Sources */,
 				9FA2FDB427A28E9F000BD4E5 /* ContentView.swift in Sources */,
 				9FA2FDB227A28E9F000BD4E5 /* TestAppcoda1App.swift in Sources */,
 				9FA2FDDC27A4DD84000BD4E5 /* Restaurant.swift in Sources */,
 				9FA2FDE027B35A7A000BD4E5 /* UIColorExt.swift in Sources */,
+				9FA42E4627B69E5B0092CDCE /* ReviewView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

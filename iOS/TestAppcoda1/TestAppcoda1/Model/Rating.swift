@@ -9,7 +9,9 @@ import Foundation
 
 
 
-enum Rating : String {
+enum Rating : String, CaseIterable {
+    
+    
     
     // rawValue  == imagename
 
