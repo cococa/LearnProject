@@ -47,7 +47,6 @@ open class Children(name : String, val lastName : String): Parent(
 //}
 
 
-
 open  class Parent0x12{
     open fun draw(){
     }
@@ -65,6 +64,24 @@ class TestClass0x12() : Parent0x12(), Polygon{
     }
 
 }
+
+open class Parent0x13 {
+    var name : String
+    constructor(name : String){
+        this.name = name
+    }
+}
+
+class  Child0x001 : Parent0x13{
+    // 次构造函数
+    constructor(name: String): super(name){
+    }
+}
+
+class  Child0x002(name : String) : Parent0x13(name){
+
+}
+
 
 
 

@@ -32,6 +32,12 @@ dependencies {
     implementation group: 'com.alibaba', name: 'easyexcel', version: '3.0.5'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
+
+
+    // https://github.com/hekailiang/squirrel
+    implementation group: 'org.restcomm.fsm', name: 'squirrel-foundation', version: '0.3.9.11'
+
+
 }
 
 compileKotlin {

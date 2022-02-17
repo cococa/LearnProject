@@ -1,9 +1,9 @@
 <template>
   <div class="flex-col justify-center items-center">
-    <div class="ctn">
-        <p class="p1">冬奥会自开幕以来冬奥会自开幕以来冬奥冬奥会自开幕以来冬奥会自开幕以来冬奥会自开幕以来会自开幕以来冬奥会自开幕以来冬奥会自开幕以来冬奥会自开幕以来</p>
-        <p>loadmore</p>
-    </div>
+    <div  ref="divRef" :class="[textOver && !btnFold ? 'inner over' : 'inner','ctn']">
+        <p>冬奥会自开幕以来冬奥会自开幕以来冬奥冬奥 奥会自开幕以来冬奥会自开幕以来</p>
+        <p style="color:red;margin-left:10px">冬奥会自开幕以来冬奥会自开幕会自开幕以来冬奥会自开幕以来冬奥会自开幕以来</p>
+            </div>
     <!-- <router-link v-for="(item ,index) in routerList" :key="index" :to="item.path">Go to {{item.path}}</router-link> -->
     <router-view class="max-w-screen-sm bg-gray-50 min-h-full max-h-full">
     </router-view>
@@ -104,6 +104,8 @@ export default {
           "url(http://116.131.22.58:18060/img/login_kuang.3dcd8e64.png)",
         backgroundRepeat: "no-repeat",
       },
+      textOver: false, //文本是否超出3行
+      btnFold: false, //按钮默认显示展开
       //img : require("./assets/border.png")
     };
   },
@@ -114,9 +116,31 @@ export default {
     this.routerList = this.$router.getRoutes();
     console.log("getData");
     this.getData();
+    setTimeout(()=>{
+        if (this.$refs.divRef) {
+        let descHeight = window
+          .getComputedStyle(this.$refs.divRef)
+          .height.replace("px", "");
+        console.log("descHeight:" + descHeight);
+        if (descHeight > 60) {
+          this.textOver= true;
+        } else {
+          this.textOver= false;
+        }
+      }
+    },1000)
   },
   methods: {
     getData() {
+      const rowContent = {
+          color: '#333',
+          fontSize : 12,
+          innerText: '',
+          marginLeft: 0,
+          marginRight: 0
+      }  
+
+
       axios
         .get("http://47.98.197.126:9999/mock/11/stz/home/station")
         .then((res) => {
@@ -136,8 +160,17 @@ export default {
 </script>
 
 <style scoped>
+
+.over {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
 p{
   display: inline;
+  font-size: 5px;
 }
 
 
@@ -146,8 +179,8 @@ p{
 }
 
 .p1{
-  height: 75px;
-  line-height: 75px;
+  /* height: 75px;
+  line-height: 75px; */
   font-size: 25px;
 }
 
