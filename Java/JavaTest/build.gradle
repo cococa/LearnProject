@@ -33,11 +33,11 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
 
-
     // https://github.com/hekailiang/squirrel
     implementation group: 'org.restcomm.fsm', name: 'squirrel-foundation', version: '0.3.9.11'
-
     implementation 'org.jeasy:easy-states:2.0.0'
+    // https://mvnrepository.com/artifact/io.netty/netty-all
+    implementation group: 'io.netty', name: 'netty-all', version: '4.1.74.Final'
 
 
 }
