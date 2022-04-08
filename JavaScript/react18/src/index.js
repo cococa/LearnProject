@@ -3,24 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-// import { Router, Route,hashHistory } from 'react-router'
-// import { BrowserRouter as Router, Route } from 'react-router-dom';
-// var ReactRouter = require('react-router')
-// var Router = ReactRouter.Router
-// var Route = ReactRouter.Route
-// var Link = ReactRouter.Link
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-
-  // (
-  //   <Router >
-  //   <Route path="/" component={App}>
-  //   </Route>
-  // </Router>
-  // ), 
   document.getElementById('root')
 );
 

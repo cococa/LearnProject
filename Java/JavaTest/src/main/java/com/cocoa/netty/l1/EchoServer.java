@@ -7,6 +7,7 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
+import io.netty.handler.logging.LoggingHandler;
 import org.jetbrains.annotations.NotNull;
 
 import java.net.InetSocketAddress;
@@ -30,11 +31,12 @@ public class EchoServer {
             serverBootstrap.group(eventLoopGroup)
                     .channel(NioServerSocketChannel.class)
                     .localAddress(new InetSocketAddress(port))
+                    .handler(new LoggingHandler())
                     .childHandler(new ChannelInitializer<SocketChannel>() {
 
                         @Override
                         protected void initChannel(@NotNull SocketChannel ch) throws Exception {
-                            ch.pipeline().addLast(echoServerHandler);
+                            ch.pipeline().addLast(echoServerHandler) ; //.addLast(new EchoServerHandler2());
                         }
                     });
             ChannelFuture sync = serverBootstrap.bind().sync();

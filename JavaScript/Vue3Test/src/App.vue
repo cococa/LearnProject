@@ -1,9 +1,11 @@
 <template>
   <div class="flex-col justify-center items-center">
-    <div  ref="divRef" :class="[textOver && !btnFold ? 'inner over' : 'inner','ctn']">
-        <p>冬奥会自开幕以来冬奥会自开幕以来冬奥冬奥 奥会自开幕以来冬奥会自开幕以来</p>
-        <p style="color:red;margin-left:10px">冬奥会自开幕以来冬奥会自开幕会自开幕以来冬奥会自开幕以来冬奥会自开幕以来</p>
-            </div>
+  
+    <div class="test1">
+      <div class="test2">我怕的</div>
+    </div>
+
+    
     <!-- <router-link v-for="(item ,index) in routerList" :key="index" :to="item.path">Go to {{item.path}}</router-link> -->
     <router-view class="max-w-screen-sm bg-gray-50 min-h-full max-h-full">
     </router-view>
@@ -97,6 +99,7 @@ export default {
         "https://img0.baidu.com/it/u=3311900507,1448170316&fm=26&fmt=auto&gp=0.jpg",
         "https://img2.baidu.com/it/u=325567737,3478266281&fm=26&fmt=auto&gp=0.jpg",
       ],
+      height: 200,
       list: [1, 2, 3, 4, 5, 6, 7, 8, 9],
       routerList: [],
       setBackground: {
@@ -116,30 +119,30 @@ export default {
     this.routerList = this.$router.getRoutes();
     console.log("getData");
     this.getData();
-    setTimeout(()=>{
-        if (this.$refs.divRef) {
+    setTimeout(() => {
+      if (this.$refs.divRef) {
         let descHeight = window
           .getComputedStyle(this.$refs.divRef)
           .height.replace("px", "");
         console.log("descHeight:" + descHeight);
         if (descHeight > 60) {
-          this.textOver= true;
+          this.textOver = true;
         } else {
-          this.textOver= false;
+          this.textOver = false;
         }
       }
-    },1000)
+    }, 1000);
   },
   methods: {
+ 
     getData() {
       const rowContent = {
-          color: '#333',
-          fontSize : 12,
-          innerText: '',
-          marginLeft: 0,
-          marginRight: 0
-      }  
-
+        color: "#333",
+        fontSize: 12,
+        innerText: "",
+        marginLeft: 0,
+        marginRight: 0,
+      };
 
       axios
         .get("http://47.98.197.126:9999/mock/11/stz/home/station")
@@ -160,7 +163,6 @@ export default {
 </script>
 
 <style scoped>
-
 .over {
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -168,17 +170,16 @@ export default {
   overflow: hidden;
 }
 
-p{
+p {
   display: inline;
   font-size: 5px;
 }
 
-
-.ctn{
+.ctn {
   /* height: 75px; */
 }
 
-.p1{
+.p1 {
   /* height: 75px;
   line-height: 75px; */
   font-size: 25px;
@@ -224,7 +225,8 @@ body {
 .arrow--1 {
   position: relative;
 }
-.arrow--1:after, .arrow--1:before {
+.arrow--1:after,
+.arrow--1:before {
   border: solid transparent;
   content: " ";
   display: block;
@@ -252,7 +254,8 @@ body {
 .arrow--2 {
   position: relative;
 }
-.arrow--2:after, .arrow--2:before {
+.arrow--2:after,
+.arrow--2:before {
   border: solid transparent;
   content: " ";
   display: block;
@@ -279,7 +282,8 @@ body {
 .arrow--3 {
   position: relative;
 }
-.arrow--3:after, .arrow--3:before {
+.arrow--3:after,
+.arrow--3:before {
   border: solid transparent;
   content: " ";
   display: block;
@@ -307,7 +311,8 @@ body {
 .arrow--4 {
   position: relative;
 }
-.arrow--4:after, .arrow--4:before {
+.arrow--4:after,
+.arrow--4:before {
   border: solid transparent;
   content: " ";
   display: block;
@@ -336,7 +341,8 @@ body {
   position: relative;
   border: none;
 }
-.arrow--5:after, .arrow--5:before {
+.arrow--5:after,
+.arrow--5:before {
   border: solid transparent;
   content: " ";
   display: block;
@@ -364,7 +370,8 @@ body {
 .arrow--6 {
   position: relative;
 }
-.arrow--6:after, .arrow--6:before {
+.arrow--6:after,
+.arrow--6:before {
   border: solid transparent;
   content: " ";
   display: block;
@@ -393,7 +400,8 @@ body {
 .arrow--7 {
   position: relative;
 }
-.arrow--7:after, .arrow--7:before {
+.arrow--7:after,
+.arrow--7:before {
   border: solid transparent;
   content: " ";
   display: block;
@@ -422,7 +430,8 @@ body {
 .arrow--8 {
   position: relative;
 }
-.arrow--8:after, .arrow--8:before {
+.arrow--8:after,
+.arrow--8:before {
   border: solid transparent;
   content: " ";
   display: block;
@@ -451,7 +460,8 @@ body {
 .arrow--9 {
   position: relative;
 }
-.arrow--9:after, .arrow--9:before {
+.arrow--9:after,
+.arrow--9:before {
   border: solid transparent;
   content: " ";
   display: block;
@@ -481,7 +491,8 @@ body {
   position: relative;
   border: none;
 }
-.arrow--10:after, .arrow--10:before {
+.arrow--10:after,
+.arrow--10:before {
   border: solid transparent;
   content: " ";
   display: block;
@@ -507,29 +518,106 @@ body {
   border-width: 10px;
 }
 .arrowaa {
-                width: 20px;
-                height: 4px;
-                margin: 0 auto 7px;
-                border-left: 4px solid transparent;
-                border-right: 4px solid transparent;
-                border-bottom: 4px solid #343c99;
-                transform: rotate(45deg);
-                transform-origin: left;
-            }
-            
-            .arrowaa:after {
-                content: '';
-                display: block;
-                width: 100%;
-                height: 100%;
-                border-left: 4px solid transparent;
-                border-right: 4px solid transparent;
-                border-top: 4px solid #343c99;
-                position: absolute;
-                right: -10px;
-                top: -14px;
-                transform: rotate(90deg);
-                transform-origin: bottom;
-            }
+  width: 20px;
+  height: 4px;
+  margin: 0 auto 7px;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid #343c99;
+  transform: rotate(45deg);
+  transform-origin: left;
+}
+
+.arrowaa:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid #343c99;
+  position: absolute;
+  right: -10px;
+  top: -14px;
+  transform: rotate(90deg);
+  transform-origin: bottom;
+}
+
+.btn {
+  height: 200px;
+  width: 30px;
+  text-wrap: normal;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  color: #fff;
+  border-color: aqua;
+  border-width: 3px;
+  border-style: solid;
+}
+
+.top-btn {
+  background: linear-gradient(-60deg, transparent 21px, #d12826 0) bottom right;
+  /* margin-top: 21px; */
+}
+
+.bottom-btn {
+  margin-top: -42px;
+  /* height: 100px; */
+  background: linear-gradient(130deg, transparent 21px, green 0) bottom right;
+}
+
+.left-btn {
+  /* width: 200px; */
+  /* background-size: 90%;  */
+  padding: 6px 35px 6px 12px;
+  background-repeat: no-repeat;
+  background: linear-gradient(-65deg, transparent 22px, #58a 0);
+}
+
+.right-btn1 {
+  margin-left: -25px;
+  padding: 3px;
+  background-repeat: no-repeat;
+  background: linear-gradient(-65deg, transparent 22px, #58a 0);
+}
+.right-btn2 {
+  padding: 6px 35px 6px 12px;
+  background-repeat: no-repeat;
+  background: linear-gradient(-65deg, transparent 22px, #000 0);
+}
+
+.parent {
+  /* line-height: 90px; */
+  background: green;
+  /* height: 200px; */
+}
+
+.child {
+  background-color: red;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+
+
+.test1{
+  transform:skewX(-40deg);
+  padding:0px 10px;
+  width: 80px;
+  height: 60px;
+  text-align: center;
+  background-color: rgba(0, 255, 0, 0.6);
+  border: solid 2px red;
+}
+
+.test2{
+  transform:skewX(40deg);
+}
 
 </style>

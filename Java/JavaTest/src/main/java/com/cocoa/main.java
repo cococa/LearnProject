@@ -1,10 +1,12 @@
 package com.cocoa;
 
 
-import com.alibaba.excel.EasyExcel;
-import com.alibaba.excel.context.AnalysisContext;
-import com.alibaba.excel.event.AnalysisEventListener;
-import com.alibaba.fastjson.JSONObject;
+import com.tencentcloudapi.common.Credential;
+import com.tencentcloudapi.common.exception.TencentCloudSDKException;
+import com.tencentcloudapi.common.profile.ClientProfile;
+import com.tencentcloudapi.common.profile.HttpProfile;
+import com.tencentcloudapi.tdmq.v20200217.TdmqClient;
+import com.tencentcloudapi.tdmq.v20200217.models.*;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -73,18 +75,18 @@ public class main {
 
     public static void main(String[] args) throws ParseException, IOException {
 
-        String s =  "中";
-
-        for(Byte b : s.getBytes()) {
-            System.out.println(b);
-        }
-
-        String sss = new String(s.getBytes());
-
-        Long  a = new Long(123);
-        Long  b = new Long(123);
-
-        System.out.println(a.equals(b));
+//        String s =  "中";
+//
+//        for(Byte b : s.getBytes()) {
+//            System.out.println(b);
+//        }
+//
+//        String sss = new String(s.getBytes());
+//
+//        Long  a = new Long(123);
+//        Long  b = new Long(123);
+//
+//        System.out.println(a.equals(b));
 
 
 //        main main = new main();
@@ -203,7 +205,7 @@ public class main {
 //            }
 //        }).sheet().doRead();
 
-
+  
     }
 
 

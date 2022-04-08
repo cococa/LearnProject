@@ -38,6 +38,9 @@ dependencies {
     implementation 'org.jeasy:easy-states:2.0.0'
     // https://mvnrepository.com/artifact/io.netty/netty-all
     implementation group: 'io.netty', name: 'netty-all', version: '4.1.74.Final'
+// https://mvnrepository.com/artifact/com.tencentcloudapi/tencentcloud-sdk-java-tdmq
+    implementation 'com.tencentcloudapi:tencentcloud-sdk-java-tdmq:3.1.479'
+
 
 
 }

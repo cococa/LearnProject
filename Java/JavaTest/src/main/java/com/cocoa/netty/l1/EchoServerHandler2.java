@@ -11,17 +11,16 @@ import org.jetbrains.annotations.NotNull;
 
 
 @ChannelHandler.Sharable
-public class EchoServerHandler extends ChannelInboundHandlerAdapter {
+public class EchoServerHandler2 extends ChannelInboundHandlerAdapter {
 
 
     @Override
     public void channelRead(@NotNull ChannelHandlerContext ctx, @NotNull Object msg) throws Exception {
         if (msg instanceof ByteBuf) {
             ByteBuf in = (ByteBuf) msg;
-            System.out.println("EchoServerHandler server received+ " + in.toString(CharsetUtil.UTF_8));
+            System.out.println("EchoServerHandler2 server received+ " + in.toString(CharsetUtil.UTF_8));
             ctx.write(in);
             ctx.write(in);
-
         }
     }
 
