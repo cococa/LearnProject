@@ -75,6 +75,14 @@ public class main {
 
     public static void main(String[] args) throws ParseException, IOException {
 
+        String str = "\uD83C\uDF49\uD83C\uDF47\uD83C\uDF51\uD83C\uDF53\uD83E\uDD5D";
+        byte[] bytes = str.getBytes(StandardCharsets.UTF_8);
+        for (byte b : bytes) {
+            System.out.println(Integer.toHexString(b));
+
+        }
+
+
 //        String s =  "中";
 //
 //        for(Byte b : s.getBytes()) {
@@ -205,7 +213,7 @@ public class main {
 //            }
 //        }).sheet().doRead();
 
-  
+
     }
 
 
