@@ -1,31 +1,30 @@
 <template>
   <div class="flex flex-1 flex-col">
     <vue3-markdown-it :source="source" />
-    
-    <div v-if="userInfo && userInfo.address">{{userInfo.address.name}}</div>
-    <div>{{userInfo && userInfo.address 
-        && userInfo.address.name}}</div>
 
-    <div style="background-color:red">{{userInfo?.address?.name}}</div>
-    <div style="background-color:green">{{userInfo?.address?.name || "default value"}}</div>
-    
-    
-    <div>当 age=0 时，测试 ?? 和 || </div>
-    <div style="background-color:green">??===>{{ age ?? "default value"}}</div>
-    <div style="background-color:red">||===>{{ age || "default value"}}</div>
+    <div v-if="userInfo && userInfo.address">{{ userInfo.address.name }}</div>
+    <div>{{ userInfo && userInfo.address && userInfo.address.name }}</div>
 
+    <div style="background-color: red">{{ userInfo?.address?.name }}</div>
+    <div style="background-color: green">
+      {{ userInfo?.address?.name || "default value" }}
+    </div>
+
+    <div>当 age=0 时，测试 ?? 和 ||</div>
+    <div style="background-color: green">
+      ??===>{{ age ?? "default value" }}
+    </div>
+    <div style="background-color: red">||===>{{ age || "default value" }}</div>
 
     <button type="button" @click="testArray">testArray</button>
-
   </div>
 </template>
 
 <script lang="ts">
 import VueMarkdownIt from "vue3-markdown-it";
-import { ArrayUtil } from '../../util/index.js'
+import { ArrayUtil } from "../../util/index.js";
 
-
-function test(){
+function test() {
   return `
   \`\`\`html
 
@@ -46,9 +45,8 @@ function test(){
       
   \`\`\`
   ## 
-  `
+  `;
 }
-
 
 export default {
   name: "",
@@ -59,17 +57,17 @@ export default {
     return {
       source: test(),
       name: "shencocoa",
-      userInfo:{
+      userInfo: {
         // address:{}
       },
-      age:0,
+      age: 0,
       list: [1, 2, 3, 4],
     };
   },
   mounted() {},
   methods: {
-    testArray(){
-        ArrayUtil.testArray();
+    testArray() {
+      ArrayUtil.testArray();
     },
     base1() {
       // 箭头函数的基本使用

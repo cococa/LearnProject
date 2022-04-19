@@ -23,7 +23,8 @@ public class EchoServer {
 
 
     public void start(int port) throws Exception {
-        final EchoServerHandler echoServerHandler = new EchoServerHandler();
+        final EchoServerHandler echoServerHandler1 = new EchoServerHandler();
+        final EchoServerHandler echoServerHandler2 = new EchoServerHandler();
         EventLoopGroup eventLoopGroup = new NioEventLoopGroup();
 
         try {
@@ -36,7 +37,8 @@ public class EchoServer {
 
                         @Override
                         protected void initChannel(@NotNull SocketChannel ch) throws Exception {
-                            ch.pipeline().addLast(echoServerHandler) ; //.addLast(new EchoServerHandler2());
+                            ch.pipeline().addLast(echoServerHandler1)
+                                    .addLast(echoServerHandler2); //.addLast(new EchoServerHandler2());
                         }
                     });
             ChannelFuture sync = serverBootstrap.bind().sync();

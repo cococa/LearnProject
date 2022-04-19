@@ -24,7 +24,7 @@ export default {
   data() {
     return {
       routerList: [],
-      firstRouterName: ["js", "ts", "vue3", "vue2", "es6"],
+      firstRouterName: ["js", "ts", "vue", "es6"],
     };
   },
   components: {},

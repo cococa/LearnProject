@@ -1,4 +1,3 @@
-
 import Home from "../pages/Home.vue";
 
 //js
@@ -6,18 +5,19 @@ import JsIndex from "../pages/js/index.vue";
 import JsObject from "../pages/js/object.vue";
 import arrowFunction from "../pages/js/arrowFunction.vue";
 import optional from "../pages/js/optional.vue";
+import objObserver from "../pages/js/objObserver.vue";
 
 //ts
 import TsIndex from "../pages/ts/index.vue";
 import BasicType from "../pages/ts/BasicType.vue";
 import Variable from "../pages/ts/Variable.vue";
-import Interfaces from "../pages/ts/Interfaces.vue"
+import Interfaces from "../pages/ts/Interfaces.vue";
 
 //vue
+import VueIndex from "../pages/vue/index.vue";
 import TestSetup from "../pages/vue/TestSetup.vue";
 import TestProvideInject from "../pages/vue/TestProvideInject.vue";
 import TestRenderFunction from "../pages/vue/TestRenderFunction.vue";
-
 
 import { createRouter, createWebHashHistory } from "vue-router";
 
@@ -28,14 +28,40 @@ const routes = [
   { path: "/", name: "/", component: Home },
   { path: "/TestSetup", name: "TestSetup", component: TestSetup },
   {
-    path: "/TestProvideInject",
-    name: "TestProvideInject",
-    component: TestProvideInject,
+    path: "/vue/index",
+    name: "vue",
+    component: VueIndex,
+    meta: {
+      title: "Vue3",
+      keepAlive: true,
+    },
   },
   {
-    path: "/TestRenderFunction",
+    path: "/vue/TestProvideInject",
+    name: "/TestProvideInject",
+    component: TestProvideInject,
+    meta: {
+      title: "TestProvideInject",
+      keepAlive: true,
+    },
+  },
+  {
+    path: "/vue/TestRenderFunction",
     name: "TestRenderFunction",
     component: TestRenderFunction,
+    meta: {
+      title: "TestRenderFunction",
+      keepAlive: true,
+    },
+  },
+  {
+    path: "/vue/TestSetup",
+    name: "TestSetup",
+    component: TestSetup,
+    meta: {
+      title: "TestSetup",
+      keepAlive: true,
+    },
   },
   {
     path: "/ts/index",
@@ -107,6 +133,15 @@ const routes = [
     component: optional,
     meta: {
       title: "js optional",
+      keepAlive: true,
+    },
+  },
+  {
+    path: "/js/objObserver",
+    name: "objObserver",
+    component: objObserver,
+    meta: {
+      title: "js objObserver",
       keepAlive: true,
     },
   },

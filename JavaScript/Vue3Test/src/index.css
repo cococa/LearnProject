@@ -22,7 +22,7 @@
 }
 
 
-/*! @import */
-/* @tailwind base;
+/* ! @import  */
+@tailwind base;
 @tailwind components;
-@tailwind utilities; */
+@tailwind utilities; 

@@ -22,7 +22,18 @@ impl<T> Point<T>{
     }
 }
 
+// 只有在 Point 为i32 时，才能调用 Point::x1
+impl Point<i32>{
+    fn x1(&self) -> &i32{
+        &self.x
+    }
+}
 
+
+enum Result<T, E> {
+    Ok(T),
+    Err(E)
+}
 
 
 fn main(){
@@ -32,6 +43,7 @@ fn main(){
 
     let integer = Point{x : 1, y : 2};
     println!("{}", integer.x());
+    println!("{}", integer.x1());
 
 
 }
