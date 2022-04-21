@@ -12,6 +12,8 @@ public class TestSimpleSocketClient {
 
         Socket socket = new Socket("127.0.0.1", 8888);
 
+//        socket.getInputStream()
+
         OutputStream outputStream = socket.getOutputStream();
 
         PrintWriter p = new PrintWriter(outputStream);

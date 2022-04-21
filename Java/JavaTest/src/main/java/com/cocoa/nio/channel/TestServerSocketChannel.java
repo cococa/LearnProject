@@ -18,9 +18,7 @@ public class TestServerSocketChannel {
     public static void main(String[] args) throws Exception {
 
         ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
-
         serverSocketChannel.configureBlocking(false);
-
         serverSocketChannel.bind(new InetSocketAddress("127.0.0.1", 8888));
 
         while (true) {
@@ -29,11 +27,8 @@ public class TestServerSocketChannel {
             SocketChannel socketChannel = serverSocketChannel.accept();
             if (socketChannel != null) {
                 ByteBuffer byteBuffer = ByteBuffer.allocate(1024);
-
                 while (socketChannel.read(byteBuffer) > -1) {
-
                     byteBuffer.flip();
-
                     while (byteBuffer.hasRemaining()) {
                         System.out.print((char) byteBuffer.get());
                     }

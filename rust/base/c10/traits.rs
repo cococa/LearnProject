@@ -1,4 +1,10 @@
 
+
+trait i {
+    fn f(&self);
+}
+
+
 struct Weibo{
     title: String,
     content : String,
