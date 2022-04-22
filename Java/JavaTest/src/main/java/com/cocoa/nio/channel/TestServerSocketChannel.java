@@ -2,6 +2,7 @@ package com.cocoa.nio.channel;
 
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
+import java.nio.channels.Selector;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
 
@@ -20,6 +21,10 @@ public class TestServerSocketChannel {
         ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
         serverSocketChannel.configureBlocking(false);
         serverSocketChannel.bind(new InetSocketAddress("127.0.0.1", 8888));
+
+        Selector selector = Selector.open();
+
+
 
         while (true) {
             Thread.sleep(1000);

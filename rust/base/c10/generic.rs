@@ -42,6 +42,7 @@ fn main(){
     println!("the largest = {}", result);
 
     let integer = Point{x : 1, y : 2};
+    // let float = Point{x : 1.0, y : 2};   // expected floating-point number, found integer
     println!("{}", integer.x());
     println!("{}", integer.x1());
 
