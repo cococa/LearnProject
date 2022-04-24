@@ -1,9 +1,9 @@
-package com.cocoa.nio.channel;
+package com.cocoa.nio;
 
 import java.io.*;
 import java.net.Socket;
 
-public class TestSimpleSocketClient {
+public class CommSocketClientTest {
 
 
     public static void main(String[] args) throws Exception {

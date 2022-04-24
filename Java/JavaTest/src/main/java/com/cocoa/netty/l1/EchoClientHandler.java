@@ -11,13 +11,17 @@ public class EchoClientHandler extends SimpleChannelInboundHandler<ByteBuf> {
 
     @Override
     public void channelActive(@NotNull ChannelHandlerContext ctx) throws Exception {
-        ctx.writeAndFlush(Unpooled.copiedBuffer("cocoa", CharsetUtil.UTF_8));
+        ctx.writeAndFlush(Unpooled.copiedBuffer("/Users/shenjun/Documents/cocoa/LearnProject/Java/JavaTest/src/main/java/com/cocoa/netty/file/FileServer.java\n", CharsetUtil.UTF_8));
     }
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, ByteBuf msg) throws Exception {
         System.out.println(
                 "Client received: " + msg.toString(CharsetUtil.UTF_8));
+
+        ctx.writeAndFlush(Unpooled.copiedBuffer("/Users/shenjun/Documents/cocoa/LearnProject/Java/JavaTest/src/main/java/com/cocoa/netty/file/FileServer.java\n", CharsetUtil.UTF_8));
+        ctx.flush();
+
     }
 
     @Override

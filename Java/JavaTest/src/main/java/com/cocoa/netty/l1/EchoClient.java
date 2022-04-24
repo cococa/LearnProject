@@ -30,14 +30,14 @@ public class EchoClient {
             Bootstrap bootstrap = new Bootstrap();
             bootstrap.group(eventLoopGroup)
                     .channel(NioSocketChannel.class)
-                    .remoteAddress(new InetSocketAddress("127.0.0.1",8888))
+//                    .remoteAddress(new InetSocketAddress("127.0.0.1",8888))
                     .handler(new ChannelInitializer<SocketChannel>() {
                         @Override
                         protected void initChannel(@NotNull SocketChannel ch) throws Exception {
                             ch.pipeline().addLast(new EchoClientHandler());
                         }
                     });
-            ChannelFuture sync = bootstrap.connect().sync();
+            ChannelFuture sync = bootstrap.connect("127.0.0.1",8888).sync();
             sync.channel().closeFuture().sync();
         } finally {
             eventLoopGroup.shutdownGracefully().sync();
