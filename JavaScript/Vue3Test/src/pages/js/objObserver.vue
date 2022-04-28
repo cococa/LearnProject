@@ -1,11 +1,11 @@
-//
 <template>
   <div class="flex flex-1 flex-col">
     <div>{{ x }}</div>
     <div v-for="(item, index) in codeArray" :key="index" class="item">
+      <p v-if="item.msg">{{ item.msg }}</p>
       <vue3-markdown-it :source="item.code" />
       <button @click="testClick(item.methodName)">
-        testMethod({{ item.methodName }})
+        点击测试({{ item.methodName }})
       </button>
     </div>
   </div>
@@ -14,22 +14,22 @@
 <script lang="ts">
 import { ref } from "vue";
 import { reactive } from "vue";
-import VueMarkdownIt from "vue3-markdown-it";
+// import VueMarkdownIt from "vue3-markdown-it";
 import mixinCode from "../../mixins/mixinCode";
-
+import { Dep } from "./Dep.js";
 // 参考文档
 // https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
 // https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy
 
 export default {
   name: "asd",
-  components: {
-    VueMarkdownIt,
-  },
+  
   mixins: [mixinCode],
   data() {
     return {
       name: "shencocoa",
+      msg_base8:
+        "base8 方法的意图是：<br/> 利用Proxy 实现 AOP 功能，具体是记录了某些方法的调用时间",
     };
   },
   mounted() {},
@@ -223,7 +223,15 @@ export default {
         console.log(p(1, 2));
       });
     },
+    base9() {
+      const dep = new Dep({ name: "cocoa" });
+      console.log(dep.id, dep.name);
+    },
+    xx() {
+      location.reload() 
+    },
   },
+
   setup(props) {
     const x = ref(0);
     const y = reactive({
@@ -232,7 +240,7 @@ export default {
     });
     console.log(x);
     console.log(y);
-    
+
     return {
       x,
     };

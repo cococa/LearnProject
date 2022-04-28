@@ -1,3 +1,7 @@
+import VueMarkdownIt from "vue3-markdown-it";
+
+
+
 function testCode(res) {
   return `
   #  
@@ -13,6 +17,7 @@ const mixinCode = {
   data() {
     return {
       codeArray: [],
+      
     };
   },
   created() {},
@@ -22,6 +27,7 @@ const mixinCode = {
       if (element != "testClick") {
         const code = {
           methodName: element,
+          msg: this['msg_'+element] ? this['msg_'+element].toString() : "",
           code: testCode(this.$options.methods[element]),
         };
         this.codeArray.push(code);

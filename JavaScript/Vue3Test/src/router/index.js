@@ -6,6 +6,8 @@ import JsObject from "../pages/js/object.vue";
 import arrowFunction from "../pages/js/arrowFunction.vue";
 import optional from "../pages/js/optional.vue";
 import objObserver from "../pages/js/objObserver.vue";
+import closure from "../pages/js/closure.vue";
+
 
 //ts
 import TsIndex from "../pages/ts/index.vue";
@@ -145,6 +147,17 @@ const routes = [
       keepAlive: true,
     },
   },
+  {
+    path: "/js/closure",
+    name: "closure",
+    component: closure,
+    meta: {
+      title: "js closure",
+      keepAlive: true,
+    },
+  },
+
+  
 ];
 
 const router = createRouter({

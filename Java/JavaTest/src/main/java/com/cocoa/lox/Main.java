@@ -18,11 +18,15 @@ public class Main {
 //                "var name = 1 * 1; \n";
 
 
-        String source = "var a = 123.12;";
+//        String source = "var a = 123.12;";
+//
+//        Scanner scanner = new Scanner(source);
+//        List<Token> tokens = scanner.scanTokens();
+//        tokens.stream().forEach(System.out::println);
 
-        Scanner scanner = new Scanner(source);
-        List<Token> tokens = scanner.scanTokens();
-        tokens.stream().forEach(System.out::println);
+        String source = "vara12312";
+        System.out.println(source.hashCode());
+
 
     }
 

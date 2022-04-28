@@ -8,7 +8,6 @@
 
 // printLabel(myObj);
 
-
 // // 用interface 重写上面的代码
 
 // interface Labeler{
@@ -41,12 +40,8 @@
 // // ro.length = 10
 // // ro[1] = 10
 
-
 // // readonly 和 const
 // // readonly作为属性使用， const 作为变量使用
-
-
-
 
 // // 可选类型
 // interface Config{
@@ -58,10 +53,10 @@
 // function test1(config:Config){
 //        if(config.color){
 //            console.log(config.color)
-//        } 
+//        }
 //        if(config.width){
 //            console.log(config.width)
-//        } 
+//        }
 // }
 // //加入输入错误的，比如笔误colour，编译将无法通过
 // test1({color:'red',width:1123});
@@ -76,7 +71,6 @@
 // test1(newObj);
 
 // // 至此。上面printLabel1 的问题都已经解释了
-
 
 // // 函数类型
 // interface Equals{
@@ -100,7 +94,6 @@
 // let myArray : StringArray = ["Hello","ccooa"]
 // let s : string = myArray[0]
 
-
 // // 类类型
 
 // interface Dater{
@@ -114,7 +107,6 @@
 //         this. currentTime = d
 //     }
 // }
-
 
 // //类静态部分与实例部分的区别
 // //当你操作类和接口的时候，你要知道类是具有两个类型的：静态部分的类型和实例的类型。 你会注意到，当你用构造器签名去定义一个接口并试图定义一个类去实现这个接口时会得到一个错误：
@@ -130,7 +122,6 @@
 
 // // 太烦了，没看明白，跳过
 
-
 // // 继承接口
 // interface Shape{
 //     color : string
@@ -144,132 +135,112 @@
 // square.length = 10
 // square.color  = "red"
 
-
-
-interface LabelValue{
-    label : String;
-    age? : number;
+interface LabelValue {
+  label: String;
+  age?: number;
 }
 
-function printLabel(labelObj : LabelValue){
-    console.log(labelObj.label);
+function printLabel(labelObj: LabelValue) {
+  console.log(labelObj.label);
 }
 
-let myObj = { size: 10 , label: "size of 10 object"}
-printLabel(myObj)
-printLabel({label:"cocoa"})  // 这样的写法不能再增加新的属性
+let myObj = { size: 10, label: "size of 10 object" };
+printLabel(myObj);
+printLabel({ label: "cocoa" }); // 这样的写法不能再增加新的属性
 
-
-function testOption(labelObj : LabelValue){
-    if(labelObj.age){
-        console.log("testOption="+labelObj.age);
-    }else{
-        console.log("sorry age prop not found");
-    }
-
+function testOption(labelObj: LabelValue) {
+  if (labelObj.age) {
+    console.log("testOption=" + labelObj.age);
+  } else {
+    console.log("sorry age prop not found");
+  }
 }
 testOption(myObj);
 
-
 // 只读属性
-interface Point{
-    readonly x : number;
-    readonly y : number;
+interface Point {
+  readonly x: number;
+  readonly y: number;
 }
 
-let p1 : Point = {x: 1 , y: 1}
-// p1.x = 10   //error!! readonly 
+let p1: Point = { x: 1, y: 1 };
+// p1.x = 10   //error!! readonly
 
-
-
-let readonlyArray : ReadonlyArray<number> = [1,2,3]
+let readonlyArray: ReadonlyArray<number> = [1, 2, 3];
 // readonlyArray[1] = 10  // error
 
-
-interface SquareConfig{
-    name?: string;
-    age?: Number;
+interface SquareConfig {
+  name?: string;
+  age?: Number;
 }
 
-function test0x2( config: SquareConfig){
-    console.log(config);
+function test0x2(config: SquareConfig) {
+  console.log(config);
 }
 
 // test0x2({age12312:12, name:"cocoa"})  // 这样的写法，即使age 是可选的，也不能没有这个属性
 
-
 // 可以绕开这样的检测
 
-test0x2({age12312:123, name:"cocoa"} as SquareConfig)
-
+test0x2({ age12312: 123, name: "cocoa" } as SquareConfig);
 
 // 函数类型
 
-interface searchFun{
-    (name: string, age: number) : string;
+interface searchFun {
+  (name: string, age: number): string;
 }
 
-let search1 : searchFun ;
-search1 = function(name: string , age: number) : string{
-    let str = `the name = ${name} the age = ${age}`
-    console.log(str)
-    return  str
+let search1: searchFun;
+search1 = function (name: string, age: number): string {
+  let str = `the name = ${name} the age = ${age}`;
+  console.log(str);
+  return str;
+};
+
+search1("cocoa", 18);
+
+interface StringArray {
+  [index: number]: string; // index 是一种索引，类型是数字
 }
 
-search1("cocoa",18)
-
-
-interface StringArray{
-    [index : number] : string   // index 是一种索引，类型是数字
-}
-
-var sa : StringArray;
-sa = ["1","2","3"]
+var sa: StringArray;
+sa = ["1", "2", "3"];
 
 // function test0x3(sa : StringArray){
-//     console.log(sa.lenght);    
+//     console.log(sa.lenght);
 // }
 
 // TypeScript支持两种索引签名：字符串和数字
 
-
-
-
 // 类类型
 
-interface ClockInterface{
-    date: Date
-    setTime(date: Date);
+interface ClockInterface {
+  date: Date;
+  setTime(date: Date);
 }
 
-class Clock implements ClockInterface{
-    setTime(date: Date) {
-       this.date = date
-    }
-    date: Date
+class Clock implements ClockInterface {
+  setTime(date: Date) {
+    this.date = date;
+  }
+  date: Date;
 }
-
 
 //类静态部分与实例部分的区别   没看懂
 
-
-
 // 继承接口
 // 接口也是可以继承自一个或多个接口，多个用逗号隔开
-interface Shape{
-    name: string
+interface Shape {
+  name: string;
 }
 
-interface Square extends Shape{
-    color: string
+interface Square extends Shape {
+  color: string;
 }
 
-let sp = <Square>{}
-sp.color="red"
-sp.name="sp"
-
-
-
+let sp = <Square>{};
+sp.color = "red";
+sp.name = "sp";
 
 // class Control {
 //     private state: any;
@@ -296,25 +267,10 @@ sp.name="sp"
 
 // }
 
-
-
-
-
-interface TTTT{
-        readonly name  : String;
-        readonly aaa : number;
+interface TTTT {
+  readonly name: String;
+  readonly aaa: number;
 }
 
-var aaaa : TTTT = {name :"S123",aaa:12}
+var aaaa: TTTT = { name: "S123", aaa: 12 };
 // aaaa.aaa = 1
-
-
-
-
-
-
-
-
-
-
-
