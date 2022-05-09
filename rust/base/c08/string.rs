@@ -28,7 +28,7 @@ fn main(){
 
     let mut s3 = String::from("new String");
     s3.push_str(str); // push_
-
+    s3.push('!');
     println!("{}",s3);
 
 

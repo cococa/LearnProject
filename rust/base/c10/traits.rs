@@ -1,7 +1,9 @@
 
 
-trait i {
-    fn f(&self);
+trait I {
+    fn f(&self){
+       println!("I function f "); 
+    }
 }
 
 
@@ -22,6 +24,11 @@ impl Summary for Weibo{
     // fn summarize(&self) -> String{
     //     format!("{}-{}-{}",self.title,self.content,self.auther)
     // }
+}
+
+
+impl I for Weibo{
+
 }
 
 
@@ -53,6 +60,9 @@ fn main(){
     };
 
     println!("{}",wb.summarize());
+    
+    wb.f();    // 使用trait 默认实现
+
     print(&wb);
 
     print1(&wb);

@@ -8,12 +8,12 @@ import optional from "../pages/js/optional.vue";
 import objObserver from "../pages/js/objObserver.vue";
 import closure from "../pages/js/closure.vue";
 
-
 //ts
 import TsIndex from "../pages/ts/index.vue";
 import BasicType from "../pages/ts/BasicType.vue";
 import Variable from "../pages/ts/Variable.vue";
 import Interfaces from "../pages/ts/Interfaces.vue";
+import TestSnabbdom from "../pages/ts/TestSnabbdom.vue";
 
 //vue
 import VueIndex from "../pages/vue/index.vue";
@@ -102,6 +102,15 @@ const routes = [
     },
   },
   {
+    path: "/ts/TestSnabbdom",
+    name: "TestSnabbdom",
+    component: TestSnabbdom,
+    meta: {
+      title: "ts TestSnabbdom",
+      keepAlive: true,
+    },
+  },
+  {
     path: "/js/index",
     name: "js",
     component: JsIndex,
@@ -156,8 +165,6 @@ const routes = [
       keepAlive: true,
     },
   },
-
-  
 ];
 
 const router = createRouter({

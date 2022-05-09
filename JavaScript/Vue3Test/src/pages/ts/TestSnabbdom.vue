@@ -1,26 +1,23 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png" />
-    <div>{{ cc_count }}</div>
-    <h1>{{ msg }}</h1>
-    <button @click="changeCount">changeCount</button>
+  <div class="flex flex-1 flex-col">
+    
+
+    <vue3-markdown-it :source="source" />
+    <vue3-markdown-it :source="source" />
+    <div>
+        <button @click="test1">test1</button>
+        <div id="container"></div>
+    </div>
 
 
-    <div @click="test1">test1</div>
-    <div id="container"></div>
 
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li>
-        <a href="https://chat.vuejs.org" target="_blank">Community Chat</a>
-      </li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-    </ul>
   </div>
 </template>
 
-<script>
+<script lang="ts">
+// https://juejin.cn/post/6952332420716691486
+// http://snabbdom.github.io/snabbdom/examples/reorder-animation/
+import VueMarkdownIt from "vue3-markdown-it";
 
 import {
   init,
@@ -40,24 +37,28 @@ function someFn() {
 }
 
 export default {
-  name: "app",
+  name: "xx",
+  components: {
+    VueMarkdownIt,
+  },
   data() {
     return {
-      cc_count: 1,
-      msg: "Welcome to Your Vue.js App"
+      source: "",
+      aa: "",
     };
   },
-  watch:{
-      // cc_count: function(newValue, oldValue) {
-      //   console.log(newValue, oldValue);
-      // }
-  },
-  created() {
-    console.log("created");
+  mounted() {
+    this.loadFile("./ts/02variable.md");
   },
   methods: {
-    changeCount() {
-      this.cc_count++;
+    loadFile(fileName) {
+      //  更新数据devInfo.txt文件接口
+      let xhr = new XMLHttpRequest(),
+        okStatus = document.location.protocol === "file:" ? 0 : 200;
+      xhr.open("GET", fileName, false); // 文件路径
+      xhr.overrideMimeType("text/html;charset=utf-8"); //默认为utf-8
+      xhr.send(null);
+      this.source = xhr.responseText; //打印文件信息
     },
     test1() {
       const patch = init([
@@ -71,14 +72,7 @@ export default {
       const container = document.getElementById("container");
 
       const vnode = h("div#container.two.classes", { on: { click: someFn } }, [
-        h("span", { 
-          style: { fontWeight: "bold" },
-          hook :{
-            insert(vnode) {
-              console.log("insert"+ JSON.stringify(vnode));
-            }
-          }
-        }, "This is bold"),
+        h("span", { style: { fontWeight: "bold" } }, "This is bold"),
         " and this is just normal text",
         h("a", { props: { href: "/foo" } }, "I'll take you places!"),
       ]);
@@ -104,35 +98,8 @@ export default {
 
     },
   },
+  setup(props) {},
 };
 </script>
 
-<style>
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-
-h1,
-h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
-</style>
+<style></style>

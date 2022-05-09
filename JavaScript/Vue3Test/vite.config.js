@@ -4,9 +4,12 @@ import vue from "@vitejs/plugin-vue";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-//   publicPath: "./",
-  base:'/',
+  //   publicPath: "./",
+  base: "/",
   plugins: [vue()],
+  build: {
+    sourcemap: 'inline',
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
