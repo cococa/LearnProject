@@ -9,14 +9,14 @@
     <div @click="test1">test1</div>
     <div id="container"></div>
 
-    <ul>
+    <!-- <ul>
       <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
       <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
       <li>
         <a href="https://chat.vuejs.org" target="_blank">Community Chat</a>
       </li>
       <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-    </ul>
+    </ul> -->
   </div>
 </template>
 
