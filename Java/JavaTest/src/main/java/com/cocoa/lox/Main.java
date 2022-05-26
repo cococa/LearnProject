@@ -1,6 +1,7 @@
 package com.cocoa.lox;
 
 
+import java.util.Calendar;
 import java.util.List;
 
 public class Main {
@@ -24,8 +25,12 @@ public class Main {
 //        List<Token> tokens = scanner.scanTokens();
 //        tokens.stream().forEach(System.out::println);
 
-        String source = "vara12312";
-        System.out.println(source.hashCode());
+//        String source = "vara12312";
+//        System.out.println(source.hashCode());
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.DAY_OF_YEAR, calendar.get(Calendar.DAY_OF_YEAR) - 365);
+        System.out.println(calendar.getTime());
 
 
     }
