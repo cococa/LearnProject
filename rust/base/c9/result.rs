@@ -20,7 +20,7 @@ fn main(){
     //     //println!("error = {:?}",error)
     // };
 
-    test3();    
+    test5();    
 
 }
 
@@ -53,7 +53,6 @@ fn test2(){
 }
 
 fn test3(){
-
     let result = read_username_from_file();
      match result{
         Ok(str) => println!("username = {}",str),
@@ -66,4 +65,19 @@ fn read_username_from_file() -> Result<String, Error> {
     let mut s = String::new();
     f.read_to_string(&mut s)?;
     Ok(s)
-} 
+}
+
+
+fn test4(){
+   let mut f =  File::open("xxxx.txt").unwrap();
+   let mut s = String::new();
+   f.read_to_string(&mut s);
+    println!("{:?}",s);
+}
+
+
+fn test5(){
+    //  ? 运算符只能被用于返回值与 ? 作用的值相兼容的函数。因为 ? 运算符被定义为从函数中提早返回一个值
+    // 下面的代码会报错
+   let f = File::open("xxxx")?;
+}

@@ -1,0 +1,2 @@
+serviceA=com.cocoa.spi.dubbo.TestDubooSpiServiceAImpl
+serviceB=com.cocoa.spi.dubbo.TestDubooSpiServiceBImpl
