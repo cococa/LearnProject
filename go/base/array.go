@@ -14,32 +14,31 @@ go 数组
 
 type TYPE int
 
-const  (
+const (
 	T1 TYPE = iota
 	T2
 	T3
 )
 
-
 func main() {
 
 	fmt.Printf("the t3 is %d \n", T3)
 
-	var a1 [2]int 
+	var a1 [2]int
 	fmt.Println(a1)
 
-	a2 := [...]int{1,2,3,4}
+	a2 := [...]int{1, 2, 3, 4}
 	fmt.Println(a2)
 
-	var a3 [2]string = [2]string{"a3-0","a3-1"}
+	var a3 [2]string = [2]string{"a3-0", "a3-1"}
 	fmt.Println(a3)
 
 	for index, value := range a2 {
-		fmt.Printf("%d--%d ",index,value )
+		fmt.Printf("%d--%d ", index, value)
 	}
 	fmt.Println("")
-	fmt.Printf("the a2 length is %d \n",len(a2))
-	
+	fmt.Printf("the a2 length is %d \n", len(a2))
+
 	//定义一个长度为4的int 数组
 	var emeintArray [4]int //数组的定义1
 
@@ -64,7 +63,7 @@ func main() {
 
 	//遍历数组1
 	for i := 0; i < len(b); i++ {
-		fmt.Printf("%d---",b[i]);
+		fmt.Printf("%d---", b[i])
 	}
 
 	//遍历数组2
