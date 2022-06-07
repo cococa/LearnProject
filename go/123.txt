@@ -1,7 +1,8 @@
-1. go array slice 190924
-    1.1 slice 和数组的区别
-    1.2  下一期深入 slice
+// go语言圣经
+//https://yar999.gitbook.io/gopl-zh/ 
 
 
-2.  go map       190926
-    2.1 map 是引用类型，初始化 make(map[T]T)
+# method     220531
+
+
+
