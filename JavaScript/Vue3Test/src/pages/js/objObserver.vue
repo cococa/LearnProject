@@ -1,9 +1,21 @@
 <template>
   <div class="flex flex-1 flex-col">
-    <div>{{ x }}</div>
+    <vue3-markdown-it :source="code" />
+
     <div v-for="(item, index) in codeArray" :key="index" class="item">
-      <p v-if="item.msg">{{ item.msg }}</p>
-      <vue3-markdown-it :source="item.code" />
+      <div v-if="item.msg">
+        <div v-for="(citem, cindex) in item.msg.split('&&')" :key="cindex">
+          {{ citem }}
+        </div>
+      </div>
+      <!-- <vue3-markdown-it :source="item.code" /> -->
+      <div class="my-editor">
+        <prism-editor
+          v-model="item.code"
+          :highlight="highlighter"
+          line-numbers
+        ></prism-editor>
+      </div>
       <button @click="testClick(item.methodName)">
         点击测试({{ item.methodName }})
       </button>
@@ -17,24 +29,42 @@ import { reactive } from "vue";
 // import VueMarkdownIt from "vue3-markdown-it";
 import mixinCode from "../../mixins/mixinCode";
 import { Dep } from "./Dep.js";
+import prism from "prismjs";
+
 // 参考文档
 // https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
 // https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy
 
 export default {
   name: "asd",
-  
   mixins: [mixinCode],
   data() {
     return {
+      code: `
+      本章节对 Proxy 进行分析，
+      分析了 vue3 为什么放弃 Object.defineProperty 选择了 Proxy ，部分代码会设计到 vue 的响应式原理
+      并测试了 Proxy 别的强大功能，比如监听构造函数
+
+      `,
       name: "shencocoa",
-      msg_base8:
-        "base8 方法的意图是：<br/> 利用Proxy 实现 AOP 功能，具体是记录了某些方法的调用时间",
+      msg_base1: "demo1 使用了 Object.defineProperty 方法",
+      msg_base2: "demo2 参考了vue2 的源码，对监听对象的全部属性进行了代理",
+      msg_base8: `
+       base8 方法的意图是：&&
+       利用Proxy 实现 AOP 功能，具体是记录了某些方法的调用时间
+       `,
+      msg_base9: `
+       base9 方法的意图是：验证 defineProperty 和 proxy 的 key 的监听 &&
+       Object.defineProperty 只能监听指定的 key 所对应的 value 值的变化，而 Proxy 可以直接监听对象的所有key
+       `,
+      msg_vue3ReactiveV1:
+        "模仿 Vue3 响应式 版本v1 && 缺点: 监听不狗精细，回调函数没有对单独的 key 进行绑定",
     };
   },
   mounted() {},
   methods: {
     base1() {
+      // let ac
       let p = {};
       let name = "";
       Object.defineProperty(p, "name", {
@@ -224,11 +254,46 @@ export default {
       });
     },
     base9() {
-      const dep = new Dep({ name: "cocoa" });
-      console.log(dep.id, dep.name);
+      let obj = {};
+      let handler = {
+        get: function (target, property, receiver) {
+          console.log("base9 get", target);
+          return Reflect.get(target, property, receiver);
+        },
+        set: function (target, key, value, receiver) {
+          console.log("base9 set", value);
+          return Reflect.set(target, key, value, receiver);
+        },
+      };
+      const objProxy = new Proxy(obj, handler);
+      objProxy.name = "123";
+      console.log(objProxy.name);
     },
-    xx() {
-      location.reload() 
+    vue3ReactiveV1() {
+      let obj = {};
+      const fnList = new Set<Function>();
+      function reactive() {
+        console.log("reactive objProxy name is: ", objProxy.name);
+      }
+      let handler = {
+        get: function (target, property, receiver) {
+          // console.log("vue3ReactiveV1 get", target);
+          fnList.add(reactive);
+          return Reflect.get(target, property, receiver);
+        },
+        set: function (target, key, value, receiver) {
+          const res = Reflect.set(target, key, value, receiver);
+          fnList.forEach((fn) => fn());
+          // console.log("vue3ReactiveV1 set", value);
+          return res;
+        },
+      };
+      const objProxy = new Proxy(obj, handler);
+      objProxy.name = "123";
+      console.log(objProxy.name);
+      setTimeout(() => {
+        objProxy.name = "2222"; // 触发 reactive
+      }, 2000);
     },
   },
 
@@ -240,8 +305,11 @@ export default {
     });
     console.log(x);
     console.log(y);
-
+    const highlighter = (code) => {
+      return prism.highlight(code, prism.languages.js, "javascript");
+    };
     return {
+      highlighter,
       x,
     };
   },

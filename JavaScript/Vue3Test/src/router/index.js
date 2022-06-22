@@ -14,6 +14,10 @@ import BasicType from "../pages/ts/BasicType.vue";
 import Variable from "../pages/ts/Variable.vue";
 import Interfaces from "../pages/ts/Interfaces.vue";
 import TestSnabbdom from "../pages/ts/TestSnabbdom.vue";
+import TestModule from "../pages/ts/TestModule.vue";
+
+
+
 
 //vue
 import VueIndex from "../pages/vue/index.vue";
@@ -107,6 +111,15 @@ const routes = [
     component: TestSnabbdom,
     meta: {
       title: "ts TestSnabbdom",
+      keepAlive: true,
+    },
+  },
+  {
+    path: "/ts/TestModule",
+    name: "TestModule",
+    component: TestModule,
+    meta: {
+      title: "ts TestModule",
       keepAlive: true,
     },
   },

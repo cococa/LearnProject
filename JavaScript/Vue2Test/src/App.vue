@@ -7,7 +7,14 @@
 
 
     <div @click="test1">test1</div>
-    <div id="container"></div>
+
+    <button @click="test2">test2</button>
+    <div id="container">
+      <span>A</span>
+      <span>C</span>
+      <span>E</span>
+      <span>B</span>
+    </div>
 
     <!-- <ul>
       <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
@@ -70,20 +77,20 @@ export default {
 
       const container = document.getElementById("container");
 
-      const vnode = h("div#container.two.classes", { on: { click: someFn } }, [
-        h("span", { 
-          style: { fontWeight: "bold" },
-          hook :{
-            insert(vnode) {
-              console.log("insert"+ JSON.stringify(vnode));
-            }
-          }
-        }, "This is bold"),
-        " and this is just normal text",
-        h("a", { props: { href: "/foo" } }, "I'll take you places!"),
-      ]);
-      // Patch into empty DOM element – this modifies the DOM as a side effect
-      patch(container, vnode);
+      // const vnode = h("div#container.two.classes", { on: { click: someFn } }, [
+      //   h("span", { 
+      //     style: { fontWeight: "bold" },
+      //     hook :{
+      //       insert(vnode) {
+      //         console.log("insert"+ JSON.stringify(vnode));
+      //       }
+      //     }
+      //   }, "This is bold"),
+      //   " and this is just normal text",
+      //   h("a", { props: { href: "/foo" } }, "I'll take you places!"),
+      // ]);
+      // // Patch into empty DOM element – this modifies the DOM as a side effect
+      // patch(container, vnode);
 
       const newVnode = h(
         "div#container.two.classes",
@@ -100,6 +107,39 @@ export default {
       );
       // Second `patch` invocation
       const vvnode = patch(vnode, newVnode); // Snabbdom efficiently updates the old view to the new state
+      console.log(vvnode);
+
+    },
+    test2() {
+      const patch = init([
+        // Init patch function with chosen modules
+        classModule, // makes it easy to toggle classes
+        propsModule, // for setting properties on DOM elements
+        styleModule, // handles styling on elements with support for animations
+        eventListenersModule, // attaches event listeners
+      ]);
+
+      const container = document.getElementById("container");
+
+      // const vnode = h("div#container.two.classes", { on: { click: someFn } }, [
+      //   h("span", {}, "A"),
+      //   h("span", {}, "B"),
+      //   h("span", {}, "C"),
+      //   h("span", {}, "D"),
+      //   h("span", {}, "E"),
+      // ]);
+      // // Patch into empty DOM element – this modifies the DOM as a side effect
+      // patch(container, vnode);
+
+      const newVnode = h("div#container", { on: { click: someFn } }, [
+        h("span", {}, "A"),
+        h("span", {}, "C"),
+        h("span", {}, "B"),
+        h("span", {}, "D"),
+        h("span", {}, "E"),
+      ]);
+      // Second `patch` invocation
+      const vvnode = patch(container, newVnode); // Snabbdom efficiently updates the old view to the new state
       console.log(vvnode);
 
     },
