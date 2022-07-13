@@ -1,10 +1,20 @@
 <template>
   <div class="flex justify-center flex-col">
+    <div style="background-color: bisque;margin:20px 0px;">
+      <div>测试 script setup , 当使用 script setup 的时候，任何在 script setup 声明的顶层的绑定 (包括变量，函数声明，以及 import 引入的内容) 都能在模板中直接使用：</div>
+      <div>{{ setupCount }}</div>
+      <button @click="countPlus">countPlus</button>
+      <div>setup 标签中，连组件也可以直接使用，不用注册</div>
+      <InjectComponent></InjectComponent>
+    </div>
+
     <div>name from setup : {{ name }}</div>
     <button @click="clickFromSetup">click from setup</button>
     <div class="p-5"></div>
     <div>count from setup : {{ count }}</div>
-    <button class="border-gray-10 border-2 border-solid" @click="countPlus">click from setup use countPlus</button>
+    <button class="border-gray-10 border-2 border-solid" @click="countPlus">
+      click from setup use countPlus
+    </button>
 
     <div class="p-5"></div>
     <div>complexUserInfo : {{ complexUserInfo }}</div>
@@ -20,6 +30,15 @@
     <button class="" @click="changeDept">changeDept</button>
   </div>
 </template>
+
+<script setup>
+import InjectComponent from "../../components/InjectComponent.vue";
+import { ref } from "vue";
+const setupCount = ref(0);
+function countPlus() {
+  setupCount.value += 1;
+}
+</script>
 
 <script>
 import { onMounted, ref, watch } from "vue";

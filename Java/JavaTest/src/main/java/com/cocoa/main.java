@@ -14,8 +14,11 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class main {
 
@@ -72,16 +75,64 @@ public class main {
         return null;
     }
 
+   static class Person{
+        private Long id;
+        private String name;
+
+        @Override
+        public String toString() {
+            return "Person{" +
+                    "id=" + id +
+                    ", name='" + name + '\'' +
+                    '}';
+        }
+
+        public Person(Long id, String name) {
+            this.id = id;
+            this.name = name;
+        }
+
+        public Long getId() {
+            return id;
+        }
+
+        public void setId(Long id) {
+            this.id = id;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+    }
+
 
     public static void main(String[] args) throws ParseException, IOException {
 
-        String str = "\uD83C\uDF49\uD83C\uDF47\uD83C\uDF51\uD83C\uDF53\uD83E\uDD5D";
-        byte[] bytes = str.getBytes(StandardCharsets.UTF_8);
-        for (byte b : bytes) {
-            System.out.println(Integer.toHexString(b));
+//        String str = "\uD83C\uDF49\uD83C\uDF47\uD83C\uDF51\uD83C\uDF53\uD83E\uDD5D";
+//        byte[] bytes = str.getBytes(StandardCharsets.UTF_8);
+//        for (byte b : bytes) {
+//            System.out.println(Integer.toHexString(b));
+//
+//        }
 
-        }
+        Person person1 = new Person(1L, "1111");
+        Person person2 = new Person(1L, "11111");
+        Person person3 = new Person(2L, "222");
+        Person person4 = new Person(4L, "444");
 
+        List<Person> list = new ArrayList<>();
+//        list.add(person1);
+//        list.add(person2);
+//        list.add(person3);
+//        list.add(person4);
+
+        Map<Long, List<Person>> collect = list.stream().
+                collect(Collectors.groupingBy(Person::getId));
+        System.out.println(collect.get(1));
 
 //        String s =  "中";
 //

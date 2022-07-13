@@ -34,6 +34,9 @@ import prism from "prismjs";
 // 参考文档
 // https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
 // https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy
+// https://blog.csdn.net/weixin_42524603/article/details/124089402
+
+
 
 export default {
   name: "asd",
@@ -42,7 +45,7 @@ export default {
     return {
       code: `
       本章节对 Proxy 进行分析，
-      分析了 vue3 为什么放弃 Object.defineProperty 选择了 Proxy ，部分代码会设计到 vue 的响应式原理
+      分析了 vue3 为什么放弃 Object.defineProperty 选择了 Proxy （Reactive 用的 Proxy , Ref 用的还是 Object.defineProperty()），部分代码会设计到 vue 的响应式原理 
       并测试了 Proxy 别的强大功能，比如监听构造函数
 
       `,
