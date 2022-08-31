@@ -44,8 +44,29 @@ dependencies {
     implementation 'com.tencentcloudapi:tencentcloud-sdk-java-tdmq:3.1.479'
 // https://mvnrepository.com/artifact/org.apache.dubbo/dubbo-common
     implementation 'org.apache.dubbo:dubbo-common:3.0.8'
+// https://mvnrepository.com/artifact/com.alibaba.nacos/nacos-client
+    implementation 'com.alibaba.nacos:nacos-client:2.1.0'
+// https://mvnrepository.com/artifact/javax.validation/validation-api
+    implementation 'javax.validation:validation-api:2.0.1.Final'
+// https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator
+    implementation 'org.hibernate.validator:hibernate-validator:6.0.23.Final'
+
+// https://mvnrepository.com/artifact/org.glassfish/javax.el
+    implementation 'org.glassfish:javax.el:3.0.0'
+
+//    implementation 'com.github.binarywang:weixin-java-common:4.3.8.B'
+    implementation 'com.github.binarywang:weixin-java-open:4.3.9.B'
+    implementation 'com.github.binarywang:weixin-java-mp:4.3.8.B'
+// https://mvnrepository.com/artifact/com.github.binarywang/weixin-java-miniapp
+//    implementation 'com.github.binarywang:weixin-java-miniapp:4.3.8.B'
+
+    // https://mvnrepository.com/artifact/org.apache.lucene/lucene-core
+    implementation 'org.apache.lucene:lucene-core:9.3.0'
 
 
+
+// https://mvnrepository.com/artifact/org.projectlombok/lombok
+    compileOnly 'org.projectlombok:lombok:1.18.24'
 
 }
 

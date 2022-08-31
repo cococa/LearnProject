@@ -14,9 +14,7 @@ fn main(){
 
 }
 
-// 自定义只能智能指针
-
-
+// 自定义智能指针
 struct MyBox<T>(T); 
 
 impl<T> MyBox<T>{

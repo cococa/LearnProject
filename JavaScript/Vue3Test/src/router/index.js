@@ -16,14 +16,15 @@ import Interfaces from "../pages/ts/Interfaces.vue";
 import TestSnabbdom from "../pages/ts/TestSnabbdom.vue";
 import TestModule from "../pages/ts/TestModule.vue";
 
-
-
-
 //vue
 import VueIndex from "../pages/vue/index.vue";
 import TestSetup from "../pages/vue/TestSetup.vue";
 import TestProvideInject from "../pages/vue/TestProvideInject.vue";
 import TestRenderFunction from "../pages/vue/TestRenderFunction.vue";
+
+//css
+import CssIndex from "../pages/css/index.vue";
+import VariableCalc from "../pages/css/VariableCalc.vue";
 
 import { createRouter, createWebHashHistory } from "vue-router";
 
@@ -178,6 +179,27 @@ const routes = [
       keepAlive: true,
     },
   },
+  {
+    path: "/css/index",
+    name: "css",
+    component: CssIndex,
+    meta: {
+      title: "css",
+      keepAlive: true,
+    },
+  },
+  {
+    path: "/css/variable-calc",
+    name: "variable-calc",
+    component: VariableCalc,
+    meta: {
+      title: "css variable-calc",
+      keepAlive: true,
+    },
+  },
+  
+
+
 ];
 
 const router = createRouter({

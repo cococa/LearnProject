@@ -14,23 +14,18 @@ public class Main {
 
 //        String source = "String s = \"12\" +\n" +
 //                "                \"34\";";
-
+//
 //        String source = "//zhushi \n" +
 //                "var name = 1 * 1; \n";
 
 
-//        String source = "var a = 123.12;";
-//
-//        Scanner scanner = new Scanner(source);
-//        List<Token> tokens = scanner.scanTokens();
-//        tokens.stream().forEach(System.out::println);
+        String source = "var a = 123.12;";
 
-//        String source = "vara12312";
-//        System.out.println(source.hashCode());
+        Scanner scanner = new Scanner(source);
+        List<Token> tokens = scanner.scanTokens();
+        tokens.stream().forEach(System.out::println);
 
-        Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.DAY_OF_YEAR, calendar.get(Calendar.DAY_OF_YEAR) - 365);
-        System.out.println(calendar.getTime());
+
 
 
     }

@@ -1,6 +1,7 @@
 package com.cocoa.lambda.base;
 
 import com.cocoa.lambda.bean.Item;
+import lombok.Data;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -8,6 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
+
 
 public class StreamTest1 {
 

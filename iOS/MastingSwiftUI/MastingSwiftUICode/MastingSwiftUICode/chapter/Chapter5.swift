@@ -31,7 +31,7 @@ struct Chapter5: View {
                 }
             }
         }
-//        .navigationBarTitle(Text("Title"))
+        .navigationBarTitle(Text("Title"))
     }
 }
 

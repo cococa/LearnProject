@@ -7,6 +7,10 @@ import com.tencentcloudapi.common.profile.ClientProfile;
 import com.tencentcloudapi.common.profile.HttpProfile;
 import com.tencentcloudapi.tdmq.v20200217.TdmqClient;
 import com.tencentcloudapi.tdmq.v20200217.models.*;
+import me.chanjar.weixin.common.error.WxErrorException;
+import me.chanjar.weixin.mp.api.WxMpUserService;
+import me.chanjar.weixin.mp.bean.result.WxMpUser;
+import org.apache.commons.collections4.ListUtils;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -19,6 +23,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class main {
 
@@ -75,22 +80,12 @@ public class main {
         return null;
     }
 
-   static class Person{
+    static class Person {
         private Long id;
         private String name;
+        private String addrss;
+        private String aaaa;
 
-        @Override
-        public String toString() {
-            return "Person{" +
-                    "id=" + id +
-                    ", name='" + name + '\'' +
-                    '}';
-        }
-
-        public Person(Long id, String name) {
-            this.id = id;
-            this.name = name;
-        }
 
         public Long getId() {
             return id;
@@ -107,10 +102,74 @@ public class main {
         public void setName(String name) {
             this.name = name;
         }
+
+        public String getAddrss() {
+            return addrss;
+        }
+
+        public void setAddrss(String addrss) {
+            this.addrss = addrss;
+        }
+
+        public String getAaaa() {
+            return aaaa;
+        }
+
+        public void setAaaa(String aaaa) {
+            this.aaaa = aaaa;
+        }
     }
 
 
+    private Integer getMpUser() {
+        int retry = 0;
+        while (retry != 3) {
+            System.out.println(retry + "---");
+            try {
+                return 1;
+            } catch (Exception e) {
+                System.out.println("getMpUser error message:{} e");
+                retry++;
+            }
+        }
+        return null;
+    }
+
+    private static Stream<Object>  getList(List<Object> list){
+
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+        return list.stream();
+    }
+
+
+
     public static void main(String[] args) throws ParseException, IOException {
+        List<Object> list = new ArrayList<>();
+        for (int i = 0; i < 10000; i++) {
+            Person p = new Person();
+            p.setAaaa("123123123123sdasdas");
+            p.setAddrss("hjasddahskdjhaskjdhjkh");
+            p.setId((long) i);
+            p.setName("1231232131");
+            list.add(p);
+        }
+
+        List<List<Object>> partition = ListUtils.partition(list, 100);
+        System.out.println(partition);
+
+
+        List<Object> collect = partition.stream().parallel().flatMap((item) -> {
+            return getList(item);
+        }).collect(Collectors.toList());
+
+
+        System.out.println(collect);
+
 
 //        String str = "\uD83C\uDF49\uD83C\uDF47\uD83C\uDF51\uD83C\uDF53\uD83E\uDD5D";
 //        byte[] bytes = str.getBytes(StandardCharsets.UTF_8);
@@ -119,20 +178,20 @@ public class main {
 //
 //        }
 
-        Person person1 = new Person(1L, "1111");
-        Person person2 = new Person(1L, "11111");
-        Person person3 = new Person(2L, "222");
-        Person person4 = new Person(4L, "444");
-
-        List<Person> list = new ArrayList<>();
-//        list.add(person1);
-//        list.add(person2);
-//        list.add(person3);
-//        list.add(person4);
-
-        Map<Long, List<Person>> collect = list.stream().
-                collect(Collectors.groupingBy(Person::getId));
-        System.out.println(collect.get(1));
+//        Person person1 = new Person(1L, "1111");
+//        Person person2 = new Person(1L, "11111");
+//        Person person3 = new Person(2L, "222");
+//        Person person4 = new Person(4L, "444");
+//
+//        List<Person> list = new ArrayList<>();
+////        list.add(person1);
+////        list.add(person2);
+////        list.add(person3);
+////        list.add(person4);
+//
+//        Map<Long, List<Person>> collect = list.stream().
+//                collect(Collectors.groupingBy(Person::getId));
+//        System.out.println(collect.get(1));
 
 //        String s =  "中";
 //

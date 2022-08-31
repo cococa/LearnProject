@@ -18,6 +18,8 @@
 		9F16A91B26BAB35B005DCFCC /* CounterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F16A91A26BAB35B005DCFCC /* CounterButton.swift */; };
 		9F21723126C4BB4700A6D6FA /* Chapter8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F21723026C4BB4700A6D6FA /* Chapter8.swift */; };
 		9F21723326C4CE2100A6D6FA /* Chapter9.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F21723226C4CE2100A6D6FA /* Chapter9.swift */; };
+		9F684F54287EB7C20015C266 /* SwiftUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F684F53287EB7C20015C266 /* SwiftUIButton.swift */; };
+		9F8E68C128804EC3009F3C27 /* Chapter7.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E68C028804EC3009F3C27 /* Chapter7.swift */; };
 		9F973EBE26B8F06F00AC99F7 /* Chapter5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F973EBD26B8F06F00AC99F7 /* Chapter5.swift */; };
 		9F973EC926B911A900AC99F7 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F973EC826B911A900AC99F7 /* CardView.swift */; };
 /* End PBXBuildFile section */
@@ -57,6 +59,8 @@
 		9F16A91A26BAB35B005DCFCC /* CounterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterButton.swift; sourceTree = "<group>"; };
 		9F21723026C4BB4700A6D6FA /* Chapter8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter8.swift; sourceTree = "<group>"; };
 		9F21723226C4CE2100A6D6FA /* Chapter9.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter9.swift; sourceTree = "<group>"; };
+		9F684F53287EB7C20015C266 /* SwiftUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIButton.swift; sourceTree = "<group>"; };
+		9F8E68C028804EC3009F3C27 /* Chapter7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter7.swift; sourceTree = "<group>"; };
 		9F973EBD26B8F06F00AC99F7 /* Chapter5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter5.swift; sourceTree = "<group>"; };
 		9F973EC826B911A900AC99F7 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -152,6 +156,7 @@
 			children = (
 				9F973EBD26B8F06F00AC99F7 /* Chapter5.swift */,
 				9F16A91826BAACE8005DCFCC /* Chapter6.swift */,
+				9F8E68C028804EC3009F3C27 /* Chapter7.swift */,
 				9F21723026C4BB4700A6D6FA /* Chapter8.swift */,
 				9F21723226C4CE2100A6D6FA /* Chapter9.swift */,
 			);
@@ -163,6 +168,7 @@
 			children = (
 				9F973EC826B911A900AC99F7 /* CardView.swift */,
 				9F16A91A26BAB35B005DCFCC /* CounterButton.swift */,
+				9F684F53287EB7C20015C266 /* SwiftUIButton.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -297,9 +303,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F21723126C4BB4700A6D6FA /* Chapter8.swift in Sources */,
+				9F8E68C128804EC3009F3C27 /* Chapter7.swift in Sources */,
 				9F16A91B26BAB35B005DCFCC /* CounterButton.swift in Sources */,
 				8D7DC8982626D4CB0032FFD2 /* ContentView.swift in Sources */,
 				9F973EBE26B8F06F00AC99F7 /* Chapter5.swift in Sources */,
+				9F684F54287EB7C20015C266 /* SwiftUIButton.swift in Sources */,
 				9F16A91926BAACE8005DCFCC /* Chapter6.swift in Sources */,
 				9F21723326C4CE2100A6D6FA /* Chapter9.swift in Sources */,
 				8D7DC8962626D4CB0032FFD2 /* MastingSwiftUICodeApp.swift in Sources */,
@@ -463,10 +471,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"MastingSwiftUICode/Preview Content\"";
-				DEVELOPMENT_TEAM = 9SKDGJS28P;
+				DEVELOPMENT_TEAM = NZ78ACFBT3;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = MastingSwiftUICode/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -485,10 +493,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"MastingSwiftUICode/Preview Content\"";
-				DEVELOPMENT_TEAM = 9SKDGJS28P;
+				DEVELOPMENT_TEAM = NZ78ACFBT3;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = MastingSwiftUICode/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
