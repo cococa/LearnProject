@@ -4,8 +4,11 @@ using namespace std;
 void change(int i );
 
 int main() {
+
+    int a  = 1;
+
     cout << "Hello, World!" << endl;
-    change(10);
+//    change(10);
     return 0;
 }
 

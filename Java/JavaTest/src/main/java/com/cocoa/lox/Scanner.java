@@ -13,22 +13,22 @@ public class Scanner {
 
     static {
         keywords = new HashMap<>();
-        keywords.put("and",    AND);
-        keywords.put("class",  CLASS);
-        keywords.put("else",   ELSE);
-        keywords.put("false",  FALSE);
-        keywords.put("for",    FOR);
-        keywords.put("fun",    FUN);
-        keywords.put("if",     IF);
-        keywords.put("nil",    NIL);
-        keywords.put("or",     OR);
-        keywords.put("print",  PRINT);
+        keywords.put("and", AND);
+        keywords.put("class", CLASS);
+        keywords.put("else", ELSE);
+        keywords.put("false", FALSE);
+        keywords.put("for", FOR);
+        keywords.put("fun", FUN);
+        keywords.put("if", IF);
+        keywords.put("nil", NIL);
+        keywords.put("or", OR);
+        keywords.put("print", PRINT);
         keywords.put("return", RETURN);
-        keywords.put("super",  SUPER);
-        keywords.put("this",   THIS);
-        keywords.put("true",   TRUE);
-        keywords.put("var",    VAR);
-        keywords.put("while",  WHILE);
+        keywords.put("super", SUPER);
+        keywords.put("this", THIS);
+        keywords.put("true", TRUE);
+        keywords.put("var", VAR);
+        keywords.put("while", WHILE);
     }
 
 
@@ -127,9 +127,9 @@ public class Scanner {
     }
 
 
-    private void getIdentifier(){
+    private void getIdentifier() {
         char c = peek();
-        while(isDigit(c) || isAlpha(c)){
+        while (isDigit(c) || isAlpha(c)) {
             current++;
             c = peek();
         }
@@ -144,7 +144,7 @@ public class Scanner {
         return c >= '0' && c <= '9';
     }
 
-    private boolean isAlpha(char c){
+    private boolean isAlpha(char c) {
         return (c >= 'a' && c <= 'z') ||
                 (c >= 'A' && c <= 'Z') ||
                 c == '_';
@@ -196,6 +196,13 @@ public class Scanner {
             case '>':
                 addToken(match('=') ? GREATER_EQUAL : GREATER);
                 break;
+            case ' ':
+            case '\r':
+            case '\t':
+                break;
+            case '\n':
+                line++;
+                break;
             case '/':
                 if (match('/')) {
                     // A comment goes until the end of the line.
@@ -210,7 +217,7 @@ public class Scanner {
             default:
                 if (isDigit(c)) {
                     getNumber();
-                }else if (isAlpha(c)){
+                } else if (isAlpha(c)) {
                     getIdentifier();
                 }
 //            default: throw new NullPointerException();

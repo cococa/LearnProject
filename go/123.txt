@@ -2,7 +2,7 @@
 //https://yar999.gitbook.io/gopl-zh/ 
 
 
-# method     220531
+###   全部放到go_shizhan
 
 
 

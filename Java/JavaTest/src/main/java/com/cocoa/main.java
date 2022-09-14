@@ -1,6 +1,8 @@
 package com.cocoa;
 
 
+import com.cocoa.model.Platform;
+import com.cocoa.model.dataoke.DouyinGoodsDetail;
 import com.tencentcloudapi.common.Credential;
 import com.tencentcloudapi.common.exception.TencentCloudSDKException;
 import com.tencentcloudapi.common.profile.ClientProfile;
@@ -135,7 +137,7 @@ public class main {
         return null;
     }
 
-    private static Stream<Object>  getList(List<Object> list){
+    private static Stream<Object> getList(List<Object> list) {
 
         try {
             Thread.sleep(3000);
@@ -147,28 +149,30 @@ public class main {
     }
 
 
-
     public static void main(String[] args) throws ParseException, IOException {
-        List<Object> list = new ArrayList<>();
-        for (int i = 0; i < 10000; i++) {
-            Person p = new Person();
-            p.setAaaa("123123123123sdasdas");
-            p.setAddrss("hjasddahskdjhaskjdhjkh");
-            p.setId((long) i);
-            p.setName("1231232131");
-            list.add(p);
-        }
+//        List<Object> list = new ArrayList<>();
+//        for (int i = 0; i < 10000; i++) {
+//            Person p = new Person();
+//            p.setAaaa("123123123123sdasdas");
+//            p.setAddrss("hjasddahskdjhaskjdhjkh");
+//            p.setId((long) i);
+//            p.setName("1231232131");
+//            list.add(p);
+//        }
+//
+//        List<List<Object>> partition = ListUtils.partition(list, 100);
+//        System.out.println(partition);
+//
+//
+//        List<Object> collect = partition.stream().parallel().flatMap((item) -> {
+//            return getList(item);
+//        }).collect(Collectors.toList());
+//
+//
+//        System.out.println(collect);
 
-        List<List<Object>> partition = ListUtils.partition(list, 100);
-        System.out.println(partition);
 
-
-        List<Object> collect = partition.stream().parallel().flatMap((item) -> {
-            return getList(item);
-        }).collect(Collectors.toList());
-
-
-        System.out.println(collect);
+        System.out.println(Platform.DDX);
 
 
 //        String str = "\uD83C\uDF49\uD83C\uDF47\uD83C\uDF51\uD83C\uDF53\uD83E\uDD5D";

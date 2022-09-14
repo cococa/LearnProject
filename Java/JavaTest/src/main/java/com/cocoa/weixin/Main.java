@@ -93,9 +93,7 @@ public class Main {
         WxOpenConfigStorage wxOpenConfigStorage = new WxOpenInMemoryConfigStorage();
         wxOpenConfigStorage.setComponentAppId("wx656730804c2c5291");
         wxOpenConfigStorage.setComponentAppSecret("93e53a39ac2148424aa18c694db8ced3");
-        wxOpenConfigStorage.setComponentVerifyTicket("ticket@@@jQpJMDaSWFAuO6UBkslKgydXE9PqzziZmE6wh021no38YCMUqnauUk3tmB3KH_liE1JWI8BA7Yy1tQwZt5YjyA");
-//        wxOpenConfigStorage.setAuthorizerRefreshToken("wxc2fe513a236a273a","refreshtoken@@@lu8FLIFrPEtBXvbkgWGHLdzyuB_MXO3zOUs8ylT1jq8");
-//        wxOpenConfigStorage.setAuthorizerRefreshToken("wxc2fe513a236a273a","refreshtoken@@@lu8FLIFrPEtBXvbkgWGHLdzyuB_MXO3zOUs8ylT1jq8");
+        wxOpenConfigStorage.setComponentVerifyTicket("ticket@@@41pTBsRdxoDdn51IFWaC4q5cT32MKqrbdd7K3Y7NJ2r3KR8njrR8x1CFF8r00hFDdvo4J9qnwZWM_PGqUQUEJg");
 
 
         WxOpenService wxOpenService = new WxOpenServiceImpl();
@@ -106,7 +104,7 @@ public class Main {
 
         WxOpenComponentService wxOpenComponentService = new WxOpenComponentServiceImpl(wxOpenService);
 
-        String appId = "wx2955b0abc6ed0abf";//"wx2955b0abc6ed0abf";
+        String appId = "wx558e6f83438f7873";//"wx2955b0abc6ed0abf";
         boolean isExpired = wxOpenComponentService.getWxOpenConfigStorage().isAuthorizerAccessTokenExpired(appId);
         if (true || isExpired) {
             WxOpenAuthorizerInfoResult wxc2fe513a236a273a = wxOpenComponentService.getAuthorizerInfo(appId);
@@ -115,26 +113,33 @@ public class Main {
             wxOpenComponentService.getWxOpenConfigStorage().setAuthorizerRefreshToken(appId, authorizerRefreshToken);
         }
 
-//        WxMpUserList wxMpUserList = wxOpenComponentService.getWxMpServiceByAppid(appId).getUserService().userInfoList()
+//        WxMpUserList wxMpUserList = wxOpenComponentService.getWxMpServiceByAppid(appId).getUserService().userList(null);
 //        System.out.println(wxMpUserList);
 
 
-
+//        WxOpenResult wxc8dc912ce6f78d37 = wxOpenComponentService.getWxMaServiceByAppid(appId)
+//                .wxAmpLink("wxc8dc912ce6f78d37", "1", "1");
+//        System.out.println(wxc8dc912ce6f78d37);
 
 //        WxOpenResult wxd674d3151e7259bf = wxOpenComponentService.getWxMaServiceByAppid(appId)
 //                .wxAmpUnLink("wxd674d3151e7259bf");
 //        System.out.println(wxd674d3151e7259bf);
 
 
-
-
-
-
 //         获取授权列表
-//        WxOpenQueryAuthResult queryAuth = wxOpenComponentService.getQueryAuth("queryauthcode@@@vzrDrmcTbV0TfZHQ4e7a7lDiSWkqYPrZY2v6laQKPdKStnhJ2wB0ECu_LpP1elAy7tBmyjS9oAL_dncFKWyU2Q");
-//        System.out.println(
-//                queryAuth
+        WxOpenQueryAuthResult queryAuth = wxOpenComponentService.getQueryAuth("queryauthcode@@@Xu5dIKd44NXLeJ1jpVpPyGWfGpUq4NE9-lP5WBs7N-N5oGtuQzJwgSaC44nm-p5yt1W6W-kO63p0rx9hI8LGTw");
+        System.out.println(
+                queryAuth
+        );
+
+
+        // 获取授权列表
+//        WxOpenAuthorizerListResult authorizerList = wxOpenComponentService.getAuthorizerList(0, 100);
+//        System.out.println(   //authorizerRefreshToken
+//                authorizerList
 //        );
+
+
 
 //        WxOpenQueryAuthResult queryAuth = wxOpenComponentService.getQueryAuth("queryauthcode@@@xI6TFBs8J12vfpPZvtFgG8vbFfc2exQMY88bahsRPeJampKbXSCjfJf3J1QtBhSOaygiDoa6DjY_6Qg95okahA");
 //        System.out.println(   //authorizerRefreshToken
@@ -151,8 +156,8 @@ public class Main {
 //        System.out.println(JSON.toJSONString(authorizerInfo));
 
 //
-        String accountBasicInfo = wxOpenComponentService.getWxMaServiceByAppid(appId).getAccountBasicInfo();
-        System.out.println(accountBasicInfo);
+//        String accountBasicInfo = wxOpenComponentService.getWxMaServiceByAppid(appId).getAccountBasicInfo();
+//        System.out.println(accountBasicInfo);
 
 //
 //        WxOpenRegisterPersonalWeappResult wxOpenRegisterPersonalWeappResult = wxOpenComponentService.fastRegisterPersonalWeapp("温国良", "wxid_az642al9mxbs12", "13623839679");
@@ -241,7 +246,7 @@ public class Main {
 //        System.out.println(JSON.toJSONString(wxFastMaSetNickameResult));
 
 
-        // 获取授权列表
+//        // 获取授权列表
 //        WxOpenAuthorizerListResult authorizerList = wxOpenComponentService.getAuthorizerList(0, 100);
 //        System.out.println(   //authorizerRefreshToken
 //                authorizerList
@@ -305,8 +310,6 @@ public class Main {
 //        WxOpenMaService wxOpenMaService = wxOpenComponentService.getWxMaServiceByAppid("wx656730804c2c5291");
 //        wxOpenMaService.getExpressService().getQuota()
 
-//        wxOpenComponentService.get
-//        getQuota
 
 //        wxOpenMaService.submitAudit()
 

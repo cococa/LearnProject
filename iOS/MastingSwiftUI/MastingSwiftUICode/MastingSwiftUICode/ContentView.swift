@@ -48,7 +48,7 @@ struct ContentView: View {
                 
                 
                 NavigationLink(
-                    destination: Chapter8(),
+                    destination: Chapter9(),
                     label: {
                         Text("Chapter9 Anim")
                     }).navigationTitle("Chapter9")

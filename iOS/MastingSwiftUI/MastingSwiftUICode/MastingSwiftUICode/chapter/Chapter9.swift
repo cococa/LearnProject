@@ -12,9 +12,32 @@ struct Chapter9: View {
     
     @State var changed = false;
     @State var isLoading = false;
+    @State var circleLoading = false;
+    
+    
+    @State var testShow = false;
+    
     
     var body: some View {
         VStack{
+            
+            HStack{
+                ForEach(0...4, id: \.self){ index in
+                     Circle()
+                        .frame(width: 10, height: 10, alignment: .center)
+                        .foregroundColor(.green)
+//                        .scaleEffect(self.circleLoading ? 0.0 : 1.0)
+                        .animation(.linear(duration: 1.0).repeatForever().delay(1.0 * Double(index)), value: circleLoading)
+//                        .onAppear{
+//                            withAnimation(){
+//
+//                            }
+//                        }
+                    
+                }.onAppear{
+                    circleLoading.toggle()
+                }
+            }
             ZStack{
                 Circle().frame(width: 200, height: 200, alignment: .center)
                     .foregroundColor(changed ? .gray : .green)
@@ -31,7 +54,12 @@ struct Chapter9: View {
             }
             
             
-            
+            Button(action: {
+                testShow.toggle()
+            }){
+                Text("123")
+            }
+            if(testShow){
             ZStack{
                 RoundedRectangle(cornerRadius: 3)
                     .stroke(Color.gray,lineWidth: 3)
@@ -41,13 +69,17 @@ struct Chapter9: View {
                     .stroke(Color.green,lineWidth: 3)
                     .frame(width: 30, height: 3, alignment: .center)
                     .offset(x: isLoading ? 110 : -110, y:0)
-                    .animation(Animation.linear(duration: 1).repeatForever())
-                
-            
+                    .onAppear{
+                        withAnimation(Animation.easeInOut(duration: 1.8).repeatForever()){
+                            isLoading.toggle()
+                        }
+                    }
             }.onAppear(){
-                self.isLoading = true
+//                self.isLoading = true
+            }.onDisappear{
+                print("123")
             }
-            
+            }
             
             
             
