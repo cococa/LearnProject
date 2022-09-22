@@ -1,18 +1,21 @@
+enum Coin{
+    Penny,
+    Nickel,
+    Dime,
+    Quarter
+}
 
-#[derive(Debug)]
-enum Option<T>{
-    None,
-    Some(T)
+fn value_in_cents(coin: Coin)-> u8{
+    match coin{
+        Coin::Penny=>1,
+        Coin::Nickel=> 5,
+        Coin::Dime =>10,
+        Coin::Quarter =>25
+    }
 }
 
 
 fn main(){
-        let a1 : Option<i32> = Option::None;
-        println!("a1={:?}",a1); 
-
-        let a2  = Some(5);
-        println!("a2={:?}",a2); 
-
-
-
+        let value = value_in_cents(Coin::Dime);
+        println!("{}",value);
 }

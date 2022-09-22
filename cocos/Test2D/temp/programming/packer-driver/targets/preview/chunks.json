@@ -1,4 +1,18 @@
 {
+  "assets/NewComponent.js": {
+    "imports": {
+      "cc": "quick-pack:/cce/internal/x/cc.js"
+    },
+    "physicalLocation": "fs/0/assets/NewComponent.js",
+    "mTimestamp": 1650850271085
+  },
+  "assets/asda.js": {
+    "imports": {
+      "cc": "quick-pack:/cce/internal/x/cc.js"
+    },
+    "physicalLocation": "fs/0/assets/asda.js",
+    "mTimestamp": 1650850457050
+  },
   "quick-pack:/cce/internal/x/cc.js": {
     "imports": {
       "__unresolved_0": {
@@ -71,31 +85,17 @@
       }
     },
     "physicalLocation": "cce/internal/x/cc.js",
-    "mTimestamp": 1650813649844,
+    "mTimestamp": 1663667284051,
     "isEntry": true,
     "exposeAs": "cce:/internal/x/cc"
-  },
-  "assets/NewComponent.js": {
-    "imports": {
-      "cc": "quick-pack:/cce/internal/x/cc.js"
-    },
-    "physicalLocation": "fs/0/assets/NewComponent.js",
-    "mTimestamp": 1650850271085
   },
   "quick-pack:/cce/internal/x/prerequisite-imports.js": {
     "imports": {
       "__unresolved_0": "assets/asda.js"
     },
     "physicalLocation": "cce/internal/x/prerequisite-imports.js",
-    "mTimestamp": 1650850457003,
+    "mTimestamp": 1663667284090,
     "isEntry": true,
     "exposeAs": "cce:/internal/x/prerequisite-imports"
-  },
-  "assets/asda.js": {
-    "imports": {
-      "cc": "quick-pack:/cce/internal/x/cc.js"
-    },
-    "physicalLocation": "fs/0/assets/asda.js",
-    "mTimestamp": 1650850457050
   }
 }

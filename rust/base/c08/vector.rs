@@ -13,7 +13,7 @@ fn main(){
     let item1 : &i32  = &v2[1];
     println!("the item1 in vec2 = {:?}", item1);
 
-
+    let opt : Option<&i32> = v2.get(1);
     match v2.get(1) {
         // 这里有意思，传递进去的参数得的 &i32 类型
         Some(item1) => println!(" match 2!"),

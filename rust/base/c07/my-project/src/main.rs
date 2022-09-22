@@ -3,9 +3,15 @@ use std::collections::HashMap;
 
 use std::io::Result as IoResult;
 
-fn main() {
+use my_project::front_of_house::Breakfast;
 
+
+fn main() {
     hosting::add_to_waitlist();
 
-    println!("Hello, world!");
+    let s = String::from("123");
+    let b = Breakfast::summer(&s);
+
+    println!("{:?}",b);
+    println!("{:?}",s);
 }
