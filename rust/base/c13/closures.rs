@@ -5,12 +5,12 @@ fn main(){
 
 
     // ----version1----    
-    // let a = 11;
-    // test1(a);    
+    let a = 11;
+    test1(a);    
 
     // -----version2-------     
-    let a = 1;
-    test2(a);    
+    // let a = 1;
+    // test2(a);    
 
 }
 
@@ -62,7 +62,8 @@ fn test2(num : u32){
 
 fn test1( num : u32){
     // 闭包的类型自动推断。如果第一次调用closures_a 传u32 类型，第2次调用传u32以外的类型，则会报错
-    let closures_a = | x | {
+    // let closures_a = | x | {    // 简写
+    let closures_a = | x : u32 | -> u32{
         thread::sleep(Duration::from_secs(2));
         x + 1
     };

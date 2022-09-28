@@ -89,11 +89,12 @@ public class Main {
         Object js = JSON.toJSON(jss);
         System.out.println(JSON.toJSONString(js));
 
+//        438768914
 
         WxOpenConfigStorage wxOpenConfigStorage = new WxOpenInMemoryConfigStorage();
         wxOpenConfigStorage.setComponentAppId("wx656730804c2c5291");
         wxOpenConfigStorage.setComponentAppSecret("93e53a39ac2148424aa18c694db8ced3");
-        wxOpenConfigStorage.setComponentVerifyTicket("ticket@@@41pTBsRdxoDdn51IFWaC4q5cT32MKqrbdd7K3Y7NJ2r3KR8njrR8x1CFF8r00hFDdvo4J9qnwZWM_PGqUQUEJg");
+        wxOpenConfigStorage.setComponentVerifyTicket("ticket@@@9lxkDCehwOdlPam19pBO8Diu5xi3kDBGrktwWEWy_iwZRliaOjA2HwQvR5PQ867McN-9df_i-tj5AVvxLXNNhQ");
 
 
         WxOpenService wxOpenService = new WxOpenServiceImpl();
@@ -104,7 +105,7 @@ public class Main {
 
         WxOpenComponentService wxOpenComponentService = new WxOpenComponentServiceImpl(wxOpenService);
 
-        String appId = "wx558e6f83438f7873";//"wx2955b0abc6ed0abf";
+        String appId = "wx54c64fcc401892c0";//"wx2955b0abc6ed0abf";
         boolean isExpired = wxOpenComponentService.getWxOpenConfigStorage().isAuthorizerAccessTokenExpired(appId);
         if (true || isExpired) {
             WxOpenAuthorizerInfoResult wxc2fe513a236a273a = wxOpenComponentService.getAuthorizerInfo(appId);
@@ -127,11 +128,16 @@ public class Main {
 
 
 //         获取授权列表
-        WxOpenQueryAuthResult queryAuth = wxOpenComponentService.getQueryAuth("queryauthcode@@@Xu5dIKd44NXLeJ1jpVpPyGWfGpUq4NE9-lP5WBs7N-N5oGtuQzJwgSaC44nm-p5yt1W6W-kO63p0rx9hI8LGTw");
-        System.out.println(
-                queryAuth
-        );
+//        WxOpenQueryAuthResult queryAuth = wxOpenComponentService.getQueryAuth("queryauthcode@@@Xu5dIKd44NXLeJ1jpVpPyGWfGpUq4NE9-lP5WBs7N-N5oGtuQzJwgSaC44nm-p5yt1W6W-kO63p0rx9hI8LGTw");
+//        System.out.println(
+//                queryAuth
+//        );
 
+
+        WxOpenMaQueryAuditResult auditStatus = wxOpenComponentService.getWxMaServiceByAppid(appId).getAuditStatus(438768914L);
+        System.out.println(
+                auditStatus
+        );
 
         // 获取授权列表
 //        WxOpenAuthorizerListResult authorizerList = wxOpenComponentService.getAuthorizerList(0, 100);

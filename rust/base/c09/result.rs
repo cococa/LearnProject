@@ -6,29 +6,13 @@ use std::io::Error;
 
 
 fn main(){
-    // test1
-    // let file  = File::open("not_found.txt");
-    // let f = match file{
-    //     Ok(file) => println!("found file"),
-    //     Err(error) => {
-    //         if(error.kind() == ErrorKind::NotFound){
-    //             println!("file not found!");    
-    //         }else{
-    //             panic!(" wa oh!");
-    //         }
-    //     } 
-    //     //println!("error = {:?}",error)
-    // };
-
-    test5();    
-
+    test3();    
 }
 
 
 
 fn test1(){
-     // test1
-     let f  = File::open("not.txt");
+     let f  = File::open("not11.txt");
      println!("{:?}", f);
      match f{
          Ok(file) => println!("found file"),
@@ -38,12 +22,12 @@ fn test1(){
 
 
 fn test2(){
-
-    let f = File::open("not.txt");
+    let filename = String::from("not.txt");
+    let f = File::open(&filename);
     match f{
         Ok(file) => file,
         Err(err) => match err.kind(){
-            ErrorKind::NotFound => match File::create("not.txt"){
+            ErrorKind::NotFound => match File::create(&filename){
                 Ok(fc) => fc,
                 Err(e) => panic!("{:?}",e),
             }
@@ -76,8 +60,8 @@ fn test4(){
 }
 
 
-fn test5(){
-    //  ? 运算符只能被用于返回值与 ? 作用的值相兼容的函数。因为 ? 运算符被定义为从函数中提早返回一个值
-    // 下面的代码会报错
-   let f = File::open("xxxx")?;
-}
+// fn test5(){
+//     //  ? 运算符只能被用于返回值与 ? 作用的值相兼容的函数。因为 ? 运算符被定义为从函数中提早返回一个值
+//     // 下面的代码会报错
+//    let f = File::open("xxxx")?;
+// }

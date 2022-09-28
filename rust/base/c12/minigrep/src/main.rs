@@ -1,41 +1,39 @@
 use std::env;
-use std::fs;
+use std::process;
+use minigrep::QueryConfig;
+use minigrep::run;
 
-fn main() {
-    println!("Hello, world!");
-    let args: Vec<String> = env::args().collect();
-    println!("{:?}", args);
-
-    let config : Config = Config::new(&args);
-    println!("{:?}", config.query);
-
-    let content  =  fs::read_to_string(config.filename).expect("Could not read file");
-    println!("{}", content);
-
-}
-
-struct Config{
-    query: String ,
-    filename: String 
-}
-
-impl Config{
-    fn new(args:&[String]) -> Config{
-        if args.len() < 3 {
-            panic!("Not enough arguments");
-        }    
-        let query = args[1].clone();
-        let filename = args[2].clone();
-        Config{ query, filename }    
+fn main(){
+    let args : Vec<String> = env::args().collect();
+    let config = QueryConfig::new(&args).unwrap_or_else(|err|{
+        println!("Problem parsing arguments: {}", err);
+        process::exit(1);
+    });
+    if let Err(e) = run(config){
+        println!("Application error: {}", e);
+        process::exit(1);
     }
+
+    // match config{
+    //     Ok(config) =>{
+    //         let contents = fs::read_to_string(config.filename);
+    //         match contents{
+    //             Ok(str)=> println!("{}",str),
+    //             Err(err) => println!("{}",err)
+    //         }
+    //     },
+    //     Err(err) => println!("{}",err)    
+    // }
+
+    // println!("{:?}", contents);
 }
 
 
 
-fn parse_config(args: &[String]) -> Config{
-    let query = &args[1];
-    let filename = &args[2];//.clone();
-    Config{query: query.to_string(), filename:filename.to_string()}
-}
 
-
+// fn parse_config (args : &[String]) -> QueryConfig{
+//     QueryConfig{
+//         query : args[0].clone(),
+//         filename : args[1].clone()
+//     } 
+// }
