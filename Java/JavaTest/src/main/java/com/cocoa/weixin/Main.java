@@ -94,7 +94,7 @@ public class Main {
         WxOpenConfigStorage wxOpenConfigStorage = new WxOpenInMemoryConfigStorage();
         wxOpenConfigStorage.setComponentAppId("wx656730804c2c5291");
         wxOpenConfigStorage.setComponentAppSecret("93e53a39ac2148424aa18c694db8ced3");
-        wxOpenConfigStorage.setComponentVerifyTicket("ticket@@@TIxkQrFoUcZAqJNWdKPMNCTclCqyaHDOSePCXYIHZlJ0Plbl3dwMT3hhAjQlgzBZFbZ0sV3X57zotHGyxfUj2w");
+        wxOpenConfigStorage.setComponentVerifyTicket("ticket@@@RD57H5wNk7JiSXrVBmsUgTaf9ZRdrKHXfN6ZteAHoOhgagXbPGh9Pd90cxWsTptpOKczLMw71T0GZMaw1LCtRQ");
 
 
         WxOpenService wxOpenService = new WxOpenServiceImpl();
@@ -118,10 +118,10 @@ public class Main {
 //        System.out.println(
 //                aBoolean
 //        );
-        WxOpenMaQueryQuotaResult wxOpenMaQueryQuotaResult = wxOpenComponentService.getWxMaServiceByAppid(appId).queryQuota();
-        System.out.println(
-                wxOpenMaQueryQuotaResult
-        );
+//        WxOpenMaQueryQuotaResult wxOpenMaQueryQuotaResult = wxOpenComponentService.getWxMaServiceByAppid(appId).queryQuota();
+//        System.out.println(
+//                wxOpenMaQueryQuotaResult
+//        );
 
 //        WxMpUserList wxMpUserList = wxOpenComponentService.getWxMpServiceByAppid(appId).getUserService().userList(null);
 //        System.out.println(wxMpUserList);
@@ -145,11 +145,11 @@ public class Main {
 
 
 
-        // 获取授权列表
-//        WxOpenAuthorizerListResult authorizerList = wxOpenComponentService.getAuthorizerList(0, 100);
-//        System.out.println(   //authorizerRefreshToken
-//                authorizerList
-//        );
+//         获取授权列表
+        WxOpenAuthorizerListResult authorizerList = wxOpenComponentService.getAuthorizerList(0, 100);
+        System.out.println(   //authorizerRefreshToken
+                authorizerList
+        );
 
 
 

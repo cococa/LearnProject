@@ -58,6 +58,7 @@ dependencies {
 //    implementation 'com.github.binarywang:weixin-java-common:4.3.8.B'
     implementation 'com.github.binarywang:weixin-java-open:4.3.9.B'
     implementation 'com.github.binarywang:weixin-java-mp:4.3.8.B'
+    implementation 'com.github.binarywang:weixin-java-cp:4.3.8.B'
 // https://mvnrepository.com/artifact/com.github.binarywang/weixin-java-miniapp
 //    implementation 'com.github.binarywang:weixin-java-miniapp:4.3.8.B'
 
