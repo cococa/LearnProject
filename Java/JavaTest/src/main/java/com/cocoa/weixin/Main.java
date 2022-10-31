@@ -94,7 +94,7 @@ public class Main {
         WxOpenConfigStorage wxOpenConfigStorage = new WxOpenInMemoryConfigStorage();
         wxOpenConfigStorage.setComponentAppId("wx656730804c2c5291");
         wxOpenConfigStorage.setComponentAppSecret("93e53a39ac2148424aa18c694db8ced3");
-        wxOpenConfigStorage.setComponentVerifyTicket("ticket@@@RD57H5wNk7JiSXrVBmsUgTaf9ZRdrKHXfN6ZteAHoOhgagXbPGh9Pd90cxWsTptpOKczLMw71T0GZMaw1LCtRQ");
+        wxOpenConfigStorage.setComponentVerifyTicket("ticket@@@5pL0cMmDAkfRJsG9bBt9ScalozlBrTxahTBBItJFQ6P5hYp1XmacCDfg4MWsTHhTrCZWytL6dkB0Po1h7bJmWw");
 
 
         WxOpenService wxOpenService = new WxOpenServiceImpl();
@@ -105,12 +105,12 @@ public class Main {
 
         WxOpenComponentService wxOpenComponentService = new WxOpenComponentServiceImpl(wxOpenService);
 
-        String appId = "wx54c64fcc401892c0";
+        String appId = "wx29638185b16bef4c";
         boolean isExpired = wxOpenComponentService.getWxOpenConfigStorage().isAuthorizerAccessTokenExpired(appId);
         if (true || isExpired) {
             WxOpenAuthorizerInfoResult wxc2fe513a236a273a = wxOpenComponentService.getAuthorizerInfo(appId);
             String authorizerRefreshToken = wxc2fe513a236a273a.getAuthorizationInfo().getAuthorizerRefreshToken();
-            System.out.println(authorizerRefreshToken);
+            System.out.println(wxc2fe513a236a273a);
             wxOpenComponentService.getWxOpenConfigStorage().setAuthorizerRefreshToken(appId, authorizerRefreshToken);
         }
 
