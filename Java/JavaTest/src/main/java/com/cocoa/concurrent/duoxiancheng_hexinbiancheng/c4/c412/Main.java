@@ -1,10 +1,4 @@
-package com.cocoa.thread.duoxiancheng_hexinbiancheng.c4.c412;
-
-import com.google.common.base.Strings;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+package com.cocoa.concurrent.duoxiancheng_hexinbiancheng.c4.c412;
 
 public class Main {
 

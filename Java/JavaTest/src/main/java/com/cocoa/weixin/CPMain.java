@@ -36,11 +36,11 @@ public class CPMain {
 
 
         WxCpTpDefaultConfigImpl wxCpTpConfigStorage = new WxCpTpDefaultConfigImpl();
-        wxCpTpConfigStorage.setCorpId("ww15d19abbad9cfab4");
+        wxCpTpConfigStorage.setCorpId("ww8c9af5748d66b63c");
         wxCpTpConfigStorage.setToken("bDNrVMZZeL");
         wxCpTpConfigStorage.setAesKey("dpWRzVw2Ma21Mr5G9KFRwicat0tSN8Y5rp7D4Gzcin5");
-        wxCpTpConfigStorage.setSuiteId("ww15d19abbad9cfab4");
-        wxCpTpConfigStorage.setSuiteSecret("yJjlbKzM0przgjrRw7jBi3qJRrpdEjY5WP6U_Kf9d34");
+        wxCpTpConfigStorage.setSuiteId("ww8c9af5748d66b63c");
+        wxCpTpConfigStorage.setSuiteSecret("rsxgU0XcoztVtkN-AIF3jAPY1ZKgrPBomTTh1NcUfJg");
 //        wxCpTpConfigStorage.setSuiteTicket("IEf3nTf_AqKpUdG2eevNLpQFvmVJBjnGr-nCT31LobGxXd5zKzqG901DyleKC_a-");
 //        wxCpTpConfigStorage.setSuiteAccessToken("sl3CUykCqwo5rtl8nRppqJ-LtUXSZ5RQ-S060LmczxNZuRbwZhsw5vYy2IJKtK4eGeR7rRWSXGUQHpQt74fzWve6bwaLJCkQCXc9gcFyZ70X1C48KtpH-J-YWqxpy9RK7AulST3oR2LThXhkyXrwET1ZhFWcI_fGRICJLEI07ITqayPdb9Wf9Bw7tWpsLzvwVL6vzTmlc_FvHdfT9kVypw");
 
@@ -48,11 +48,11 @@ public class CPMain {
 
         WxCpTpServiceImpl wxCpTpService = new WxCpTpServiceImpl();
         wxCpTpService.setWxCpTpConfigStorage(wxCpTpConfigStorage);
-        wxCpTpService.setSuiteTicket("IEf3nTf_AqKpUdG2eevNLoFxcqyY3_tjoOAHi61nNSsX6NVi2XywPfmwXpYMgdx7");
+        wxCpTpService.setSuiteTicket("IEf3nTf_AqKpUdG2eevNLlKhliJncUWUTQSAzsCELAsU8km6XeWBpweaRh85fhUu");
 //        'Mc4GngArVlU02PoaR2cEXVedRvrCthPx44NsuCXDeV0', 'ww5c3411f2eb07755b',
         final String corpId = "ww5c3411f2eb07755b";
 //        authCorpId=wphn_jEQAAFYhwvqH5dRVyvOGzi4QeYg&permanentCode=f42GZcNXEIkbyljM1lJyRdR0Xmx1DakiaNWpsStONus
-        WxAccessToken wxAccessToken = wxCpTpService.getCorpToken(corpId, "Mc4GngArVlU02PoaR2cEXVedRvrCthPx44NsuCXDeV0", true);
+        WxAccessToken wxAccessToken = wxCpTpService.getCorpToken(corpId, "YKQscuLdp36jGdbZbYFCg1dTU1YnEcpuCIqUX_f9y1Q", true);
         System.out.println(wxAccessToken);
         System.out.println("----------");
 

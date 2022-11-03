@@ -1,4 +1,4 @@
-package com.cocoa.thread.duoxiancheng_hexinbiancheng.c4.c411;
+package com.cocoa.concurrent.duoxiancheng_hexinbiancheng.c4.c411;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;

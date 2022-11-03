@@ -1,4 +1,4 @@
-package com.cocoa.thread.duoxiancheng_hexinbiancheng.c2.c21;
+package com.cocoa.concurrent.duoxiancheng_hexinbiancheng.c2.c21;
 
 public class Test {
 
