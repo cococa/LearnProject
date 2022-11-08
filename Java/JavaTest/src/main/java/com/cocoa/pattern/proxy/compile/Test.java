@@ -70,10 +70,10 @@ public class Test{
 
         System.out.println(clazz.getName());
 
-        TestCompile t =  (TestCompile) clazz.	newInstance();
-
-        t.main(null);
-
+//        TestCompile t =  (TestCompile) clazz.	newInstance();
+//
+//        t.main(null);
+//
 
 
 

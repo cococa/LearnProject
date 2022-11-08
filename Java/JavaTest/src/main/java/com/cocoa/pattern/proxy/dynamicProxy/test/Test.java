@@ -10,7 +10,7 @@ public class Test{
       InvocationHandler h = new LogHandler(user);
 
 
-      Logger logger = (Logger)  Proxy.newProxyInstance(Test.class.getClassLoader(), new Class[]{Logger.Class}, h);
+      Logger logger = (Logger)  Proxy.newProxyInstance(Test.class.getClassLoader(), new Class[]{Logger.class}, h);
 
       logger.log();
 

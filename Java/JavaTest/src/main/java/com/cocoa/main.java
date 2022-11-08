@@ -149,7 +149,16 @@ public class main {
     }
 
 
+    
+
+
     public static void main(String[] args) throws ParseException, IOException {
+
+        Person p = new Person();
+        change(p);
+        System.out.println(p.getName());
+
+
 //        List<Object> list = new ArrayList<>();
 //        for (int i = 0; i < 10000; i++) {
 //            Person p = new Person();
@@ -331,30 +340,6 @@ public class main {
     }
 
 
-//    public void test() throws Exception{
-//        DefaultHttpClient httpClient = new DefaultHttpClient();
-//        String url = "https://api.netease.im/nimserver/user/refreshToken.action";
-//        HttpPost httpPost = new HttpPost(url);
-//
-//        String appKey = "dd87cd68fa15d7499e98ea7f0d2c061b";
-//        String appSecret = "10d14d4d6a2a";
-//        String nonce =  "12345";
-//        String curTime = String.valueOf((new Date()).getTime() / 1000L);
-//        String checkSum = CheckSumBuilder.getCheckSum(appSecret, nonce ,curTime);
-//
-//        httpPost.addHeader("AppKey", appKey);
-//        httpPost.addHeader("Nonce", nonce);
-//        httpPost.addHeader("CurTime", curTime);
-//        httpPost.addHeader("CheckSum", checkSum);
-//        httpPost.addHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
-//
-//        List<NameValuePair> nvps = new ArrayList<NameValuePair>();
-//        nvps.add(new BasicNameValuePair("accid", "testqccr2"));
-//        httpPost.setEntity(new UrlEncodedFormEntity(nvps, "utf-8"));
-//
-//        HttpResponse response = httpClient.execute(httpPost);
-//
-//        System.out.println(EntityUtils.toString(response.getEntity(), "utf-8"));
-//    }
+
 
 }

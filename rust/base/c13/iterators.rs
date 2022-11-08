@@ -10,6 +10,11 @@ fn shoes_in_size(shoes : Vec<Shoe>, size : u32) -> Vec<Shoe>{
 }
 
 
+// iter返回的是值的不可变引用，即&T
+// iter_mut返回的是可变引用，即&mut T
+// into_iter返回的是T类型的值
+
+
 fn main(){
 
     let v1  = vec![1,2,3,4,5];
@@ -44,7 +49,17 @@ fn main(){
         },
     ];
 
-    let in_my_size = shoes_in_size(shoes, 10);
-    println!("{:?}", in_my_size);    
+    // test1 
+    // let in_my_size = shoes_in_size(shoes, 10);
+    // println!("{:?}", in_my_size);    
+
+    // test2 [无法编译]  测试 into_iter 后，打印最老的shoes ，发现 into_iter 发生了值借用
+    // 报错原因----------- `shoes` moved due to this method call
+    // let myShoes :Vec<Shoe> = shoes.into_iter().filter(|item| 10 == item.size ).collect();
+    // println!("{:?}", shoes);    
+
+
+
+
 
 }
