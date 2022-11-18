@@ -1,15 +1,16 @@
 plugins {
     id 'com.android.application'
-    id 'kotlin-android'
+    id 'org.jetbrains.kotlin.android'
 }
 
 android {
-    compileSdkVersion 30
+    namespace 'com.cocoa.composetest'
+    compileSdkVersion 33
 
     defaultConfig {
         applicationId "com.cocoa.composetest"
         minSdkVersion 23
-        targetSdkVersion 30
+        targetSdkVersion 33
         versionCode 1
         versionName "1.0"
 

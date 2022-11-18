@@ -8,6 +8,7 @@
         "math.h": "c",
         "__node_handle": "c",
         "cstring": "c",
-        "sstream": "c"
+        "sstream": "c",
+        "ostream": "cpp"
     }
 }

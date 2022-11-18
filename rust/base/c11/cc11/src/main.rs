@@ -1,11 +1,20 @@
 
 use cc11::aaa::Person;
+use rand::prelude::*;
+
+
 
 fn main() {
-    let p = Person{
-        width:12
-    };
-    println!("{}", p.width);
+    // let p = Person{
+    //     width:12
+    // };
+    // println!("{}", p.width);
+
+    if rand::random() { // generates a boolean
+        // Try printing a random unicode code point (probably a bad idea)!
+        println!("char: {}", rand::random::<bool>());
+    }
+
 }
 
 fn getNum() -> u32 {

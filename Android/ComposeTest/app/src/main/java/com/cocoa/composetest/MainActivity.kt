@@ -38,8 +38,6 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         val defaultPreview2ViewModel by viewModels<DefaultPreview2ViewModel>()
         setContent {
-
-
             ComposeTestTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
