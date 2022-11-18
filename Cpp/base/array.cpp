@@ -6,7 +6,7 @@ int main(){
 
     cout << "Helleo---->" << "Array" <<endl;
 
-    int a1[3] {1,2,3};
+    int a1[3] {0};
 
     // 使用数组下标访问数组
     for(int i = 0; i < 3;i++){
