@@ -8,8 +8,13 @@ public class main {
 
     public static void main ( String args[] )
     {
+
+        String s  = "Hello我的";
+        char c = s.charAt(2);
+        System.out.println(c);
+
         //维修企业注册
-        lcipproaccountcompany();
+//        lcipproaccountcompany();
 
         //获取接口调用凭证
         //lcipprogetaccesstoken();
