@@ -10,5 +10,6 @@
         "cstring": "c",
         "sstream": "c",
         "ostream": "cpp"
-    }
+    },
+    "cmake.sourceDirectory": "${workspaceFolder}/Android/TestNdk/app/src/main/cpp"
 }
