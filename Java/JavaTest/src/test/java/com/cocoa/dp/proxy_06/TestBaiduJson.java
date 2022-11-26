@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class TestTest {
+class TestBaiduJson {
 
     @Test
     void test1() {

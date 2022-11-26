@@ -7,7 +7,7 @@ import org.junit.Test;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
-public class TestCache {
+public class BaiduJsonCache {
 
 
     @Test

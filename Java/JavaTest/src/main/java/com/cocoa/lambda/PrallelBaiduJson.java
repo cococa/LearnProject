@@ -5,7 +5,7 @@ import org.junit.Test;
 import java.util.stream.LongStream;
 import java.util.stream.Stream;
 
-public class PrallelTest {
+public class PrallelBaiduJson {
 
     @Test
     public void test() {

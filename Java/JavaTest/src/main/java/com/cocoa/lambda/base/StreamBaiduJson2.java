@@ -6,7 +6,7 @@ import org.junit.Test;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class StreamTest2 {
+public class StreamBaiduJson2 {
 
 
 

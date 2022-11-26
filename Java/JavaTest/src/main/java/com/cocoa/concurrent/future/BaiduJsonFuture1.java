@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.*;
 
-public class TestFuture1 {
+public class BaiduJsonFuture1 {
 
 
     /**

@@ -11,7 +11,7 @@ import java.util.Optional;
 import java.util.stream.Stream;
 
 
-public class StreamTest1 {
+public class StreamBaiduJson1 {
 
     @Test
     public void test1() {

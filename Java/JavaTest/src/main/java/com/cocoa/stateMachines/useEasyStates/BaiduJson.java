@@ -26,7 +26,7 @@ import java.util.Set;
  *
 
  */
-public class Test {
+public class BaiduJson {
 
         @org.junit.Test
         public void test() throws FiniteStateMachineException {

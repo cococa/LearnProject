@@ -5,7 +5,7 @@ import org.junit.Test;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TestHash {
+public class BaiduJsonHash {
 
     @Test
     public void test1(){

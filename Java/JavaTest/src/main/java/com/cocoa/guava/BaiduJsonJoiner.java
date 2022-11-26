@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import java.util.Map;
 
-public class TestJoiner {
+public class BaiduJsonJoiner {
 
     @Test
     public void test1() {
