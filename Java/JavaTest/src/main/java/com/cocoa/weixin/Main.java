@@ -94,7 +94,7 @@ public class Main {
         WxOpenConfigStorage wxOpenConfigStorage = new WxOpenInMemoryConfigStorage();
         wxOpenConfigStorage.setComponentAppId("wx656730804c2c5291");
         wxOpenConfigStorage.setComponentAppSecret("93e53a39ac2148424aa18c694db8ced3");
-        wxOpenConfigStorage.setComponentVerifyTicket("ticket@@@5pL0cMmDAkfRJsG9bBt9ScalozlBrTxahTBBItJFQ6P5hYp1XmacCDfg4MWsTHhTrCZWytL6dkB0Po1h7bJmWw");
+        wxOpenConfigStorage.setComponentVerifyTicket("ticket@@@gKReXV43IjyMWxn_pL_cZZsSXPVgYqrpv2P_ebhLKECte3NgJFjvXpQkBCrFW6Qr3YWyVf0DjVxWeNreKKOwnQ");
 
 
         WxOpenService wxOpenService = new WxOpenServiceImpl();
@@ -105,7 +105,7 @@ public class Main {
 
         WxOpenComponentService wxOpenComponentService = new WxOpenComponentServiceImpl(wxOpenService);
 
-        String appId = "wx29638185b16bef4c";
+        String appId = "wxc8dc912ce6f78d37";
         boolean isExpired = wxOpenComponentService.getWxOpenConfigStorage().isAuthorizerAccessTokenExpired(appId);
         if (true || isExpired) {
             WxOpenAuthorizerInfoResult wxc2fe513a236a273a = wxOpenComponentService.getAuthorizerInfo(appId);
@@ -143,13 +143,15 @@ public class Main {
 //        );
 
 
+        WxOpenMaQueryAuditResult wx684b71dc51c79a94 = wxOpenComponentService.getWxMaServiceByAppid(appId).getAuditStatus(444897508L);
+        System.out.println(wx684b71dc51c79a94);
 
 
 //         获取授权列表
-        WxOpenAuthorizerListResult authorizerList = wxOpenComponentService.getAuthorizerList(0, 100);
-        System.out.println(   //authorizerRefreshToken
-                authorizerList
-        );
+//        WxOpenAuthorizerListResult authorizerList = wxOpenComponentService.getAuthorizerList(0, 100);
+//        System.out.println(   //authorizerRefreshToken
+//                authorizerList
+//        );
 
 
 

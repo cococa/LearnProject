@@ -9,6 +9,10 @@ public class Words implements Serializable {
 
     private String words;
 
+    public Words(String words) {
+        this.words = words;
+    }
+
     public String getWords() {
         return words;
     }

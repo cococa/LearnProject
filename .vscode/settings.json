@@ -9,7 +9,9 @@
         "__node_handle": "c",
         "cstring": "c",
         "sstream": "c",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "string": "cpp",
+        "new": "cpp"
     },
     "cmake.sourceDirectory": "${workspaceFolder}/Android/TestNdk/app/src/main/cpp"
 }

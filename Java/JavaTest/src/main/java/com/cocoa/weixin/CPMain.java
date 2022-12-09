@@ -23,8 +23,6 @@ import java.util.List;
 public class CPMain {
     public static void main(String[] args) throws Exception {
 
-          Byte b = new Byte("0");
-            System.out.println(b==1);
 
 
 //        WxCpTpDefaultConfigImpl wxCpTpConfigStorage = new WxCpTpDefaultConfigImpl();
