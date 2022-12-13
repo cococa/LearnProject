@@ -1,2 +1,19 @@
-package org.example;public class Person {
+package org.example;
+
+
+import org.springframework.context.annotation.Bean;
+
+
+public class Person {
+
+    private String name;
+
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
