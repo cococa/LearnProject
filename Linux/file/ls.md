@@ -17,5 +17,6 @@ ls [Directory_Path]
 -a  Show all files, including hidden files (file names which begin with a period .)
 -d  Instead of listing the files and directories inside the directory, it shows any information about the directory itself, it can be used with -l to show long formatted information
 
+-R 列出文件下的所有结构
 
 
