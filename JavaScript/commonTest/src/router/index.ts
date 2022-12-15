@@ -23,6 +23,9 @@ import VueIndex from "@/views/vue/index.vue";
 import TestSetup from "@/views/vue/TestSetup.vue";
 import TestProvideInject from "@/views/vue/TestProvideInject.vue";
 import TestRenderFunction from "@/views/vue/TestRenderFunction.vue";
+import TestReactive from "@/views/vue/TestReactive.vue";
+
+
 
 //css
 import CssIndex from "@/views/css/index.vue";
@@ -59,6 +62,15 @@ const routes = [
     component: TestRenderFunction,
     meta: {
       title: "TestRenderFunction",
+      keepAlive: true,
+    },
+  },
+  {
+    path: "/vue/TestReactive",
+    name: "TestReactive",
+    component: TestReactive,
+    meta: {
+      title: "TestReactive",
       keepAlive: true,
     },
   },

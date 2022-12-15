@@ -1,6 +1,9 @@
 <template>
   <div class="flex-col justify-center items-center">
-    <router-view style="min-width:980px;height: 100vh;" class="max-w-screen-sm bg-gray-50 min-h-full max-h-full">
+    <router-view
+      style="min-width: 980px; height: 100vh"
+      class="max-w-screen-sm bg-gray-50 min-h-full max-h-full"
+    >
     </router-view>
   </div>
 </template>
@@ -16,46 +19,11 @@ export default {
       routerList: [],
     };
   },
-  components: {
-  },
+  components: {},
   created() {
     this.routerList = this.$router.getRoutes();
-    console.log("getData");
-    this.getData();
-    setTimeout(() => {
-      if (this.$refs.divRef) {
-        let descHeight = window
-          .getComputedStyle(this.$refs.divRef)
-          .height.replace("px", "");
-        console.log("descHeight:" + descHeight);
-        if (descHeight > 60) {
-          this.textOver = true;
-        } else {
-          this.textOver = false;
-        }
-      }
-    }, 1000);
   },
   methods: {
- 
-    getData() {
-      const rowContent = {
-        color: "#333",
-        fontSize: 12,
-        innerText: "",
-        marginLeft: 0,
-        marginRight: 0,
-      };
-
-      axios
-        .get("http://47.98.197.126:9999/mock/11/stz/home/station")
-        .then((res) => {
-          console.log("axios", res.data);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    },
     onRouter() {
       //   console.log(this.$router);
       //  this.$router.push('/about')
@@ -507,11 +475,9 @@ body {
   align-items: center;
 }
 
-
-
-.test1{
-  transform:skewX(-40deg);
-  padding:0px 10px;
+.test1 {
+  transform: skewX(-40deg);
+  padding: 0px 10px;
   width: 80px;
   height: 60px;
   text-align: center;
@@ -519,8 +485,7 @@ body {
   border: solid 2px red;
 }
 
-.test2{
-  transform:skewX(40deg);
+.test2 {
+  transform: skewX(40deg);
 }
-
 </style>
