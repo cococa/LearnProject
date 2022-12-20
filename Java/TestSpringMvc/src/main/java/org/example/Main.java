@@ -2,6 +2,7 @@ package org.example;
 
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.FactoryBean;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.springframework.context.ApplicationContext;
@@ -15,6 +16,11 @@ import java.nio.file.Files;
 
 
 public class Main {
+
+
+    @Autowired
+
+
 
     public static ClassPathResource qualifiedResource(Class<?> clazz, String resourceSuffix) {
         return new ClassPathResource(String.format("%s-%s", clazz.getSimpleName(), resourceSuffix), clazz);
@@ -41,9 +47,10 @@ public class Main {
 //        Person person =  factory.getBean(Person.class);
 //        System.out.println(person);
 
-        ApplicationContext ctx = new AnnotationConfigApplicationContext(QuickstartConfiguration.class);
+        ApplicationContext ctx = new AnnotationConfigApplicationContext("org.example");
         Person person = ctx.getBean(Person.class);
 
+        System.out.println(person.getDog());
         System.out.println(person);
 
     }

@@ -1,2 +1,8 @@
-package org.example;public class Dog {
+package org.example;
+
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class Dog {
 }
