@@ -18,7 +18,7 @@ repositories {
  * @see http://www.gradle.org/docs/current/userguide/userguide_single.html#sec:how_to_declare_your_dependencies
  */
 dependencies {
-    compile group: 'com.google.code.gson', name: 'gson', version: '2.8.5'
+    implementation group: 'com.google.code.gson', name: 'gson', version: '2.8.5'
 }
 
 
@@ -27,12 +27,12 @@ task zip(type: Zip, group: "Archive", description: "Archives sources in a zip fi
     from "src"
 }
 
-task first << {
-	println "first"
-}
-task second << {
-	println "second"
-}
+//task first << {
+//	println "first"
+//}
+//task second << {
+//	println "second"
+//}
 
 task makeReleaseVersion{
 	ant.propertyfile(file : versionFile){
@@ -47,7 +47,7 @@ task makeReleaseVersion{
 }
 
 
-task printVersion(group: "version", description: "print version" ,dependsOn:[first,second,makeReleaseVersion]){
+task printVersion(group: "version", description: "print version" ,dependsOn:[makeReleaseVersion]){
 	doLast{
 		println "$version"
 	}
@@ -89,6 +89,12 @@ class ProjectVersion{
 	}
 }
 
+
+tasks.register("hello"){
+	doLast{
+		println("hello")
+	}
+}
 
 
 

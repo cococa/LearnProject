@@ -4,13 +4,8 @@ using namespace std;
 
 // p88 & p89  内容
 
-// 通过引用交换数据
-void swap(int &b, int &a)
-{
-    int temp = b;
-    b = a;
-    a = temp;
-}
+
+
 
 int main()
 {
@@ -33,17 +28,5 @@ int main()
     // 指针数组的释放要加中括号
     delete[] p1;
 
-    int a = 10;
-
-    // c++ Prime Plus 中叫引用
-    // 引用必须立即初始化（不允许分两步），一旦初始化后不可更改
-    int &b = a;
-
-    cout << b << endl;
-
-    int x = 10;
-    int y = 20;
-    swap(x, y);
-    cout << x << endl;
-    cout << y << endl;
+    
 }
