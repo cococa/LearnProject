@@ -1,7 +1,11 @@
 <template>
   <div class="flex justify-center flex-col">
-    <div style="background-color: bisque;margin:20px 0px;">
-      <div>测试 script setup , 当使用 script setup 的时候，任何在 script setup 声明的顶层的绑定 (包括变量，函数声明，以及 import 引入的内容) 都能在模板中直接使用：</div>
+    <div style="background-color: bisque; margin: 20px 0px">
+      <div>
+        测试 script setup , 当使用 script setup 的时候，任何在 script setup
+        声明的顶层的绑定 (包括变量，函数声明，以及 import 引入的内容)
+        都能在模板中直接使用：
+      </div>
       <div>{{ setupCount }}</div>
       <button @click="countPlus">countPlus</button>
       <div>setup 标签中，连组件也可以直接使用，不用注册</div>
@@ -42,15 +46,17 @@ function countPlus() {
 
 <script>
 import { onMounted, ref, watch } from "vue";
-import userCompose from "@/composables/UserCompose";
+import {userCompose } from "@/composables/UserCompose";
 // import { useStore } from "vuex";
+import InjectComponent from "../../components/InjectComponent.vue";
 
 export default {
   name: "xx",
   data() {
     return {};
   },
-  components: {},
+  // 如果没有使用 <script setup>，则需要使用 components 选项来显式注册：
+  components: { InjectComponent },
   created() {},
   methods: {
     clickFromSetup() {
@@ -110,7 +116,7 @@ export default {
       getUser,
       changeDept,
       complexUserInfo,
-      changeCpxUserInfo,
+      changeCpxUserInfo
     };
   },
 };

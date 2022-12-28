@@ -22,9 +22,7 @@ import me.chanjar.weixin.open.api.*;
 import me.chanjar.weixin.open.api.impl.*;
 import me.chanjar.weixin.open.bean.result.*;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.InputStream;
+import java.io.*;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
@@ -74,27 +72,61 @@ public class Main {
         return outfilePath;
     }
 
+    private static void savePic(InputStream inputStream, String fileName) {
+
+        OutputStream os = null;
+        try {
+            String path = "/Users/shenjun/Documents/cocoa/LearnProject/Java/JavaTest";
+            // 2、保存到临时文件
+            // 1K的数据缓冲
+            byte[] bs = new byte[1024];
+            // 读取到的数据长度
+            int len;
+            // 输出的文件流保存到本地文件
+
+            File tempFile = new File(path);
+            if (!tempFile.exists()) {
+                tempFile.mkdirs();
+            }
+            os = new FileOutputStream(tempFile.getPath() + File.separator + fileName);
+            // 开始读取
+            while ((len = inputStream.read(bs)) != -1) {
+                os.write(bs, 0, len);
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            // 完毕，关闭所有链接
+            try {
+                os.close();
+                inputStream.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
 
     public static void main(String[] args) throws Exception {
-
-
         Byte b = new Byte("1");
         Byte a = new Byte("1");
 
-
         System.out.println(a.equals(b));
-
 
         String jss = "{name:\"ccccc\"}";
         Object js = JSON.toJSON(jss);
         System.out.println(JSON.toJSONString(js));
 
-//        438768914
+
+
 
         WxOpenConfigStorage wxOpenConfigStorage = new WxOpenInMemoryConfigStorage();
         wxOpenConfigStorage.setComponentAppId("wx656730804c2c5291");
         wxOpenConfigStorage.setComponentAppSecret("93e53a39ac2148424aa18c694db8ced3");
-        wxOpenConfigStorage.setComponentVerifyTicket("ticket@@@gKReXV43IjyMWxn_pL_cZZsSXPVgYqrpv2P_ebhLKECte3NgJFjvXpQkBCrFW6Qr3YWyVf0DjVxWeNreKKOwnQ");
+        wxOpenConfigStorage.setComponentVerifyTicket("ticket@@@OY6bY6ct4x84Me8yxo_5RxhWCBYDmWhVLdXSpx5BdfFKveYDBedfhcrpUvpsRHVAstH9BpJ4ih0jsGZFfJ8emw");
 
 
         WxOpenService wxOpenService = new WxOpenServiceImpl();
@@ -105,7 +137,7 @@ public class Main {
 
         WxOpenComponentService wxOpenComponentService = new WxOpenComponentServiceImpl(wxOpenService);
 
-        String appId = "wxc8dc912ce6f78d37";
+        String appId = "wx68c591be932fa3b0";
         boolean isExpired = wxOpenComponentService.getWxOpenConfigStorage().isAuthorizerAccessTokenExpired(appId);
         if (true || isExpired) {
             WxOpenAuthorizerInfoResult wxc2fe513a236a273a = wxOpenComponentService.getAuthorizerInfo(appId);
@@ -113,6 +145,9 @@ public class Main {
             System.out.println(wxc2fe513a236a273a);
             wxOpenComponentService.getWxOpenConfigStorage().setAuthorizerRefreshToken(appId, authorizerRefreshToken);
         }
+
+//        File file = wxOpenComponentService.getWxMaServiceByAppid(appId).getTestQrcode(null, null);
+//        savePic(new FileInputStream(file),"aa.jpg");
 
 //        Boolean aBoolean = wxOpenComponentService.getWxMaServiceByAppid(appId).speedAudit(438770365L);
 //        System.out.println(
@@ -143,8 +178,8 @@ public class Main {
 //        );
 
 
-        WxOpenMaQueryAuditResult wx684b71dc51c79a94 = wxOpenComponentService.getWxMaServiceByAppid(appId).getAuditStatus(444897508L);
-        System.out.println(wx684b71dc51c79a94);
+//        WxOpenMaQueryAuditResult wx684b71dc51c79a94 = wxOpenComponentService.getWxMaServiceByAppid(appId).getAuditStatus(422814145L);
+//        System.out.println(wx684b71dc51c79a94);
 
 
 //         获取授权列表

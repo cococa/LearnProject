@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from "vue-router";
 
 import Home from "@/views/Home.vue";
 
@@ -24,13 +24,11 @@ import TestSetup from "@/views/vue/TestSetup.vue";
 import TestProvideInject from "@/views/vue/TestProvideInject.vue";
 import TestRenderFunction from "@/views/vue/TestRenderFunction.vue";
 import TestReactive from "@/views/vue/TestReactive.vue";
-
-
+import TestComposables from "@/views/vue/TestComposables.vue";
 
 //css
 import CssIndex from "@/views/css/index.vue";
 import VariableCalc from "@/views/css/VariableCalc.vue";
-
 
 // 2. 定义一些路由
 // 每个路由都需要映射到一个组件。
@@ -71,6 +69,15 @@ const routes = [
     component: TestReactive,
     meta: {
       title: "TestReactive",
+      keepAlive: true,
+    },
+  },
+  {
+    path: "/vue/TestComposables",
+    name: "TestComposables",
+    component: TestComposables,
+    meta: {
+      title: "TestComposables",
       keepAlive: true,
     },
   },
@@ -210,9 +217,6 @@ const routes = [
       keepAlive: true,
     },
   },
-  
-
-
 ];
 
 const router = createRouter({

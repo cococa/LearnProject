@@ -30,12 +30,21 @@ public class Main {
         InvocationHandler handler = new InvocationHandler() {
             @Override
             public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-                System.out.println("" + method.getClass());
+                //很神奇，一直输出true
+                System.out.println(proxy instanceof IProductService);
+                System.out.println(proxy instanceof IUserService);
                 if(method.getName().equals("findUserById")) {
                     Class clz = UserServiceImpl.class;
                     Object target = clz.newInstance();
                     return method.invoke(target, args);
                 }
+
+                if(method.getName().equals("getInfo")) {
+                    Class clz = ProductServiceImpl.class;
+                    Object target = clz.newInstance();
+                    return method.invoke(target, args);
+                }
+
                 return null;
             }
         };
