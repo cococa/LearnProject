@@ -1,5 +1,7 @@
 package com.cocoa.proxy;
 
+import com.cocoa.proxy.jdk.User;
+
 public class UserServiceImpl implements IUserService {
 
     @Override
