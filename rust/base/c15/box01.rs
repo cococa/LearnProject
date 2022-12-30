@@ -1,11 +1,10 @@
-
 #[derive(Debug)]
-enum List{
+enum List {
     Cons(i32, Box<List>),
-    None,
+    Nil,
 }
 
 fn main(){
-    let a = List::Cons(1, Box::new(List::Cons(2, Box::new(List::None))));
-    println!("{:?}",a);
+    let list = List::Cons(1, Box::new(List::Cons(3,Box::new(List::Nil))));
+    println!("{:?}",list);
 }

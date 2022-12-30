@@ -1,12 +1,27 @@
 package com.cocoa.optional;
 
 
-import jdk.nashorn.internal.runtime.regexp.joni.constants.OPCode;
 import org.junit.Test;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Optional;
 
 public class Base {
+
+
+    @Test
+    public void testXXX() throws ParseException {
+        Calendar cNow = Calendar.getInstance();
+        cNow.add(Calendar.MINUTE, 60 * 24);
+
+        SimpleDateFormat allSdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+
+        System.out.println(allSdf.format(cNow.getTime()));
+        System.out.println(allSdf.parse("2022-12-30 14:51").after(cNow.getTime()));
+
+    }
 
 
     @Test
@@ -37,8 +52,8 @@ public class Base {
 //      (execute a block of code if the value is present).
 
         Optional<String> optional3 = Optional.ofNullable(null);
-        String result = optional3.orElse("defalut value");
-        System.out.println(result);
+        String defalut_value = optional3.filter(String::isEmpty).orElse("defalut value");
+        System.out.println(defalut_value);
 
 
 //       here is the source code of methods isPresent and orElse  ,simple to know the orElse
@@ -53,6 +68,13 @@ public class Base {
 
         // create empty optional
         Optional<String> optEmpty = Optional.empty();
+        optEmpty.ifPresent((item) -> System.out.println(item));
+//        if(optEmpty.isPresent()) {
+//            System.out.println(optEmpty.get());
+//        }
+
+        optEmpty.orElseThrow(NullPointerException::new);
+
     }
 
     @Test
@@ -79,7 +101,7 @@ public class Base {
         System.out.println(result3);
 
 
-        Optional.ofNullable(null).ifPresent( (t) -> System.out.println(t));
+        Optional.ofNullable(null).ifPresent((t) -> System.out.println(t));
 
 
     }

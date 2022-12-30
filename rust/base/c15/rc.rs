@@ -26,6 +26,11 @@ fn main(){
     let a = Rc::new(List::Cons(4, Rc::new (List::Cons(10, Rc::new(List::None)))));
     let b = List::Cons(10, Rc::clone(&a));
     let c = List::Cons(11, Rc::clone(&a));
+    {
+        let _d = List::Cons(11, Rc::clone(&a));
+        println!("inner count{}", Rc::strong_count(&a));
+        // 离开此作用域时，引用会自动释放
+    }
     println!("count{}", Rc::strong_count(&a));
 
 

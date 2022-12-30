@@ -14,7 +14,7 @@ var mutex sync.Mutex
 
 const N = 10000
 
-//https://pkg.go.dev/search?q=runtime
+// https://pkg.go.dev/search?q=runtime
 func main() {
 
 	msg, err := test1()
