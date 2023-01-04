@@ -25,8 +25,6 @@ int main(){
 
     pf("start----\n");
 
-
-
     printf1(10);
 
     #ifndef TEST_FLAG
