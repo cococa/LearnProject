@@ -2,7 +2,6 @@ package com
 
 fun main() {
 
-
     var a: String? = null
 //    val result = a?.length
 //    if (result == null) {
