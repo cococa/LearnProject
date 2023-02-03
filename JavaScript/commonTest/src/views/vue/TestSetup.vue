@@ -1,5 +1,6 @@
 <template>
   <div class="flex justify-center flex-col">
+    <div>{{ double }}</div>
     <div style="background-color: bisque; margin: 20px 0px">
       <div>
         测试 script setup , 当使用 script setup 的时候，任何在 script setup
@@ -38,86 +39,69 @@
 <!-- <script setup>
 import InjectComponent from "../../components/InjectComponent.vue";
 import { ref } from "vue";
-const setupCount = ref(0);
-function countPlus() {
-  setupCount.value += 1;
-}
+
 </script> -->
 
-<script>
-import { onMounted, ref, watch } from "vue";
-import {userCompose } from "@/composables/UserCompose";
+<script lang="ts" setup>
+import { computed, ref, watch } from "vue";
+import type { Ref } from "vue";
+
+import { userCompose } from "@/composables/UserCompose";
 // import { useStore } from "vuex";
 import InjectComponent from "../../components/InjectComponent.vue";
 
-export default {
-  name: "xx",
-  data() {
-    return {};
+const setupCount = ref(0);
+
+function clickFromSetup() {
+  console.log(getName());
+}
+
+let name = "cocoa";
+function getName() {
+  return name;
+}
+const count = ref(11);
+
+function countPlus() {
+  count.value++;
+}
+
+const double = computed<string>(() => name + "----computedname");
+
+// 使用watch 函数
+watch(
+  count,
+  (newValue, oldValue) => {
+    console.log(`the newValue ${newValue} and the oldValue ${oldValue}`);
   },
-  // 如果没有使用 <script setup>，则需要使用 components 选项来显式注册：
-  components: { InjectComponent },
-  created() {},
-  methods: {
-    clickFromSetup() {
-      console.log(this.getName());
-    },
-  },
-  setup(props) {
-    // const store = useStore();
-    // console.log("the count is  = " + store.state.count);
+  { immediate: true }
+);
 
-    let name = "cocoa";
-    function getName() {
-      return name;
-    }
-    const count = ref(11);
+// onMounted(countPlus);  // 在 `mounted` 时调用 `countPlus`
 
-    function countPlus() {
-      count.value++;
-    }
+const deptID = ref(11);
+const { user, getUser } = userCompose(deptID);
 
-    // 使用watch 函数
-    watch(
-      count,
-      (newValue, oldValue) => {
-        console.log(`the newValue ${newValue} and the oldValue ${oldValue}`);
-      },
-      { immediate: true }
-    );
+watch([deptID, count], (nv, ov) => {
+  // 监听多个数据，但是如果他们同时改变，只能被回调一次
+  console.log("deptid or count has changed!!");
+});
 
-    // onMounted(countPlus);  // 在 `mounted` 时调用 `countPlus`
+function changeDept() {
+  deptID.value++;
+}
 
-    const deptID = ref(11);
-    const { user, getUser } = userCompose(deptID);
+interface UserInfo {
+  name: string;
+  age: number;
+}
 
-    watch([deptID, count], (nv, ov) => {
-      // 监听多个数据，但是如果他们同时改变，只能被回调一次
-      console.log("deptid or count has changed!!");
-    });
-
-    function changeDept() {
-      deptID.value++;
-    }
-    const userInfo = {
-      name: "cocoa",
-      age: 33,
-    };
-    const complexUserInfo = ref(userInfo);
-    function changeCpxUserInfo() {
-      this.complexUserInfo.age += 1;
-    }
-    return {
-      getName,
-      name,
-      count,
-      countPlus,
-      user,
-      getUser,
-      changeDept,
-      complexUserInfo,
-      changeCpxUserInfo
-    };
-  },
+const userInfo: UserInfo = {
+  name: "cocoa",
+  age: 33,
 };
+const complexUserInfo: Ref<UserInfo> = ref(userInfo);
+function changeCpxUserInfo() {
+  complexUserInfo.value.age += 1;
+}
 </script>
