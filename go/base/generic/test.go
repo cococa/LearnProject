@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"reflect"
 )
 
 // 参考文章
@@ -28,6 +29,15 @@ func (s Stack[T]) Contains(val T) bool {
 type AAA struct {
 }
 
+// 使用泛型实现 map 函数
+func Map[T1, T2 any](s []T1, f func(T1) T2) []T2 {
+	result := make([]T2, len(s))
+	for i, v := range s {
+		result[i] = f(v)
+	}
+	return result
+}
+
 func main() {
 
 	// var aaa AAA
@@ -38,4 +48,11 @@ func main() {
 	fmt.Println(intStack.Contains(10))
 	// intStack.Push("123")
 	fmt.Println(intStack)
+	fmt.Println("--------------")
+	s := []int{1, 2, 3}
+	fmt.Println(reflect.TypeOf(s))
+	res := Map(s, func(s int) int {
+		return s * s
+	})
+	fmt.Println(res)
 }
