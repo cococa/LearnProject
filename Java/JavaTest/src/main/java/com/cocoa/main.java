@@ -1,6 +1,7 @@
 package com.cocoa;
 
 
+import com.alibaba.fastjson.JSON;
 import com.cocoa.model.Platform;
 import com.cocoa.model.dataoke.DouyinGoodsDetail;
 import com.tencentcloudapi.common.Credential;
@@ -20,10 +21,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -149,14 +147,49 @@ public class main {
     }
 
 
+    private static SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMdd");
 
+    public static Date getDateAfterMonth(int month) {
+        Date date = new Date();
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        calendar.add(calendar.MONTH, month);
+        return calendar.getTime();
+    }
+
+
+    static void test1(String pageindex) throws UnsupportedEncodingException {
+        Map<String, String> map = new HashMap<>();
+        map.put("appkey", "b253a26d80fc9e3a");
+        map.put("appsecret", "a188d216d08c47228493b2e11a42e9c2");
+        map.put("pageindex", pageindex);
+        map.put("pagesize", "1000");  //最大 5000
+        String s = HttpUtils.simplePost(JSON.toJSONString(map), "http://sdmsync.dat881.com/api/Cycle/CycleBatch/Post");
+        System.out.println(s);
+    }
 
 
     public static void main(String[] args) throws ParseException, IOException {
+        test1("");
+//        Boolean a = null;
+//        System.out.println(a == true);
 
-        Person p = new Person();
-//        change(p);
-        System.out.println(p.getName());
+//        String s1 = new String("{\"appkey\": \"b253a26d80fc9e3a\",\"appsecret\": \"a188d216d08c47228493b2e11a42e9c2\",\"pageindex\": \"\",\"pagesize\": \"100\"}");
+//        String s = HttpUtils.simplePost(s1, "http://sdmsync.dat881.com/api/Cycle/CycleBatch/Post");
+//        System.out.println(s);
+
+
+//        Map<Integer,Long> map = new HashMap<>();
+//        map.put(1,2L);
+//        System.out.println(map.get(222));
+
+
+//        System.out.println(new Date().after(getDateAfterMonth(12)));
+//
+//
+//        Person p = new Person();
+////        change(p);
+//        System.out.println(p.getName());
 
 
 //        List<Object> list = new ArrayList<>();
@@ -181,7 +214,7 @@ public class main {
 //        System.out.println(collect);
 
 
-        System.out.println(Platform.DDX);
+//        System.out.println(Platform.DDX);
 
 
 //        String str = "\uD83C\uDF49\uD83C\uDF47\uD83C\uDF51\uD83C\uDF53\uD83E\uDD5D";
@@ -338,8 +371,6 @@ public class main {
 
 
     }
-
-
 
 
 }
