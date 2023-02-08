@@ -15,7 +15,7 @@ struct Chapter9: View {
     @State var circleLoading = false;
     
     
-    @State var testShow = false;
+    @State var hbarShow = false;
     
     
     var body: some View {
@@ -46,7 +46,6 @@ struct Chapter9: View {
                     .font(.system(size: 100 ))
                     .scaleEffect(changed ? 1.0 : 0.5)
             }
-//            .animation(.easeIn)
             .onTapGesture {
                 withAnimation(.default){
                     changed.toggle();
@@ -55,32 +54,33 @@ struct Chapter9: View {
             
             
             Button(action: {
-                testShow.toggle()
+                hbarShow.toggle()
             }){
+                Text("show hbar")
+            }
+//            if(hbarShow){
                 Text("123")
-            }
-            if(testShow){
-            ZStack{
-                RoundedRectangle(cornerRadius: 3)
-                    .stroke(Color.gray,lineWidth: 3)
-                    .frame(width: 250, height: 3, alignment: .center)
-            
-                RoundedRectangle(cornerRadius: 3)
-                    .stroke(Color.green,lineWidth: 3)
-                    .frame(width: 30, height: 3, alignment: .center)
-                    .offset(x: isLoading ? 110 : -110, y:0)
-                    .onAppear{
-                        withAnimation(Animation.easeInOut(duration: 1.8).repeatForever()){
-                            isLoading.toggle()
+                ZStack{
+                    RoundedRectangle(cornerRadius: 3)
+                        .stroke(Color.gray,lineWidth: 3)
+                        .frame(width: 250, height: 3, alignment: .center)
+                
+                    RoundedRectangle(cornerRadius: 3)
+                        .stroke(Color.green,lineWidth: 3)
+                        .frame(width: 30, height: 3, alignment: .center)
+                        .offset(x: isLoading ? 110 : -110, y:0)
+                        .onAppear{
+                            withAnimation(Animation.easeInOut(duration: 1.8).repeatForever()){
+                                isLoading.toggle()
+                            }
                         }
-                    }
-            }.onAppear(){
-//                self.isLoading = true
-            }.onDisappear{
-                print("123")
-            }
-            }
-            
+//                }.onAppear(){
+////                    self.isLoading = true
+//                }.onDisappear{
+//                    print("123")
+                }
+
+//            }
             
             
         }
