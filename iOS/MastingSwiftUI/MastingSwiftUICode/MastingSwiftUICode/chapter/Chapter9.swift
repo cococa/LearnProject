@@ -7,16 +7,13 @@
 
 import SwiftUI
 
+
 struct Chapter9: View {
-    
     
     @State var changed = false;
     @State var isLoading = false;
     @State var circleLoading = false;
-    
-    
     @State var hbarShow = false;
-    
     
     var body: some View {
         VStack{
@@ -25,7 +22,7 @@ struct Chapter9: View {
                 ForEach(0...4, id: \.self){ index in
                      Circle()
                         .frame(width: 10, height: 10, alignment: .center)
-                        .foregroundColor(.green)
+                        .foregroundColor(.red)
 //                        .scaleEffect(self.circleLoading ? 0.0 : 1.0)
                         .animation(.linear(duration: 1.0).repeatForever().delay(1.0 * Double(index)), value: circleLoading)
 //                        .onAppear{

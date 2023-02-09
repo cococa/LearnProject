@@ -18,6 +18,9 @@
 		9F16A91B26BAB35B005DCFCC /* CounterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F16A91A26BAB35B005DCFCC /* CounterButton.swift */; };
 		9F21723126C4BB4700A6D6FA /* Chapter8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F21723026C4BB4700A6D6FA /* Chapter8.swift */; };
 		9F21723326C4CE2100A6D6FA /* Chapter9.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F21723226C4CE2100A6D6FA /* Chapter9.swift */; };
+		9F262DB42994D96E00945D56 /* Chapter11.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F262DB32994D96E00945D56 /* Chapter11.swift */; };
+		9F262DB62994DB0600945D56 /* RestaurantDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F262DB52994DB0600945D56 /* RestaurantDetailView.swift */; };
+		9F43A4FD2994CB890058F19B /* ColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F43A4FC2994CB890058F19B /* ColorExt.swift */; };
 		9F684F54287EB7C20015C266 /* SwiftUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F684F53287EB7C20015C266 /* SwiftUIButton.swift */; };
 		9F8E68C128804EC3009F3C27 /* Chapter7.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E68C028804EC3009F3C27 /* Chapter7.swift */; };
 		9F973EBE26B8F06F00AC99F7 /* Chapter5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F973EBD26B8F06F00AC99F7 /* Chapter5.swift */; };
@@ -60,6 +63,9 @@
 		9F16A91A26BAB35B005DCFCC /* CounterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterButton.swift; sourceTree = "<group>"; };
 		9F21723026C4BB4700A6D6FA /* Chapter8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter8.swift; sourceTree = "<group>"; };
 		9F21723226C4CE2100A6D6FA /* Chapter9.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter9.swift; sourceTree = "<group>"; };
+		9F262DB32994D96E00945D56 /* Chapter11.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter11.swift; sourceTree = "<group>"; };
+		9F262DB52994DB0600945D56 /* RestaurantDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailView.swift; sourceTree = "<group>"; };
+		9F43A4FC2994CB890058F19B /* ColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExt.swift; sourceTree = "<group>"; };
 		9F684F53287EB7C20015C266 /* SwiftUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIButton.swift; sourceTree = "<group>"; };
 		9F8E68C028804EC3009F3C27 /* Chapter7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter7.swift; sourceTree = "<group>"; };
 		9F973EBD26B8F06F00AC99F7 /* Chapter5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter5.swift; sourceTree = "<group>"; };
@@ -162,6 +168,7 @@
 				9F21723026C4BB4700A6D6FA /* Chapter8.swift */,
 				9F21723226C4CE2100A6D6FA /* Chapter9.swift */,
 				9FDB18B62993AD15004B77B3 /* Chapter10.swift */,
+				9F262DB32994D96E00945D56 /* Chapter11.swift */,
 			);
 			path = chapter;
 			sourceTree = "<group>";
@@ -172,6 +179,8 @@
 				9F973EC826B911A900AC99F7 /* CardView.swift */,
 				9F16A91A26BAB35B005DCFCC /* CounterButton.swift */,
 				9F684F53287EB7C20015C266 /* SwiftUIButton.swift */,
+				9F43A4FC2994CB890058F19B /* ColorExt.swift */,
+				9F262DB52994DB0600945D56 /* RestaurantDetailView.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -306,6 +315,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F21723126C4BB4700A6D6FA /* Chapter8.swift in Sources */,
+				9F262DB42994D96E00945D56 /* Chapter11.swift in Sources */,
 				9F8E68C128804EC3009F3C27 /* Chapter7.swift in Sources */,
 				9F16A91B26BAB35B005DCFCC /* CounterButton.swift in Sources */,
 				8D7DC8982626D4CB0032FFD2 /* ContentView.swift in Sources */,
@@ -315,8 +325,10 @@
 				9F16A91926BAACE8005DCFCC /* Chapter6.swift in Sources */,
 				9F21723326C4CE2100A6D6FA /* Chapter9.swift in Sources */,
 				8D7DC8962626D4CB0032FFD2 /* MastingSwiftUICodeApp.swift in Sources */,
+				9F262DB62994DB0600945D56 /* RestaurantDetailView.swift in Sources */,
 				8D7DC8C72626D8720032FFD2 /* LayoutUserInterface.swift in Sources */,
 				9F973EC926B911A900AC99F7 /* CardView.swift in Sources */,
+				9F43A4FD2994CB890058F19B /* ColorExt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
