@@ -1,5 +1,6 @@
 
 
+// trait 是私有的，别的包使用要加上 pub
 trait I {
     fn f(&self){
        println!("I function f "); 
@@ -49,7 +50,13 @@ fn print3<T : Summary>(item: &T) -> &T{
     item 
 }
 
-
+fn test1()-> impl I {
+    Weibo{
+        title: String::from("this is title"),
+        content : String::from("this is content"),
+        auther: String::from("lily")
+    } 
+}
 
 
 fn main(){
@@ -68,6 +75,9 @@ fn main(){
     print1(&wb);
 
     print3(&wb);
+
+    let t  = test1();
+    t.f();
 
 }
 

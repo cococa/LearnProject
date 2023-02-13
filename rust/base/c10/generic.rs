@@ -46,5 +46,10 @@ fn main(){
     println!("{}", integer.x());
     println!("{}", integer.x1());
 
+    // 当单独创建 let v  = Vec::new(); 时，会报错：
+    // consider giving `v` an explicit type, where the type for type parameter `T` is specified
+    // 是因为你没有明显制定类型  Vec<i32>  或者要后面调用 push 方法，编译才会成功
+    // let v  = Vec::new();    
+    
 
 }
