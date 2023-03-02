@@ -159,24 +159,22 @@ public class main {
     }
 
 
-    static void test1(String pageindex) throws UnsupportedEncodingException {
+    static String test1(String pageindex) throws UnsupportedEncodingException {
         Map<String, String> map = new HashMap<>();
         map.put("appkey", "b253a26d80fc9e3a");
         map.put("appsecret", "a188d216d08c47228493b2e11a42e9c2");
         map.put("pageindex", pageindex);
         map.put("pagesize", "1000");  //最大 5000
         String s = HttpUtils.simplePost(JSON.toJSONString(map), "http://sdmsync.dat881.com/api/Cycle/CycleBatch/Post");
-        System.out.println(s);
+        return s;
     }
 
 
     public static void main(String[] args) throws ParseException, IOException {
-        test1("");
-
-
-
-
-
+        String ss = test1("a739wcHTKXaI7zd9yGwPeQ==");
+        System.out.println(ss);
+        LyUpkeepImportResult lyUpkeepImportResult = JSON.parseObject(ss, LyUpkeepImportResult.class);
+        System.out.println(lyUpkeepImportResult.getResult());
 //        Boolean a = null;
 //        System.out.println(a == true);
 

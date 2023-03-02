@@ -1,17 +1,25 @@
 package com.cocoa.lt;
 
+import org.apache.commons.codec.DecoderException;
+import org.apache.commons.codec.binary.Hex;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 class Main {
 
-    public static void main(String[] args) {
 
 
-        System.out.println(new Main().myAtoi("3.123"));
+    public static void main(String[] args) throws Exception {
 
     }
 
 
     public int myAtoi(String s) {
-        if(s.contains("+-")|| s.contains("-+")){
+        if (s.contains("+-") || s.contains("-+")) {
             return 0;
         }
         int length = s.length();
@@ -27,7 +35,7 @@ class Main {
                 if (c != ' ' && c != '+' && c != '-' && result != 0) {
                     result = 0;
                 }
-                if(c == '.'){
+                if (c == '.') {
                     result = 0;
                     len = 0;
                 }
@@ -40,7 +48,7 @@ class Main {
 
                     if (i != 0 && '-' == s.charAt(i - 1)) {
                         result = Integer.MIN_VALUE;
-                    }else {
+                    } else {
                         result = Integer.MAX_VALUE;
                     }
 

@@ -1,14 +1,17 @@
 package com.cocoa.weixin;
 
 import cn.binarywang.wx.miniapp.api.WxMaService;
+import cn.binarywang.wx.miniapp.api.WxMaSubscribeService;
 import cn.binarywang.wx.miniapp.api.impl.WxMaServiceImpl;
 import cn.binarywang.wx.miniapp.bean.WxMaAuditMediaUploadResult;
+import cn.binarywang.wx.miniapp.bean.WxMaSubscribeMessage;
 import cn.binarywang.wx.miniapp.bean.code.WxMaCodeVersionInfo;
 import cn.binarywang.wx.miniapp.config.WxMaConfig;
 import cn.binarywang.wx.miniapp.config.impl.WxMaDefaultConfigImpl;
 import com.alibaba.fastjson.JSON;
 import me.chanjar.weixin.common.api.WxConsts;
 import me.chanjar.weixin.common.bean.result.WxMediaUploadResult;
+import me.chanjar.weixin.common.bean.subscribemsg.PubTemplateKeyword;
 import me.chanjar.weixin.common.error.WxErrorException;
 import me.chanjar.weixin.mp.api.WxMpMaterialService;
 import me.chanjar.weixin.mp.api.WxMpService;
@@ -26,8 +29,10 @@ import java.io.*;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Main {
 
@@ -111,22 +116,20 @@ public class Main {
 
 
     public static void main(String[] args) throws Exception {
-        Byte b = new Byte("1");
-        Byte a = new Byte("1");
-
-        System.out.println(a.equals(b));
-
-        String jss = "{name:\"ccccc\"}";
-        Object js = JSON.toJSON(jss);
-        System.out.println(JSON.toJSONString(js));
-
-
+//        Byte b = new Byte("1");
+//        Byte a = new Byte("1");
+//
+//        System.out.println(a.equals(b));
+//
+//        String jss = "{name:\"ccccc\"}";
+//        Object js = JSON.toJSON(jss);
+//        System.out.println(JSON.toJSONString(js));
 
 
         WxOpenConfigStorage wxOpenConfigStorage = new WxOpenInMemoryConfigStorage();
         wxOpenConfigStorage.setComponentAppId("wx656730804c2c5291");
         wxOpenConfigStorage.setComponentAppSecret("93e53a39ac2148424aa18c694db8ced3");
-        wxOpenConfigStorage.setComponentVerifyTicket("ticket@@@OY6bY6ct4x84Me8yxo_5RxhWCBYDmWhVLdXSpx5BdfFKveYDBedfhcrpUvpsRHVAstH9BpJ4ih0jsGZFfJ8emw");
+        wxOpenConfigStorage.setComponentVerifyTicket("ticket@@@YADYgR6RG7orV2iUFMc0BMeu629P842fHkNwTnTzzCy_ZtJ17useFU-lnf40EIMIUcykhjcNJMT_2UZ_Pfa5aw");
 
 
         WxOpenService wxOpenService = new WxOpenServiceImpl();
@@ -137,7 +140,8 @@ public class Main {
 
         WxOpenComponentService wxOpenComponentService = new WxOpenComponentServiceImpl(wxOpenService);
 
-        String appId = "wx68c591be932fa3b0";
+
+        String appId = "wx54c64fcc401892c0";
         boolean isExpired = wxOpenComponentService.getWxOpenConfigStorage().isAuthorizerAccessTokenExpired(appId);
         if (true || isExpired) {
             WxOpenAuthorizerInfoResult wxc2fe513a236a273a = wxOpenComponentService.getAuthorizerInfo(appId);
@@ -145,6 +149,49 @@ public class Main {
             System.out.println(wxc2fe513a236a273a);
             wxOpenComponentService.getWxOpenConfigStorage().setAuthorizerRefreshToken(appId, authorizerRefreshToken);
         }
+
+
+//        675   GzbiiwgLxgc7yVj3EXlrJ2Pf3N2U6HYwucfpwCV4RmQ
+
+//        String tid = "675";
+        WxMaSubscribeService subscribeService = wxOpenComponentService.getWxMaServiceByAppid(appId).getSubscribeService();
+        boolean b = subscribeService.delTemplate("30540");
+        System.out.println(b);
+        b = subscribeService.delTemplate("675");
+        System.out.println(b);
+        b = subscribeService.delTemplate("1874");
+        System.out.println(b);
+        b = subscribeService.delTemplate("30602");
+        System.out.println(b);
+
+
+//        List<PubTemplateKeyword> pubTemplateKeyWordsById = subscribeService.getPubTemplateKeyWordsById(tid);
+//        pubTemplateKeyWordsById.stream().forEach((item) -> System.out.print(item.getKid() + "-" + item.getName() + " "));
+//        if (org.apache.commons.collections4.CollectionUtils.isNotEmpty(pubTemplateKeyWordsById)) {
+//            List<Integer> collect = pubTemplateKeyWordsById.stream().map(PubTemplateKeyword::getKid).limit(5).collect(Collectors.toList());
+//            collect.clear();
+//            collect.addAll(getKidList(tid));
+//            System.out.println(subscribeService.addTemplate(tid, collect, "123"));
+//        }
+
+//
+
+
+//        WxMaSubscribeMessage wxMaSubscribeMessage = new WxMaSubscribeMessage();
+//        wxMaSubscribeMessage.setToUser("of0wJ5J6HFWM7Hd6q1ncYnFeGeKY");
+//        wxMaSubscribeMessage.setTemplateId("rHRBcZ7u9-kaJPV7KJhDKGXhlv8REjHdg_nAouUEeuo");
+//
+//        List<WxMaSubscribeMessage.MsgData> data = new ArrayList<>();
+//        data.add(new WxMaSubscribeMessage.MsgData("thing1","汽车年卡"));
+//        data.add(new WxMaSubscribeMessage.MsgData("thing2","汽车10次"));
+//        data.add(new WxMaSubscribeMessage.MsgData("amount3","123"));
+//        data.add(new WxMaSubscribeMessage.MsgData("phrase4","已付款"));
+//        data.add(new WxMaSubscribeMessage.MsgData("thing5","xxx门店"));
+//
+//        wxMaSubscribeMessage.setData(data);
+//        WxMaSubscribeService subscribeService = wxOpenComponentService.getWxMaServiceByAppid(appId).getSubscribeService();
+//        subscribeService.sendSubscribeMsg(wxMaSubscribeMessage);
+
 
 //        File file = wxOpenComponentService.getWxMaServiceByAppid(appId).getTestQrcode(null, null);
 //        savePic(new FileInputStream(file),"aa.jpg");
@@ -187,8 +234,11 @@ public class Main {
 //        System.out.println(   //authorizerRefreshToken
 //                authorizerList
 //        );
-
-
+//
+//        WxOpenAuthorizerInfoResult wx49445c40059f4524 = wxOpenComponentService.getAuthorizerInfo("wx73af589ad8423f90");
+//        System.out.println(   //authorizerRefreshToken
+//                wx49445c40059f4524
+//        );
 
 //        WxOpenQueryAuthResult queryAuth = wxOpenComponentService.getQueryAuth("queryauthcode@@@xI6TFBs8J12vfpPZvtFgG8vbFfc2exQMY88bahsRPeJampKbXSCjfJf3J1QtBhSOaygiDoa6DjY_6Qg95okahA");
 //        System.out.println(   //authorizerRefreshToken
@@ -373,4 +423,35 @@ public class Main {
 
 
     }
+
+
+    //        data.add(new WxMaSubscribeMessage.MsgData("thing1","汽车年卡"));
+//        data.add(new WxMaSubscribeMessage.MsgData("thing2","汽车10次"));
+//        data.add(new WxMaSubscribeMessage.MsgData("amount3","123"));
+//        data.add(new WxMaSubscribeMessage.MsgData("phrase4","已付款"));
+//        data.add(new WxMaSubscribeMessage.MsgData("thing5","xxx门店"));
+
+    private static List<Integer> getKidList(String tid) {
+        if ("1874".equals(tid)) {  // 服务完成
+            // 1-工单状态 2-服务项目 3-日期 4-预计完工时间 5-订单编号 6-完成时间 7-服务地址 8-备注 9-服务门店 10-消费站点 11-结束时间 12-订单金额 13-原因 14-订单名称
+            return Arrays.asList(5, 6, 9, 12);
+        }
+        if ("30602".equals(tid)) {
+            //1-权益名称 2-券剩余数量 3-温馨提示 4-到期时间
+            return Arrays.asList(1, 4, 3);
+        }
+        if ("30540".equals(tid)) {
+            //1-卡名称 2-项目 3-实付金额 4-状态 5-门店名称
+            return Arrays.asList(1, 2, 3, 4);
+        }
+        if ("675".equals(tid)) {
+            //1-订单编号 2-订单金额 3-下单时间 4-温馨提示 5-车牌号 6-订单类型 7-预约时间 8-服务地址 9-取货地址 10-车型 11-下单店铺 12-订单内容 13-送货地址 14-支付方式 15-支付时间 16-支付金额 17-物品名称 18-店铺地址 19-VIN码 20-服务技师 21-服务门店 22-服务项目 23-门店地址
+            return Arrays.asList(15, 21, 16, 17);
+        }
+        return null;
+    }
+
+
 }
+
+

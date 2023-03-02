@@ -53,6 +53,8 @@ dependencies {
     implementation group: 'com.google.guava', name: 'guava', version: '30.0-jre'
     compileOnly 'org.projectlombok:lombok:1.18.24'
     implementation 'com.aliyun:alidns20150109:3.0.1'
+// https://mvnrepository.com/artifact/commons-codec/commons-codec
+    implementation 'commons-codec:commons-codec:1.15'
 
 
 }
