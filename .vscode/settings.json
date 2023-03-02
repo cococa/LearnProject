@@ -11,7 +11,8 @@
         "sstream": "c",
         "ostream": "cpp",
         "string": "cpp",
-        "new": "cpp"
+        "new": "cpp",
+        "mathfunctions.h": "c"
     },
     "cmake.sourceDirectory": "${workspaceFolder}/Android/TestNdk/app/src/main/cpp"
 }

@@ -57,10 +57,10 @@ RM = /opt/homebrew/Cellar/cmake/3.20.5/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/shenjun/Documents/cocoa/LearnProject/C/Cmake/test1
+CMAKE_SOURCE_DIR = /Users/shenjun/Documents/cocoa/LearnProject/C/Cmake/Demo
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/shenjun/Documents/cocoa/LearnProject/C/Cmake/test1
+CMAKE_BINARY_DIR = /Users/shenjun/Documents/cocoa/LearnProject/C/Cmake/Demo
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/shenjun/Documents/cocoa/LearnProject/C/Cmake/test1/CMakeFiles /Users/shenjun/Documents/cocoa/LearnProject/C/Cmake/test1//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/shenjun/Documents/cocoa/LearnProject/C/Cmake/Demo/CMakeFiles /Users/shenjun/Documents/cocoa/LearnProject/C/Cmake/Demo//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/shenjun/Documents/cocoa/LearnProject/C/Cmake/test1/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/shenjun/Documents/cocoa/LearnProject/C/Cmake/Demo/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -117,24 +117,37 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Test1
+# Target rules for targets named Demo
 
 # Build rule for target.
-Test1: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Test1
-.PHONY : Test1
+Demo: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Demo
+.PHONY : Demo
 
 # fast build rule for target.
-Test1/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Test1.dir/build.make CMakeFiles/Test1.dir/build
-.PHONY : Test1/fast
+Demo/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Demo.dir/build.make CMakeFiles/Demo.dir/build
+.PHONY : Demo/fast
+
+#=============================================================================
+# Target rules for targets named MathFunctions
+
+# Build rule for target.
+MathFunctions: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MathFunctions
+.PHONY : MathFunctions
+
+# fast build rule for target.
+MathFunctions/fast:
+	$(MAKE) $(MAKESILENT) -f math/CMakeFiles/MathFunctions.dir/build.make math/CMakeFiles/MathFunctions.dir/build
+.PHONY : MathFunctions/fast
 
 main.o: main.c.o
 .PHONY : main.o
 
 # target to build an object file
 main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Test1.dir/build.make CMakeFiles/Test1.dir/main.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Demo.dir/build.make CMakeFiles/Demo.dir/main.c.o
 .PHONY : main.c.o
 
 main.i: main.c.i
@@ -142,7 +155,7 @@ main.i: main.c.i
 
 # target to preprocess a source file
 main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Test1.dir/build.make CMakeFiles/Test1.dir/main.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Demo.dir/build.make CMakeFiles/Demo.dir/main.c.i
 .PHONY : main.c.i
 
 main.s: main.c.s
@@ -150,7 +163,7 @@ main.s: main.c.s
 
 # target to generate assembly for a file
 main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Test1.dir/build.make CMakeFiles/Test1.dir/main.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Demo.dir/build.make CMakeFiles/Demo.dir/main.c.s
 .PHONY : main.c.s
 
 # Help Target
@@ -161,7 +174,8 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Test1"
+	@echo "... Demo"
+	@echo "... MathFunctions"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
