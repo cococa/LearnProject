@@ -1,3 +1,0 @@
-/Users/shenjun/Documents/cocoa/LearnProject/C/Cmake/test1/CMakeFiles/rebuild_cache.dir
-/Users/shenjun/Documents/cocoa/LearnProject/C/Cmake/test1/CMakeFiles/edit_cache.dir
-/Users/shenjun/Documents/cocoa/LearnProject/C/Cmake/test1/CMakeFiles/Test1.dir

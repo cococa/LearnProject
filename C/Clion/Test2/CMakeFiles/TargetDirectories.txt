@@ -1,3 +1,0 @@
-/cygdrive/d/cocoa/LearnProject/C/Clion/Test2/CMakeFiles/rebuild_cache.dir
-/cygdrive/d/cocoa/LearnProject/C/Clion/Test2/CMakeFiles/edit_cache.dir
-/cygdrive/d/cocoa/LearnProject/C/Clion/Test2/CMakeFiles/Test2.dir
