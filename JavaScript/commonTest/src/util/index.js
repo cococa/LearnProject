@@ -57,14 +57,9 @@ export const ArrayUtil = {
 };
 
 
+export function test2Fun() {
+  return "hello world"
+}
 
-
-
-
-
-
-
-
-
-
-
+// let PI= 3.1415926;
+export const PI = 3.1415926;

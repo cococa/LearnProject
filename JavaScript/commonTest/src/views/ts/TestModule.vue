@@ -1,85 +1,60 @@
 <template>
   <div class="flex flex-1 flex-col">
-    <div style="width:800px"></div>
-    <div class="my-editor">
-      <prism-editor
-        v-model="editorCode"
-        :highlight="highlighter"
-        line-numbers
-      ></prism-editor>
-    </div>
+    <div style="width: 800px"></div>
     <button class="bg-indigo-500" @click="test1">test1</button>
     <button class="bg-indigo-500" @click="test2">test2</button>
+    <button class="bg-indigo-500" @click="test3">test3</button>
   </div>
 </template>
 
-<script lang="ts">
-import VueMarkdownIt from "vue3-markdown-it";
+<script setup>
 import * as shapes from "./lib/test-module";
 // import { Person } from "./lib/test-module";
-import mixinCode from "../../mixins/mixinCode";
 import { ref } from "vue";
-import prism from "prismjs";
+import deepClone, { test2Fun, PI } from "../../util";
+import { union as listunion } from "../../util/CCArrayUtil";
+// 导入原型方法
+import "../../util/CCArrayExt";
 
-export default {
-  name: "xx",
-  components: {
-    VueMarkdownIt,
-    Prism,
-  },
-  mixins: [mixinCode],
-  data() {
-    return {
-      source1: `test1() {
-      const t = new shapes.Shapes.Triangle();
-      console.log(t);
-      console.log(shapes.Shapes.age);
-    },`,
-      code1: "",
-    };
-  },
-  mounted() {},
-  methods: {
-    test1() {
-      const t = new shapes.Shapes.Triangle();
-      console.log(t);
-      console.log(shapes.Shapes.age);
-    },
-    test2() {
-      // const p = new Person();
-      // p.name = "123";
-      // console.log(p);
-    },
-    loadFile(fileName) {
-      //  更新数据devInfo.txt文件接口
-      let xhr = new XMLHttpRequest(),
-        okStatus = document.location.protocol === "file:" ? 0 : 200;
-      xhr.open("GET", fileName, false); // 文件路径
-      xhr.overrideMimeType("text/html;charset=utf-8"); //默认为utf-8
-      xhr.send(null);
-      this.source = xhr.responseText; //打印文件信息
-    },
-  },
-  setup(props) {
-    const a = function () {
-      return function (){
-        //asdas
-        let aaa  = 10;
-        console.log(aaa);
-      }
-    };
-    const editorCode = ref(a.toString());
-    
-    const highlighter = (code) => {
-      return prism.highlight(code, prism.languages.js, "javascript");
-    };
+//   source1: `test1() {
+//   const t = new shapes.Shapes.Triangle();
+//   console.log(t);
+//   console.log(shapes.Shapes.age);
+// },`,
+//   code1: "",
+//   data3: {name: "123"}
 
-    return {
-      editorCode,
-      highlighter,
-    };
-  },
-};
+function test1() {
+  const t = new shapes.Shapes.Triangle();
+  console.log(t);
+  console.log(shapes.Shapes.age);
+}
+function test2() {
+  // const p = new Person();
+  // p.name = "123";
+  // console.log(p);
+}
+
+let data3 = ref({ name: "123" });
+function test3() {
+  let data = deepClone(data3.value);
+  data.name = "456";
+  console.log(data);
+  console.log(test2Fun());
+  console.log(PI);
+
+  let list1 = [1, 2, 3, 4, 5];
+  let list2 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  console.log(listunion(list1, list2));
+
+  let removeAllRes = list2.removeAll((item) => {
+    return item % 2;
+  });
+  // console.log("removeAllRes",removeAllRes);
+  for (const iterator of removeAllRes) {
+    console.log(iterator);
+  }
+}
 </script>
 
 <style></style>
