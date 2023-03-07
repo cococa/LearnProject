@@ -26,9 +26,16 @@ import TestRenderFunction from "@/views/vue/TestRenderFunction.vue";
 import TestReactive from "@/views/vue/TestReactive.vue";
 import TestComposables from "@/views/vue/TestComposables.vue";
 
+
+import Es6Index from "@/views/es6/index.vue";
+import Promise from "@/views/es6/Promise.vue";
+
+
+
 //css
 import CssIndex from "@/views/css/index.vue";
 import VariableCalc from "@/views/css/VariableCalc.vue";
+
 
 // 2. 定义一些路由
 // 每个路由都需要映射到一个组件。
@@ -216,6 +223,24 @@ const routes = [
       title: "css variable-calc",
       keepAlive: true,
     },
+  },
+  {
+      path: "/es6/index",
+      name: "es6",
+      component: Es6Index,
+      meta: {
+          title: "Es6Index",
+          keepAlive: true,
+      },
+  },
+  {
+      path: "/es6/promise",
+      name: "promise",
+      component: Promise,
+      meta: {
+          title: "promise",
+          keepAlive: true,
+      },
   },
 ];
 

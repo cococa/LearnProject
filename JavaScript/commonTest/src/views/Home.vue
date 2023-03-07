@@ -32,7 +32,7 @@ export default {
   components: {},
   created() {
      this.routerList = this.$router.getRoutes().filter((item) => {
-      console.log(item);
+      console.log("routerList>>>",item);
       return  this.firstRouterName.some((name) => {
         return name == item.name;
       });
