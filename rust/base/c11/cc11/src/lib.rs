@@ -7,7 +7,6 @@ pub mod aaa{
 }
 
 
-
 #[cfg(test)]
 mod tests {
     #[test]

@@ -15,6 +15,7 @@
 #include "pointer/p4.h"
 #include "pointer/string.h"
 #include "pointer/_const.h"
+#include "advanced/align_of.h"
 #define VALUE 10
 
 #define MAX(a, b) ((a > b) ? (a) : (b))
@@ -38,6 +39,12 @@
 //      %o 无符号以八进制表示的整数    
 //
 //      %g 自动选择合适的表示法 
+
+
+int main(){
+    algnof_main();
+}
+
 
 
 
@@ -150,72 +157,126 @@ struct Action{
 //
 //
 //
-typedef struct Sds SDS;
+//typedef struct Sds SDS;
+//
+//struct Sds{
+//    int len;
+//    int free;
+//    char str[];
+//};
+//
+//
+//SDS* init(char* str, size_t len){
+//    SDS* s = (SDS*) malloc(sizeof(int) *2 + sizeof(char)* (len+1));
+//    s->len  = len;
+//    s->free = 0;
+//    memcpy(s->str, str, len+1);
+//    return s;
+//}
+//
+//void printSds(SDS *p){
+//    if(p==NULL){
+//        return;
+//    }
+//    printf("the len of sds = %d , and the free = %d, the content = %s \n", p->len, p-> free, p->str);
+//}
+//
+//void freeSds(SDS *p){
+//    if(p==NULL){
+//        return;
+//    }
+//    free(p);
+//    p=NULL;
+//}
+//
+//SDS* append(SDS* p, char* str, size_t len){
+//    size_t cutLen = p-> len;
+//    if(len <= cutLen){
+//        memcpy(p-> str, str,len+1);
+//        return p;
+//    }else{
+//        freeSds(p);
+//        return  init(str,len);
+//    }
+//}
 
-struct Sds{
-    int len;
-    int free;
-    char str[];
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+#define SDS_HDR_VAR(T, s) struct sdshdr##T *sh = (struct sdshdr##T *)((s)-(sizeof(struct sdshdr##T))-2);
+
+
+struct sdshdr8 {
+    u_int32_t len;
+    u_int32_t alloc;
+    char buf[];
+};
+
+struct A{
+    char a1;
+    short a2;
+    int a3;
 };
 
 
-SDS* init(char* str, size_t len){
-    SDS* s = (SDS*) malloc(sizeof(int) *2 + sizeof(char)* (len+1));
-    s->len  = len;
-    s->free = 0;
-    memcpy(s->str, str, len+1);
-    return s;
-}
-
-void printSds(SDS *p){
-    if(p==NULL){
-        return;
-    }
-    printf("the len of sds = %d , and the free = %d, the content = %s \n", p->len, p-> free, p->str);
-}
-
-void freeSds(SDS *p){
-    if(p==NULL){
-        return;
-    }
-    free(p);
-    p=NULL;
-}
-
-SDS* append(SDS* p, char* str, size_t len){
-    size_t cutLen = p-> len;
-    if(len <= cutLen){
-        memcpy(p-> str, str,len+1);
-        return p;
-    }else{
-        freeSds(p);
-        return  init(str,len);
-    }
-}
+struct __attribute__ ((__packed__)) B{
+    char a1;
+    int a3;
+    short a2;
+};
 
 
-int main(int argc, char* argv[]){
-//    char *str = "Helloworld!!!";
+
+//int main() {
+
+//    int initlen = 10;
+//    void *mash = malloc(sizeof(struct sdshdr8) + initlen );
 //
-//    printf("%p", str);
-//    long d =  sizeof(*str);
-//
-//    size_t len  = strlen(str);
-//    SDS* sds = init(str, len);
-//    printSds(sds);
-//
-//    char *str2 = "User Defaults won't write to disk right away";
-//    SDS* s2 = append(sds, str2, strlen(str2));
-//    printSds(s2);
-//
-//    freeSds(sds);
-//    freeSds(s2);
+//    SDS_HDR_VAR(8, mash)
+//    sh->len = 2;
+//    sh->alloc = 3;
+//    sh->buf;
 
-    for (int i = 0; i < argc; ++i) {
-        printf("%s\n",argv[i]);
-    }
+//    printf("%ld \n\r", sizeof(char));
+//    printf("%ld \n\r", sizeof(struct A));
+//    printf("%ld \n\r", sizeof(struct B));
+//
+//    struct A* a = malloc(sizeof (struct A));
+//    a->a1 = 0xff;
+//    a->a2 = 0xdddd;
+//    a->a3 = 0xbbeebbee;
 
-//    test_const();
-    memory_main();
 
-}
+
+//}
+
+
+
+//
+//int main(int argc, char* argv[]){
+////    char *str = "Helloworld!!!";
+////
+////    printf("%p", str);
+////    long d =  sizeof(*str);
+////
+////    size_t len  = strlen(str);
+////    SDS* sds = init(str, len);
+////    printSds(sds);
+////
+////    char *str2 = "User Defaults won't write to disk right away";
+////    SDS* s2 = append(sds, str2, strlen(str2));
+////    printSds(s2);
+////
+////    freeSds(sds);
+////    freeSds(s2);
+//
+//    for (int i = 0; i < argc; ++i) {
+//        printf("%s\n",argv[i]);
+//    }
+//
+////    test_const();
+//    memory_main();
+//
+//}
