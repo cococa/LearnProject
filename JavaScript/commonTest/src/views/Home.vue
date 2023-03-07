@@ -7,7 +7,7 @@
       @click="push(item.path)"
     >
       <div class="flex-1 flex-row">
-        <div>{{ index+1 }}. </div>
+        <div>{{ index + 1 }}.</div>
         <div>{{ item.meta.title }}相关</div>
       </div>
       <img
@@ -18,11 +18,9 @@
   </div>
 </template>
 
-<script>
-
-
+<script lang="ts">
 export default {
-  name: "xx",
+  name: "Home",
   data() {
     return {
       routerList: [],
@@ -31,9 +29,9 @@ export default {
   },
   components: {},
   created() {
-     this.routerList = this.$router.getRoutes().filter((item) => {
-      console.log("routerList>>>",item);
-      return  this.firstRouterName.some((name) => {
+    this.routerList = this.$router.getRoutes().filter((item) => {
+      console.log("routerList>>>", item);
+      return this.firstRouterName.some((name) => {
         return name == item.name;
       });
     });
