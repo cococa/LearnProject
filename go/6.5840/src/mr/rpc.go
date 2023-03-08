@@ -14,6 +14,7 @@ import "strconv"
 // and reply for an RPC.
 //
 
+// RPC 请求的参数和返回的参数
 type ExampleArgs struct {
 	X int
 }
@@ -23,7 +24,6 @@ type ExampleReply struct {
 }
 
 // Add your RPC definitions here.
-
 
 // Cook up a unique-ish UNIX-domain socket name
 // in /var/tmp, for the coordinator.
