@@ -1,11 +1,11 @@
-package main
+package btree
 
 import (
 	"fmt"
 	"sort"
 )
 
-func main() {
+func Sort() {
 	a := 10
 	result := sort.Search(100, func(i int) bool {
 		fmt.Println(i)
@@ -13,4 +13,5 @@ func main() {
 	})
 
 	fmt.Printf("\rresult = %d ", result)
+
 }
