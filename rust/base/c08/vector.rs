@@ -13,9 +13,10 @@ fn main(){
     let item1 : &i32  = &v2[1];
     println!("the item1 in vec2 = {:?}", item1);
 
+    // 这里有意思，参数类型得是 &i32 (引用类型)
     let opt : Option<&i32> = v2.get(1);
     match v2.get(1) {
-        // 这里有意思，传递进去的参数得的 &i32 类型
+        
         Some(item1) => println!(" match 2!"),
         None => println!("not matched!")   
     }
@@ -25,9 +26,9 @@ fn main(){
     println!("{:?}" , some_not_exist); 
 
 
-    //--------演示借用后无法，试图操作vec，无法通过编译，类似java 中的扩容---------------
+    //--------演示借用后无法，试图操作vec，无法通过编译，类似java 中的扩容, 扩容后引用就变了，而first 持有这老的引用 ---------------
     let mut v = vec![1, 2, 3, 4, 5];
-    let first = &v[0];
+    let first = &v[0];   // 这里得到的是一个引用, 如果 & 去掉，则下面的 v.push(6) 不会报错
     // v.push(6);
     println!("The first element is: {}", first);
     //-----------------------
@@ -42,8 +43,8 @@ fn main(){
     }
 
     // 遍历 vec    
-    for i in &v2 {
-        println!("the item in v2 {}", i );
+    for i in v2 {
+        println!("the item in v2 -->{}", i );
     }
 
     

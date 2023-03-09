@@ -15,6 +15,7 @@ import me.chanjar.weixin.common.bean.subscribemsg.PubTemplateKeyword;
 import me.chanjar.weixin.common.error.WxErrorException;
 import me.chanjar.weixin.mp.api.WxMpMaterialService;
 import me.chanjar.weixin.mp.api.WxMpService;
+import me.chanjar.weixin.mp.api.WxMpSubscribeMsgService;
 import me.chanjar.weixin.mp.api.impl.WxMpMaterialServiceImpl;
 import me.chanjar.weixin.mp.api.impl.WxMpServiceImpl;
 import me.chanjar.weixin.mp.bean.result.WxMpUserList;
@@ -129,7 +130,7 @@ public class Main {
         WxOpenConfigStorage wxOpenConfigStorage = new WxOpenInMemoryConfigStorage();
         wxOpenConfigStorage.setComponentAppId("wx656730804c2c5291");
         wxOpenConfigStorage.setComponentAppSecret("93e53a39ac2148424aa18c694db8ced3");
-        wxOpenConfigStorage.setComponentVerifyTicket("ticket@@@YADYgR6RG7orV2iUFMc0BMeu629P842fHkNwTnTzzCy_ZtJ17useFU-lnf40EIMIUcykhjcNJMT_2UZ_Pfa5aw");
+        wxOpenConfigStorage.setComponentVerifyTicket("ticket@@@5BywfW01VHquMZFalzj4j5FvswCvHQhjRV6vfRG_eJnCyIrOXwwj53egWsaYLyASDMAO1XnsYlATj1xb4EB3sg");
 
 
         WxOpenService wxOpenService = new WxOpenServiceImpl();
@@ -141,7 +142,7 @@ public class Main {
         WxOpenComponentService wxOpenComponentService = new WxOpenComponentServiceImpl(wxOpenService);
 
 
-        String appId = "wx54c64fcc401892c0";
+        String appId = "wx558e6f83438f7873";
         boolean isExpired = wxOpenComponentService.getWxOpenConfigStorage().isAuthorizerAccessTokenExpired(appId);
         if (true || isExpired) {
             WxOpenAuthorizerInfoResult wxc2fe513a236a273a = wxOpenComponentService.getAuthorizerInfo(appId);
@@ -151,18 +152,28 @@ public class Main {
         }
 
 
+        WxMpSubscribeMsgService subscribeMsgService = wxOpenComponentService.getWxMpServiceByAppid(appId).getSubscribeMsgService();
+
+//        System.out.println(subscribeMsgService.getPubTemplateKeyWordsById("OPENTM410086463"));
+
+        List<PubTemplateKeyword> opentm418136928 = subscribeMsgService.getPubTemplateKeyWordsById("42633");
+
+        opentm418136928.stream().forEach((item) -> System.out.println(item.getKid() + " " + item.getName() + " " + item.getExample()));
+
+
+
 //        675   GzbiiwgLxgc7yVj3EXlrJ2Pf3N2U6HYwucfpwCV4RmQ
 
 //        String tid = "675";
-        WxMaSubscribeService subscribeService = wxOpenComponentService.getWxMaServiceByAppid(appId).getSubscribeService();
-        boolean b = subscribeService.delTemplate("30540");
-        System.out.println(b);
-        b = subscribeService.delTemplate("675");
-        System.out.println(b);
-        b = subscribeService.delTemplate("1874");
-        System.out.println(b);
-        b = subscribeService.delTemplate("30602");
-        System.out.println(b);
+//        WxMaSubscribeService subscribeService = wxOpenComponentService.getWxMaServiceByAppid(appId).getSubscribeService();
+//        boolean b = subscribeService.delTemplate("30540");
+//        System.out.println(b);
+//        b = subscribeService.delTemplate("675");
+//        System.out.println(b);
+//        b = subscribeService.delTemplate("1874");
+//        System.out.println(b);
+//        b = subscribeService.delTemplate("30602");
+//        System.out.println(b);
 
 
 //        List<PubTemplateKeyword> pubTemplateKeyWordsById = subscribeService.getPubTemplateKeyWordsById(tid);
