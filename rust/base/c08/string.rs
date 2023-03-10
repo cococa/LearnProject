@@ -17,11 +17,11 @@ fn main(){
  */
 
 
-    let str = "Hello";
+    let str : &str = "Hello";
 
     // 两种创建字符串的方法，s1 和 s2 
-    let s1 = String::from("Hello");
-    let s2 = str.to_string();
+    let s1 : String = String::from("Hello");
+    let s2 : String = str.to_string();
 
 
 
