@@ -9,20 +9,12 @@
 
 <script setup>
 import * as shapes from "./lib/test-module";
-// import { Person } from "./lib/test-module";
 import { ref } from "vue";
 import deepClone, { test2Fun, PI } from "../../util";
 import { union as listunion } from "../../util/CCArrayUtil";
 // 导入原型方法
 import "../../util/CCArrayExt";
 
-//   source1: `test1() {
-//   const t = new shapes.Shapes.Triangle();
-//   console.log(t);
-//   console.log(shapes.Shapes.age);
-// },`,
-//   code1: "",
-//   data3: {name: "123"}
 
 function test1() {
   const t = new shapes.Shapes.Triangle();
