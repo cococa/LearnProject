@@ -42,7 +42,8 @@
 
 
 int main(){
-    algnof_main();
+//    algnof_main();
+    const_main();
 }
 
 

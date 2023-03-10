@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.15)
-project(Test2 C)
+project(CommonTest C)
 
 set(CMAKE_C_STANDARD 11)
 
@@ -14,7 +14,7 @@ include_directories(variable)
 set(INC_DIR C:/Users/hj/Desktop/libevent-master/include)
 set(LINK_DIR C:/Users/hj/Desktop/libevent-master)
 
-add_executable(Test2
+add_executable(CommonTest
         advanced/string01.c
         advanced/string01.h
         advanced/align_of.c
