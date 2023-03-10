@@ -36,13 +36,21 @@ void printSds(SDS *p) {
     printf("the len of sds = %d , and the free = %d, the content = %s \n", p->len, p->free, p->str);
 }
 
-void freeSds(SDS *p) {
-    if (p == NULL) {
-        return;
+//void freeSds(SDS *p) {
+//    if (p == NULL) {
+//        return;
+//    }
+//    free(p);
+//    p = NULL;
+//}
+
+void freeSds(SDS **f){
+    if(*f != NULL){
+        free(*f);
+        *f = NULL;
     }
-    free(p);
-    p = NULL;
 }
+
 
 SDS *append(SDS *p, char *str, size_t len) {
     size_t cutLen = p->len;
@@ -58,10 +66,7 @@ SDS *append(SDS *p, char *str, size_t len) {
 
 int main() {
 
-
-
     char s[] = "12312312";
-
     char *c = "Hello";
     change(s, c, strlen(c));
 
@@ -71,12 +76,12 @@ int main() {
     SDS *sds = init(str, len);
     printSds(sds);
 
-    char *str2 = "User Defaults won't write to disk right away";
-    SDS *s2 = append(sds, str2, strlen(str2));
-    printSds(s2);
+//    char *str2 = "User Defaults won't write to disk right away";
+//    SDS *s2 = append(sds, str2, strlen(str2));
+//    printSds(s2);
 
-    freeSds(sds);
-    freeSds(s2);
+    freeSds(&sds);
+//    freeSds(s2);
 
 
 
