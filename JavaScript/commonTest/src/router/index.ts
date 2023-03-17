@@ -21,11 +21,15 @@ import TestTypeInference from "@/views/ts/TestTypeInference.vue";
 
 //vue
 import VueIndex from "@/views/vue/index.vue";
-import TestSetup from "@/views/vue/TestSetup.vue";
+import TestSetup from "@/views/vue/HookArray.vue";
 import TestProvideInject from "@/views/vue/TestProvideInject.vue";
 import TestRenderFunction from "@/views/vue/TestRenderFunction.vue";
 import TestReactive from "@/views/vue/TestReactive.vue";
 import TestComposables from "@/views/vue/TestComposables.vue";
+import HookArray from "@/views/vue/HookArray.vue";
+
+
+
 
 import Es6Index from "@/views/es6/index.vue";
 import Promise from "@/views/es6/Promise.vue";
@@ -91,6 +95,15 @@ const routes = [
     component: TestSetup,
     meta: {
       title: "TestSetup",
+      keepAlive: true,
+    },
+  },
+  {
+    path: "/vue/HookArray",
+    name: "HookArray",
+    component: HookArray,
+    meta: {
+      title: "HookArray",
       keepAlive: true,
     },
   },
