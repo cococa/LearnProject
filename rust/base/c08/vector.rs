@@ -47,8 +47,11 @@ fn main(){
         println!("the item in v2 -->{}", i );
     }
 
-    
 
 
+    let mut vv2 = vec![1,2,3];
+    for i in &mut vv2 {
+        *i += 1;
+    }
 
 }
