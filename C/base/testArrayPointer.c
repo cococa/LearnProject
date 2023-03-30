@@ -18,7 +18,14 @@ void test1(int a , char* c){
  */
 int main(){
 
-    char str[] = "Hello world";
+    char str[] = "abc";
     test1(1,str);
+
+    // char * ccc;
+    // ccc = &str;
+
+    printf("%p \n", &str);
+    printf("%p \n", &str[0]);
+    
     return 0;
 }
