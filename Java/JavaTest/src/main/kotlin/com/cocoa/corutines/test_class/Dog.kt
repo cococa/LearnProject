@@ -5,7 +5,7 @@ class Dog : Thread() {
 
     override fun run() {
         super.run()
-        println(Thread.currentThread().name);
+        println(currentThread().name)
     }
 
 }

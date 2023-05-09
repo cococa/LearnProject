@@ -2,10 +2,11 @@ package com.cocoa.nio.selector;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
-import java.net.Socket;
 import java.nio.ByteBuffer;
-import java.nio.CharBuffer;
-import java.nio.channels.*;
+import java.nio.channels.SelectionKey;
+import java.nio.channels.Selector;
+import java.nio.channels.ServerSocketChannel;
+import java.nio.channels.SocketChannel;
 import java.nio.charset.StandardCharsets;
 import java.util.Date;
 import java.util.Iterator;
@@ -79,7 +80,7 @@ public class TestServerSocketSelector {
                         boolean isConnectionPending = socketChannel.isConnectionPending();
                         System.out.println("isReadable");
                         System.out.println(keys.size());
-                        System.out.println(String.format("isConnected=%s isBlocking=%s isConnectionPending=%s", isConnected, isBlocking, isConnectionPending));
+                        System.out.printf("isConnected=%s isBlocking=%s isConnectionPending=%s%n", isConnected, isBlocking, isConnectionPending);
 
 
                         ByteBuffer byteBuffer = ByteBuffer.allocate(1024);

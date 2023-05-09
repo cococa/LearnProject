@@ -74,7 +74,7 @@ public class Money implements Serializable, Comparable<Money> {
         if (monies.length == 0) {
             throw new IllegalArgumentException("Money array must not be empty");
         } else {
-            return total((Iterable) Lists.newArrayList(monies));
+            return total(Lists.newArrayList(monies));
         }
     }
 
@@ -84,11 +84,11 @@ public class Money implements Serializable, Comparable<Money> {
         if (!it.hasNext()) {
             throw new IllegalArgumentException("Money iterator must not be empty");
         } else {
-            Money total = (Money)it.next();
+            Money total = it.next();
             Preconditions.checkNotNull(total, "Money iterator must not contain null entries");
 
             while(it.hasNext()) {
-                total = total.plus((Money)it.next());
+                total = total.plus(it.next());
             }
 
             return total;

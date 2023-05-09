@@ -1,7 +1,5 @@
 package com.cocoa.controlFlow
 
-import java.lang.NullPointerException
-
 
 fun testMethods1(name: String?) {
     val len = name?.length ?: return
@@ -66,9 +64,8 @@ fun main() {
 
 //    testMethods2()
 
-    var name   = null ?: throw NullPointerException("123");
-    println("${name}");
-
+    var name   = null ?: throw NullPointerException("123")
+    println("${name}")
 
 
 }

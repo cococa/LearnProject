@@ -3,7 +3,7 @@ package com.cocoa.pattern.proxy.staticProxy;
 public class ProxyLogger{
 
 
-    private IPlayer player;
+    private final IPlayer player;
 
     public ProxyLogger(IPlayer player){
       this.player = player;

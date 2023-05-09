@@ -1,7 +1,8 @@
 package com.cocoa.concurrent.threadpool;
 
-import java.util.concurrent.*;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class Test2 {
 	public static void main(String[] args) throws Exception {

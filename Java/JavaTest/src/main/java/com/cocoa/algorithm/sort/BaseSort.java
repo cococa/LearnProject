@@ -28,7 +28,7 @@ public class BaseSort {
             array[i] = temp;
             keys.put(temp, temp);
         }
-        System.out.println(String.format("random create array %s", Arrays.toString(array)));
+        System.out.printf("random create array %s%n", Arrays.toString(array));
         return array;
     }
 

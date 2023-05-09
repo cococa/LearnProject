@@ -55,7 +55,7 @@ public class TestJoin05 extends Thread {
             item.join();
         }
 
-        System.out.println("");
+        System.out.println();
     }
 
 

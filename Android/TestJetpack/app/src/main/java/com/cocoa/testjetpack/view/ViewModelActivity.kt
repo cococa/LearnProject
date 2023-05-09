@@ -1,10 +1,15 @@
 package com.cocoa.testjetpack.view
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.Observer
+import androidx.lifecycle.asLiveData
 import androidx.lifecycle.lifecycleScope
 import com.cocoa.testjetpack.databinding.ActivityViewmodelBinding
 import com.cocoa.testjetpack.net.Status
@@ -12,8 +17,12 @@ import com.cocoa.testjetpack.viewModel.CommentsViewModel
 import com.cocoa.testjetpack.viewModel.MainViewModel
 import com.cocoa.testjetpack.viewModel.UserViewModel
 import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import java.util.*
+
+
+val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 
 
 class ViewModelActivity : AppCompatActivity() {
@@ -25,6 +34,15 @@ class ViewModelActivity : AppCompatActivity() {
     val userViewModel: UserViewModel by viewModels()
 
     val commentsViewModel : CommentsViewModel by viewModels();
+
+
+    fun test(){
+        this.dataStore.data.map {
+            
+        }.asLiveData()
+    }
+
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

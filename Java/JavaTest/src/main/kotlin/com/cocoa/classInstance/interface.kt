@@ -53,8 +53,7 @@ interface Person0x123 : Named {
         get() = "$firstName"
 }
 
-class Su(override val firstName: String) : Person0x123 {
-}
+class Su(override val firstName: String) : Person0x123
 
 interface A {
     fun foo() {

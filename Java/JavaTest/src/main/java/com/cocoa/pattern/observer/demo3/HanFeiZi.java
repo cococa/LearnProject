@@ -2,7 +2,8 @@ package com.cocoa.pattern.observer.demo3;
 
 import com.cocoa.pattern.observer.demo4.LiSi;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class HanFeiZi implements IHanFeiZi , Observable{
 

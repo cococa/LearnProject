@@ -2,8 +2,8 @@ package com.cocoa.stateMachines.useEnum;
 
 public interface IStateMachines {
 
-    public NodeEnum nextState();
+    NodeEnum nextState();
 
-    public String toString();
+    String toString();
 
 }

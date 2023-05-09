@@ -15,7 +15,7 @@ open  class Parent(val name : String){
         println("parent init ${name}")
     }
 
-    open val vertexCount : Int = 0;
+    open val vertexCount : Int = 0
 
     open fun draw(){  println("Drawing a rectangle") }
     fun fill(){}
@@ -56,7 +56,7 @@ interface Polygon{
     fun draw(){}
 }
 
-class TestClass0x12() : Parent0x12(), Polygon{
+class TestClass0x12 : Parent0x12(), Polygon{
 
     override fun draw(){
         super<Polygon>.draw()
@@ -74,15 +74,10 @@ open class Parent0x13 {
 
 class  Child0x001 : Parent0x13{
     // 次构造函数
-    constructor(name: String): super(name){
-    }
+    constructor(name: String): super(name)
 }
 
-class  Child0x002(name : String) : Parent0x13(name){
-
-}
-
-
+class  Child0x002(name : String) : Parent0x13(name)
 
 
 fun main(){

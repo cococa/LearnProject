@@ -1,8 +1,5 @@
 package com.cocoa.jvm;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Test1 {
 
     public void test1() {

@@ -1,6 +1,7 @@
 package com
 
-import kotlinx.coroutines.*
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.runBlocking
 
 fun main(){
 

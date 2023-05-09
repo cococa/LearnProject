@@ -3,7 +3,6 @@ package com.cocoa.concurrent.future;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.*;
 
@@ -16,8 +15,8 @@ public class BaiduJsonFuture1 {
      */
 
     class Task implements Callable<String> {
-        private String tag;
-        private Long time;
+        private final String tag;
+        private final Long time;
 
         public Task(String tag, Long time) {
             this.tag = tag;

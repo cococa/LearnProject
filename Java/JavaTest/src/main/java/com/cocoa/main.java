@@ -2,28 +2,12 @@ package com.cocoa;
 
 
 import com.alibaba.fastjson.JSON;
-import com.cocoa.model.Platform;
-import com.cocoa.model.dataoke.DouyinGoodsDetail;
-import com.tencentcloudapi.common.Credential;
-import com.tencentcloudapi.common.exception.TencentCloudSDKException;
-import com.tencentcloudapi.common.profile.ClientProfile;
-import com.tencentcloudapi.common.profile.HttpProfile;
-import com.tencentcloudapi.tdmq.v20200217.TdmqClient;
-import com.tencentcloudapi.tdmq.v20200217.models.*;
-import me.chanjar.weixin.common.error.WxErrorException;
-import me.chanjar.weixin.mp.api.WxMpUserService;
-import me.chanjar.weixin.mp.bean.result.WxMpUser;
-import org.apache.commons.collections4.ListUtils;
 
-import java.io.*;
-import java.nio.charset.StandardCharsets;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.*;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class main {
@@ -148,13 +132,13 @@ public class main {
     }
 
 
-    private static SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMdd");
+    private static final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMdd");
 
     public static Date getDateAfterMonth(int month) {
         Date date = new Date();
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
-        calendar.add(calendar.MONTH, month);
+        calendar.add(Calendar.MONTH, month);
         return calendar.getTime();
     }
 

@@ -2,7 +2,7 @@ package com.cocoa.concurrent.duoxiancheng_hexinbiancheng.c4.c411;
 
 public class MyThread extends Thread {
 
-    private MyService myService;
+    private final MyService myService;
 
     public MyThread(MyService myService) {
         this.myService = myService;

@@ -12,10 +12,10 @@ fun main() {
     test(Co())
 
     // 这里的host
-    val host = Host("kotl.in")
-    // 这里的host 无法调用 printConnectionString
-    // 只有在 Connection 对象中才能使用
-    Connection(Host("kotl.in"), 443).connect()
+//    val host = Host("kotl.in")
+//    // 这里的host 无法调用 printConnectionString
+//    // 只有在 Connection 对象中才能使用
+//    Connection(Host("kotl.in"), 443).connect()
 
 }
 
@@ -45,12 +45,9 @@ val <T> List<T>.lastIndex: Int
 
 
 // 扩展是静态解析的
-open class Person0x221 {
-}
+open class Person0x221
 
-class Co : Person0x221() {
-
-}
+class Co : Person0x221()
 
 fun Person0x221.Print() {
     println("Person0x221")
@@ -101,7 +98,7 @@ class Connection(val host: Host, val port: Int) {
 
 fun Any?.antherToString(): String {
     if (this == null) {
-        return "optional null";
+        return "optional null"
     }
     return this.toString()
 }

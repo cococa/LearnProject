@@ -2,7 +2,6 @@ package com.cocoa.dangan;
 
 
 import com.alibaba.fastjson.annotation.JSONField;
-import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 import java.util.Map;

@@ -1,10 +1,5 @@
 package com.cocoa.lombok;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Timer;
-import java.util.stream.Collectors;
-
 public class main {
 
     public static void main(String[] args) {

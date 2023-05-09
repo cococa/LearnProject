@@ -6,8 +6,8 @@ fun main(){
 
     val a: Int = 10000
     println(a ===a)
-    val boxA : Int? = a
-    val boxA1 : Int? = a
+    val boxA : Int = a
+    val boxA1 : Int = a
     println(boxA === boxA1)
 
 

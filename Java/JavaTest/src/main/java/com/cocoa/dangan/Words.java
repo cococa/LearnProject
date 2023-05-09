@@ -1,8 +1,6 @@
 package com.cocoa.dangan;
 
 
-import lombok.Data;
-
 import java.io.Serializable;
 
 public class Words implements Serializable {

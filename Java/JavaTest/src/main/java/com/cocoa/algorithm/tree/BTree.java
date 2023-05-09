@@ -18,8 +18,6 @@ package com.cocoa.algorithm.tree;
 import com.alibaba.fastjson.JSON;
 import lombok.Data;
 
-import java.util.Arrays;
-
 /**
  * The {@code BTree} class represents an ordered symbol table of generic
  * key-value pairs.
@@ -279,8 +277,7 @@ public class BTree<Key extends Comparable<Key>, Value> {
     private Node split(Node h) {
         Node t = new Node(M / 2);
         h.m = M / 2;
-        for (int j = 0; j < M / 2; j++)
-            t.children[j] = h.children[M / 2 + j];
+        System.arraycopy(h.children, 2, t.children, 0, M / 2);
         return t;
     }
 

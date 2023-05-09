@@ -3,8 +3,8 @@ package com.cocoa.pattern.observer.demo1;
 public class Spy implements Runnable{
 
 
-	private HanFeiZi  mHanFeiZi ;
-	private LiSi mLiSi;
+	private final HanFeiZi  mHanFeiZi ;
+	private final LiSi mLiSi;
 
 	public Spy(HanFeiZi hanFeiZi, LiSi liSi){
 			this.mHanFeiZi = hanFeiZi;
@@ -16,7 +16,7 @@ public class Spy implements Runnable{
 		while(true){
 		try{
 			Thread.sleep(2000);
-			System.out.println(this.mHanFeiZi.fun+"");
+			System.out.println(String.valueOf(this.mHanFeiZi.fun));
 		}catch(Exception e){
 
 		}

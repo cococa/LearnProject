@@ -2,9 +2,7 @@ package com.cocoa.concurrent.threadpool;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
 import java.util.concurrent.FutureTask;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class Test1{
 	public static void main(String[] args) throws ExecutionException, InterruptedException {

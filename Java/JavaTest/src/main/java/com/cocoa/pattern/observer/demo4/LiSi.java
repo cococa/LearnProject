@@ -1,7 +1,7 @@
 package com.cocoa.pattern.observer.demo4;
 
-import java.util.Observer;
 import java.util.Observable;
+import java.util.Observer;
 
 public class LiSi implements Observer{
 

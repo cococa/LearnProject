@@ -1,5 +1,7 @@
 package com.cocoa.classInstance
 
+import java.util.*
+
 fun main() {
     var person = Person("cocoa")
     // person.name  主构造函数的参数在对象中是无法调用的
@@ -28,14 +30,12 @@ fun main() {
 }
 
 // 定义类
-class Invoice {
-
-}
+class Invoice
 
 class Empty
 
 // 主构造函数
-class Person constructor(name: String) {
+class Person(name: String) {
 
     // 主构造函数的参数可以在类中使用
     var nameLength = name.length
@@ -54,7 +54,7 @@ class Person constructor(name: String) {
 
 }
 
-open class Base constructor(p: Int) {
+open class Base(p: Int) {
 
     // 没有标注 open ，子类不允许覆盖
     open fun v() {}
@@ -100,7 +100,7 @@ open class Base1(val name :String){
 
 }
 
-class Derived1 (name : String , val lastName :String) : Base1(name.capitalize().also { println("argument for base :$it") }){
+class Derived1 (name : String , val lastName :String) : Base1(name.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }.also { println("argument for base :$it") }){
 
     init {
         println("initializing derived")
@@ -115,11 +115,9 @@ class Derived1 (name : String , val lastName :String) : Base1(name.capitalize().
 
 // 抽象类
 // 抽象类可以不用open 修饰，包括抽象类中的方法
-abstract class AObj0x11 {
-}
+abstract class AObj0x11
 
-class TestOx11 :AObj0x11(){
-}
+class TestOx11 :AObj0x11()
 
 // 抽象类可以覆盖一个非抽象类的开放成员
 open class Test0x12 {

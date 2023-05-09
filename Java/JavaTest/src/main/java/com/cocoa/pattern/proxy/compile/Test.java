@@ -1,9 +1,13 @@
 package com.cocoa.pattern.proxy.compile;
 
-import javax.tools.*;
-import java.io.*;
-import java.util.Arrays;
-import java.net.*;
+import javax.tools.JavaCompiler;
+import javax.tools.JavaFileObject;
+import javax.tools.StandardJavaFileManager;
+import javax.tools.ToolProvider;
+import java.io.File;
+import java.io.FileWriter;
+import java.net.URL;
+import java.net.URLClassLoader;
 
 
 public class Test{

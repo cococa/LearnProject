@@ -24,7 +24,6 @@ struct ContentView: View {
 
                         VStack {
                             Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-
                         }
                         .background(Color.red)
 
@@ -47,7 +46,6 @@ struct ContentView: View {
                     }
                 }
             }
-            Text("Select an item")
         }
         .task {
             
@@ -147,7 +145,7 @@ struct ContentView: View {
                 openPanel.canChooseFiles = true;
                 openPanel.message = "本应用需要访问该目录，请点击允许按钮"
                 openPanel.prompt = "允许"
-                openPanel.directoryURL = URL.init(string: "/Users/shenjun");
+                openPanel.directoryURL = URL.init(string: "/Users");
                 openPanel.begin{res in
                     print(res)
                     print(openPanel.urls)
@@ -155,13 +153,17 @@ struct ContentView: View {
 
                             let fileManager = FileManager.default
                             do {
-                            let filePath = "/Users/shenjun/Library/Developer/Xcode/DerivedData"
+                            //let filePath = "/Users/shenjun/Library/Developer/Xcode/DerivedData"
+                                
+                            let filePath = "/Users/shenjun/Library/Containers/com.tencent.xinWeChat/Data/Library/Application Support/com.tencent.xinWeChat/2.0b4.0.9/e0006ad9e1b64c1570d5ff94514306f3/Message/MessageTemp/aba3b4dbdeb0c170d939bfef0f6d1a92/Video"
+                                
                             let files = try fileManager.contentsOfDirectory(atPath: filePath)
+                                print("we got \(files.count) files")
                             for file in files {
-                                let fileAttributes = try fileManager.attributesOfItem(atPath: filePath)
+                                let fileAttributes = try fileManager.attributesOfItem(atPath: filePath + "/" + file)
                                 let fileSize = fileAttributes[.size] as! UInt64
                                 let fileCreationDate = fileAttributes[.creationDate] as! Date
-                                print("\(file)\nSize: \(fileSize)\nCreated: \(fileCreationDate)  \(fileAttributes[.type])  \n")
+                                print("\(file)\nSize: \(fileSize.toHu)\nCreated: \(fileCreationDate)  \(fileAttributes[.type])  \n")
                             }
                             } catch {
                                 print("Error reading directory: \(error)")
@@ -228,3 +230,5 @@ struct ContentView_Previews: PreviewProvider {
         ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
+
+

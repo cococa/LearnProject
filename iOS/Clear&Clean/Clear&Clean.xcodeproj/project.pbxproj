@@ -16,6 +16,8 @@
 		9F93D8AC29C9A72B00D8F6AE /* Clear_CleanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F93D8AB29C9A72B00D8F6AE /* Clear_CleanTests.swift */; };
 		9F93D8B629C9A72B00D8F6AE /* Clear_CleanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F93D8B529C9A72B00D8F6AE /* Clear_CleanUITests.swift */; };
 		9F93D8B829C9A72B00D8F6AE /* Clear_CleanUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F93D8B729C9A72B00D8F6AE /* Clear_CleanUITestsLaunchTests.swift */; };
+		9F9D520B2A0638AD00DCB7C2 /* UInt64Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9D520A2A0638AD00DCB7C2 /* UInt64Ext.swift */; };
+		9F9D520D2A06397100DCB7C2 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9D520C2A06397100DCB7C2 /* File.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		9F93D8B529C9A72B00D8F6AE /* Clear_CleanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clear_CleanUITests.swift; sourceTree = "<group>"; };
 		9F93D8B729C9A72B00D8F6AE /* Clear_CleanUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clear_CleanUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9F93D8C429CA9F3B00D8F6AE /* Clear-Clean-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Clear-Clean-Info.plist"; sourceTree = SOURCE_ROOT; };
+		9F9D520A2A0638AD00DCB7C2 /* UInt64Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UInt64Ext.swift; sourceTree = "<group>"; };
+		9F9D520C2A06397100DCB7C2 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,8 @@
 				9F93D8A229C9A72B00D8F6AE /* Clear_Clean.entitlements */,
 				9F93D89F29C9A72B00D8F6AE /* Clear_Clean.xcdatamodeld */,
 				9F93D89A29C9A72A00D8F6AE /* Preview Content */,
+				9F9D520A2A0638AD00DCB7C2 /* UInt64Ext.swift */,
+				9F9D520C2A06397100DCB7C2 /* File.swift */,
 			);
 			path = "Clear&Clean";
 			sourceTree = "<group>";
@@ -268,8 +274,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F93D89E29C9A72A00D8F6AE /* Persistence.swift in Sources */,
+				9F9D520D2A06397100DCB7C2 /* File.swift in Sources */,
 				9F93D8A129C9A72B00D8F6AE /* Clear_Clean.xcdatamodeld in Sources */,
 				9F93D89729C9A72A00D8F6AE /* ContentView.swift in Sources */,
+				9F9D520B2A0638AD00DCB7C2 /* UInt64Ext.swift in Sources */,
 				9F93D89529C9A72A00D8F6AE /* Clear_CleanApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

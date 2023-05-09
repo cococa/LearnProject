@@ -1,6 +1,9 @@
 package com.cocoa.concurrent.threadpool;
 
-import java.util.concurrent.*;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 public class Test3 {
 	public static void main(String[] args) throws Exception {

@@ -24,7 +24,7 @@ public class QuickStartSample {
         }
 
         protected void ontoB(String from, String to, FSMEvent event, Integer context) {
-            System.out.println("Entry State \'"+to+"\'.");
+            System.out.println("Entry State '" +to+ "'.");
         }
     }
 

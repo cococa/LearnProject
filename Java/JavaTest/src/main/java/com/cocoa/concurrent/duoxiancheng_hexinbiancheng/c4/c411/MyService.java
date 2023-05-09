@@ -5,7 +5,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class MyService {
 
-    private Lock lock = new ReentrantLock();
+    private final Lock lock = new ReentrantLock();
 
 
     public void testMethod() {

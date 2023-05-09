@@ -12,7 +12,7 @@ public class BaiduJsonExecutorService {
 
     public class DownloadCallable implements Callable {
 
-        private Long time;
+        private final Long time;
 
         public DownloadCallable(Long time) {
             this.time = time;

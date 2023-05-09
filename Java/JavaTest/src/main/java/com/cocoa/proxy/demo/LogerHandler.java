@@ -2,7 +2,6 @@ package com.cocoa.proxy.demo;
 
 import com.cocoa.proxy.IProductService;
 import com.cocoa.proxy.ProductServiceImpl;
-import com.cocoa.proxy.UserServiceImpl;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

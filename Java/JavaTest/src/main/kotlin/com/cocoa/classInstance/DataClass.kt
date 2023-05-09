@@ -63,9 +63,7 @@ fun main(){
 
 }
 
-class Person0x11(val name :String , val age : Int){
-
-}
+class Person0x11(val name :String , val age : Int)
 
 // 数据类必须满足一下几点
 // 主构造函数必须有一个参数
@@ -82,9 +80,7 @@ data class Person0x00(val name :String , var age : Int){
 }
 
 //如果生成的类需要含有一个无参的构造函数，则所有的属性必须指定默认值,即使在init 方法实现初始化也不行
-data class Person0x01(var name :String = "" , var age : Int = 0){
-
-}
+data class Person0x01(var name :String = "" , var age : Int = 0)
 
 data class Person0x02(var name : String){
     var age : Int  = 120

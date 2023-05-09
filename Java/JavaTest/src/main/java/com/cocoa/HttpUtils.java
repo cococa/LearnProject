@@ -1,7 +1,5 @@
 package com.cocoa;
 
-import com.alibaba.fastjson.JSONObject;
-
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.Consts;
 import org.apache.http.client.config.RequestConfig;
@@ -32,8 +30,8 @@ import java.security.cert.X509Certificate;
  */
 @Slf4j
 public class HttpUtils {
-    private static CloseableHttpClient httpClient;
-    private static RequestConfig requestConfig;
+    private static final CloseableHttpClient httpClient;
+    private static final RequestConfig requestConfig;
     private static final String ENCODING = Consts.UTF_8.name();
 
     static {

@@ -1,5 +1,7 @@
 package com.cocoa.pattern.proxy.dynamicProxy.test;
-import java.lang.reflect.*;
+
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Proxy;
 
 public class Test{
 

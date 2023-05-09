@@ -1,7 +1,7 @@
 package com.cocoa.spi.jdk;
 
-import  java.util.ServiceLoader;
-import  java.util.Iterator;
+import java.util.Iterator;
+import java.util.ServiceLoader;
 
 
 public class TestMain {

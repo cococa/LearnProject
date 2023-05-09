@@ -27,9 +27,7 @@ fun main() {
 
 }
 
-class Test0x1212{
-
-}
+class Test0x1212
 
 class Test {
 
@@ -62,7 +60,6 @@ class Test {
         aa = "123"
     }
     var isEmpty: Boolean = false
-        get() =  field    //"123".length == 0
         set(value) {
             field = value
             println("set isEmpty ${value}")

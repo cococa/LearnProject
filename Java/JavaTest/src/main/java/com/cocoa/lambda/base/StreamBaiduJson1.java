@@ -1,7 +1,6 @@
 package com.cocoa.lambda.base;
 
 import com.cocoa.lambda.bean.Item;
-import lombok.Data;
 import org.junit.Test;
 
 import java.util.ArrayList;

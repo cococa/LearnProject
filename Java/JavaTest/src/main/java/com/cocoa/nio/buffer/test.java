@@ -58,7 +58,7 @@ public class test {
             // If the buffer's current position is not smaller than its limit
             sb.append((char)byteBuffer.get());
         }
-        System.out.println(sb.toString()); // print Shenw
+        System.out.println(sb); // print Shenw
 
     }
 
@@ -66,11 +66,11 @@ public class test {
 
 
     private void print(ByteBuffer byteBuffer){
-        System.out.println(String.format("the capcity is %s",byteBuffer.capacity()));
-        System.out.println(String.format("the limit is %s",byteBuffer.limit()));
-        System.out.println(String.format("the position is %s",byteBuffer.position()));
-        System.out.println(String.format("the mark is %s",byteBuffer.mark()));
-        System.out.println(String.format("the buffer is %s",byteBuffer));
+        System.out.printf("the capcity is %s%n",byteBuffer.capacity());
+        System.out.printf("the limit is %s%n",byteBuffer.limit());
+        System.out.printf("the position is %s%n",byteBuffer.position());
+        System.out.printf("the mark is %s%n",byteBuffer.mark());
+        System.out.printf("the buffer is %s%n",byteBuffer);
         System.out.println("---------------------");
         System.out.println("---------------------");
     }
