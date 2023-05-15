@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 220px;
+        height: 70px;
+        background-color: red;
+        margin-top: 30px;
+        padding: 20px;
+        color: white;
+        font-size: 18px;
+      }
+
+      .test1 {
+        border-radius:  60px;
+      }
+
+      .test2 {
+        border-radius: 30px / 60px;
+      }
+      
+      .test3{
+        border-top-left-radius: 30px 100%;
+      }
+
+      
+    </style>
+  </head>
+  <body>
+    <div class="test1">border-radius:  60px;</div>
+    <div class="test2">水平半径30px 垂直半径60px</div>
+    <div class="test3">border-top-left-radius: 30px 100%;  100%表示垂直的半径为div 的高度</div>
+  </body>
+</html>
