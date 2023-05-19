@@ -9,49 +9,89 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
+    
+
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
+    
+    
+    
+    @State var isAnimating = false
+    var animation: Animation {
+        Animation.easeInOut(duration: 3)
+        .repeatForever(autoreverses: false)
+    }
+    
+    @State var isRotating = 0.0
+    @State var scale = 1.0
+    @State var count : Double = 8.0;
+    @State var blur : Double = 11.0;
 
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-
-                        VStack {
-                            Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+        VStack{
+            Text("\(count)")
+            Polygon(sides: self.count, scale: 1.0 )
+                    .stroke(Color.blue, lineWidth: 12)
+                    .frame(width: 200, height: 200)
+                    .rotationEffect(.degrees(isRotating))
+                    .scaleEffect(self.scale)
+//                    .blur(radius: CGFloat(blur))
+                    .onAppear {
+                        withAnimation(
+                            .linear(duration: 2)
+                                .repeatForever(autoreverses: false)) {
+                            isRotating = 360.0
                         }
-                        .background(Color.red)
-
-                    } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
+                    
+                        withAnimation(.easeInOut(duration: 1).repeatForever(autoreverses: true)){
+                            self.scale = CGFloat.random(in: 1.0...3.0)
+                            self.count = 12.0
+                            self.blur = 0.0
+                        }
+                        
                     }
-                }
-                .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-
-                }
-                ToolbarItem {
-                    Button(action: test) {
-                        Label("test", systemImage: "plus")
-                    }
-                }
-            }
-        }
-        .task {
+        }.frame(maxWidth: .infinity, maxHeight: .infinity)
             
-        }
-        .frame(width: 1000, height: 620)
+            //            List {
+            //                ForEach(items) { item in
+            //                    NavigationLink {
+            //
+            //                        VStack {
+            //                            Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+            //                        }
+            //                        .background(Color.red)
+            //
+            //                    } label: {
+            //                        Text(item.timestamp!, formatter: itemFormatter)
+            //                    }
+            //                }
+            //                .onDelete(perform: deleteItems)
+            //            }
+            //            .toolbar {
+            //                ToolbarItem {
+            //                    Button(action: addItem) {
+            //                        Label("Add Item", systemImage: "plus")
+            //                    }
+            //
+            //                }
+            //                ToolbarItem {
+            //                    Button(action: test) {
+            //                        Label("test", systemImage: "plus")
+            //                    }
+            //                }
+            //            }
+            //        }
+            //        .task {
+            //
+            //        }
+            //        .frame(width: 1000, height: 620)
+        
     }
+
 
     private func addItem() {
 //        withAnimation {
@@ -163,7 +203,7 @@ struct ContentView: View {
                                 let fileAttributes = try fileManager.attributesOfItem(atPath: filePath + "/" + file)
                                 let fileSize = fileAttributes[.size] as! UInt64
                                 let fileCreationDate = fileAttributes[.creationDate] as! Date
-                                print("\(file)\nSize: \(fileSize.toHu)\nCreated: \(fileCreationDate)  \(fileAttributes[.type])  \n")
+                                print("\(file)\nSize: \(fileSize.toHumanSize())\nCreated: \(fileCreationDate)  \(fileAttributes[.type])  \n")
                             }
                             } catch {
                                 print("Error reading directory: \(error)")

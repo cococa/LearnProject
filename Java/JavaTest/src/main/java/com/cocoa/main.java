@@ -157,8 +157,8 @@ public class main {
     public static void main(String[] args) throws ParseException, IOException {
         String ss = test1("a739wcHTKXaI7zd9yGwPeQ==");
         System.out.println(ss);
-        LyUpkeepImportResult lyUpkeepImportResult = JSON.parseObject(ss, LyUpkeepImportResult.class);
-        System.out.println(lyUpkeepImportResult.getResult());
+//        LyUpkeepImportResult lyUpkeepImportResult = JSON.parseObject(ss, LyUpkeepImportResult.class);
+//        System.out.println(lyUpkeepImportResult.getResult());
 //        Boolean a = null;
 //        System.out.println(a == true);
 
