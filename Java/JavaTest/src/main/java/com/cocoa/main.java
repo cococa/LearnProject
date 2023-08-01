@@ -154,7 +154,14 @@ public class main {
     }
 
 
+
     public static void main(String[] args) throws ParseException, IOException {
+
+        P p = new P();
+        p.setaByte((byte) 1);
+        System.out.println(p.getaByte() == 1);
+
+
         String ss = test1("a739wcHTKXaI7zd9yGwPeQ==");
         System.out.println(ss);
 //        LyUpkeepImportResult lyUpkeepImportResult = JSON.parseObject(ss, LyUpkeepImportResult.class);
@@ -361,4 +368,15 @@ public class main {
     }
 
 
+}
+ class P {
+    Byte aByte ;
+
+    public Byte getaByte() {
+        return aByte;
+    }
+
+    public void setaByte(Byte aByte) {
+        this.aByte = aByte;
+    }
 }

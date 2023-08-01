@@ -18,18 +18,17 @@ import Interfaces from "@/views/ts/Interfaces.vue";
 import TestSnabbdom from "@/views/ts/TestSnabbdom.vue";
 import TestModule from "@/views/ts/TestModule.vue";
 import TestTypeInference from "@/views/ts/TestTypeInference.vue";
+import MyPromise from "@/views/ts/promise.vue";
 
 //vue
 import VueIndex from "@/views/vue/index.vue";
-import TestSetup from "@/views/vue/HookArray.vue";
+import Pinia from "@/views/vue/pinia.vue";
+import TestSetup from "@/views/vue/TestSetup.vue";
 import TestProvideInject from "@/views/vue/TestProvideInject.vue";
 import TestRenderFunction from "@/views/vue/TestRenderFunction.vue";
 import TestReactive from "@/views/vue/TestReactive.vue";
 import TestComposables from "@/views/vue/TestComposables.vue";
 import HookArray from "@/views/vue/HookArray.vue";
-
-
-
 
 import Es6Index from "@/views/es6/index.vue";
 import Promise from "@/views/es6/Promise.vue";
@@ -59,6 +58,15 @@ const routes = [
     component: TestProvideInject,
     meta: {
       title: "TestProvideInject",
+      keepAlive: true,
+    },
+  },
+  {
+    path: "/vue/Pinia",
+    name: "/Pinia",
+    component: Pinia,
+    meta: {
+      title: "Pinia",
       keepAlive: true,
     },
   },
@@ -149,6 +157,16 @@ const routes = [
     component: TestSnabbdom,
     meta: {
       title: "ts TestSnabbdom",
+      keepAlive: true,
+    },
+  },
+
+  {
+    path: "/ts/MyPromise",
+    name: "MyPromise",
+    component: MyPromise,
+    meta: {
+      title: "ts MyPromise",
       keepAlive: true,
     },
   },

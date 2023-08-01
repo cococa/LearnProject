@@ -1,5 +1,7 @@
 <template>
   <div class="flex justify-center flex-col">
+    <div id="aaa"></div>
+    <button @click="testShowMsg">testShowMsg</button>
     <div>{{ double }}</div>
     <div style="background-color: bisque; margin: 20px 0px">
       <div>
@@ -43,12 +45,59 @@ import { ref } from "vue";
 </script> -->
 
 <script lang="ts" setup>
-import { computed, ref, watch } from "vue";
+import { showMsg } from "../js/dialog.js";
+import { computed, ref, watch, render, createVNode, onMounted } from "vue";
 import type { Ref } from "vue";
 
 import { userCompose } from "@/composables/UserCompose";
 // import { useStore } from "vuex";
 import InjectComponent from "../../components/InjectComponent.vue";
+
+import { ElMessage, ElMessageBox } from "element-plus";
+
+$log(reverse("1 2 3"));
+
+function reverse(s: string): string {
+  return s.split(" ").reverse().join("，");
+}
+
+// const testShowMsg = () => {
+//   ElMessageBox.confirm(
+//     'proxy will permanently delete the file. Continue?',
+//     'Warning',
+//     {
+//       confirmButtonText: 'OK',
+//       cancelButtonText: 'Cancel',
+//       type: 'warning',
+//     }
+//   )
+//     .then(() => {
+//       ElMessage({
+//         type: 'success',
+//         message: 'Delete completed',
+//       })
+//     })
+//     .catch(() => {
+//       ElMessage({
+//         type: 'info',
+//         message: 'Delete canceled',
+//       })
+//     })
+// }
+
+const testShowMsg = () => {
+  showMsg("testShowMsg");
+};
+
+function testRender() {
+  // const v = createVNode("div", { class: "foo" }, "testRender DIV INNDER");
+  const v = `<div class="foo">testRender DIV INNDER123</div>`;
+  render(v, document.getElementById("aaa") as Element);
+}
+
+onMounted(() => {
+  testRender();
+});
 
 const setupCount = ref(0);
 

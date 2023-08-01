@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div>countStore {{ countStore.count }}</div>
     <div>TestReactive</div>
     <button @click="changeObj">更新Person</button>
     <div>{{ person }}</div>
@@ -14,7 +15,8 @@
 
 <script setup lang="ts">
 import { reactive, nextTick } from "vue";
-
+import { useCounterStore } from "../../stores/counter";
+const countStore = useCounterStore();
 interface Person {
   name: string;
   age: Number;
