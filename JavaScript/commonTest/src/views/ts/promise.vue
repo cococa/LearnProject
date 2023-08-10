@@ -64,24 +64,23 @@ export default {
       })
         .then(
           (v: any) => {
-            console.log("then1 p1", v);
+            console.log("then1 f1", v);
             return new MyPromise((resolve, reject) => {
-              // setTimeout(() => {
-              //   resolve("222");
-              // }, 2000);
-              resolve("222");
+              setTimeout(() => {
+                resolve("222");
+              }, 2000);
             });
           },
           (err: any) => {
-            console.log("then1 p2", err);
+            console.log("then1 f2", err);
           }
         )
         .then(
           (v: any) => {
-            console.log("then2 p1", v);
+            console.log("then2 f1", v);
           },
           (err: any) => {
-            console.log("then2 p2", err);
+            console.log("then2 f2", err);
           }
         );
     },

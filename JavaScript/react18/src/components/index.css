@@ -1,0 +1,17 @@
+.red{
+    color: red;
+}
+
+.container {
+    border: 1px solid black;
+    height: 200px;
+    width: 100%;
+}
+
+.pointer{
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    border-radius: 50%;
+    background-color: red;
+}

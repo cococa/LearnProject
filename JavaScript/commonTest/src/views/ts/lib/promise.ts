@@ -19,19 +19,21 @@ enum PromiseState {
 // 参考文档   https://juejin.cn/post/7222310732293570619
 
 export default class MyPromise {
+  _id : number = 0;
   value: any;
   reson: any;
   state: PromiseState = PromiseState.PENDING;
   _fulfilledStack: any[] = [];
   _rejectStack: any[] = [];
 
-  log(...p: string[]) {
-    // console.log("MyPromise", ...p);
-  }
+  // log(...p: string[]) {
+  //   console.log("MyPromise", ...p);
+  // }
 
   constructor(params: PromiseParams) {
     const _resolve = (value: any) => {
-      this.log("value", value);
+      console.log("constructor value", value, this.state, this._id);
+      this._fulfilledStack && this._fulfilledStack.forEach((fn) => console.log(fn));
       if (this.state === PromiseState.PENDING) {
         this.value = value;
         this.state = PromiseState.FULFILLED;
@@ -39,20 +41,23 @@ export default class MyPromise {
       }
     };
     const _reject = (reson: any) => {
-      this.log("reson", reson);
+      console.log("constructor reson", reson);
       if (this.state === PromiseState.PENDING) {
         this.reson = reson;
         this.state = PromiseState.REJECTED;
         this._rejectStack && this._rejectStack.forEach((fn) => fn(reson));
       }
     };
+    this._id = Math.random();
     params(_resolve, _reject);
   }
 
   public then(onFulfilled: any, onRejected?: any): MyPromise {
     return new MyPromise((resolve, reject) => {
       if (this.state === PromiseState.FULFILLED) {
-        // 处理上一个then返回的promise
+        // 处理上一个then返回的promise, 这里要注意两个问题，
+        // 如果用  instanceof MyPromise 判断，会丢失了Promise的扩展性，举个例子，我可以用原生的Promise，这里就会出问题
+        // 根据 Promise A+ 规范，如果一个类有then方法，那么就认为是一个Promise
         console.log("debug", this.value instanceof MyPromise);
         if (this.value instanceof MyPromise) {
           this.value.then(
@@ -78,10 +83,15 @@ export default class MyPromise {
       }
       if (this.state === PromiseState.PENDING) {
         if (onFulfilled) {
+          console.log("onFulfilled add task", onFulfilled);
           this._fulfilledStack.push((val: any) => {
+
+            console.log("debug1", val);
             const _res = onFulfilled(val);
+            console.log("debug2", _res);
             resolve(_res);
           });
+          console.log("onFulfilled after add task", this._fulfilledStack.length);
         }
 
         if (onRejected) {
