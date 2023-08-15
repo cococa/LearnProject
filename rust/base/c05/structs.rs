@@ -31,7 +31,7 @@ fn main(){
 
     let user2  = User{
         age: 111,
-        ..user1
+        ..user1   // .. 语法必须放在最后
     };  
     println!("{:?}", user2);
 
