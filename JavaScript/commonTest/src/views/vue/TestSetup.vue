@@ -1,6 +1,8 @@
 <template>
   <div class="flex justify-center flex-col">
-    <div id="aaa"></div>
+    <div>{{ sref }}</div>
+    <button @click="testShallowRef">testShallowRef</button>
+    <button @click="testDeepRef">testDeepRef</button>
     <button @click="testShowMsg">testShowMsg</button>
     <div>{{ double }}</div>
     <div style="background-color: bisque; margin: 20px 0px">
@@ -46,7 +48,15 @@ import { ref } from "vue";
 
 <script lang="ts" setup>
 import { showMsg } from "../js/dialog.js";
-import { computed, ref, watch, render, createVNode, onMounted } from "vue";
+import {
+  computed,
+  ref,
+  watch,
+  render,
+  createVNode,
+  onMounted,
+  shallowRef,
+} from "vue";
 import type { Ref } from "vue";
 
 import { userCompose } from "@/composables/UserCompose";
@@ -55,7 +65,18 @@ import InjectComponent from "../../components/InjectComponent.vue";
 
 import { ElMessage, ElMessageBox } from "element-plus";
 
-$log(reverse("1 2 3"));
+// $log(reverse("1 2 3"));
+
+// const obj = { name: "cocoa", age: 33 };
+const sref = ref([]);
+// sref.value.name = "123";
+const testShallowRef = () => {
+  sref.value = ["123", "2222"];
+};
+
+const testDeepRef = () => {
+  sref.value[0] = "123";
+};
 
 function reverse(s: string): string {
   return s.split(" ").reverse().join("，");

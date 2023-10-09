@@ -2,6 +2,41 @@
   <div class="flex flex-1 flex-col">
     <vue3-markdown-it :source="source" />
 
+    <div class="blk">
+      <div>
+        定义变量 <br />
+        let a: null<br />
+        let b: 0<br />
+        let c: undefined<br />
+        let d: ""<br />
+        然后测试 ?? ||
+      </div>
+    </div>
+
+    <div class="blk">
+      <div>a || "cocoa" print =>{{ a || "cocoa" }}</div>
+      <div>a ?? "cocoa" print =>{{ a ?? "cocoa" }}</div>
+    </div>
+    <div class="blk">
+      <div>b || "cocoa" print =>{{ b || "cocoa" }}</div>
+      <div>b ?? "cocoa" print =>{{ b ?? "cocoa" }}</div>
+    </div>
+
+    <div class="blk">
+      通过上面的例子发现， ?? 只检测 undefined 和null， ||
+      检测前面的表达式是否为true ，由于0是false，所以会打印后面的值
+      <br />
+      ?? 的展开可以看做是 const result = (a !== null && a !== undefined) ? a :
+      b;
+    </div>
+
+    <div class="blk">然后看一下面链式调用</div>
+
+    <div class="blk">
+      <div>a ?? c ?? d ?? "cocoa" print =>{{ a ?? c ?? d ?? "cocoa" }}(输出了d)</div>
+      <div>a || c || d || "cocoa" print =>{{ a || c || d || "cocoa" }}(输出了默认值)</div>
+    </div>
+
     <div v-if="userInfo && userInfo.address">{{ userInfo.address.name }}</div>
     <div>{{ userInfo && userInfo.address && userInfo.address.name }}</div>
 
@@ -55,6 +90,10 @@ export default {
   },
   data() {
     return {
+      a: null,
+      b: 0,
+      c: undefined,
+      d: "",
       source: test(),
       name: "shencocoa",
       userInfo: {
@@ -98,4 +137,10 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.blk {
+  margin-bottom: 20px;
+  background-color: azure;
+  border: 1px solid black;
+}
+</style>

@@ -9,30 +9,29 @@
     <div>
       <button type="button" @click="test2">自定义对象的拷贝</button>
     </div>
-    <button @click="testClick">
-      test
-    </button>
-
+    <button @click="testClick">test</button>
   </div>
 </template>
 
-<script lang="ts">
+<script lang="js">
 import VueMarkdownIt from "vue3-markdown-it";
 import { union } from "@/util/CCArrayUtil.js";
 
 
 
+
+
 function test() {
   return `
-  # 
+  #
   \`\`\`javascript
   // 对象的比较
     let a = {};
     let b = a;
     a == b  ;   // true 同一个对象
-    a === b ;   // true 
+    a === b ;   // true
   \`\`\`
-  
+
   \`\`\`javascript
     // 当然这里只考虑了 object的类型，没有考虑数组等别的拷贝
     function _deepClone(rest){
@@ -40,7 +39,7 @@ function test() {
         for(let key  in rest){
           console.log((typeof rest[key]));
           if((typeof rest[key]) == 'object'){
-            result[key] = _deepClone(rest[key]);  
+            result[key] = _deepClone(rest[key]);
           }else{
             result[key] = rest[key]
           }
@@ -66,7 +65,7 @@ function test() {
 
 
   \`\`\`
-  ## 
+  ##
 
   `;
 }
@@ -113,15 +112,14 @@ export default {
   },
   mounted() {},
   methods: {
-    testClick(){
-      // const array = [{name:'123',ae}];  
+    testClick() {
+      // const array = [{name:'123',ae}];
       // const re = array.removeAll((item)=>item>1);
       // console.log(re);
 
-      console.log(union([1],[2]));
+      console.log(union([1], [2]));
 
-
-        // console.log(intersection([1,2,3,4],[-1,3,3]));
+      // console.log(intersection([1,2,3,4],[-1,3,3]));
     },
     test1() {
       let user = {
@@ -170,4 +168,10 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.blk {
+  margin-bottom: 20px;
+  background-color: azure;
+  border: 1px solid black;
+}
+</style>

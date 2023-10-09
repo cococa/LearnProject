@@ -2,12 +2,15 @@ package com.cocoa;
 
 
 import com.alibaba.fastjson.JSON;
+import org.apache.dubbo.common.utils.MD5Utils;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class main {
@@ -154,16 +157,66 @@ public class main {
     }
 
 
-
     public static void main(String[] args) throws ParseException, IOException {
 
-        P p = new P();
-        p.setaByte((byte) 1);
-        System.out.println(p.getaByte() == 1);
+//        P p = new P();
+//        p.setA(0);
+//        System.out.println(Objects.equals(p.getA(), 0));
+//
 
 
-        String ss = test1("a739wcHTKXaI7zd9yGwPeQ==");
-        System.out.println(ss);
+//     String ss = "[{\"abbreviation\":\"浙\",\"areaCode\":\"330000000000\",\"areaId\":21,\"areaInnerLevel\":\"1\",\"areaName\":\"浙江省\",\"parentId\":0,\"status\":0,\"warningLevel\":0},{\"abbreviation\":\"沪\",\"areaCode\":\"310000000000\",\"areaId\":30,\"areaInnerLevel\":\"1\",\"areaName\":\"上海市\",\"carnoPre\":\"沪A\",\"parentId\":0,\"status\":0,\"warningLevel\":3},{\"areaCode\":\"500000000000\",\"areaId\":123,\"areaInnerLevel\":\"1\",\"areaName\":\"重庆市\",\"carnoPre\":\"渝A\",\"parentId\":0,\"status\":0,\"warningLevel\":3},{\"abbreviation\":\"冀\",\"areaCode\":\"130000000000\",\"areaId\":124,\"areaInnerLevel\":\"1\",\"areaName\":\"河北省\",\"parentId\":0,\"status\":0,\"warningLevel\":0},{\"abbreviation\":\"晋\",\"areaCode\":\"140000000000\",\"areaId\":125,\"areaInnerLevel\":\"1\",\"areaName\":\"山西省\",\"parentId\":0,\"status\":0,\"warningLevel\":0},{\"abbreviation\":\"豫\",\"areaCode\":\"410000000000\",\"areaId\":126,\"areaInnerLevel\":\"1\",\"areaName\":\"河南省\",\"parentId\":0,\"status\":0,\"warningLevel\":0},{\"abbreviation\":\"辽\",\"areaCode\":\"210000000000\",\"areaId\":127,\"areaInnerLevel\":\"1\",\"areaName\":\"辽宁省\",\"parentId\":0,\"status\":0,\"warningLevel\":0},{\"abbreviation\":\"吉\",\"areaCode\":\"220000000000\",\"areaId\":128,\"areaInnerLevel\":\"1\",\"areaName\":\"吉林省\",\"parentId\":0,\"status\":0,\"warningLevel\":0},{\"abbreviation\":\"黑\",\"areaCode\":\"230000000000\",\"areaId\":129,\"areaInnerLevel\":\"1\",\"areaName\":\"黑龙江省\",\"parentId\":0,\"status\":0,\"warningLevel\":0},{\"abbreviation\":\"蒙\",\"areaCode\":\"150000000000\",\"areaId\":130,\"areaInnerLevel\":\"1\",\"areaName\":\"内蒙古自治区\",\"parentId\":0,\"status\":0,\"warningLevel\":0},{\"abbreviation\":\"苏\",\"areaCode\":\"320000000000\",\"areaId\":131,\"areaInnerLevel\":\"1\",\"areaName\":\"江苏省\",\"parentId\":0,\"status\":0,\"warningLevel\":0},{\"abbreviation\":\"鲁\",\"areaCode\":\"370000000000\",\"areaId\":132,\"areaInnerLevel\":\"1\",\"areaName\":\"山东省\",\"parentId\":0,\"status\":0,\"warningLevel\":0},{\"abbreviation\":\"皖\",\"areaCode\":\"340000000000\",\"areaId\":133,\"areaInnerLevel\":\"1\",\"areaName\":\"安徽省\",\"parentId\":0,\"status\":0,\"warningLevel\":0},{\"abbreviation\":\"闽\",\"areaCode\":\"350000000000\",\"areaId\":135,\"areaInnerLevel\":\"1\",\"areaName\":\"福建省\",\"parentId\":0,\"status\":0,\"warningLevel\":0},{\"abbreviation\":\"鄂\",\"areaCode\":\"420000000000\",\"areaId\":136,\"areaInnerLevel\":\"1\",\"areaName\":\"湖北省\",\"parentId\":0,\"status\":0,\"warningLevel\":0},{\"abbreviation\":\"湘\",\"areaCode\":\"430000000000\",\"areaId\":137,\"areaInnerLevel\":\"1\",\"areaName\":\"湖南省\",\"parentId\":0,\"status\":0,\"warningLevel\":0},{\"abbreviation\":\"粤\",\"areaCode\":\"440000000000\",\"areaId\":138,\"areaInnerLevel\":\"1\",\"areaName\":\"广东省\",\"parentId\":0,\"status\":0,\"warningLevel\":0},{\"abbreviation\":\"桂\",\"areaCode\":\"450000000000\",\"areaId\":139,\"areaInnerLevel\":\"1\",\"areaName\":\"广西壮族自治区\",\"parentId\":0,\"status\":0,\"warningLevel\":0},{\"abbreviation\":\"赣\",\"areaCode\":\"360000000000\",\"areaId\":140,\"areaInnerLevel\":\"1\",\"areaName\":\"江西省\",\"parentId\":0,\"status\":0,\"warningLevel\":0},{\"abbreviation\":\"川\",\"areaCode\":\"510000000000\",\"areaId\":141,\"areaInnerLevel\":\"1\",\"areaName\":\"四川省\",\"parentId\":0,\"status\":0,\"warningLevel\":0},{\"abbreviation\":\"琼\",\"areaCode\":\"460000000000\",\"areaId\":142,\"areaInnerLevel\":\"1\",\"areaName\":\"海南省\",\"carnoPre\":\"琼A\",\"parentId\":0,\"status\":0,\"warningLevel\":0},{\"abbreviation\":\"贵\",\"areaCode\":\"520000000000\",\"areaId\":143,\"areaInnerLevel\":\"1\",\"areaName\":\"贵州省\",\"parentId\":0,\"status\":0,\"warningLevel\":0},{\"abbreviation\":\"云\",\"areaCode\":\"530000000000\",\"areaId\":144,\"areaInnerLevel\":\"1\",\"areaName\":\"云南省\",\"parentId\":0,\"status\":0,\"warningLevel\":0},{\"abbreviation\":\"藏\",\"areaCode\":\"540000000000\",\"areaId\":145,\"areaInnerLevel\":\"1\",\"areaName\":\"西藏自治区\",\"parentId\":0,\"status\":0,\"warningLevel\":0},{\"abbreviation\":\"陕\",\"areaCode\":\"610000000000\",\"areaId\":146,\"areaInnerLevel\":\"1\",\"areaName\":\"陕西省\",\"parentId\":0,\"status\":0,\"warningLevel\":0},{\"abbreviation\":\"甘\",\"areaCode\":\"620000000000\",\"areaId\":147,\"areaInnerLevel\":\"1\",\"areaName\":\"甘肃省\",\"parentId\":0,\"status\":0,\"warningLevel\":0},{\"abbreviation\":\"青\",\"areaCode\":\"630000000000\",\"areaId\":148,\"areaInnerLevel\":\"1\",\"areaName\":\"青海省\",\"parentId\":0,\"status\":0,\"warningLevel\":0},{\"abbreviation\":\"宁\",\"areaCode\":\"640000000000\",\"areaId\":149,\"areaInnerLevel\":\"1\",\"areaName\":\"宁夏回族自治区\",\"parentId\":0,\"status\":0,\"warningLevel\":0},{\"abbreviation\":\"新\",\"areaCode\":\"650000000000\",\"areaId\":150,\"areaInnerLevel\":\"1\",\"areaName\":\"新疆维吾尔自治区\",\"parentId\":0,\"status\":0,\"warningLevel\":0},{\"abbreviation\":\"台\",\"areaCode\":\"710000000000\",\"areaId\":151,\"areaInnerLevel\":\"1\",\"areaName\":\"台湾省\",\"parentId\":0,\"status\":0,\"warningLevel\":0},{\"areaCode\":\"810000000000\",\"areaId\":152,\"areaInnerLevel\":\"1\",\"areaName\":\"香港特别行政区\",\"parentId\":0,\"status\":0,\"warningLevel\":0},{\"areaCode\":\"820000000000\",\"areaId\":153,\"areaInnerLevel\":\"1\",\"areaName\":\"澳门特别行政区\",\"parentId\":0,\"status\":0,\"warningLevel\":0},{\"areaCode\":\"120000000000\",\"areaId\":207,\"areaInnerLevel\":\"1\",\"areaName\":\"天津市\",\"carnoPre\":\"津A\",\"parentId\":0,\"status\":0,\"warningLevel\":3},{\"areaCode\":\"110000000000\",\"areaId\":208,\"areaInnerLevel\":\"1\",\"areaName\":\"北京市\",\"carnoPre\":\"京A\",\"parentId\":0,\"status\":0,\"warningLevel\":3}]";
+//
+//        List<AreaDo> areaDos = JSON.parseArray(ss, AreaDo.class);
+//        System.out.println(areaDos.size());
+//
+//        areaDos.add(areaDos.get(0));
+//        System.out.println(areaDos.size());
+//        Map<String, AreaDo> collect1 = areaDos.stream().filter(item -> {
+//                    System.out.println(item.getStatus());
+//                    System.out.println(Objects.equals(item.getStatus(), (byte)0));
+//                    return  Objects.equals(item.getStatus(), (byte)0);
+//                })
+//                .collect(Collectors.toMap(AreaDo::getAreaCode, Function.identity(), (k1, k2) -> k1));
+////        Map<String, AreaDo> collect = (Map<String, AreaDo>) collect1
+//
+//        System.out.println("collect1   "+collect1.isEmpty());
+//        System.out.println("collect1   "+collect1);
+
+//        110000000000
+//        SxOHY9jW7eVk7cYIcpMyVBtYidUIsJqR
+//        RB5BZ-XQXKI-I6PGN-UIQFL-DDPK2-KJBES
+//        https://apis.map.qq.com/ws/district/v1/getchildren?id=330100&key=46WBZ-GBORZ-RRMXA-Z436B-MRWI2-NUBS5
+//        330100000000
+        String origin = "/ws/district/v1/getchildren?id=710000&key=RB5BZ-XQXKI-I6PGN-UIQFL-DDPK2-KJBES" + "SxOHY9jW7eVk7cYIcpMyVBtYidUIsJqR";
+        String sig = new MD5Utils().getMd5(origin);
+        System.out.println(sig);
+        String s = HttpUtils.simpleGet("https://apis.map.qq.com/ws/district/v1/getchildren?id=710000&key=RB5BZ-XQXKI-I6PGN-UIQFL-DDPK2-KJBES&sig=" + sig);
+        System.out.printf(s);
+//        {
+//            "id": "370000",
+//                "name": "山东",
+//                "fullname": "山东省",
+//                "pinyin": [
+//            "shan",
+//                    "dong"
+//                ],
+//            "location": {
+//            "lat": 36.670201,
+//                    "lng": 117.020725
+//        }
+//        },
+
+
+//        System.out.printf(s);
+
+//        P p = new P();
+//        p.setaByte((byte) 1);
+//        System.out.println(p.getaByte() == 1);
+//
+//
+//        String ss = test1("a739wcHTKXaI7zd9yGwPeQ==");
+//        System.out.println(ss);
 //        LyUpkeepImportResult lyUpkeepImportResult = JSON.parseObject(ss, LyUpkeepImportResult.class);
 //        System.out.println(lyUpkeepImportResult.getResult());
 //        Boolean a = null;
@@ -369,14 +422,25 @@ public class main {
 
 
 }
- class P {
-    Byte aByte ;
 
-    public Byte getaByte() {
-        return aByte;
-    }
-
-    public void setaByte(Byte aByte) {
-        this.aByte = aByte;
-    }
-}
+//class P {
+//    Byte aByte;
+//
+//    Integer a ;
+//
+//    public Integer getA() {
+//        return a;
+//    }
+//
+//    public void setA(Integer a) {
+//        this.a = a;
+//    }
+//
+//    public Byte getaByte() {
+//        return aByte;
+//    }
+//
+//    public void setaByte(Byte aByte) {
+//        this.aByte = aByte;
+//    }
+//}
