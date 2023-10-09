@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let user = {
+      firstName: "Ilya",
+      sayHi() {
+        console.log(this);
+        // function arrow() {
+        //   console.log(this);
+        //   // alert(this.firstName)
+        // }
+        // arrow();
+      },
+    };
+
+    user.sayHi(); // Ilya
+    // function testObj() {
+    //   const obj = {
+    //     name: "cocoa",
+    //     age: 18,
+    //     getAge: function () {
+    //       return this.age;
+    //     },
+    //   };
+    //   console.log(obj.getAge());
+
+    //   const getAge = obj.getAge;
+    //   getAge.bind(obj)
+    //   console.log(getAge());
+    // }
+    // testObj();
+  </script>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <style>
+      progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        -webkit-appearance: none;
+        appearance: none;
+        width: 100%;
+        height: 15px;
+        border: none;
+        background: transparent;
+      }
+      progress::-webkit-progress-bar {
+        background: transparent;
+      }
+      progress::-webkit-progress-value {
+        background: linear-gradient(
+          to left,
+          #db38b5,
+          #01b3e3,
+          #25ce7b,
+          #fdc741,
+          #ff6b01,
+          #fc4236
+        );
+        background-attachment: fixed;
+      }
+      progress::-moz-progress-bar {
+        background: linear-gradient(
+          to left,
+          #db38b5,
+          #01b3e3,
+          #25ce7b,
+          #fdc741,
+          #ff6b01,
+          #fc4236
+        );
+        background-attachment: fixed;
+      }
+
+      section {
+        min-height: 100vh;
+        padding: 10vw 5vh;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+      }
+      p {
+        margin: 0;
+        font-size: 24px;
+      }
+
+      .test {
+        position: fixed;
+        top: 100px;
+        left: 100px;
+        width: 20px;
+        height: 20px;
+        background-color: red;
+      }
+
+      .t1{
+        width: 20px;
+        height: 20px;
+        background-color: red;
+      }
+      .t2{
+        width: 20px;
+        height: 20px;
+        margin-left: 100px;
+        background-color: green;
+      }
+
+      .box-container{
+        margin: 200px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="box-container">
+         <div class="t1"></div> 
+         <div class="t2"></div>   
+    </div>
+    <progress max="100" value="0"></progress>
+    <div class="container">
+      <section>
+        <p>Scroll to add some color to your life!🎨</p>
+      </section>
+      <section>
+        <p>You're doing great, keep going😘</p>
+      </section>
+      <section>
+        <p>Keep scrolling just a little more 🏃‍♀️</p>
+      </section>
+      <section>
+        <p>Here you go!<br />Did you like it?🌈</p>
+      </section>
+      <div class="test"></div>
+      <div class="test box"></div>
+    </div>
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.to(".box-container", {
+  duration: 0.5,
+  opacity: 0,
+  y: -100,
+  stagger: 0.1,
+  ease: "back.in",
+});
+      gsap.to(".box", { x: "40vw",duration:3 });
+      gsap.to("progress", {
+        value: 100,
+        ease: "none",
+        scrollTrigger: {
+          scrub: 3.3,
+          once: true,
+          endTrigger: function () {
+            console.log("end");
+          },
+        },
+      });
+      gsap.to(".test", {
+        width: 100,
+        top: 200,
+        ease: "none",
+        scrollTrigger: { scrub: 0.3 },
+      });
+    </script>
+  </body>
+</html>

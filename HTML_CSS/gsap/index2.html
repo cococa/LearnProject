@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <style>
+      .container {
+        background-color: grey;
+        height: 400px;
+        padding: 20px;
+      }
+      .t1 {
+        width: 80px;
+        height: 80px;
+        background-color: blueviolet;
+      }
+
+      .temp {
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="temp"></div>
+    <div class="container">
+      <div class="t1"></div>
+      <div class="t2"></div>
+    </div>
+    <div class="temp"></div>
+    <script>
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".container",
+          start: "top",
+          end: "+=440",
+          scrub: 1,
+          pin: true,
+          markers: true,
+        },
+      });
+      tl.to(".t1", { y: "+30vh", duration: 1 });
+      tl.to(".t1", { rotation: 360, duration: 3 });
+      tl.to(".t1", { x: 250, duration: 1 });
+    </script>
+  </body>
+</html>
