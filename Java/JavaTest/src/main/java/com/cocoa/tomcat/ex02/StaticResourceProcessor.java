@@ -12,6 +12,4 @@ public class StaticResourceProcessor implements Processor{
             e.printStackTrace();
         }
     }
-
-
 }

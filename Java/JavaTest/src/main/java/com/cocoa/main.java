@@ -187,11 +187,11 @@ public class main {
 //        SxOHY9jW7eVk7cYIcpMyVBtYidUIsJqR
 //        RB5BZ-XQXKI-I6PGN-UIQFL-DDPK2-KJBES
 //        https://apis.map.qq.com/ws/district/v1/getchildren?id=330100&key=46WBZ-GBORZ-RRMXA-Z436B-MRWI2-NUBS5
-//        330100000000
-        String origin = "/ws/district/v1/getchildren?id=710000&key=RB5BZ-XQXKI-I6PGN-UIQFL-DDPK2-KJBES" + "SxOHY9jW7eVk7cYIcpMyVBtYidUIsJqR";
+//        320282000000
+        String origin = "/ws/district/v1/getchildren?id=110000&key=RB5BZ-XQXKI-I6PGN-UIQFL-DDPK2-KJBES" + "SxOHY9jW7eVk7cYIcpMyVBtYidUIsJqR";
         String sig = new MD5Utils().getMd5(origin);
         System.out.println(sig);
-        String s = HttpUtils.simpleGet("https://apis.map.qq.com/ws/district/v1/getchildren?id=710000&key=RB5BZ-XQXKI-I6PGN-UIQFL-DDPK2-KJBES&sig=" + sig);
+        String s = HttpUtils.simpleGet("https://apis.map.qq.com/ws/district/v1/getchildren?id=110000&key=RB5BZ-XQXKI-I6PGN-UIQFL-DDPK2-KJBES&sig=" + sig);
         System.out.printf(s);
 //        {
 //            "id": "370000",

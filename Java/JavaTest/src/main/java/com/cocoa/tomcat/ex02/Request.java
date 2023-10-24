@@ -20,6 +20,9 @@ public class Request implements ServletRequest {
         this.inputStream = inputStream;
     }
 
+    /**
+     * 对请求的第一行进行解析，得到请求的资源名
+     */
     public void parse() {
         StringBuffer stringBuffer = new StringBuffer(2048);
 
@@ -30,8 +33,11 @@ public class Request implements ServletRequest {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        if(i == -1){
+            return ;
+        }
         stringBuffer.append(new String(bytes, 0, i));
-        System.out.printf("+++" + stringBuffer.toString());
+        System.out.println(">>>" + stringBuffer.toString());
         this.setUri(parseUri(stringBuffer.toString()));
     }
 
@@ -54,6 +60,7 @@ public class Request implements ServletRequest {
     public void setUri(String uri) {
         this.uri = uri;
     }
+
 
     @Override
     public Object getAttribute(String name) {
@@ -80,6 +87,10 @@ public class Request implements ServletRequest {
         return 0;
     }
 
+    @Override
+    public long getContentLengthLong() {
+        return 0;
+    }
 
     @Override
     public String getContentType() {
@@ -181,5 +192,58 @@ public class Request implements ServletRequest {
         return null;
     }
 
+    @Override
+    public int getRemotePort() {
+        return 0;
+    }
 
+    @Override
+    public String getLocalName() {
+        return null;
+    }
+
+    @Override
+    public String getLocalAddr() {
+        return null;
+    }
+
+    @Override
+    public int getLocalPort() {
+        return 0;
+    }
+
+    @Override
+    public ServletContext getServletContext() {
+        return null;
+    }
+
+    @Override
+    public AsyncContext startAsync() throws IllegalStateException {
+        return null;
+    }
+
+    @Override
+    public AsyncContext startAsync(ServletRequest servletRequest, ServletResponse servletResponse) throws IllegalStateException {
+        return null;
+    }
+
+    @Override
+    public boolean isAsyncStarted() {
+        return false;
+    }
+
+    @Override
+    public boolean isAsyncSupported() {
+        return false;
+    }
+
+    @Override
+    public AsyncContext getAsyncContext() {
+        return null;
+    }
+
+    @Override
+    public DispatcherType getDispatcherType() {
+        return null;
+    }
 }

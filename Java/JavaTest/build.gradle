@@ -74,11 +74,8 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-slf4j:$coroutines_version"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-debug:$coroutines_version"
 
-
-//    // https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api
-//    compileOnly 'javax.servlet:javax.servlet-api:4.0.1'
-
-
+    // https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api
+    implementation 'javax.servlet:javax.servlet-api:4.0.1'
 }
 
 compileKotlin {
