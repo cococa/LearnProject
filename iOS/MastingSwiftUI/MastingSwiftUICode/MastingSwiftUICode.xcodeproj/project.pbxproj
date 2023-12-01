@@ -25,7 +25,6 @@
 		9F8E68C128804EC3009F3C27 /* Chapter7.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E68C028804EC3009F3C27 /* Chapter7.swift */; };
 		9F973EBE26B8F06F00AC99F7 /* Chapter5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F973EBD26B8F06F00AC99F7 /* Chapter5.swift */; };
 		9F973EC926B911A900AC99F7 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F973EC826B911A900AC99F7 /* CardView.swift */; };
-		9FB9C08A2A4EB2E000DFF72D /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB9C0892A4EB2E000DFF72D /* SwiftUIView.swift */; };
 		9FDB18B72993AD15004B77B3 /* Chapter10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDB18B62993AD15004B77B3 /* Chapter10.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,7 +70,6 @@
 		9F8E68C028804EC3009F3C27 /* Chapter7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter7.swift; sourceTree = "<group>"; };
 		9F973EBD26B8F06F00AC99F7 /* Chapter5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter5.swift; sourceTree = "<group>"; };
 		9F973EC826B911A900AC99F7 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		9FB9C0892A4EB2E000DFF72D /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		9FDB18B62993AD15004B77B3 /* Chapter10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter10.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,7 +169,6 @@
 				9F21723226C4CE2100A6D6FA /* Chapter9.swift */,
 				9FDB18B62993AD15004B77B3 /* Chapter10.swift */,
 				9F262DB32994D96E00945D56 /* Chapter11.swift */,
-				9FB9C0892A4EB2E000DFF72D /* SwiftUIView.swift */,
 			);
 			path = chapter;
 			sourceTree = "<group>";
@@ -319,7 +316,6 @@
 			files = (
 				9F21723126C4BB4700A6D6FA /* Chapter8.swift in Sources */,
 				9F262DB42994D96E00945D56 /* Chapter11.swift in Sources */,
-				9FB9C08A2A4EB2E000DFF72D /* SwiftUIView.swift in Sources */,
 				9F8E68C128804EC3009F3C27 /* Chapter7.swift in Sources */,
 				9F16A91B26BAB35B005DCFCC /* CounterButton.swift in Sources */,
 				8D7DC8982626D4CB0032FFD2 /* ContentView.swift in Sources */,

@@ -40,10 +40,34 @@
 //
 //      %g 自动选择合适的表示法 
 
+typedef unsigned int uint32_t;
+
+uint32_t isqrt_bist(uint32_t a)
+{
+    uint32_t low, high, mid;
+
+    if (a <= 1) return a;
+
+    low = 1;
+    high = (a >> 5) + 8;
+    if (high > 65535) high = 65535; /* adjust upper bound */
+
+    while (high >= low) {
+        mid = (low + high) >> 1;
+        if (mid * mid > a) {
+            high = mid - 1;
+        } else {
+            low = mid + 1;
+        }
+    }
+    return high;
+}
+
 
 int main(){
 //    algnof_main();
-    const_main();
+//    const_main();
+    printf("asdas %d", isqrt_bist(2));
 }
 
 

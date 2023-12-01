@@ -1,4 +1,4 @@
-package com.cocoa.proxy.jdk;
+package com.cocoa.proxy;
 
 import java.io.Serializable;
 

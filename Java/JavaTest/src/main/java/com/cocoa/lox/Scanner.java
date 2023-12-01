@@ -119,7 +119,7 @@ public class Scanner {
         current--;
         //此时start 到current substring 的结果是 "xxxx", 所以要去掉"
         String value = source.substring(start, current);
-        if (value.indexOf(".") > -1) {
+        if (value.contains(".")) {
             addToken(NUMBER, Double.parseDouble(value));
         } else {
             addToken(NUMBER, Integer.parseInt(value));

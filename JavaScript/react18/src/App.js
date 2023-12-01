@@ -8,6 +8,7 @@ import List from "./components/List.js";
 import Button from "./components/Button.js";
 import FirstComponent  from "./components/FirstComponent.js";
 import MoveContainer from "./components/MoveContainer.js";
+import { Father } from "./book-components/Father";
 
 import { useState } from "react";
 
@@ -22,7 +23,8 @@ function App() {
 
   return (
     <div className="App">
-      <MoveContainer/>
+      <Father></Father>
+      {/* <MoveContainer/> */}
       <FirstComponent ></FirstComponent>
       <div onClick={()=> { alert('clicked!'); setText("222")  }}><Button handleClick={handleClick} text={text}></Button></div>
       {1 > 2 ? <div>1</div> : <div>2</div>}

@@ -1,9 +1,6 @@
 package com.cocoa.proxy.jdk;
 
-import com.cocoa.proxy.IProductService;
-import com.cocoa.proxy.IUserService;
-import com.cocoa.proxy.ProductServiceImpl;
-import com.cocoa.proxy.UserServiceImpl;
+import com.cocoa.proxy.*;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -18,6 +15,8 @@ public class Main {
                 //很神奇，一直输出true
                 System.out.println(proxy instanceof IProductService);
                 System.out.println(proxy instanceof IUserService);
+                System.out.println(method.getName());
+
                 if (method.getName().equals("findUserById")) {
                     Class clz = UserServiceImpl.class;
                     Object target = clz.newInstance();
@@ -34,7 +33,9 @@ public class Main {
             }
         };
         // 这里的 class 数组必须是接口，否则会出错
-        Object proxy = Proxy.newProxyInstance(IUserService.class.getClassLoader(), new Class[]{IUserService.class, IProductService.class}, handler);
+//        Exception in thread "main" java.lang.IllegalArgumentException: com.cocoa.proxy.User is not an interface
+        Object proxy = Proxy.newProxyInstance(Main.class.getClassLoader(),
+                new Class[]{IUserService.class, IProductService.class}, handler);
         if (proxy instanceof IUserService) {
             IUserService userService = (IUserService) proxy;
             User userById = userService.findUserById(1);
@@ -44,7 +45,7 @@ public class Main {
         if (proxy instanceof IProductService) {
             IProductService productService = (IProductService) proxy;
             String info = productService.getInfo();
-            System.out.println(info);
+            System.out.println("ProductServiceImpl" + info);
         }
 
 
