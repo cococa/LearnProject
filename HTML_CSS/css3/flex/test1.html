@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        flex-direction: column;
+        display: flex;
+      }
+
+      .parent {
+        display: flex;
+      }
+      .parent div {
+        width: 50px;
+        margin: 10px;
+        height: 50px;
+        background-color: red;
+      }
+      .parent .mauto {
+        margin: auto;
+      }
+
+      .demo2 {
+        display: flex;
+        width: 900px;
+        margin-top: 20px;
+        background-color: antiquewhite;
+      }
+
+      .demo2 div{
+        flex: 1 1 auto;
+        /* width: 200px; */
+      }
+
+      .demo2 div:nth-child(2){
+        background-color: rebeccapurple;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="parent">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="mauto">mauto</div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+      <div class="demo2">
+        <div>hey</div>
+        <div>cccc</div>
+        <div>Hello world yeah!</div>
+      </div>
+    </div>
+  </body>
+</html>

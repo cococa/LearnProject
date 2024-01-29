@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Main {
 
+
     public static void main(String[] args) {
 
 
@@ -23,8 +24,6 @@ public class Main {
         Scanner scanner = new Scanner(source);
         List<Token> tokens = scanner.scanTokens();
         tokens.stream().forEach(System.out::println);
-
-
 
 
     }

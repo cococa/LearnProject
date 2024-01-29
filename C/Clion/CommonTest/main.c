@@ -16,6 +16,7 @@
 #include "pointer/string.h"
 #include "pointer/_const.h"
 #include "advanced/align_of.h"
+
 #define VALUE 10
 
 #define MAX(a, b) ((a > b) ? (a) : (b))
@@ -42,8 +43,7 @@
 
 typedef unsigned int uint32_t;
 
-uint32_t isqrt_bist(uint32_t a)
-{
+uint32_t isqrt_bist(uint32_t a) {
     uint32_t low, high, mid;
 
     if (a <= 1) return a;
@@ -64,16 +64,20 @@ uint32_t isqrt_bist(uint32_t a)
 }
 
 
-int main(){
+int main() {
 //    algnof_main();
 //    const_main();
-    printf("asdas %d", isqrt_bist(2));
+    //printf("asdas %d", isqrt_bist(2));
+
+    char *p = "Heek";
+    printf("%c", *p++);
+    printf("%c", *p);
+
+
 }
 
 
-
-
-extern int  global_b;
+extern int global_b;
 
 
 int sum(int *start, int *end) {
@@ -98,7 +102,7 @@ int calcLen(char *c) {
 }
 
 
-struct Action{
+struct Action {
     int id;
     int position;
 };
@@ -239,14 +243,14 @@ struct sdshdr8 {
     char buf[];
 };
 
-struct A{
+struct A {
     char a1;
     short a2;
     int a3;
 };
 
 
-struct __attribute__ ((__packed__)) B{
+struct __attribute__ ((__packed__)) B {
     char a1;
     int a3;
     short a2;
