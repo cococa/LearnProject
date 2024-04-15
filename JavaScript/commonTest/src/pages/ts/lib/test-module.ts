@@ -12,10 +12,7 @@ export namespace Shapes{
 
 
 export class Person{
-
+    
     name : String
 
 }
-
-
-

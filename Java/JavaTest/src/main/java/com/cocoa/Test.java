@@ -8,9 +8,13 @@ public class Test {
 
     public static void main(String[] args) {
 
-        String a = "自卑感";
-        byte[] bytes = a.getBytes();
-        System.out.println(bytes.length);
+        String _fileName = "http:://abadasc.cxcjpcm/aaaa.png";
+        String _extensionName = _fileName.substring(_fileName.lastIndexOf(".") + 1);
+        System.out.printf("extensionName: %s\n", _extensionName);
+//
+//        String a = "自卑感";
+//        byte[] bytes = a.getBytes();
+//        System.out.println(bytes.length);
 
 //        List<String> list = new ArrayList<>();
 //        list.add("123");

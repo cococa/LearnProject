@@ -10,6 +10,14 @@ export default class FirstComponent extends Component {
             text: "123"
         }
     }
+
+    componentDidCatch() {
+        this.setState({
+            text: "error"
+        })
+    }
+
+
     render() {
         const { handleClick, text } = this.props;
         const {text: stateText} = this.state;

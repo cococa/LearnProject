@@ -8,7 +8,7 @@
     >
       <div class="flex-1 flex-row">
         <div>{{ index + 1 }}.</div>
-        <div>{{ item.meta.title }}相关</div>
+        <div>{{ item.name }}相关</div>
       </div>
       <img
         style="width: 90px; height: 60px"

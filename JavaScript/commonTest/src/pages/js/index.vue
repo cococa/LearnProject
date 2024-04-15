@@ -1,4 +1,4 @@
-<template>
+<template>  
   <div class="flex flex-1 flex-col">
     <div
       class="flex flex-row flex-1 p-6 bg-gray-200"
@@ -7,7 +7,7 @@
       @click="push(item.path)"
     >
       <div class="flex-1 flex-row item">
-        <div class="item-title flex-1">{{index}}. {{item.meta.title || 'item.path'}} </div>
+        <div class="item-title flex-1">{{index}}. {{item.name || 'item.path'}} </div>
         <div>点击进入</div>
       </div>
     </div>
@@ -19,7 +19,7 @@
 export default {
   name: 'xx',
   components: {
-
+    
   },
   data() {
     return {
@@ -29,7 +29,7 @@ export default {
   mounted() {
     const app = this;
     this.routerList = this.$router.getRoutes().filter((item) => {
-      return item.path.indexOf('es6') > -1 && item.path.indexOf('es6/index') == -1;
+      return item.path.indexOf('js') > -1 && item.path.indexOf('js/index') == -1;
     });
     console.log(this.routerList);
   },
@@ -39,7 +39,7 @@ export default {
     },
   },
   setup(props) {
-
+    
   }
 };
 </script>

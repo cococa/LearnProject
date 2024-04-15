@@ -8,7 +8,7 @@
     >
       <div class="flex-1 flex-row item">
         <div class="item-title flex-1">
-          {{ index }}. {{ item.meta.title || "item.path" }}
+          {{ index }}. {{ item.name || "item.path" }}
         </div>
         <div>点击进入</div>
       </div>
@@ -17,10 +17,10 @@
 </template>
 
 <script lang="ts">
-import { WebSocketServer } from "ws";
+// import { WebSocketServer } from "ws";
 
 // console.log(WebSocket);
-console.log(WebSocketServer);
+// console.log(WebSocketServer);
 
 // const wss = new WebSocketServer({
 //   port: 8080,

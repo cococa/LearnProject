@@ -42,7 +42,9 @@ export default {
     testPromise() {
       console.log("testPromise start");
       new Promise((resolve, reject) => {
+        
         resolve("123");
+
       })
         .then(
           (res) =>
@@ -58,31 +60,36 @@ export default {
       console.log("testMyPromise start");
       new MyPromise((resolve, reject) => {
         setTimeout(() => {
-          resolve("111");
+          // resolve("aaaaaaaa");
+          reject("some  error!");
         }, 1000);
-        // resolve("111");
-      })
-        .then(
-          (v: any) => {
-            console.log("then1 f1", v);
-            return new MyPromise((resolve, reject) => {
-              setTimeout(() => {
-                resolve("222");
-              }, 2000);
-            });
-          },
-          (err: any) => {
-            console.log("then1 f2", err);
-          }
-        )
-        .then(
-          (v: any) => {
-            console.log("then2 f1", v);
-          },
-          (err: any) => {
-            console.log("then2 f2", err);
-          }
-        );
+        // resolve("aaaa");
+      }).then(
+        (v: any) => v,
+        (reson: any) => console.log(reson)
+      );
+      // .then((v: any) => console.log(v));
+      // .then(
+      //   (v: any) => {
+      //     console.log("then1 f1", v);
+      //     return new MyPromise((resolve, reject) => {
+      //       setTimeout(() => {
+      //         resolve("222");
+      //       }, 2000);
+      //     });
+      //   },
+      //   (err: any) => {
+      //     console.log("then1 f2", err);
+      //   }
+      // )
+      // .then(
+      //   (v: any) => {
+      //     console.log("then2 f1", v);
+      //   },
+      //   (err: any) => {
+      //     console.log("then2 f2", err);
+      //   }
+      // );
     },
     loadFile(fileName) {
       //  更新数据devInfo.txt文件接口

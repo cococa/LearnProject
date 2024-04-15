@@ -7,58 +7,61 @@
       @click="push(item.path)"
     >
       <div class="flex-1 flex-row item">
-        <div class="item-title flex-1">
-          {{ index }}. {{ item.meta.title || "item.path" }}
-        </div>
+        <div class="item-title flex-1">{{index}}. {{item.name || 'item.path'}} </div>
         <div>点击进入</div>
       </div>
     </div>
   </div>
 </template>
 
-<script lang="ts">
+<script lang='ts'>
+
 export default {
-  name: "xx",
-  components: {},
+  name: 'xx',
+  components: {
+
+  },
   data() {
     return {
-      routerList: [],
-    };
+      routerList:[]
+    }
   },
   mounted() {
     const app = this;
     this.routerList = this.$router.getRoutes().filter((item) => {
-      console.log("item", item.path);
-      return (
-        item.path.indexOf("ts") > -1 && item.path.indexOf("ts/index") == -1
-      );
+      return item.path.indexOf('es6') > -1 && item.path.indexOf('es6/index') == -1;
     });
-    console.log("routerList",this.routerList);
+    console.log(this.routerList);
   },
   methods: {
-    push(path: string) {
+        push(path) {
       this.$router.push(path);
     },
   },
-  setup(props) {},
+  setup(props) {
+
+  }
 };
 </script>
 
-<style>
-.item-title {
-  font-size: 1.3rem;
-  color: #333;
-  padding: 10px 20px;
+
+<style >
+.item-title{
+    font-size: 1.3rem;
+    color: #333;
+    padding: 10px 20px;
 }
 
-.item {
+.item{
   padding: 16px;
   border-top-width: 0px;
-  border-left-width: 0px;
-  border-right-width: 0px;
+  border-left-width:  0px;
+  border-right-width:  0px;
   border-bottom-width: 1px;
   border-color: #999;
   border-style: solid;
   align-items: center;
 }
+
 </style>
+

@@ -11,15 +11,19 @@ interface PromiseParams {
 }
 
 enum PromiseState {
+  //待定、已履行或已拒绝
   PENDING = "pending",
   FULFILLED = "fulfilled",
   REJECTED = "rejected",
 }
 
-// 参考文档   https://juejin.cn/post/7222310732293570619
+//定义 Promise 的then 方法
+interface IPromise {
+  then(onFulfilled?: any, onRejected?: any): IPromise;
+}
 
-export default class MyPromise {
-  _id : number = 0;
+export default class MyPromise implements IPromise {
+  _id: number = 0;
   value: any;
   reson: any;
   state: PromiseState = PromiseState.PENDING;
@@ -33,7 +37,7 @@ export default class MyPromise {
   constructor(params: PromiseParams) {
     const _resolve = (value: any) => {
       console.log("constructor value", value, this.state, this._id);
-      this._fulfilledStack && this._fulfilledStack.forEach((fn) => console.log(fn));
+      // this._fulfilledStack && this._fulfilledStack.forEach((fn) => console.log(fn));
       if (this.state === PromiseState.PENDING) {
         this.value = value;
         this.state = PromiseState.FULFILLED;
@@ -52,14 +56,21 @@ export default class MyPromise {
     params(_resolve, _reject);
   }
 
-  public then(onFulfilled: any, onRejected?: any): MyPromise {
+  public instanceOfIPromise(obj: any) {
+    return (
+      Object.prototype.hasOwnProperty.call(obj, "then") &&
+      typeof obj["then"] === "function"
+    );
+  }
+
+  public then(onFulfilled?: any, onRejected?: any): MyPromise {
     return new MyPromise((resolve, reject) => {
       if (this.state === PromiseState.FULFILLED) {
         // 处理上一个then返回的promise, 这里要注意两个问题，
         // 如果用  instanceof MyPromise 判断，会丢失了Promise的扩展性，举个例子，我可以用原生的Promise，这里就会出问题
         // 根据 Promise A+ 规范，如果一个类有then方法，那么就认为是一个Promise
-        console.log("debug", this.value instanceof MyPromise);
-        if (this.value instanceof MyPromise) {
+        // console.log("debug", this.implementsInterface(this.value, IPromise));
+        if (this.instanceOfIPromise(this.value)) {
           this.value.then(
             (val: any) => {
               const _res = onFulfilled(val);
@@ -84,14 +95,17 @@ export default class MyPromise {
       if (this.state === PromiseState.PENDING) {
         if (onFulfilled) {
           console.log("onFulfilled add task", onFulfilled);
+          console.log("onFulfilled add task", this._fulfilledStack.length);
           this._fulfilledStack.push((val: any) => {
-
             console.log("debug1", val);
             const _res = onFulfilled(val);
             console.log("debug2", _res);
             resolve(_res);
           });
-          console.log("onFulfilled after add task", this._fulfilledStack.length);
+          console.log(
+            "onFulfilled after add task",
+            this._fulfilledStack.length
+          );
         }
 
         if (onRejected) {

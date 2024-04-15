@@ -7,7 +7,7 @@
       @click="push(item.path)"
     >
       <div class="flex-1 flex-row item">
-        <div class="item-title flex-1">{{index}}. {{item.meta.title || 'item.path'}} </div>
+        <div class="item-title flex-1">{{index}}. {{item.name || 'item.path'}} </div>
         <div>点击进入</div>
       </div>
     </div>
@@ -29,7 +29,7 @@ export default {
   mounted() {
     const app = this;
     this.routerList = this.$router.getRoutes().filter((item) => {
-      return item.path.indexOf('js') > -1 && item.path.indexOf('js/index') == -1;
+      return item.path.indexOf('css') > -1 && item.path.indexOf('css/index') == -1;
     });
     console.log(this.routerList);
   },

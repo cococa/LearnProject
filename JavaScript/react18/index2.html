@@ -1,0 +1,67 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Radius - No Gap</title>
+    <style>
+        canvas {
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" width="200" height="200"></canvas>
+
+    <script>
+        // 获取Canvas元素
+        var canvas = document.getElementById('myCanvas');
+        var ctx = canvas.getContext('2d');
+
+        // 大圆的圆心和半径
+        var centerX = 100;
+        var centerY = 100;
+        var radiusLarge = 80;
+
+        // 小圆的数量
+        var smallCircleCount = 6;
+
+        // 计算小圆的半径
+        var radiusSmall = calculateSmallCircleRadius(radiusLarge, smallCircleCount) 
+
+        // 画大圆
+        ctx.beginPath();
+        ctx.arc(centerX, centerY, radiusLarge, 0, 2 * Math.PI);
+        ctx.stroke();
+
+        // 画小圆
+        for (var i = 0; i < smallCircleCount; i++) {
+            var angle = (2 * Math.PI / smallCircleCount) * i;  // 将360度分为小圆的数量份
+            var x = centerX + radiusLarge * Math.cos(angle);
+            var y = centerY + radiusLarge * Math.sin(angle);
+            
+            // 画小圆
+            ctx.beginPath();
+            ctx.arc(x, y, radiusSmall, 0, 2 * Math.PI);
+            ctx.fill();
+        }
+
+        function calculateSmallCircleRadius(radiusLarge, smallCircleCount) {
+    // 计算每个小圆之间的角度
+    var angleBetweenCircles = (2 * Math.PI) / smallCircleCount;
+
+    // 计算每个小圆的半径，以确保小圆之间没有重叠
+    var radiusSmall = (Math.sin(angleBetweenCircles / 2) * radiusLarge) / (1 + Math.sin(angleBetweenCircles / 2));
+
+    return radiusSmall;
+}
+
+
+        function getSmallRadius(R, n) {
+            return R * Math.PI / n;
+        }
+
+
+    </script>
+</body>
+</html>

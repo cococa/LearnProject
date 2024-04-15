@@ -4,6 +4,7 @@
       <vue3-markdown-it :source="item.code" />
       <button @click="testClick(item.methodName)">
         testMethod({{ item.methodName }})
+            <template #default></template>
       </button>
     </div>
   </div>
