@@ -82,18 +82,21 @@ devDependencies:
   prettier:
     specifier: ^2.7.1
     version: 2.8.8
+  sass:
+    specifier: ^1.75.0
+    version: 1.75.0
   typescript:
     specifier: ~4.7.4
     version: 4.7.4
   vite:
     specifier: ^4.0.0
-    version: 4.5.3(@types/node@18.19.31)
+    version: 4.5.3(@types/node@18.19.31)(sass@1.75.0)
   vite-plugin-pages:
     specifier: ^0.31.0
-    version: 0.31.0(@vue/compiler-sfc@3.4.21)(vite@4.5.3)
+    version: 0.31.0(vite@4.5.3)
   vitest:
     specifier: ^0.25.6
-    version: 0.25.8(jsdom@20.0.3)
+    version: 0.25.8(jsdom@20.0.3)(sass@1.75.0)
   vue-tsc:
     specifier: ^1.0.12
     version: 1.8.27(typescript@4.7.4)
@@ -979,7 +982,7 @@ packages:
       '@babel/core': 7.24.4
       '@babel/plugin-transform-typescript': 7.24.4(@babel/core@7.24.4)
       '@vue/babel-plugin-jsx': 1.2.2(@babel/core@7.24.4)
-      vite: 4.5.3(@types/node@18.19.31)
+      vite: 4.5.3(@types/node@18.19.31)(sass@1.75.0)
       vue: 3.4.21(typescript@4.7.4)
     transitivePeerDependencies:
       - supports-color
@@ -992,7 +995,7 @@ packages:
       vite: ^4.0.0 || ^5.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.5.3(@types/node@18.19.31)
+      vite: 4.5.3(@types/node@18.19.31)(sass@1.75.0)
       vue: 3.4.21(typescript@4.7.4)
     dev: true
 
@@ -1317,6 +1320,14 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
+  /anymatch@3.1.3:
+    resolution: {integrity: sha1-eQxYsZuhcgqEIFtXxhjVrYUklz4=, tarball: http://registry.m.jd.com/anymatch/download/anymatch-3.1.3.tgz}
+    engines: {node: '>= 8'}
+    dependencies:
+      normalize-path: 3.0.0
+      picomatch: 2.3.1
+    dev: true
+
   /argparse@2.0.1:
     resolution: {integrity: sha1-JG9Q88p4oyQPbJl+ipvR6sSeSzg=, tarball: http://registry.m.jd.com/argparse/download/argparse-2.0.1.tgz}
 
@@ -1382,6 +1393,11 @@ packages:
     resolution: {integrity: sha1-J3Csa8R9MSr5eov5pjQ0LgzSXLY=, tarball: http://registry.m.jd.com/base64id/download/base64id-2.0.0.tgz}
     engines: {node: ^4.5.0 || >= 5.9}
     dev: false
+
+  /binary-extensions@2.3.0:
+    resolution: {integrity: sha1-9uFKl4WNMnJSIAJC1Mz+UixEVSI=, tarball: http://registry.m.jd.com/binary-extensions/download/binary-extensions-2.3.0.tgz}
+    engines: {node: '>=8'}
+    dev: true
 
   /boolbase@1.0.0:
     resolution: {integrity: sha1-aN/1++YMUes3cl6p4+0xDcwed24=, tarball: http://registry.m.jd.com/boolbase/download/boolbase-1.0.0.tgz}
@@ -1477,6 +1493,21 @@ packages:
     resolution: {integrity: sha1-plAuQxKn7pafZG6Duz3dVigb1pQ=, tarball: http://registry.m.jd.com/check-error/download/check-error-1.0.3.tgz}
     dependencies:
       get-func-name: 2.0.2
+    dev: true
+
+  /chokidar@3.6.0:
+    resolution: {integrity: sha1-GXxsxmnvKo3F57TZfuTgksPrDVs=, tarball: http://registry.m.jd.com/chokidar/download/chokidar-3.6.0.tgz}
+    engines: {node: '>= 8.10.0'}
+    dependencies:
+      anymatch: 3.1.3
+      braces: 3.0.2
+      glob-parent: 5.1.2
+      is-binary-path: 2.1.0
+      is-glob: 4.0.3
+      normalize-path: 3.0.0
+      readdirp: 3.6.0
+    optionalDependencies:
+      fsevents: 2.3.3
     dev: true
 
   /color-convert@1.9.3:
@@ -2501,6 +2532,10 @@ packages:
     engines: {node: '>= 4'}
     dev: true
 
+  /immutable@4.3.5:
+    resolution: {integrity: sha1-+LQ25m1Z+Zdg3Fd/XJmk/SpcxaA=, tarball: http://registry.m.jd.com/immutable/download/immutable-4.3.5.tgz}
+    dev: true
+
   /import-fresh@3.3.0:
     resolution: {integrity: sha1-NxYsJfy566oublPVtNiM4X2eDCs=, tarball: http://registry.m.jd.com/import-fresh/download/import-fresh-3.3.0.tgz}
     engines: {node: '>=6'}
@@ -2562,6 +2597,13 @@ packages:
     resolution: {integrity: sha1-CBR6GHW8KzIAXUHM2Ckd/8ZpHfM=, tarball: http://registry.m.jd.com/is-bigint/download/is-bigint-1.0.4.tgz}
     dependencies:
       has-bigints: 1.0.2
+    dev: true
+
+  /is-binary-path@2.1.0:
+    resolution: {integrity: sha1-6h9/O4DwZCNug0cPhsCcJU+0Wwk=, tarball: http://registry.m.jd.com/is-binary-path/download/is-binary-path-2.1.0.tgz}
+    engines: {node: '>=8'}
+    dependencies:
+      binary-extensions: 2.3.0
     dev: true
 
   /is-boolean-object@1.1.2:
@@ -3097,6 +3139,11 @@ packages:
       validate-npm-package-license: 3.0.4
     dev: true
 
+  /normalize-path@3.0.0:
+    resolution: {integrity: sha1-Dc1p/yOhybEf0JeDFmRKA4ghamU=, tarball: http://registry.m.jd.com/normalize-path/download/normalize-path-3.0.0.tgz}
+    engines: {node: '>=0.10.0'}
+    dev: true
+
   /normalize-wheel-es@1.2.0:
     resolution: {integrity: sha1-D6JZPWGfckWlQWUmGRBasHas8J4=, tarball: http://registry.m.jd.com/normalize-wheel-es/download/normalize-wheel-es-1.2.0.tgz}
     dev: false
@@ -3380,6 +3427,13 @@ packages:
       path-type: 3.0.0
     dev: true
 
+  /readdirp@3.6.0:
+    resolution: {integrity: sha1-dKNwvYVxFuJFspzJc0DNQxoCpsc=, tarball: http://registry.m.jd.com/readdirp/download/readdirp-3.6.0.tgz}
+    engines: {node: '>=8.10.0'}
+    dependencies:
+      picomatch: 2.3.1
+    dev: true
+
   /regexp.prototype.flags@1.5.2:
     resolution: {integrity: sha1-E49kSjNQ+YGoWMRPa7GmH/Wb4zQ=, tarball: http://registry.m.jd.com/regexp.prototype.flags/download/regexp.prototype.flags-1.5.2.tgz}
     engines: {node: '>= 0.4'}
@@ -3455,6 +3509,16 @@ packages:
 
   /safer-buffer@2.1.2:
     resolution: {integrity: sha1-RPoWGwGHuVSd2Eu5GAL5vYOFzWo=, tarball: http://registry.m.jd.com/safer-buffer/download/safer-buffer-2.1.2.tgz}
+    dev: true
+
+  /sass@1.75.0:
+    resolution: {integrity: sha1-kbvof7At/MNOBS3dargPYNOSvmw=, tarball: http://registry.m.jd.com/sass/download/sass-1.75.0.tgz}
+    engines: {node: '>=14.0.0'}
+    hasBin: true
+    dependencies:
+      chokidar: 3.6.0
+      immutable: 4.3.5
+      source-map-js: 1.2.0
     dev: true
 
   /saxes@6.0.0:
@@ -3943,14 +4007,16 @@ packages:
     engines: {node: '>= 0.8'}
     dev: false
 
-  /vite-plugin-pages@0.31.0(@vue/compiler-sfc@3.4.21)(vite@4.5.3):
+  /vite-plugin-pages@0.31.0(vite@4.5.3):
     resolution: {integrity: sha1-nL0Dt1dgs2/tpehxxvaPsAxMZrc=, tarball: http://registry.m.jd.com/vite-plugin-pages/download/vite-plugin-pages-0.31.0.tgz}
     peerDependencies:
       '@vue/compiler-sfc': ^2.7.0 || ^3.0.0
       vite: ^2.0.0 || ^3.0.0-0 || ^4.0.0
+    peerDependenciesMeta:
+      '@vue/compiler-sfc':
+        optional: true
     dependencies:
       '@types/debug': 4.1.12
-      '@vue/compiler-sfc': 3.4.21
       debug: 4.3.4
       deep-equal: 2.2.3
       extract-comments: 1.1.0
@@ -3958,13 +4024,13 @@ packages:
       json5: 2.2.3
       local-pkg: 0.4.3
       picocolors: 1.0.0
-      vite: 4.5.3(@types/node@18.19.31)
+      vite: 4.5.3(@types/node@18.19.31)(sass@1.75.0)
       yaml: 2.4.1
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /vite@4.5.3(@types/node@18.19.31):
+  /vite@4.5.3(@types/node@18.19.31)(sass@1.75.0):
     resolution: {integrity: sha1-2IpFKepYuulylMfi5vDqs5pQ+xo=, tarball: http://registry.m.jd.com/vite/download/vite-4.5.3.tgz}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -3996,11 +4062,12 @@ packages:
       esbuild: 0.18.20
       postcss: 8.4.38
       rollup: 3.29.4
+      sass: 1.75.0
     optionalDependencies:
       fsevents: 2.3.3
     dev: true
 
-  /vitest@0.25.8(jsdom@20.0.3):
+  /vitest@0.25.8(jsdom@20.0.3)(sass@1.75.0):
     resolution: {integrity: sha1-m1fgtBzW8tLZKqlKObNcNvcV+Mw=, tarball: http://registry.m.jd.com/vitest/download/vitest-0.25.8.tgz}
     engines: {node: '>=v14.16.0'}
     hasBin: true
@@ -4036,7 +4103,7 @@ packages:
       tinybench: 2.6.0
       tinypool: 0.3.1
       tinyspy: 1.1.1
-      vite: 4.5.3(@types/node@18.19.31)
+      vite: 4.5.3(@types/node@18.19.31)(sass@1.75.0)
     transitivePeerDependencies:
       - less
       - lightningcss
