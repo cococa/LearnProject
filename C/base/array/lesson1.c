@@ -18,9 +18,9 @@ int main()
   int b[SIZE];
   for (int i = 0; i < SIZE; i++)
   {
-    printf("%d \n", b[i]);
+    printf("%d -", b[i]);
   }
-
+  printf("\n");
 
   //未经过初始化的数组，内容往往是不确定的
   //但是，只要你初始化后，哪怕只初始化数组中的一个元素
