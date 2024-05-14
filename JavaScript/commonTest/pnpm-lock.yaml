@@ -8,9 +8,6 @@ dependencies:
   axios:
     specifier: ^0.24.0
     version: 0.24.0
-  element-plus:
-    specifier: ^2.3.7
-    version: 2.6.3(vue@3.4.21)
   pinia:
     specifier: ^2.1.4
     version: 2.1.7(typescript@4.7.4)(vue@3.4.21)
@@ -407,19 +404,6 @@ packages:
       '@babel/helper-validator-identifier': 7.22.20
       to-fast-properties: 2.0.0
 
-  /@ctrl/tinycolor@3.6.1:
-    resolution: {integrity: sha1-tsdaVqGUfMkW6gWHctZmosiTLzE=, tarball: http://registry.m.jd.com/@ctrl/tinycolor/download/@ctrl/tinycolor-3.6.1.tgz}
-    engines: {node: '>=10'}
-    dev: false
-
-  /@element-plus/icons-vue@2.3.1(vue@3.4.21):
-    resolution: {integrity: sha1-H2Na1f3VyF7ZNkgVJVcOgrWoMHo=, tarball: http://registry.m.jd.com/@element-plus/icons-vue/download/@element-plus/icons-vue-2.3.1.tgz}
-    peerDependencies:
-      vue: ^3.2.0
-    dependencies:
-      vue: 3.4.21(typescript@4.7.4)
-    dev: false
-
   /@esbuild/android-arm64@0.18.20:
     resolution: {integrity: sha1-mEtPnI0Dd0Q8wt/O8mbQIkRZNiI=, tarball: http://registry.m.jd.com/@esbuild/android-arm64/download/@esbuild/android-arm64-0.18.20.tgz}
     engines: {node: '>=12'}
@@ -611,23 +595,6 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@floating-ui/core@1.6.0:
-    resolution: {integrity: sha1-+kG4eBKha/EjEiv5RZRrrj/ff8E=, tarball: http://registry.m.jd.com/@floating-ui/core/download/@floating-ui/core-1.6.0.tgz}
-    dependencies:
-      '@floating-ui/utils': 0.2.1
-    dev: false
-
-  /@floating-ui/dom@1.6.3:
-    resolution: {integrity: sha1-lU5Gwd061I5J25rachiwmFzude8=, tarball: http://registry.m.jd.com/@floating-ui/dom/download/@floating-ui/dom-1.6.3.tgz}
-    dependencies:
-      '@floating-ui/core': 1.6.0
-      '@floating-ui/utils': 0.2.1
-    dev: false
-
-  /@floating-ui/utils@0.2.1:
-    resolution: {integrity: sha1-FjCM6gRfD8d3tv8gqfJUdN2Ck9I=, tarball: http://registry.m.jd.com/@floating-ui/utils/download/@floating-ui/utils-0.2.1.tgz}
-    dev: false
-
   /@humanwhocodes/config-array@0.11.14:
     resolution: {integrity: sha1-145IGgOfdWbsyWYLTqf+ax/sRCs=, tarball: http://registry.m.jd.com/@humanwhocodes/config-array/download/@humanwhocodes/config-array-0.11.14.tgz}
     engines: {node: '>=10.10.0'}
@@ -729,10 +696,6 @@ packages:
     resolution: {integrity: sha1-lhFvKpEuDAKBc0WzwQdRBpkg1VM=, tarball: http://registry.m.jd.com/@socket.io/component-emitter/download/@socket.io/component-emitter-3.1.0.tgz}
     dev: false
 
-  /@sxzz/popperjs-es@2.11.7:
-    resolution: {integrity: sha1-p/aeNmXT2psRX55xZx2uG5fhNnE=, tarball: http://registry.m.jd.com/@sxzz/popperjs-es/download/@sxzz/popperjs-es-2.11.7.tgz}
-    dev: false
-
   /@tootallnate/once@2.0.0:
     resolution: {integrity: sha1-9UShSNOrNYAcH2M6dEH9h8LkhL8=, tarball: http://registry.m.jd.com/@tootallnate/once/download/@tootallnate/once-2.0.0.tgz}
     engines: {node: '>= 10'}
@@ -780,16 +743,6 @@ packages:
     resolution: {integrity: sha1-HnijrCQo5tfmwFwWZcJCAjpGAdg=, tarball: http://registry.m.jd.com/@types/linkify-it/download/@types/linkify-it-3.0.5.tgz}
     dev: false
 
-  /@types/lodash-es@4.17.12:
-    resolution: {integrity: sha1-ZfbR5fgFOap8+/yWLeXe8M9PNBs=, tarball: http://registry.m.jd.com/@types/lodash-es/download/@types/lodash-es-4.17.12.tgz}
-    dependencies:
-      '@types/lodash': 4.17.0
-    dev: false
-
-  /@types/lodash@4.17.0:
-    resolution: {integrity: sha1-13Q1XkHzctU1Ck0HFKu0gZSkicM=, tarball: http://registry.m.jd.com/@types/lodash/download/@types/lodash-4.17.0.tgz}
-    dev: false
-
   /@types/markdown-it@14.0.0:
     resolution: {integrity: sha1-uqLUEtr8tnh1vOXr58SxaksEFi8=, tarball: http://registry.m.jd.com/@types/markdown-it/download/@types/markdown-it-14.0.0.tgz}
     dependencies:
@@ -817,10 +770,6 @@ packages:
   /@types/tough-cookie@4.0.5:
     resolution: {integrity: sha1-y24qaRtwyxd8bjrpwdLosuqM0wQ=, tarball: http://registry.m.jd.com/@types/tough-cookie/download/@types/tough-cookie-4.0.5.tgz}
     dev: true
-
-  /@types/web-bluetooth@0.0.16:
-    resolution: {integrity: sha1-HRKHOo5JVnNx8qdf4+f37cpmYtg=, tarball: http://registry.m.jd.com/@types/web-bluetooth/download/@types/web-bluetooth-0.0.16.tgz}
-    dev: false
 
   /@typescript-eslint/eslint-plugin@5.62.0(@typescript-eslint/parser@5.62.0)(eslint@8.57.0)(typescript@4.7.4):
     resolution: {integrity: sha1-ru8DKNFyueN9m6ttvBO4ftiJd9s=, tarball: http://registry.m.jd.com/@typescript-eslint/eslint-plugin/download/@typescript-eslint/eslint-plugin-5.62.0.tgz}
@@ -1205,31 +1154,6 @@ packages:
       '@types/node': 18.19.31
     dev: true
 
-  /@vueuse/core@9.13.0(vue@3.4.21):
-    resolution: {integrity: sha1-L2nmbRkFweTuvCSaAXWc+I6gDPQ=, tarball: http://registry.m.jd.com/@vueuse/core/download/@vueuse/core-9.13.0.tgz}
-    dependencies:
-      '@types/web-bluetooth': 0.0.16
-      '@vueuse/metadata': 9.13.0
-      '@vueuse/shared': 9.13.0(vue@3.4.21)
-      vue-demi: 0.14.7(vue@3.4.21)
-    transitivePeerDependencies:
-      - '@vue/composition-api'
-      - vue
-    dev: false
-
-  /@vueuse/metadata@9.13.0:
-    resolution: {integrity: sha1-vCWmza0bGpPDbOMBkRJNplIFOf8=, tarball: http://registry.m.jd.com/@vueuse/metadata/download/@vueuse/metadata-9.13.0.tgz}
-    dev: false
-
-  /@vueuse/shared@9.13.0(vue@3.4.21):
-    resolution: {integrity: sha1-CJ/0zE4uekAV5XqPMuSznQljU7k=, tarball: http://registry.m.jd.com/@vueuse/shared/download/@vueuse/shared-9.13.0.tgz}
-    dependencies:
-      vue-demi: 0.14.7(vue@3.4.21)
-    transitivePeerDependencies:
-      - '@vue/composition-api'
-      - vue
-    dev: false
-
   /abab@2.0.6:
     resolution: {integrity: sha1-QbgPLIcdGWhiFrgjCSMc/Tyz0pE=, tarball: http://registry.m.jd.com/abab/download/abab-2.0.6.tgz}
     dev: true
@@ -1361,10 +1285,6 @@ packages:
   /assertion-error@1.1.0:
     resolution: {integrity: sha1-5gtrDo8wG9l+U3UhW9pAbIURjAs=, tarball: http://registry.m.jd.com/assertion-error/download/assertion-error-1.1.0.tgz}
     dev: true
-
-  /async-validator@4.2.5:
-    resolution: {integrity: sha1-yW6jMypSFpnQr6rO7VEKVGVsYzk=, tarball: http://registry.m.jd.com/async-validator/download/async-validator-4.2.5.tgz}
-    dev: false
 
   /asynckit@0.4.0:
     resolution: {integrity: sha1-x57Zf380y48robyXkLzDZkdLS3k=, tarball: http://registry.m.jd.com/asynckit/download/asynckit-0.4.0.tgz}
@@ -1655,10 +1575,6 @@ packages:
       is-data-view: 1.0.1
     dev: true
 
-  /dayjs@1.11.10:
-    resolution: {integrity: sha1-aKzqhTF6bhZEV9bWlHVkAppqFqA=, tarball: http://registry.m.jd.com/dayjs/download/dayjs-1.11.10.tgz}
-    dev: false
-
   /de-indent@1.0.2:
     resolution: {integrity: sha1-sgOOhG3DO6pXlhKNCAS0VbjB4h0=, tarball: http://registry.m.jd.com/de-indent/download/de-indent-1.0.2.tgz}
     dev: true
@@ -1776,31 +1692,6 @@ packages:
   /electron-to-chromium@1.4.735:
     resolution: {integrity: sha1-wykU7yzQo6VFo974QdJToxqKk74=, tarball: http://registry.m.jd.com/electron-to-chromium/download/electron-to-chromium-1.4.735.tgz}
     dev: true
-
-  /element-plus@2.6.3(vue@3.4.21):
-    resolution: {integrity: sha1-FegufcBkbF0eAbUI0OV312SCmxw=, tarball: http://registry.m.jd.com/element-plus/download/element-plus-2.6.3.tgz}
-    peerDependencies:
-      vue: ^3.2.0
-    dependencies:
-      '@ctrl/tinycolor': 3.6.1
-      '@element-plus/icons-vue': 2.3.1(vue@3.4.21)
-      '@floating-ui/dom': 1.6.3
-      '@popperjs/core': /@sxzz/popperjs-es@2.11.7
-      '@types/lodash': 4.17.0
-      '@types/lodash-es': 4.17.12
-      '@vueuse/core': 9.13.0(vue@3.4.21)
-      async-validator: 4.2.5
-      dayjs: 1.11.10
-      escape-html: 1.0.3
-      lodash: 4.17.21
-      lodash-es: 4.17.21
-      lodash-unified: 1.0.3(@types/lodash-es@4.17.12)(lodash-es@4.17.21)(lodash@4.17.21)
-      memoize-one: 6.0.0
-      normalize-wheel-es: 1.2.0
-      vue: 3.4.21(typescript@4.7.4)
-    transitivePeerDependencies:
-      - '@vue/composition-api'
-    dev: false
 
   /emoji-regex@8.0.0:
     resolution: {integrity: sha1-6Bj9ac5cz8tARZT4QpY79TFkzDc=, tarball: http://registry.m.jd.com/emoji-regex/download/emoji-regex-8.0.0.tgz}
@@ -1986,10 +1877,6 @@ packages:
     resolution: {integrity: sha1-VAdumrKepb89jx7WKs/7uIJy3yc=, tarball: http://registry.m.jd.com/escalade/download/escalade-3.1.2.tgz}
     engines: {node: '>=6'}
     dev: true
-
-  /escape-html@1.0.3:
-    resolution: {integrity: sha1-Aljq5NPQwJdN4cFpGI7wBR0dGYg=, tarball: http://registry.m.jd.com/escape-html/download/escape-html-1.0.3.tgz}
-    dev: false
 
   /escape-string-regexp@1.0.5:
     resolution: {integrity: sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=, tarball: http://registry.m.jd.com/escape-string-regexp/download/escape-string-regexp-1.0.5.tgz}
@@ -2903,22 +2790,6 @@ packages:
       p-locate: 5.0.0
     dev: true
 
-  /lodash-es@4.17.21:
-    resolution: {integrity: sha1-Q+YmxG5lkbd1C+srUBFzkMYJ4+4=, tarball: http://registry.m.jd.com/lodash-es/download/lodash-es-4.17.21.tgz}
-    dev: false
-
-  /lodash-unified@1.0.3(@types/lodash-es@4.17.12)(lodash-es@4.17.21)(lodash@4.17.21):
-    resolution: {integrity: sha1-gLHqwQ7S6wLtGJ8IYUopwn0HyJQ=, tarball: http://registry.m.jd.com/lodash-unified/download/lodash-unified-1.0.3.tgz}
-    peerDependencies:
-      '@types/lodash-es': '*'
-      lodash: '*'
-      lodash-es: '*'
-    dependencies:
-      '@types/lodash-es': 4.17.12
-      lodash: 4.17.21
-      lodash-es: 4.17.21
-    dev: false
-
   /lodash.flow@3.5.0:
     resolution: {integrity: sha1-h79AKSuM+D5OjOGjrkIJ4gBxZ1o=, tarball: http://registry.m.jd.com/lodash.flow/download/lodash.flow-3.5.0.tgz}
     dev: false
@@ -2929,6 +2800,7 @@ packages:
 
   /lodash@4.17.21:
     resolution: {integrity: sha1-Z5WRxWTDv/quhFTPCz3zcMPWkRw=, tarball: http://registry.m.jd.com/lodash/download/lodash-4.17.21.tgz}
+    dev: true
 
   /loupe@2.3.7:
     resolution: {integrity: sha1-bmm31Nt9OrQ2MoAT030cjDVAxpc=, tarball: http://registry.m.jd.com/loupe/download/loupe-2.3.7.tgz}
@@ -3030,10 +2902,6 @@ packages:
 
   /mdurl@1.0.1:
     resolution: {integrity: sha1-/oWy7HWlkDfyrf7BAP1sYBdhFS4=, tarball: http://registry.m.jd.com/mdurl/download/mdurl-1.0.1.tgz}
-    dev: false
-
-  /memoize-one@6.0.0:
-    resolution: {integrity: sha1-slkbhx7YKUiu5HJ9xqvO7qyMEEU=, tarball: http://registry.m.jd.com/memoize-one/download/memoize-one-6.0.0.tgz}
     dev: false
 
   /memorystream@0.3.1:
@@ -3143,10 +3011,6 @@ packages:
     resolution: {integrity: sha1-Dc1p/yOhybEf0JeDFmRKA4ghamU=, tarball: http://registry.m.jd.com/normalize-path/download/normalize-path-3.0.0.tgz}
     engines: {node: '>=0.10.0'}
     dev: true
-
-  /normalize-wheel-es@1.2.0:
-    resolution: {integrity: sha1-D6JZPWGfckWlQWUmGRBasHas8J4=, tarball: http://registry.m.jd.com/normalize-wheel-es/download/normalize-wheel-es-1.2.0.tgz}
-    dev: false
 
   /npm-run-all@4.1.5:
     resolution: {integrity: sha1-BEdiAqFe4OLiFAgIYb/xKlHZj7o=, tarball: http://registry.m.jd.com/npm-run-all/download/npm-run-all-4.1.5.tgz}

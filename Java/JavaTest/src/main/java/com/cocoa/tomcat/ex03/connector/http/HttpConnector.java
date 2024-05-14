@@ -16,14 +16,21 @@ public class HttpConnector implements Runnable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Socket socket = null;
-        try {
-            socket =  serverSocket.accept();
-        } catch (IOException e) {
-            e.printStackTrace();
+        if(serverSocket == null){
+            System.out.println("serverSocket is null");
+            return;
         }
-//        HttpProcessor httpProcessor = new HttpProcessor();
-//        httpProcessor.process(socket);
+        while (true) {
+            Socket socket = null;
+            try {
+                socket = serverSocket.accept();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            System.out.println("Accepted socket");
+            HttpProcessor httpProcessor = new HttpProcessor();
+            httpProcessor.process(socket);
+        }
     }
 
     public void start() {

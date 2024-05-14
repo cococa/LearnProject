@@ -159,6 +159,10 @@ public class main {
 
     public static void main(String[] args) throws ParseException, IOException {
 
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+
+
+
 //        P p = new P();
 //        p.setA(0);
 //        System.out.println(Objects.equals(p.getA(), 0));

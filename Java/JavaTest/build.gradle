@@ -74,15 +74,13 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-slf4j:$coroutines_version"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-debug:$coroutines_version"
 
-    // https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api
-    implementation 'javax.servlet:javax.servlet-api:4.0.1'
-    implementation group: 'org.apache.tomcat', name: 'tomcat-catalina', version: '10.0.27'
-
 
     implementation group: 'com.qiniu', name: 'qiniu-java-sdk', version: '7.15.0'
-// https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp
     implementation group: 'com.squareup.okhttp3', name: 'okhttp', version: '4.6.0'
 
+//    implementation group: 'org.apache.tomcat', name: 'tomcat-catalina', version: '10.0.27'
+    implementation group: 'org.apache.tomcat', name: 'tomcat-util', version: '7.0.0'
+    implementation 'javax.servlet:javax.servlet-api:4.0.1'
 
 }
 
