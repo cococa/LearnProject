@@ -22,6 +22,9 @@ interface IPromise {
   then(onFulfilled?: any, onRejected?: any): IPromise;
 }
 
+let id = 0;
+
+const tag = "MyPromise>>>";
 export default class MyPromise implements IPromise {
   _id: number = 0;
   value: any;
@@ -29,15 +32,23 @@ export default class MyPromise implements IPromise {
   state: PromiseState = PromiseState.PENDING;
   _fulfilledStack: any[] = [];
   _rejectStack: any[] = [];
+  _custrParams: any = null;
 
-  // log(...p: string[]) {
-  //   console.log("MyPromise", ...p);
-  // }
+  log(...p: any[]) {
+    console.log(tag, `with id ${this._id} `, ...p);
+  }
 
   constructor(params: PromiseParams) {
+    this._id = id++;
+    console.log(tag, "constructor", this._id);
     const _resolve = (value: any) => {
-      console.log("constructor value", value, this.state, this._id);
-      // this._fulfilledStack && this._fulfilledStack.forEach((fn) => console.log(fn));
+      this.log(
+        "constructor resolve",
+        value,
+        this.state,
+        this._fulfilledStack.length
+      );
+      // this._fulfilledStack && this._fulfilledStack.forEach((fn) => this.log(fn));
       if (this.state === PromiseState.PENDING) {
         this.value = value;
         this.state = PromiseState.FULFILLED;
@@ -45,15 +56,15 @@ export default class MyPromise implements IPromise {
       }
     };
     const _reject = (reson: any) => {
-      console.log("constructor reson", reson);
+      this.log("constructor reject", reson);
       if (this.state === PromiseState.PENDING) {
         this.reson = reson;
         this.state = PromiseState.REJECTED;
         this._rejectStack && this._rejectStack.forEach((fn) => fn(reson));
       }
     };
-    this._id = Math.random();
     params(_resolve, _reject);
+    this._custrParams = params;
   }
 
   public instanceOfIPromise(obj: any) {
@@ -64,12 +75,22 @@ export default class MyPromise implements IPromise {
   }
 
   public then(onFulfilled?: any, onRejected?: any): MyPromise {
+    if (onFulfilled) {
+      const res = onFulfilled();
+      if (res instanceof MyPromise) {
+        console.log(tag, "then", "asdasdasd", onFulfilled);
+        return res;
+      }
+    }
+    console.log(tag, this._id);
     return new MyPromise((resolve, reject) => {
+      this.log("in function then ", this.state);
+      //已履行
       if (this.state === PromiseState.FULFILLED) {
         // 处理上一个then返回的promise, 这里要注意两个问题，
         // 如果用  instanceof MyPromise 判断，会丢失了Promise的扩展性，举个例子，我可以用原生的Promise，这里就会出问题
         // 根据 Promise A+ 规范，如果一个类有then方法，那么就认为是一个Promise
-        // console.log("debug", this.implementsInterface(this.value, IPromise));
+        // this.log("debug", this.implementsInterface(this.value, IPromise));
         if (this.instanceOfIPromise(this.value)) {
           this.value.then(
             (val: any) => {
@@ -86,26 +107,30 @@ export default class MyPromise implements IPromise {
           resolve(_res);
         }
       }
+      // 已拒绝，直接执行onRejected，这个相对简单
       if (this.state === PromiseState.REJECTED) {
         if (onRejected) {
           const _res = onRejected(this.reson);
           reject(_res);
         }
       }
+      //
       if (this.state === PromiseState.PENDING) {
         if (onFulfilled) {
-          console.log("onFulfilled add task", onFulfilled);
-          console.log("onFulfilled add task", this._fulfilledStack.length);
+          // this.log("onFulfilled add task", onFulfilled);
+          this.log("onFulfilled will add task", this._fulfilledStack.length);
+
           this._fulfilledStack.push((val: any) => {
-            console.log("debug1", val);
+            this.log(
+              "in function then _fulfilledStack will exec",
+              val,
+              val instanceof MyPromise
+            );
             const _res = onFulfilled(val);
-            console.log("debug2", _res);
+            this.log("in function then _fulfilledStack done exec", val);
             resolve(_res);
           });
-          console.log(
-            "onFulfilled after add task",
-            this._fulfilledStack.length
-          );
+          this.log("onFulfilled after add task", this._fulfilledStack.length);
         }
 
         if (onRejected) {

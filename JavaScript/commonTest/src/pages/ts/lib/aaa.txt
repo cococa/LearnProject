@@ -1,0 +1,117 @@
+interface Resolve {
+  (value: any): void;
+}
+
+interface Reject {
+  (reason: any): void;
+}
+
+interface PromiseParams {
+  (resolve: Resolve, reject: Reject): void;
+}
+
+enum PromiseState {
+  PENDING = "pending",
+  FULFILLED = "fulfilled",
+  REJECTED = "rejected",
+}
+
+interface IPromise {
+  then(onFulfilled?: any, onRejected?: any): IPromise;
+}
+
+let id = 0;
+
+const tag = "MyPromise>>>";
+
+export default class MyPromise implements IPromise {
+  _id: number = 0;
+  value: any;
+  reason: any;
+  state: PromiseState = PromiseState.PENDING;
+  _fulfilledStack: any[] = [];
+  _rejectStack: any[] = [];
+
+  log(...p: any[]) {
+    console.log(tag, `with id ${this._id} `, ...p);
+  }
+
+  constructor(params: PromiseParams) {
+    this._id = id++;
+    console.log(tag, "constructor", this._id);
+    const _resolve = (value: any) => {
+      if (this.state === PromiseState.PENDING) {
+        this.value = value;
+        this.state = PromiseState.FULFILLED;
+        setTimeout(() => {
+          this._fulfilledStack.forEach((fn) => fn(value));
+        }, 0);
+      }
+    };
+    const _reject = (reason: any) => {
+      if (this.state === PromiseState.PENDING) {
+        this.reason = reason;
+        this.state = PromiseState.REJECTED;
+        setTimeout(() => {
+          this._rejectStack.forEach((fn) => fn(reason));
+        }, 0);
+      }
+    };
+    try {
+      params(_resolve, _reject);
+    } catch (error) {
+      _reject(error);
+    }
+  }
+
+  public instanceOfIPromise(obj: any): boolean {
+    return obj && typeof obj.then === "function";
+  }
+
+  public then(onFulfilled?: any, onRejected?: any): MyPromise {
+    return new MyPromise((resolve, reject) => {
+      const _onFulfilled = (value: any) => {
+        try {
+          if (typeof onFulfilled === "function") {
+            const result = onFulfilled(value);
+            if (this.instanceOfIPromise(result)) {
+              result.then(resolve, reject);
+            } else {
+              resolve(result);
+            }
+          } else {
+            resolve(value);
+          }
+        } catch (error) {
+          reject(error);
+        }
+      };
+
+      const _onRejected = (reason: any) => {
+        try {
+          if (typeof onRejected === "function") {
+            const result = onRejected(reason);
+            if (this.instanceOfIPromise(result)) {
+              result.then(resolve, reject);
+            } else {
+              resolve(result);
+            }
+          } else {
+            reject(reason);
+          }
+        } catch (error) {
+          reject(error);
+        }
+      };
+
+      if (this.state === PromiseState.FULFILLED) {
+        setTimeout(() => _onFulfilled(this.value), 0);
+      } else if (this.state === PromiseState.REJECTED) {
+        setTimeout(() => _onRejected(this.reason), 0);
+      } else {
+        this._fulfilledStack.push(_onFulfilled);
+        this._rejectStack.push(_onRejected);
+      }
+    });
+  }
+}
