@@ -1,0 +1,13 @@
+{
+  "include": ["./src/**/*"], // 要编译的文件，  ** 代表任意文件夹  *代表任意文件
+  "exclude": [], // 排除的文件
+  // "extends": ""  // 定义被继承的配置文件
+  "compilerOptions": {
+    "target": "ES6" ,// 编译默认是ES3
+    "module": "ES6",
+    // "lib": ["DOM"]
+    "outDir": "./dist"
+  }
+}
+
+// 直接在当前目录运行  tsc 即可编译
