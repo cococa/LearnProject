@@ -14,11 +14,11 @@ fun makeFlow(): Flow<Int> {
     }
 }
 
-fun main() {
-    runBlocking {
-        makeFlow()
-            .collect {
-                println(it)
-            }
-    }
-}
+//fun main() {
+//    runBlocking {
+//        makeFlow()
+//            .collect {
+//                println(it)
+//            }
+//    }
+//}

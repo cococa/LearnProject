@@ -9,6 +9,12 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Main {
     public static void main(String[] args) {
 
+
+
+
+
+
+
         ClassPathXmlApplicationContext classPathXmlApplicationContext = new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
 
 
@@ -16,18 +22,18 @@ public class Main {
 
 
         System.out.println(user);
-
-
-        User user1 = classPathXmlApplicationContext.getBean("user", User.class);
-
-        System.out.println( user1);
-
-
-        System.out.println(user == user1);
-
-
-        UserService userService = classPathXmlApplicationContext.getBean("userService", UserService.class);
-        userService.addUser(user1);
+//
+//
+//        User user1 = classPathXmlApplicationContext.getBean("user", User.class);
+//
+//        System.out.println( user1);
+//
+//
+//        System.out.println(user == user1);
+//
+//
+//        UserService userService = classPathXmlApplicationContext.getBean("userService", UserService.class);
+//        userService.addUser(user1);
 
 
     }

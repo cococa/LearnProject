@@ -1,8 +1,11 @@
-package com.cocoa;
+package com.cocoa.dto;
 
 
 import lombok.Data;
+import org.springframework.stereotype.Component;
 
+
+@Component
 @Data
 public class User {
 

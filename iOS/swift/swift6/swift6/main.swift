@@ -1,0 +1,13 @@
+//
+//  main.swift
+//  swift6
+//
+//  Created by sj on 2024/10/24.
+//
+
+import Foundation
+
+a()
+
+
+

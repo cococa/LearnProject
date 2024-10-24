@@ -1,7 +1,10 @@
 package com.cocoa.dao;
 
-import com.cocoa.User;
+import com.cocoa.dto.User;
+import org.springframework.stereotype.Repository;
 
+
+@Repository
 public class UserDao {
 
     public Boolean addUser(User user) {

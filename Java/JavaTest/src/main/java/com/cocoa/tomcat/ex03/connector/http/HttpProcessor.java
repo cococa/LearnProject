@@ -19,13 +19,13 @@ public class HttpProcessor {
 
 
 
-            if (request.getRequestURI().startsWith("/servlet/")) {
-                ServletProcessor processor = new ServletProcessor();
+//            if (request.getRequestURI().startsWith("/servlet/")) {
+//                ServletProcessor processor = new ServletProcessor();
+////                processor.process(request, response);
+//            } else {
+//                StaticResourceProcessor processor = new StaticResourceProcessor();
 //                processor.process(request, response);
-            } else {
-                StaticResourceProcessor processor = new StaticResourceProcessor();
-                processor.process(request, response);
-            }
+//            }
 
             // Close the socket
             socket.close();
