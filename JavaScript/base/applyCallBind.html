@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/apply
+
+
+      //this 就是 window
+      console.log(this === window); // true
+
+      function test() {
+        console.log(this === window); // true
+      }
+      // 通过函数调用，this 也是window
+      test();
+
+      const obj = {
+        test: function () {
+          console.log(this === obj); // true
+        },
+      };
+      // 如果在对象的方法中使用this, 则为对象本身
+      obj.test();
+
+      const test1 = () => {
+        console.log(this); // window
+      };
+      test1();
+
+      function Person() {
+        console.log(this);
+      }
+      //构造函数中，this 指向对象
+      new Person();
+
+      //  apply bing call 为什么要改this 指向
+      const obj1 = {
+        fn1: function () {
+          console.log("fn1");
+        },
+        fn2: function (fn) {
+          fn.call(this);
+        },
+        fn3: function () {
+          this.fn2(function () {
+            this.fn1();
+          });
+        },
+      };
+
+      obj1.fn3();
+    </script>
+  </body>
+</html>
