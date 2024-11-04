@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script>
+      // Set Map  WeakMap WeakSet  只要带Weak 的都不能遍历
+
+      // Set
+      // 1. Set 对象允许你储存任何类型的唯一值，无论是原始值或者是对象引用。
+      // 2. has delete clear add 等方法
+
+      // WeakSet
+      //   WeakSet 只能储存对象引用和Symbol，不能存放值，而 Set 对象都可以
+      //   WeakSet 对象中储存的对象值都是被弱引用的，即垃圾回收机制不考虑 WeakSet 对该对象的应用，
+      //   如果没有其他的变量或属性引用这个对象值，则这个对象将会被垃圾回收掉（不考虑该对象还存在于 WeakSet 中），
+      //   所以，WeakSet 对象里有多少个成员元素，取决于垃圾回收机制有没有运行，
+      //   运行前后成员个数可能不一致，遍历结束之后，有的成员可能取不到了（被垃圾回收了），
+      //   WeakSet 对象是无法被遍历的（ES6 规定 WeakSet 不可遍历），也没有办法拿到它包含的所有元素
+
+      // Set 和 Array 互相转换
+      let s1 = new Set([1, 2, 3]);
+      let a1 = Array.from(s1);
+
+      // Map
+      // 1.  [key, value] 的形式储存 , key 值不允许重复
+      // 2. Map 的key 必须是同一个引用，否则会被认为是不同的key
+      // set(key, value)：向字典中添加新元素
+      // get(key)：通过键查找特定的数值并返回
+      // has(key)：判断字典中是否存在键key
+      // delete(key)：通过键 key 从字典中移除对应的数据
+
+     
+      // WeakMap
+      // 1.  [key, value] 的形式储存 , key 值不允许重复
+      // 2. WeakMap 对象是一组键/值对的集合，其中的键是弱引用的。其键必须是对象，而值可以是任意的。
+     // (大多数原始数据类型可以任意地被创建，且没有生命周期，因此不能作为键)
+
+
+
+    </script>
+  </head>
+  <body></body>
+</html>
