@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 300px;
+        height: 100px;
+        background-color: red;
+        color: white;
+        /* 颜色动画，持续2秒，线性， 延迟 */
+        transition: all 1s linear 0.1s;
+        border-radius: 2px;
+        padding: 10px;
+      }
+
+      div:hover {
+        border-radius: 20px;
+        color: green;
+      }
+
+      .step {
+        position: absolute;
+        left: 500px;
+        top: 200px;
+        transition: all 1s linear;
+      }
+
+      .step:hover {
+        left: 0px;
+      }
+
+      .drawer {
+        position: absolute;
+        width: 0px;
+        opacity: 0;
+        transition: all 0.2s linear;
+        height: 0px;
+      }
+
+      .drawer-open {
+        opacity: 1;
+        height: 100px;
+        width: 100px;
+      }
+    </style>
+    <script>
+      window.onload = function () {
+        const button = document.querySelector("#menu");
+        console.log(button);
+        button.addEventListener("click", function () {
+          const drawer = document.querySelector(".drawer");
+          drawer.classList.toggle("drawer-open");
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <div>123</div>
+
+    <div class="step">step</div>
+
+    <div style="margin-top: 300px; background-color: white">
+      <button id="menu">menu</button>
+      <div class="drawer">
+        <ul>
+          <li>111</li>
+          <li>222</li>
+          <li>333</li>
+        </ul>
+      </div>
+      <p><button>read more</button></p>
+    </div>
+  </body>
+</html>
