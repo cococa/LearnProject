@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div style="color: red">
+      parent div and color is red
+      <br />
+      <div style="all: inherit">child div with inherit</div>
+      <br />
+      <div style="all: unset">child div with unset</div>
+      <br />
+      <div style="all: initial">child div with initial</div>
+      <br />
+    </div>
+    <h3>大致解释：</h3>
+    <span
+      >color 等和字体相关的属性， 是默认继承的属性，在子元素显式inherit
+      的时候，子元素也有了红色的字体，即使不写也有</span
+    >
+    <span
+      >unset：如果属性默认可继承，则表现为 inherit；否则表现为 initial。（ color
+      是默认继承的）</span
+    >
+    <span>initial ： 很好理解</span>
+
+    <br />
+    <br />
+    <br /><br />
+    <br />
+    <br />
+
+
+    <div>demo2</div>
+    <div style="border: solid 1px red">
+      parent div and color is red
+      <br />
+      <div style="border: inherit">child div with inherit</div>
+      <br />
+      <div style="border: unset">child div with unset</div>
+      <br />
+      <div style="border: initial">child div with initial</div>
+      <br />
+    </div>
+    <h3>大致解释：</h3>
+
+    <span
+      >border 是默认不继承的属性，在子元素显式inherit
+      的时候，子元素也有了边框</span
+    >
+    <span
+      >unset：如果属性默认可继承，则表现为 inherit；否则表现为 initial。（border
+      是默认不继承的）</span
+    >
+    <span>initial ： 很好理解</span>
+  </body>
+</html>
