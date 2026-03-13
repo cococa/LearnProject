@@ -82,6 +82,8 @@ fun main(){
 
     val p  = Person1()
     var p1  = Person1(name = "cocoa", age = 12)
+
+
     println(p.toString())
     println(p1)
 

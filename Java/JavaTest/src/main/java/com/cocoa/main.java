@@ -2,6 +2,9 @@ package com.cocoa;
 
 
 import com.alibaba.fastjson.JSON;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 import org.apache.dubbo.common.utils.MD5Utils;
 
 import java.io.IOException;
@@ -31,9 +34,7 @@ public class main {
         int minLen = Math.min(version1Array.length, version2Array.length);
         long diff = 0;
 
-        while (index < minLen
-                && (diff = Long.parseLong(version1Array[index])
-                - Long.parseLong(version2Array[index])) == 0) {
+        while (index < minLen && (diff = Long.parseLong(version1Array[index]) - Long.parseLong(version2Array[index])) == 0) {
             index++;
         }
         if (diff == 0) {
@@ -159,8 +160,32 @@ public class main {
 
     public static void main(String[] args) throws ParseException, IOException {
 
-        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
 
+        OkHttpClient client = new OkHttpClient.Builder()
+                .sslSocketFactory(SSLSocketClient.getSSLSocketFactory(), SSLSocketClient.getX509TrustManager())
+                .hostnameVerifier(SSLSocketClient.getHostnameVerifier()) // 添加 HostnameVerifier
+                .build();
+
+
+        Request request = new Request.Builder()
+//                .url("https://www.baidu.com")
+                .url("https://test.lb.api.douhuakj.cn/api/message/front/api/front/message/getImListPageUnReadCount").build();
+
+        try {
+            Response response = client.newCall(request).execute();
+            System.out.println(response.body().string());
+            if (response.isSuccessful()) {
+                System.out.println("Response Body: " + response.body().string());
+                System.out.println("Status Code: " + response.code());
+            } else {
+                System.out.println("Request failed with status code: " + response.code());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+//        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
 
 
 //        P p = new P();
@@ -192,11 +217,11 @@ public class main {
 //        RB5BZ-XQXKI-I6PGN-UIQFL-DDPK2-KJBES
 //        https://apis.map.qq.com/ws/district/v1/getchildren?id=330100&key=46WBZ-GBORZ-RRMXA-Z436B-MRWI2-NUBS5
 //        320282000000
-        String origin = "/ws/district/v1/getchildren?id=110000&key=RB5BZ-XQXKI-I6PGN-UIQFL-DDPK2-KJBES" + "SxOHY9jW7eVk7cYIcpMyVBtYidUIsJqR";
-        String sig = new MD5Utils().getMd5(origin);
-        System.out.println(sig);
-        String s = HttpUtils.simpleGet("https://apis.map.qq.com/ws/district/v1/getchildren?id=110000&key=RB5BZ-XQXKI-I6PGN-UIQFL-DDPK2-KJBES&sig=" + sig);
-        System.out.printf(s);
+//        String origin = "/ws/district/v1/getchildren?id=110000&key=RB5BZ-XQXKI-I6PGN-UIQFL-DDPK2-KJBES" + "SxOHY9jW7eVk7cYIcpMyVBtYidUIsJqR";
+//        String sig = new MD5Utils().getMd5(origin);
+//        System.out.println(sig);
+//        String s = HttpUtils.simpleGet("https://apis.map.qq.com/ws/district/v1/getchildren?id=110000&key=RB5BZ-XQXKI-I6PGN-UIQFL-DDPK2-KJBES&sig=" + sig);
+//        System.out.printf(s);
 //        {
 //            "id": "370000",
 //                "name": "山东",

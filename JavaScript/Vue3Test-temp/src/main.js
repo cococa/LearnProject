@@ -3,7 +3,7 @@ import { createApp } from "vue";
 import App from "./App.vue";
 
 import VueMarkdownIt from "vue3-markdown-it";
-import "highlight.js/styles/monokai.css";
+// import "highlight.js/styles/monokai.css";
 import "./index.css";
 import router from './router/index.js';
 
@@ -18,6 +18,10 @@ import "prismjs/themes/prism-tomorrow.css"; // import syntax highlighting styles
 import { createStore } from "vuex";
 
 import './util/CCArrayExt.js'
+
+
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
 
 
 import VConsole from 'vconsole';
@@ -46,6 +50,7 @@ app.use(store);
 app.use(VueMarkdownIt);
 app.use(prism)
 app.component('PrismEditor',PrismEditor)
+app.use(ElementPlus)
 app.mount("#app");
 
 // app.prototype.$prism = prism

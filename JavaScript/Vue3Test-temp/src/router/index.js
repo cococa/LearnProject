@@ -21,6 +21,7 @@ import VueIndex from "../pages/vue/index.vue";
 import TestSetup from "../pages/vue/TestSetup.vue";
 import TestProvideInject from "../pages/vue/TestProvideInject.vue";
 import TestRenderFunction from "../pages/vue/TestRenderFunction.vue";
+import TestPackagingComponent from "../pages/vue/TestPackagingComponent.vue";
 
 //css
 import CssIndex from "../pages/css/index.vue";
@@ -58,6 +59,15 @@ const routes = [
     component: TestRenderFunction,
     meta: {
       title: "TestRenderFunction",
+      keepAlive: true,
+    },
+  },
+  {
+    path: "/vue/TestPackagingComponent",
+    name: "TestPackagingComponent",
+    component: TestPackagingComponent,
+    meta: {
+      title: "TestPackagingComponent",
       keepAlive: true,
     },
   },
